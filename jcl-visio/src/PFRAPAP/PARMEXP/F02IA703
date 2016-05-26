@@ -1,0 +1,2 @@
+ SORT FIELDS=(27,18,CH,A),EQUALS                                        00010028
+ OMIT COND=(27,10,CH,EQ,C'01.07.2015',AND,37,2,CH,LT,C'15')             00020028

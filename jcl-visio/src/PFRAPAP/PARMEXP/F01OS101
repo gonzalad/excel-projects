@@ -1,0 +1,591 @@
+-----------------------------------------------------------------------         
+-- INITIALISATION QUOTIDIENNE DE LA TABLE DES CONTACTS DE L'AC       --         
+-----------------------------------------------------------------------         
+    UPDATE PFRA.TBSACTC                                                         
+            SET TSACNFOY             = 0                                        
+              , TSACCFORIG           = '    '                                   
+              , TSACCSTOCK           = 'N'                                      
+              , TSACCENCOURS         = 'N'                                      
+              , TSACNSOC             = 0                                        
+              , TSACCMODE            = ' '                                      
+              , TSACCQUALIF          = '   '                                    
+              , TSACCORIG            = '  '                                     
+              , TSACCSUPPORT         = '    '                                   
+              , TSACCDEMARC          = '   '                                    
+    WHERE TSACNFOY  <> 0                                                        
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- INITIALISATION QUOTIDIENNE TABLE CONTACT  CUMUL AGENCE            --         
+-----------------------------------------------------------------------         
+    DELETE   FROM PFRA.TBSCCAG                                                  
+       WHERE TCCADCONTACT =  ( SELECT MAX(TSCADCONTACT)                         
+                                 FROM PFRA.TBSACAG     )                        
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- INITIALISATION QUOTIDIENNE TABLE ACTION   CUMUL AGENCE            --         
+-----------------------------------------------------------------------         
+    DELETE   FROM PFRA.TBSCAAG                                                  
+       WHERE TCAADACTION  =  ( SELECT MAX(TSAADACTION)                          
+                                 FROM PFRA.TBSAAAG     )                        
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- INITIALISATION QUOTIDIENNE TABLE OBJECTIF CUMUL AGENCE            --         
+--                (2 DERNIERS MOIS)                                  --         
+-----------------------------------------------------------------------         
+    DELETE   FROM PFRA.TBSCOAG                                                  
+       WHERE TCOADOBJECTIF =  ( SELECT MAX(TSOADOBJECTIF)                       
+                                 FROM PFRA.TBSAOAG     )                        
+    ;                                                                           
+    DELETE   FROM PFRA.TBSCOAG                                                  
+       WHERE TCOADOBJECTIF =  ( SELECT MAX(TSOADOBJECTIF) - 1 MONTH             
+                                 FROM PFRA.TBSAOAG     )                        
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- INITIALISATION QUOTIDIENNE TABLE OBJECTIF AGENCE                  --         
+--                (2 DERNIERS MOIS)                                  --         
+-----------------------------------------------------------------------         
+    DELETE   FROM PFRA.TBSAOAG                                                  
+       WHERE TSOADOBJECTIF =  ( SELECT MAX(TSOUDOBJECTIF)                       
+                                 FROM PFRA.TBSAOUS     )                        
+    ;                                                                           
+    DELETE   FROM PFRA.TBSAOAG                                                  
+       WHERE TSOADOBJECTIF =  ( SELECT MAX(TSOUDOBJECTIF) - 1 MONTH             
+                                 FROM PFRA.TBSAOUS     )                        
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE ACTION CUMUL AGENCE,         --         
+-- NIVEAU ZONE                                                       --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSCAAG                                                    
+    SELECT X.TSAADACTION      ,                                                 
+           TDAGNTT            ,                                                 
+           TDAGNZZ            ,                                                 
+           TSAACACTION        ,                                                 
+           TSAACFAMATER       ,                                                 
+           TSAACTYPEEC        ,                                                 
+           TSAACTYPCTC        ,                                                 
+           TSAACDEMARC        ,                                                 
+           TSAANSOC           ,                                                 
+      SUM (TSAABJOURALLOP)    ,                                                 
+      SUM (TSAABJOURNEWOP)    ,                                                 
+      SUM (TSAABJOURALLOPAFD) ,                                                 
+      SUM (TSAABJOURNEWOPAFD) ,                                                 
+      SUM (TSAAMJOURALLOP)    ,                                                 
+      SUM (TSAAMJOURNEWOP)    ,                                                 
+      SUM (TSAAMJOURTXMIXE)   ,                                                 
+      SUM (TSAATJOURTXMIXE)   ,                                                 
+      SUM (TSAABMOISALLOP)    ,                                                 
+      SUM (TSAABMOISNEWOP)    ,                                                 
+      SUM (TSAABMOISALLOPAFD) ,                                                 
+      SUM (TSAABMOISNEWOPAFD) ,                                                 
+      SUM (TSAAMMOISALLOP)    ,                                                 
+      SUM (TSAAMMOISNEWOP)    ,                                                 
+      SUM (TSAAMMOISTXMIXE)   ,                                                 
+      SUM (TSAATMOISTXMIXE)                                                     
+     FROM  PFRA.TBORDAG, PFRA.TBSAAAG X                                         
+     WHERE X.TSAANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGNZZ       ^=  99                                                 
+       AND TDAGNTT       ^=  99                                                 
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSAANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSAADACTION  =  ( SELECT MAX(TSAADACTION)                          
+                             FROM   PFRA.TBSAAAG    )                           
+     GROUP BY TSAADACTION             ,                                         
+              TDAGNTT                 ,                                         
+              TDAGNZZ                 ,                                         
+              TSAACACTION             ,                                         
+              TSAACFAMATER            ,                                         
+              TSAACTYPEEC             ,                                         
+              TSAACTYPCTC             ,                                         
+              TSAACDEMARC             ,                                         
+              TSAANSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE ACTION CUMUL AGENCE,         --         
+-- NIVEAU TERRITOIRE                                                 --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSCAAG                                                    
+    SELECT X.TSAADACTION      ,                                                 
+           TDAGNTT            ,                                                 
+           99                 ,                                                 
+           TSAACACTION        ,                                                 
+           TSAACFAMATER       ,                                                 
+           TSAACTYPEEC        ,                                                 
+           TSAACTYPCTC        ,                                                 
+           TSAACDEMARC        ,                                                 
+           TSAANSOC           ,                                                 
+      SUM (TSAABJOURALLOP)    ,                                                 
+      SUM (TSAABJOURNEWOP)    ,                                                 
+      SUM (TSAABJOURALLOPAFD) ,                                                 
+      SUM (TSAABJOURNEWOPAFD) ,                                                 
+      SUM (TSAAMJOURALLOP)    ,                                                 
+      SUM (TSAAMJOURNEWOP)    ,                                                 
+      SUM (TSAAMJOURTXMIXE)   ,                                                 
+      SUM (TSAATJOURTXMIXE)   ,                                                 
+      SUM (TSAABMOISALLOP)    ,                                                 
+      SUM (TSAABMOISNEWOP)    ,                                                 
+      SUM (TSAABMOISALLOPAFD) ,                                                 
+      SUM (TSAABMOISNEWOPAFD) ,                                                 
+      SUM (TSAAMMOISALLOP)    ,                                                 
+      SUM (TSAAMMOISNEWOP)    ,                                                 
+      SUM (TSAAMMOISTXMIXE)   ,                                                 
+      SUM (TSAATMOISTXMIXE)                                                     
+     FROM  PFRA.TBORDAG, PFRA.TBSAAAG X                                         
+     WHERE X.TSAANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGNTT       ^=  99                                                 
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSAANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSAADACTION  =  ( SELECT MAX(TSAADACTION)                          
+                             FROM   PFRA.TBSAAAG       )                        
+     GROUP BY TSAADACTION             ,                                         
+              TDAGNTT                 ,                                         
+              TSAACACTION             ,                                         
+              TSAACFAMATER            ,                                         
+              TSAACTYPEEC             ,                                         
+              TSAACTYPCTC             ,                                         
+              TSAACDEMARC             ,                                         
+              TSAANSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE ACTION CUMUL AGENCE,         --         
+-- NIVEAU NATIONAL                                                   --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSCAAG                                                    
+    SELECT X.TSAADACTION      ,                                                 
+           99                 ,                                                 
+           99                 ,                                                 
+           TSAACACTION        ,                                                 
+           TSAACFAMATER       ,                                                 
+           TSAACTYPEEC        ,                                                 
+           TSAACTYPCTC        ,                                                 
+           TSAACDEMARC        ,                                                 
+           TSAANSOC           ,                                                 
+      SUM (TSAABJOURALLOP)    ,                                                 
+      SUM (TSAABJOURNEWOP)    ,                                                 
+      SUM (TSAABJOURALLOPAFD) ,                                                 
+      SUM (TSAABJOURNEWOPAFD) ,                                                 
+      SUM (TSAAMJOURALLOP)    ,                                                 
+      SUM (TSAAMJOURNEWOP)    ,                                                 
+      SUM (TSAAMJOURTXMIXE)   ,                                                 
+      SUM (TSAATJOURTXMIXE)   ,                                                 
+      SUM (TSAABMOISALLOP)    ,                                                 
+      SUM (TSAABMOISNEWOP)    ,                                                 
+      SUM (TSAABMOISALLOPAFD) ,                                                 
+      SUM (TSAABMOISNEWOPAFD) ,                                                 
+      SUM (TSAAMMOISALLOP)    ,                                                 
+      SUM (TSAAMMOISNEWOP)    ,                                                 
+      SUM (TSAAMMOISTXMIXE)   ,                                                 
+      SUM (TSAATMOISTXMIXE)                                                     
+     FROM  PFRA.TBORDAG, PFRA.TBSAAAG X                                         
+     WHERE X.TSAANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSAANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSAADACTION  =  ( SELECT MAX(TSAADACTION)                          
+                             FROM   PFRA.TBSAAAG       )                        
+     GROUP BY TSAADACTION             ,                                         
+              TSAACACTION             ,                                         
+              TSAACFAMATER            ,                                         
+              TSAACTYPEEC             ,                                         
+              TSAACTYPCTC             ,                                         
+              TSAACDEMARC             ,                                         
+              TSAANSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE CONTACT CUMUL AGENCE,        --         
+-- NIVEAU ZONE                                                       --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSCCAG                                                    
+    SELECT X.TSCADCONTACT     ,                                                 
+           TDAGNTT            ,                                                 
+           TDAGNZZ            ,                                                 
+           TSCACTYPCTC        ,                                                 
+           TSCACDEMARC        ,                                                 
+           TSCANSOC           ,                                                 
+      SUM (TSCABJOUR)         ,                                                 
+      SUM (TSCABMOIS)                                                           
+     FROM  PFRA.TBORDAG, PFRA.TBSACAG X                                         
+     WHERE X.TSCANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGNZZ       ^=  99                                                 
+       AND TDAGNTT       ^=  99                                                 
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSCANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSCADCONTACT =  ( SELECT MAX(TSCADCONTACT)                         
+                             FROM   PFRA.TBSACAG        )                       
+     GROUP BY TSCADCONTACT            ,                                         
+              TDAGNTT                 ,                                         
+              TDAGNZZ                 ,                                         
+              TSCACTYPCTC             ,                                         
+              TSCACDEMARC             ,                                         
+              TSCANSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE CONTACT CUMUL AGENCE,        --         
+-- NIVEAU TERRITOIRE                                                 --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSCCAG                                                    
+    SELECT X.TSCADCONTACT     ,                                                 
+           TDAGNTT            ,                                                 
+           99                 ,                                                 
+           TSCACTYPCTC        ,                                                 
+           TSCACDEMARC        ,                                                 
+           TSCANSOC           ,                                                 
+      SUM (TSCABJOUR)         ,                                                 
+      SUM (TSCABMOIS)                                                           
+     FROM  PFRA.TBORDAG, PFRA.TBSACAG X                                         
+     WHERE X.TSCANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGNTT       ^=  99                                                 
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSCANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSCADCONTACT =  ( SELECT MAX(TSCADCONTACT)                         
+                             FROM   PFRA.TBSACAG        )                       
+     GROUP BY TSCADCONTACT            ,                                         
+              TDAGNTT                 ,                                         
+              TSCACTYPCTC             ,                                         
+              TSCACDEMARC             ,                                         
+              TSCANSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE CONTACT CUMUL AGENCE,        --         
+-- NIVEAU NATIONAL                                                   --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSCCAG                                                    
+    SELECT X.TSCADCONTACT     ,                                                 
+           99                 ,                                                 
+           99                 ,                                                 
+           TSCACTYPCTC        ,                                                 
+           TSCACDEMARC        ,                                                 
+           TSCANSOC           ,                                                 
+      SUM (TSCABJOUR)         ,                                                 
+      SUM (TSCABMOIS)                                                           
+     FROM  PFRA.TBORDAG, PFRA.TBSACAG X                                         
+     WHERE X.TSCANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSCANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSCADCONTACT =  ( SELECT MAX(TSCADCONTACT)                         
+                             FROM   PFRA.TBSACAG        )                       
+     GROUP BY TSCADCONTACT            ,                                         
+              TSCACTYPCTC             ,                                         
+              TSCACDEMARC             ,                                         
+              TSCANSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE OBJECTIF AGENCE              --         
+--             (2 DERNIERS MOIS)                                     --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSAOAG                                                    
+    SELECT TSOUDOBJECTIF      ,                                                 
+           TSOUNAGCE          ,                                                 
+           TSOUCACTION        ,                                                 
+           TSOUCFAMATER       ,                                                 
+           TSOUCDEMARC        ,                                                 
+           TSOUNSOC           ,                                                 
+      SUM (TSOUBMOIS)         ,                                                 
+      SUM (TSOUMMOIS)         ,                                                 
+      0                       ,                                                 
+      0                                                                         
+     FROM  PFRA.TBSAOUS                                                         
+     WHERE TSOUDOBJECTIF   = ( SELECT MAX(TSOUDOBJECTIF)                        
+                             FROM   PFRA.TBSAOUS         )                      
+     GROUP BY TSOUDOBJECTIF           ,                                         
+              TSOUNAGCE               ,                                         
+              TSOUCACTION             ,                                         
+              TSOUCFAMATER            ,                                         
+              TSOUCDEMARC             ,                                         
+              TSOUNSOC                                                          
+    ;                                                                           
+    INSERT INTO PFRA.TBSAOAG                                                    
+    SELECT TSOUDOBJECTIF      ,                                                 
+           TSOUNAGCE          ,                                                 
+           TSOUCACTION        ,                                                 
+           TSOUCFAMATER       ,                                                 
+           TSOUCDEMARC        ,                                                 
+           TSOUNSOC           ,                                                 
+      SUM (TSOUBMOIS)         ,                                                 
+      SUM (TSOUMMOIS)         ,                                                 
+      0                       ,                                                 
+      0                                                                         
+     FROM  PFRA.TBSAOUS                                                         
+     WHERE TSOUDOBJECTIF   = ( SELECT MAX(TSOUDOBJECTIF) - 1 MONTH              
+                             FROM   PFRA.TBSAOUS         )                      
+     GROUP BY TSOUDOBJECTIF           ,                                         
+              TSOUNAGCE               ,                                         
+              TSOUCACTION             ,                                         
+              TSOUCFAMATER            ,                                         
+              TSOUCDEMARC             ,                                         
+              TSOUNSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE OBJECTIF CUMUL AGENCE,       --         
+-- NIVEAU ZONE (2 DERNIERS MOIS)                                     --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSCOAG                                                    
+    SELECT X.TSOADOBJECTIF    ,                                                 
+           TDAGNTT            ,                                                 
+           TDAGNZZ            ,                                                 
+           TSOACACTION        ,                                                 
+           TSOACFAMATER       ,                                                 
+           TSOACDEMARC        ,                                                 
+           TSOANSOC           ,                                                 
+      SUM (TSOABMOIS)         ,                                                 
+      SUM (TSOAMMOIS)         ,                                                 
+      0                       ,                                                 
+      0                                                                         
+     FROM  PFRA.TBORDAG, PFRA.TBSAOAG X                                         
+     WHERE X.TSOANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGNZZ       ^=  99                                                 
+       AND TDAGNTT       ^=  99                                                 
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSOANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSOADOBJECTIF = ( SELECT MAX(TSOADOBJECTIF)                        
+                             FROM   PFRA.TBSAOAG         )                      
+     GROUP BY TSOADOBJECTIF           ,                                         
+              TDAGNTT                 ,                                         
+              TDAGNZZ                 ,                                         
+              TSOACACTION             ,                                         
+              TSOACFAMATER            ,                                         
+              TSOACDEMARC             ,                                         
+              TSOANSOC                                                          
+    ;                                                                           
+    INSERT INTO PFRA.TBSCOAG                                                    
+    SELECT X.TSOADOBJECTIF    ,                                                 
+           TDAGNTT            ,                                                 
+           TDAGNZZ            ,                                                 
+           TSOACACTION        ,                                                 
+           TSOACFAMATER       ,                                                 
+           TSOACDEMARC        ,                                                 
+           TSOANSOC           ,                                                 
+      SUM (TSOABMOIS)         ,                                                 
+      SUM (TSOAMMOIS)         ,                                                 
+      0                       ,                                                 
+      0                                                                         
+     FROM  PFRA.TBORDAG, PFRA.TBSAOAG X                                         
+     WHERE X.TSOANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGNZZ       ^=  99                                                 
+       AND TDAGNTT       ^=  99                                                 
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSOANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSOADOBJECTIF = ( SELECT MAX(TSOADOBJECTIF) - 1 MONTH              
+                             FROM   PFRA.TBSAOAG         )                      
+     GROUP BY TSOADOBJECTIF           ,                                         
+              TDAGNTT                 ,                                         
+              TDAGNZZ                 ,                                         
+              TSOACACTION             ,                                         
+              TSOACFAMATER            ,                                         
+              TSOACDEMARC             ,                                         
+              TSOANSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE OBJECTIF CUMUL AGENCE,       --         
+-- NIVEAU TERRITOIRE (2 DERNIERS MOIS)                               --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSCOAG                                                    
+    SELECT X.TSOADOBJECTIF    ,                                                 
+           TDAGNTT            ,                                                 
+           99                 ,                                                 
+           TSOACACTION        ,                                                 
+           TSOACFAMATER       ,                                                 
+           TSOACDEMARC        ,                                                 
+           TSOANSOC           ,                                                 
+      SUM (TSOABMOIS)         ,                                                 
+      SUM (TSOAMMOIS)         ,                                                 
+      0                       ,                                                 
+      0                                                                         
+     FROM  PFRA.TBORDAG, PFRA.TBSAOAG X                                         
+     WHERE X.TSOANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGNTT       ^=  99                                                 
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSOANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSOADOBJECTIF = ( SELECT MAX(TSOADOBJECTIF)                        
+                             FROM   PFRA.TBSAOAG         )                      
+     GROUP BY TSOADOBJECTIF           ,                                         
+              TDAGNTT                 ,                                         
+              TSOACACTION             ,                                         
+              TSOACFAMATER            ,                                         
+              TSOACDEMARC             ,                                         
+              TSOANSOC                                                          
+    ;                                                                           
+    INSERT INTO PFRA.TBSCOAG                                                    
+    SELECT X.TSOADOBJECTIF    ,                                                 
+           TDAGNTT            ,                                                 
+           99                 ,                                                 
+           TSOACACTION        ,                                                 
+           TSOACFAMATER       ,                                                 
+           TSOACDEMARC        ,                                                 
+           TSOANSOC           ,                                                 
+      SUM (TSOABMOIS)         ,                                                 
+      SUM (TSOAMMOIS)         ,                                                 
+      0                       ,                                                 
+      0                                                                         
+     FROM  PFRA.TBORDAG, PFRA.TBSAOAG X                                         
+     WHERE X.TSOANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGNTT       ^=  99                                                 
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSOANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSOADOBJECTIF = ( SELECT MAX(TSOADOBJECTIF) - 1 MONTH              
+                             FROM   PFRA.TBSAOAG         )                      
+     GROUP BY TSOADOBJECTIF           ,                                         
+              TDAGNTT                 ,                                         
+              TSOACACTION             ,                                         
+              TSOACFAMATER            ,                                         
+              TSOACDEMARC             ,                                         
+              TSOANSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- ALIMENTATION QUOTIDIENNE DE LA TABLE OBJECTIF CUMUL AGENCE,       --         
+-- NIVEAU NATIONAL   (2 DERNIERS MOIS)                               --         
+-----------------------------------------------------------------------         
+    INSERT INTO PFRA.TBSCOAG                                                    
+    SELECT X.TSOADOBJECTIF    ,                                                 
+           99                 ,                                                 
+           99                 ,                                                 
+           TSOACACTION        ,                                                 
+           TSOACFAMATER       ,                                                 
+           TSOACDEMARC        ,                                                 
+           TSOANSOC           ,                                                 
+      SUM (TSOABMOIS)         ,                                                 
+      SUM (TSOAMMOIS)         ,                                                 
+      0                       ,                                                 
+      0                                                                         
+     FROM  PFRA.TBORDAG, PFRA.TBSAOAG X                                         
+     WHERE X.TSOANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSOANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSOADOBJECTIF = ( SELECT MAX(TSOADOBJECTIF)                        
+                             FROM   PFRA.TBSAOAG         )                      
+     GROUP BY TSOADOBJECTIF           ,                                         
+              TSOACACTION             ,                                         
+              TSOACFAMATER            ,                                         
+              TSOACDEMARC             ,                                         
+              TSOANSOC                                                          
+    ;                                                                           
+    INSERT INTO PFRA.TBSCOAG                                                    
+    SELECT X.TSOADOBJECTIF    ,                                                 
+           99                 ,                                                 
+           99                 ,                                                 
+           TSOACACTION        ,                                                 
+           TSOACFAMATER       ,                                                 
+           TSOACDEMARC        ,                                                 
+           TSOANSOC           ,                                                 
+      SUM (TSOABMOIS)         ,                                                 
+      SUM (TSOAMMOIS)         ,                                                 
+      0                       ,                                                 
+      0                                                                         
+     FROM  PFRA.TBORDAG, PFRA.TBSAOAG X                                         
+     WHERE X.TSOANAGCE = TDAGNAGCE                                              
+       AND TDAGNSOC       =  999                                                
+       AND TDAGDMESCE     =  ( SELECT MAX(TDAGDMESCE)                           
+                             FROM   PFRA.TBORDAG                                
+                             WHERE  TDAGNAGCE  = X.TSOANAGCE                    
+                             AND    TDAGDMESCE  <= CURRENT DATE                 
+                             AND (  TDAGDINACT  >= CURRENT DATE                 
+                                 OR TDAGDINACT   = '01.01.0001'))               
+       AND X.TSOADOBJECTIF = ( SELECT MAX(TSOADOBJECTIF) - 1 MONTH              
+                             FROM   PFRA.TBSAOAG         )                      
+     GROUP BY TSOADOBJECTIF           ,                                         
+              TSOACACTION             ,                                         
+              TSOACFAMATER            ,                                         
+              TSOACDEMARC             ,                                         
+              TSOANSOC                                                          
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- INITIALISATION QUOTIDIENNE DES DONN{ES " JOURS "                  --         
+-- DE LA TABLE ACTION AGENCE                                         --         
+-----------------------------------------------------------------------         
+LOCK TABLE PFRA.TBSAAAG IN EXCLUSIVE MODE ;                             00010001
+    UPDATE PFRA.TBSAAAG                                                         
+       SET TSAABJOURALLOP     = 000000000,                                      
+           TSAABJOURNEWOP     = 000000000,                                      
+           TSAABJOURALLOPAFD  = 000000000,                                      
+           TSAABJOURNEWOPAFD  = 000000000,                                      
+           TSAAMJOURALLOP     = 0000000000000,                                  
+           TSAAMJOURNEWOP     = 0000000000000,                                  
+           TSAAMJOURTXMIXE    = 0000000000000,                                  
+           TSAATJOURTXMIXE    = 00000000000                                     
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- INITIALISATION QUOTIDIENNE DES DONN{ES " JOURS "                  --         
+-- DE LA TABLE ACTION USER                                           --         
+-----------------------------------------------------------------------         
+LOCK TABLE PFRA.TBSAAUS IN EXCLUSIVE MODE ;                             00010001
+    UPDATE PFRA.TBSAAUS                                                         
+       SET TSAUBJOURALLOP     = 000000000,                                      
+           TSAUBJOURNEWOP     = 000000000,                                      
+           TSAUBJOURALLOPAFD  = 000000000,                                      
+           TSAUBJOURNEWOPAFD  = 000000000,                                      
+           TSAUMJOURALLOP     = 0000000000000,                                  
+           TSAUMJOURNEWOP     = 0000000000000,                                  
+           TSAUMJOURTXMIXE    = 0000000000000,                                  
+           TSAUTJOURTXMIXE    = 00000000000                                     
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- INITIALISATION QUOTIDIENNE DES DONN{ES " JOURS "                  --         
+-- DE LA TABLE CONTACT AGENCE                                        --         
+-----------------------------------------------------------------------         
+LOCK TABLE PFRA.TBSACAG IN EXCLUSIVE MODE ;                             00010001
+    UPDATE PFRA.TBSACAG                                                         
+       SET TSCABJOUR          = 00000000000                                     
+    ;                                                                           
+-----------------------------------------------------------------------         
+-- INITIALISATION QUOTIDIENNE DES DONN{ES " JOURS "                  --         
+-- DE LA TABLE CONTACT USER                                          --         
+-----------------------------------------------------------------------         
+LOCK TABLE PFRA.TBSACUS IN EXCLUSIVE MODE ;                             00010001
+    UPDATE PFRA.TBSACUS                                                         
+       SET TSCUBJOUR          = 00000000000                                     
+    ;                                                                           
+

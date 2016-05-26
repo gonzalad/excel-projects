@@ -1,0 +1,8 @@
+PFRDWH01(EXIT=16                                                                
+BIN                                                                             
+SENDSITE                                                                        
+LOCSITE PRIMARY=20000 SECONDARY=1000 TRACKS RECFM=FB LRECL=2161                 
+CD /data/GIW/PROD/&ANNEE&MOIS/FR/CTLM/CTX                                       
+GET HARRYIMXSICFR7C 'PFRATMP.SBBE0060.IEBGENER.SICFR7C0'                        
+CLOSE                                                                           
+QUIT                                                                            

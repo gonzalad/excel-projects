@@ -1,0 +1,4 @@
+SEND PART=MC284011,IDF=P0100481,                                        00010004
+FNAME= PFRAFTE.SGCH0008.BM049400.FLUU5400,                              00020005
+PARM= PFRAFTE.SGCH0008.BM049400.FLUU5400,                               00030005
+TYPE=FILE                                                               00040000

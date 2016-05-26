@@ -1,0 +1,288 @@
+*-- DEMANDE       WATTECA WATTECA WATTECA.TRADXTRA.CTECH(K01IFA0G)              
+*-- REQUETE 00001 DELETE TBSYDBS                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT TDBSNAME                                                                 
+  FROM XXXX.TBSYDBS                                                             
+*-- DELETE --------------------------------------------------*                  
+DELETE FROM XXXX.TBSYDBS                                                        
+ WHERE TDBSNAME = ?                                                             
+*-- REQUETE 00002 DELETE TBSYTBL                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT TTBLDATABASE                                                             
+     , TTBLNAME                                                                 
+  FROM XXXX.TBSYTBL                                                             
+*-- DELETE --------------------------------------------------*                  
+DELETE FROM XXXX.TBSYTBL                                                        
+ WHERE TTBLDATABASE = ?                                                         
+   AND TTBLNAME = ?                                                             
+*-- REQUETE 00003 DELETE TBSYCOL                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT TCLMTBNAME                                                               
+     , TCLMCOLNO                                                                
+     , TCLMNAME                                                                 
+  FROM XXXX.TBSYCOL                                                             
+*-- DELETE --------------------------------------------------*                  
+DELETE FROM XXXX.TBSYCOL                                                        
+ WHERE TCLMTBNAME = ?                                                           
+   AND TCLMCOLNO = ?                                                            
+   AND TCLMNAME = ?                                                             
+*-- REQUETE 00004 DELETE TBSYIDX                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT TIDXTABLE                                                                
+     , TIDXNAME                                                                 
+     , TIDXCOLSEQ                                                               
+     , TIDXCOLNO                                                                
+     , TIDXCOLNAME                                                              
+     , TIDXCOLTYPE                                                              
+     , TIDXCOLLENGTH                                                            
+     , TIDXSCALE                                                                
+     , TIDXUNIQUE                                                               
+     , TIDXCLUSTER                                                              
+     , TIDXORDER                                                                
+  FROM XXXX.TBSYIDX                                                             
+*-- DELETE --------------------------------------------------*                  
+DELETE FROM XXXX.TBSYIDX                                                        
+ WHERE TIDXTABLE = ?                                                            
+   AND TIDXNAME = ?                                                             
+   AND TIDXCOLSEQ = ?                                                           
+   AND TIDXCOLNO = ?                                                            
+   AND TIDXCOLNAME = ?                                                          
+   AND TIDXCOLTYPE = ?                                                          
+   AND TIDXCOLLENGTH = ?                                                        
+   AND TIDXSCALE = ?                                                            
+   AND TIDXUNIQUE = ?                                                           
+   AND TIDXCLUSTER = ?                                                          
+   AND TIDXORDER = ?                                                            
+*-- REQUETE 00005 INSERT TBSYDBS                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(DBNAME AS CHAR(8))                                                  
+     , CAST(COUNT(*) AS DECIMAL(3,0))                                           
+FROM SYSIBM.SYSTABLES                                                           
+WHERE  CREATOR LIKE 'XXXX%'                                                     
+    AND  DBNAME  LIKE 'P%FR'                                                    
+    AND  TYPE    = 'T'                                                          
+  GROUP BY DBNAME                                                               
+*-- INSERT --------------------------------------------------*                  
+INSERT INTO XXXX.TBSYDBS                                                        
+VALUES (?,                                                                      
+        ?,                                                                      
+        '  ')                                                                   
+*-- REQUETE 00006 INSERT TBSYTBL                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(X.DBNAME AS CHAR(8))                                                
+     , CAST(X.NAME AS CHAR(8))                                                  
+     , CAST(X.CREATOR AS CHAR(8))                                               
+     , CAST(X.CARD AS DECIMAL(9,0))                                             
+     , CAST(X.RECLENGTH AS DECIMAL(5,0))                                        
+     , CAST(X.COLCOUNT AS DECIMAL(3,0))                                         
+     , CAST(Y.PARTITIONS AS DECIMAL(3,0))                                       
+     , CAST(SUBSTR(X.REMARKS,1,40) AS CHAR(40))                                 
+     , CAST(X.DBID AS SMALLINT)                                                 
+     , CAST(X.OBID AS SMALLINT)                                                 
+     , CAST(Y.PSID AS SMALLINT)                                                 
+     , CAST(X.CREATEDTS AS TIMESTAMP)                                           
+FROM   SYSIBM.SYSTABLES X, SYSIBM.SYSTABLESPACE Y                               
+WHERE  X.CREATOR LIKE 'XXXX%'                                                   
+AND   X.DBNAME  LIKE 'P%FR'                                                     
+AND   X.DBNAME  = Y.DBNAME                                                      
+AND   X.TSNAME  = Y.NAME                                                        
+AND   X.NAME    LIKE 'TB%'                                                      
+AND   X.NAME NOT LIKE 'TB£_%' ESCAPE '£'                                        
+AND   X.TYPE = 'T'                                                              
+  ORDER BY 1          ASC,                                                      
+           2          ASC,                                                      
+           3          ASC                                                       
+*-- INSERT --------------------------------------------------*                  
+INSERT INTO XXXX.TBSYTBL                                                        
+VALUES (?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        CURRENT DATE,                                                           
+        CURRENT TIME,                                                           
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?)                                                                      
+*-- REQUETE 00007 INSERT TBSYCOL                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(X.TBNAME AS CHAR(8))                                                
+     , CAST(X.TBCREATOR AS CHAR(8))                                             
+     , CAST(X.NAME AS CHAR(18))                                                 
+     , CAST(X.COLNO AS SMALLINT)                                                
+     , CAST(X.COLTYPE AS CHAR(8))                                               
+     , CAST(X.LENGTH AS SMALLINT)                                               
+     , CAST(X.SCALE AS SMALLINT)                                                
+     , CAST(X.NULLS AS CHAR(1))                                                 
+     , CAST(SUBSTR(X.REMARKS,1,40) AS CHAR(40))                                 
+     , CAST(X.LABEL AS VARCHAR(30))                                             
+FROM   SYSIBM.SYSCOLUMNS X, SYSIBM.SYSTABLES Y                                  
+WHERE  X.TBCREATOR LIKE 'XXXX%'                                                 
+AND   X.TBNAME    LIKE 'TB%'                                                    
+AND   X.TBNAME    = Y.NAME                                                      
+AND   X.TBCREATOR = Y.CREATOR                                                   
+AND   X.TBNAME NOT LIKE 'TB£_%' ESCAPE '£'                                      
+AND   Y.TYPE = 'T'                                                              
+  ORDER  BY   1           ASC,                                                  
+              2           ASC,                                                  
+              4           ASC,                                                  
+              3           ASC                                                   
+*-- INSERT --------------------------------------------------*                  
+INSERT INTO XXXX.TBSYCOL                                                        
+VALUES (?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        0,                                                                      
+        'N',                                                                    
+        ?,                                                                      
+        ?,                                                                      
+        ?)                                                                      
+*-- REQUETE 00008 INSERT TBSYIDX                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(X.TBNAME AS CHAR(8))                                                
+     , CAST(X.NAME AS CHAR(18))                                                 
+     , CAST(Y.COLSEQ AS SMALLINT)                                               
+     , CAST(Y.COLNO AS SMALLINT)                                                
+     , CAST(Y.COLNAME AS CHAR(18))                                              
+     , CAST(Z.COLTYPE AS CHAR(8))                                               
+     , CAST(Z.LENGTH AS SMALLINT)                                               
+     , CAST(Z.SCALE AS SMALLINT)                                                
+     , CAST(X.UNIQUERULE AS CHAR(1))                                            
+     , CAST(X.CLUSTERING AS CHAR(1))                                            
+     , CAST(Y.ORDERING AS CHAR(1))                                              
+FROM SYSIBM.SYSINDEXES X, SYSIBM.SYSKEYS Y,                                     
+SYSIBM.SYSCOLUMNS Z, SYSIBM.SYSTABLES W                                         
+WHERE X.CREATOR   LIKE 'XXXX%'                                                  
+AND  X.CREATOR   = Y.IXCREATOR                                                  
+AND  X.NAME      LIKE 'I%'                                                      
+AND  X.NAME      = Y.IXNAME                                                     
+AND  X.TBCREATOR LIKE 'XXXX%'                                                   
+AND  X.TBCREATOR = Z.TBCREATOR                                                  
+AND  X.TBNAME    LIKE 'TB%'                                                     
+AND  X.TBNAME    = Z.TBNAME                                                     
+AND  Y.COLNAME   = Z.NAME                                                       
+AND  X.TBCREATOR = W.CREATOR                                                    
+AND  X.TBNAME    = W.NAME                                                       
+AND   X.TBNAME NOT LIKE 'TB£_%' ESCAPE '£'                                      
+AND  W.TYPE      = 'T'                                                          
+  ORDER BY 1        ASC,                                                        
+           2        ASC,                                                        
+           3        ASC                                                         
+*-- INSERT --------------------------------------------------*                  
+INSERT INTO XXXX.TBSYIDX                                                        
+VALUES (?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?)                                                                      
+*-- REQUETE 00009 UPDATE TBSYTBL                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(MATABLE.MONCOMPTEUR AS DECIMAL(3,0))                                
+     , TTBLDATABASE                                                             
+     , TTBLNAME                                                                 
+  FROM XXXX.TBSYTBL                                                             
+     ,   ( SELECT TIDXTABLE AS MONNOM,                                          
+           COUNT(DISTINCT(TIDXNAME)) AS MONCOMPTEUR                             
+FROM   XXXX.TBSYIDX                                                             
+    GROUP BY TIDXTABLE ) AS MATABLE                                             
+WHERE TTBLNAME = MATABLE.MONNOM                                                 
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBSYTBL                                                             
+   SET TTBLNBIX = ?                                                             
+ WHERE TTBLDATABASE = ?                                                         
+   AND TTBLNAME = ?                                                             
+*-- REQUETE 00010 UPDATE TBSYTBL                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(MATABLEPAK.MONCOMPTPAK AS DECIMAL(5,0))                             
+     , TTBLDATABASE                                                             
+     , TTBLNAME                                                                 
+  FROM XXXX.TBSYTBL                                                             
+     ,   ( SELECT BNAME     AS MONNOMPAK,                                       
+           COUNT(DISTINCT(DNAME)) AS MONCOMPTPAK                                
+FROM   SYSIBM.SYSPACKDEP                                                        
+WHERE  BQUALIFIER LIKE 'XXXX%'                                                  
+     AND   BTYPE      = 'T'                                                     
+    GROUP BY BNAME ) AS MATABLEPAK                                              
+WHERE TTBLNAME = MATABLEPAK.MONNOMPAK                                           
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBSYTBL                                                             
+   SET TTBLNBPACK = ?                                                           
+WHERE  TTBLDATABASE = ?                                                         
+   AND TTBLNAME = ?                                                             
+*-- REQUETE 00011 UPDATE TBSYTBL                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(MATABLEPLA.MONCOMPTPLA AS DECIMAL(5,0))                             
+     , TTBLDATABASE                                                             
+     , TTBLNAME                                                                 
+  FROM XXXX.TBSYTBL                                                             
+     ,   ( SELECT BNAME     AS MONNOMPLA,                                       
+           COUNT(DISTINCT(DNAME)) AS MONCOMPTPLA                                
+FROM   SYSIBM.SYSPLANDEP                                                        
+WHERE  BCREATOR   LIKE 'XXXX%'                                                  
+     AND   BTYPE      = 'T'                                                     
+    GROUP BY BNAME ) AS MATABLEPLA                                              
+WHERE TTBLNAME = MATABLEPLA.MONNOMPLA                                           
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBSYTBL                                                             
+   SET TTBLNBPLAN = ?                                                           
+ WHERE TTBLDATABASE = ?                                                         
+   AND TTBLNAME = ?                                                             
+*-- REQUETE 00012 UPDATE TBSYCOL                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT TCLMTBNAME                                                               
+     , TCLMCOLNO                                                                
+     , TCLMNAME                                                                 
+  FROM XXXX.TBSYCOL                                                             
+     , XXXX.TBSYIDX                                                             
+  WHERE TCLMTBNAME = TIDXTABLE                                                  
+   AND  TCLMNAME   = TIDXCOLNAME                                                
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBSYCOL                                                             
+   SET TCLMKEY = 'Y'                                                            
+ WHERE TCLMTBNAME = ?                                                           
+   AND TCLMCOLNO = ?                                                            
+   AND TCLMNAME = ?                                                             
+

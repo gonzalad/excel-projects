@@ -1,0 +1,1139 @@
+*-- DEMANDE       WATTECA WATTECA WATTECA.TRADXTRA.JCL(FRSTCUM1)                
+*-- REQUETE 00001 DELETE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE IXCREATOR   = 'SOMME'                                                     
+  AND DATE_CREATE = CURRENT DATE;                                               
+*-- DELETE --------------------------------------------------*                  
+DELETE FROM XXXX.TBCDBRG                                                        
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00002 INSERT TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , CAST(SUM(NB_ROWS) AS DECIMAL(11,0))                                      
+     , CAST(SUM(NB_DELTA_ROWS) AS DECIMAL(11,0))                                
+     , CAST(SUM(NB_KEYS) AS DECIMAL(11,0))                                      
+     , CAST(SUM(TIME_SCAN) AS DECIMAL(9,4))                                     
+     , CAST(SUM(TS_ALLO_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(TS_USED_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(TS_EXTENTS) AS DECIMAL(7,0))                                    
+     , CAST(SUM(IC_ALLO_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(IC_USED_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(IC_EXTENTS) AS DECIMAL(7,0))                                    
+     , CAST(SUM(FAROFFPOS) AS DECIMAL(11,0))                                    
+     , CAST(SUM(NEAROFFPOS) AS DECIMAL(11,0))                                   
+     , CAST(SUM(LEAFDIST) AS DECIMAL(11,0))                                     
+     , CAST(AVG(NLEAF) AS DECIMAL(11,0))                                        
+     , CAST(AVG(NLEVELS) AS DECIMAL(5,0))                                       
+     , CAST(SUM(INDEXFREE) AS DECIMAL(11,0))                                    
+FROM XXXX.CDB_REORG                                                             
+WHERE TSNAME LIKE 'S%'                                                          
+  AND PARTITION > 0                                                             
+  AND DATE_CREATE = CURRENT DATE                                                
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY DATE_CREATE,                                                           
+         DBNAME,                                                                
+         TSNAME;                                                                
+*-- INSERT --------------------------------------------------*                  
+INSERT INTO XXXX.TBCDBRG                                                        
+VALUES (?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        CURRENT TIME,                                                           
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ' ',                                                                    
+        ' ',                                                                    
+        0,                                                                      
+        'SOMME',                                                                
+        'TS',                                                                   
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        ' ',                                                                    
+        0,                                                                      
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        '0001-01-01-00.00.00.000000',                                           
+        '0001-01-01-00.00.00.000000',                                           
+        '0001-01-01-00.00.00.000000',                                           
+        '01.01.0001',                                                           
+        '00:00:00',                                                             
+        '00:00:00',                                                             
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0)                                                                      
+*-- REQUETE 00003 INSERT TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , CAST(SUM(NB_ROWS) AS DECIMAL(11,0))                                      
+     , CAST(SUM(NB_DELTA_ROWS) AS DECIMAL(11,0))                                
+     , CAST(SUM(NB_KEYS) AS DECIMAL(11,0))                                      
+     , CAST(SUM(TIME_SCAN) AS DECIMAL(9,4))                                     
+     , CAST(SUM(TS_ALLO_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(TS_USED_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(TS_EXTENTS) AS DECIMAL(7,0))                                    
+     , CAST(SUM(IC_ALLO_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(IC_USED_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(IC_EXTENTS) AS DECIMAL(7,0))                                    
+     , CAST(SUM(FAROFFPOS) AS DECIMAL(11,0))                                    
+     , CAST(SUM(NEAROFFPOS) AS DECIMAL(11,0))                                   
+     , CAST(SUM(LEAFDIST) AS DECIMAL(11,0))                                     
+     , CAST(AVG(NLEAF) AS DECIMAL(11,0))                                        
+     , CAST(AVG(NLEVELS) AS DECIMAL(5,0))                                       
+     , CAST(SUM(INDEXFREE) AS DECIMAL(11,0))                                    
+FROM XXXX.CDB_REORG                                                             
+WHERE TSNAME LIKE 'S%'                                                          
+  AND DATE_CREATE = CURRENT DATE                                                
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY DATE_CREATE,                                                           
+         DBNAME;                                                                
+*-- INSERT --------------------------------------------------*                  
+INSERT INTO XXXX.TBCDBRG                                                        
+VALUES (?,                                                                      
+        ?,                                                                      
+        'ALLTS',                                                                
+        0,                                                                      
+        CURRENT TIME,                                                           
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ' ',                                                                    
+        ' ',                                                                    
+        0,                                                                      
+        'SOMME',                                                                
+        'DB',                                                                   
+        ' ',                                                                    
+        '  ',                                                                   
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        ' ',                                                                    
+        0,                                                                      
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        '0001-01-01-00.00.00.000000',                                           
+        '0001-01-01-00.00.00.000000',                                           
+        '0001-01-01-00.00.00.000000',                                           
+        '01.01.0001',                                                           
+        '00:00:00',                                                             
+        '00:00:00',                                                             
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0)                                                                      
+*-- REQUETE 00004 INSERT TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT DATE_CREATE                                                              
+     , CAST(SUM(NB_ROWS) AS DECIMAL(11,0))                                      
+     , CAST(SUM(NB_DELTA_ROWS) AS DECIMAL(11,0))                                
+     , CAST(SUM(NB_KEYS) AS DECIMAL(11,0))                                      
+     , CAST(SUM(TIME_SCAN) AS DECIMAL(9,4))                                     
+     , CAST(SUM(TS_ALLO_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(TS_USED_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(TS_EXTENTS) AS DECIMAL(7,0))                                    
+     , CAST(SUM(IC_ALLO_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(IC_USED_PAGES) AS DECIMAL(9,0))                                 
+     , CAST(SUM(IC_EXTENTS) AS DECIMAL(7,0))                                    
+     , CAST(SUM(FAROFFPOS) AS DECIMAL(11,0))                                    
+     , CAST(SUM(NEAROFFPOS) AS DECIMAL(11,0))                                   
+     , CAST(SUM(LEAFDIST) AS DECIMAL(11,0))                                     
+     , CAST(AVG(NLEAF) AS DECIMAL(11,0))                                        
+     , CAST(AVG(NLEVELS) AS DECIMAL(5,0))                                       
+     , CAST(SUM(INDEXFREE) AS DECIMAL(11,0))                                    
+FROM XXXX.CDB_REORG                                                             
+WHERE TSNAME LIKE 'S%'                                                          
+  AND DATE_CREATE = CURRENT DATE                                                
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY  DATE_CREATE;                                                          
+*-- INSERT --------------------------------------------------*                  
+INSERT INTO XXXX.TBCDBRG                                                        
+VALUES (?,                                                                      
+        'ALLDBPFR',                                                             
+        'ALLTS',                                                                
+        0,                                                                      
+        CURRENT TIME,                                                           
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        0,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ?,                                                                      
+        ' ',                                                                    
+        ' ',                                                                    
+        0,                                                                      
+        'SOMME',                                                                
+        'TOTAL',                                                                
+        ' ',                                                                    
+        '  ',                                                                   
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        ' ',                                                                    
+        0,                                                                      
+        ' ',                                                                    
+        ' ',                                                                    
+        ' ',                                                                    
+        '0001-01-01-00.00.00.000000',                                           
+        '0001-01-01-00.00.00.000000',                                           
+        '0001-01-01-00.00.00.000000',                                           
+        '01.01.0001',                                                           
+        '00:00:00',                                                             
+        '00:00:00',                                                             
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0,                                                                      
+        0)                                                                      
+*-- REQUETE 00005 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND PARTITION = 1 ;                                                           
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_ROWS_SEC = -2                                                         
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00006 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND PARTITION <> 1                                                            
+  AND NB_ROWS < 100000;                                                         
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_ROWS_SEC = -1                                                         
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00007 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(NB_ROWS / TIME_SCAN AS DECIMAL(9,0))                                
+     , DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND NB_ROWS_SEC >= 0;                                                         
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_ROWS_SEC = ?                                                          
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00008 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(X.NB_ROWS - Y.NB_ROWS AS DECIMAL(11,0))                             
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , XXXX.CDB_REORG Y                                                         
+     ,  (SELECT DBNAME, TSNAME, PARTITION, MAX(DATE_CREATE) AS DATE_CREATE      
+  FROM XXXX.CDB_REORG                                                           
+  WHERE DATE_CREATE < CURRENT_DATE                                              
+  GROUP BY DBNAME, TSNAME, PARTITION) AS Z                                      
+WHERE X.DATE_CREATE = CURRENT_DATE                                              
+  AND Y.DBNAME      = X.DBNAME                                                  
+  AND Y.TSNAME      = X.TSNAME                                                  
+  AND Y.PARTITION   = X.PARTITION                                               
+  AND Y.DBNAME      = Z.DBNAME                                                  
+  AND Y.TSNAME      = Z.TSNAME                                                  
+  AND Y.PARTITION   = Z.PARTITION                                               
+  AND Y.DATE_CREATE = Z.DATE_CREATE;                                            
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_DELTA_ROWS = ?                                                        
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00009 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(FLOAT(TS_USED_PAGES)*100                                            
+/ FLOAT(TS_ALLO_PAGES) AS DECIMAL(5,2))                                         
+     , DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND TS_ALLO_PAGES <> 0;                                                       
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET TS_PERC_USED = ?                                                         
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00010 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(FLOAT(IC_USED_PAGES)*100                                            
+/ FLOAT(IC_ALLO_PAGES) AS DECIMAL(5,2))                                         
+     , DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND IC_ALLO_PAGES <> 0;                                                       
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET IC_PERC_USED = ?                                                         
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00011 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(-1 * (100 - ((100 *  FLOAT(NB_ROWS)                                 
+/ (FLOAT(NB_DELTA_ROWS) *-1 + FLOAT(NB_ROWS))))) AS DECIMAL(9,4))               
+     , DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND NB_DELTA_ROWS < 0                                                         
+  AND NB_DELTA_ROWS <> NB_ROWS;                                                 
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET PERC_DELTA_ROWS = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00012 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(((FLOAT(NB_ROWS)                                                    
+/ (FLOAT(NB_ROWS) - FLOAT(NB_DELTA_ROWS)) *100)) - 100 AS DECIMAL(9,4))         
+     , DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND NB_DELTA_ROWS > 0                                                         
+  AND NB_DELTA_ROWS <> NB_ROWS                                                  
+  AND 100000        >  ((FLOAT(NB_ROWS)                                         
+                 / (FLOAT(NB_ROWS) - FLOAT(NB_DELTA_ROWS)) *100)) - 100         
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET PERC_DELTA_ROWS = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00013 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND NB_DELTA_ROWS > 0                                                         
+  AND NB_DELTA_ROWS <> NB_ROWS                                                  
+  AND 100000        <= ((FLOAT(NB_ROWS)                                         
+                 / (FLOAT(NB_ROWS) - FLOAT(NB_DELTA_ROWS)) *100)) - 100         
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET PERC_DELTA_ROWS = 99999.9999                                             
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00014 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.COUNT AS INTEGER)                                            
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT COUNT(*) AS COUNT,                                               
+        X.DBNAME AS DB,                                                         
+        Y.TSNAME AS TS                                                          
+ FROM SYSIBM.SYSINDEXES X,                                                      
+      SYSIBM.SYSTABLES  Y                                                       
+ WHERE X.CREATOR = Y.CREATOR                                                    
+   AND X.TBNAME  = Y.NAME                                                       
+   AND X.NAME LIKE 'IX%'                                                        
+ GROUP BY X.DBNAME,                                                             
+          Y.TSNAME) AS TBTEMP                                                   
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND TBTEMP.DB     = X.DBNAME                                                  
+  AND TBTEMP.TS     = X.TSNAME;                                                 
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_IX = ?                                                                
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00015 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.COUNT AS INTEGER)                                            
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT  COUNT(*) AS COUNT                                               
+ FROM XXXX.CDB_REORG                                                            
+ WHERE DATE_CREATE = CURRENT DATE                                               
+   AND TSNAME LIKE 'S%'                                                         
+   AND IXCREATOR <> 'SOMME') AS TBTEMP                                          
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND DBNAME = 'ALLDBPFR'                                                       
+  AND TSNAME = 'ALLTS';                                                         
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_LDS_TS = ?                                                            
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00016 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.COUNT AS INTEGER)                                            
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT  COUNT(*) AS COUNT,                                              
+         DBNAME   AS DB                                                         
+ FROM XXXX.CDB_REORG                                                            
+ WHERE DATE_CREATE = CURRENT DATE                                               
+   AND TSNAME LIKE 'S%'                                                         
+   AND IXCREATOR <> 'SOMME'                                                     
+GROUP BY DBNAME) AS TBTEMP                                                      
+WHERE X.DBNAME = TBTEMP.DB                                                      
+  AND X.TSNAME = 'ALLTS'                                                        
+  AND X.DATE_CREATE = CURRENT DATE;                                             
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_LDS_TS = ?                                                            
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00017 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.COUNT AS INTEGER)                                            
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT  COUNT(*) AS COUNT                                               
+ FROM XXXX.CDB_REORG                                                            
+ WHERE DATE_CREATE = CURRENT DATE                                               
+   AND TSNAME LIKE 'S%'                                                         
+   AND IC_EXTENTS <> 0                                                          
+   AND IXCREATOR <> 'SOMME') AS TBTEMP                                          
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND DBNAME = 'ALLDBPFR'                                                       
+  AND TSNAME = 'ALLTS';                                                         
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_LDS_IC = ?                                                            
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00018 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.COUNT AS INTEGER)                                            
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT  COUNT(*) AS COUNT,                                              
+         DBNAME   AS DB                                                         
+ FROM XXXX.CDB_REORG                                                            
+ WHERE DATE_CREATE = CURRENT DATE                                               
+   AND TSNAME LIKE 'S%'                                                         
+   AND IC_EXTENTS <> 0                                                          
+   AND IXCREATOR <> 'SOMME'                                                     
+GROUP BY DBNAME) AS TBTEMP                                                      
+WHERE X.DBNAME = TBTEMP.DB                                                      
+  AND X.TSNAME = 'ALLTS'                                                        
+  AND X.DATE_CREATE = CURRENT DATE;                                             
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_LDS_IC = ?                                                            
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00019 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TABTEMP.COL4 AS SMALLINT)                                           
+     , CAST(TABTEMP.COL5 AS SMALLINT)                                           
+     , CAST(TABTEMP.COL6 AS SMALLINT)                                           
+     , CAST(TABTEMP.COL7 AS INTEGER)                                            
+     , CAST(TABTEMP.COL8 AS INTEGER)                                            
+     , CAST(TABTEMP.COL9 AS DECIMAL(3,0))                                       
+     , CAST(TABTEMP.COL10 AS DECIMAL(3,0))                                      
+     , CAST(TABTEMP.COL11 AS CHAR(1))                                           
+     , CAST(TABTEMP.COL12 AS DECIMAL(3,0))                                      
+     , CAST(TABTEMP.COL13 AS CHAR(8))                                           
+     , CAST(TABTEMP.COL14 AS CHAR(4))                                           
+     , CAST(SUBSTR(TABTEMP.COL15,1,4) AS CHAR(8))                               
+     , CAST(TABTEMP.COL16 AS TIMESTAMP)                                         
+     , CAST(TABTEMP.COL17 AS TIMESTAMP)                                         
+     , CAST(TABTEMP.COL18 AS TIMESTAMP)                                         
+     , Z.DATE_CREATE                                                            
+     , Z.DBNAME                                                                 
+     , Z.TSNAME                                                                 
+     , Z.PARTITION                                                              
+  FROM XXXX.CDB_REORG Z                                                         
+     , (SELECT X.DBNAME     AS COL1,                                            
+        X.TSNAME     AS COL2,                                                   
+        X.PARTITION  AS COL3,                                                   
+        W.DBID       AS COL4,                                                   
+        W.OBID       AS COL5,                                                   
+        W.PSID       AS COL6,                                                   
+        X.PQTY       AS COL7,                                                   
+        X.SQTY       AS COL8,                                                   
+        X.FREEPAGE   AS COL9,                                                   
+        X.PCTFREE    AS COL10,                                                  
+        X.COMPRESS   AS COL11,                                                  
+        MAX(X.PAGESAVE, 0) AS COL12,                                            
+        W.CREATEDBY  AS COL13,                                                  
+        W.LOCKRULE   AS COL14,                                                  
+        W.BPOOL      AS COL15,                                                  
+        X.STATSTIME  AS COL16,                                                  
+        W.CREATEDTS  AS COL17,                                                  
+        W.ALTEREDTS  AS COL18                                                   
+FROM SYSIBM.SYSTABLEPART X,                                                     
+     SYSIBM.SYSTABLESPACE W,                                                    
+     XXXX.CDB_REORG  Y                                                          
+  WHERE X.DBNAME    = Y.DBNAME                                                  
+    AND X.TSNAME    = Y.TSNAME                                                  
+    AND X.PARTITION = Y.PARTITION                                               
+    AND X.DBNAME    = W.DBNAME                                                  
+    AND X.TSNAME    = W.NAME                                                    
+    AND X.DBNAME    <> 'ALLDBPFR'                                               
+    AND X.TSNAME    <> 'ALLTS'                                                  
+    AND Y.DATE_CREATE = CURRENT DATE) AS TABTEMP                                
+WHERE Z.DATE_CREATE = CURRENT DATE                                              
+  AND Z.DBNAME    = TABTEMP.COL1                                                
+  AND Z.TSNAME    = TABTEMP.COL2                                                
+  AND Z.PARTITION = TABTEMP.COL3 ;                                              
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET DBID = ?                                                                 
+     , OBID = ?                                                                 
+     , PSID = ?                                                                 
+     , PQTY = ?                                                                 
+     , SQTY = ?                                                                 
+     , FREEPAGE = ?                                                             
+     , PCTFREE = ?                                                              
+     , COMPRESS = ?                                                             
+     , PAGESAVE = ?                                                             
+     , CREATEDBY = ?                                                            
+     , LOCKRULE = ?                                                             
+     , BPOOL = ?                                                                
+     , STATSTIME = ?                                                            
+     , CREATEDTS = ?                                                            
+     , ALTEREDTS = ?                                                            
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00020 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TABTEMP.CLUSTGEN AS DECIMAL(5,2))                                   
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT  Y.DATE_CREATE,                                                  
+         SUM(CLUSTERRATIO*NB_ROWS)/(SUM(NB_ROWS)+1) AS CLUSTGEN                 
+FROM XXXX.CDB_REORG Y                                                           
+WHERE Y.DATE_CREATE = CURRENT DATE                                              
+  AND TSNAME LIKE 'S%'                                                          
+  AND IXCREATOR <> 'SOMME'                                                      
+  AND TSNAME NOT LIKE 'SDOHEX%'                                                 
+  AND TSNAME NOT LIKE 'SV1998%'                                                 
+  AND TSNAME NOT LIKE 'SV1999%'                                                 
+  AND TSNAME NOT LIKE 'SV2000%'                                                 
+  AND TSNAME NOT LIKE 'SV2001%'                                                 
+  AND TSNAME NOT LIKE 'SOA%'                                                    
+GROUP BY  Y.DATE_CREATE) AS TABTEMP                                             
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND X.DBNAME = 'ALLDBPFR'                                                     
+  AND X.TSNAME = 'ALLTS';                                                       
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET CLUSTERRATIO = ?                                                         
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00021 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TABTEMP.CLUSTGEN AS DECIMAL(5,2))                                   
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT  Y.DATE_CREATE AS DATE,                                          
+         Y.DBNAME      AS DATABASE,                                             
+         SUM(CLUSTERRATIO*(NB_ROWS))/(SUM(NB_ROWS)+1) AS CLUSTGEN               
+FROM XXXX.CDB_REORG Y                                                           
+WHERE Y.DATE_CREATE = CURRENT DATE                                              
+  AND TSNAME LIKE 'S%'                                                          
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY  Y.DATE_CREATE,                                                        
+          Y.DBNAME ) AS TABTEMP                                                 
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND X.DBNAME  = TABTEMP.DATABASE                                              
+  AND IXCREATOR = 'SOMME';                                                      
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET CLUSTERRATIO = ?                                                         
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00022 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TABTEMP.CLUSTGEN AS DECIMAL(5,2))                                   
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT  Y.DATE_CREATE AS DATE,                                          
+         Y.DBNAME      AS DATABASE,                                             
+         Y.TSNAME      AS TSNAME  ,                                             
+         SUM(CLUSTERRATIO*(NB_ROWS))/(SUM(NB_ROWS)+1) AS CLUSTGEN               
+FROM XXXX.CDB_REORG Y                                                           
+WHERE Y.DATE_CREATE = CURRENT DATE                                              
+  AND TSNAME LIKE 'S%'                                                          
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY  Y.DATE_CREATE,                                                        
+          Y.DBNAME,                                                             
+          Y.TSNAME ) AS TABTEMP                                                 
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND X.DBNAME  = TABTEMP.DATABASE                                              
+  AND X.TSNAME  = TABTEMP.TSNAME                                                
+  AND IXCREATOR = 'SOMME';                                                      
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET CLUSTERRATIO = ?                                                         
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00023 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+WHERE DATE_CREATE  = CURRENT DATE                                               
+  AND CLUSTERRATIO = 99.99                                                      
+  AND IXCREATOR = 'SOMME';                                                      
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET CLUSTERRATIO = 100.00                                                    
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00024 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+WHERE DATE_CREATE  = CURRENT DATE                                               
+  AND CLUSTERRATIO > 100.00                                                     
+  AND IXCREATOR = 'SOMME';                                                      
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET CLUSTERRATIO = 100.00                                                    
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00025 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(COALESCE(TBTEMP.SUM,0) AS DECIMAL(11,0))                            
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT SUM((TS_ALLO_PAGES*1.0000000) / (1-(PAGESAVE*1/100))) AS SUM     
+FROM XXXX.CDB_REORG                                                             
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND PAGESAVE  <> 0                                                            
+  AND IXCREATOR <> 'SOMME') AS TBTEMP                                           
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND DBNAME = 'ALLDBPFR'                                                       
+  AND TSNAME = 'ALLTS';                                                         
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_PAGES_NOCOMP = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00026 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(X.NB_PAGES_NOCOMP + TBTEMP.SUM AS DECIMAL(11,0))                    
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT SUM(TS_ALLO_PAGES) AS SUM                                        
+FROM XXXX.CDB_REORG                                                             
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND PAGESAVE  =  0                                                            
+  AND IXCREATOR <> 'SOMME') AS TBTEMP                                           
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND DBNAME = 'ALLDBPFR'                                                       
+  AND TSNAME = 'ALLTS';                                                         
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_PAGES_NOCOMP = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00027 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.SUM AS DECIMAL(11,0))                                        
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT SUM((TS_ALLO_PAGES*1.0000000) / (1-(PAGESAVE*1/100))) AS SUM,    
+ DBNAME AS DB                                                                   
+FROM XXXX.CDB_REORG                                                             
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND PAGESAVE  <> 0                                                            
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY DBNAME ) AS TBTEMP                                                     
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND X.DBNAME = TBTEMP.DB                                                      
+  AND X.TSNAME = 'ALLTS';                                                       
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_PAGES_NOCOMP = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00028 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(X.NB_PAGES_NOCOMP + TBTEMP.SUM AS DECIMAL(11,0))                    
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT SUM(TS_ALLO_PAGES) AS SUM,                                       
+ DBNAME AS DB                                                                   
+FROM XXXX.CDB_REORG                                                             
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND PAGESAVE  =  0                                                            
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY DBNAME ) AS TBTEMP                                                     
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND X.DBNAME = TBTEMP.DB                                                      
+  AND X.TSNAME = 'ALLTS';                                                       
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_PAGES_NOCOMP = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00029 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.SUM AS DECIMAL(11,0))                                        
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT SUM((TS_ALLO_PAGES*1.0000000) / (1-(PAGESAVE*1/100))) AS SUM,    
+ DBNAME AS DB,                                                                  
+ TSNAME AS TS                                                                   
+FROM XXXX.CDB_REORG                                                             
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND PAGESAVE  <> 0                                                            
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY DBNAME,                                                                
+         TSNAME ) AS TBTEMP                                                     
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND X.DBNAME = TBTEMP.DB                                                      
+  AND X.TSNAME = TBTEMP.TS                                                      
+  AND X.PARTITION = 0;                                                          
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_PAGES_NOCOMP = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00030 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(X.NB_PAGES_NOCOMP + TBTEMP.SUM AS DECIMAL(11,0))                    
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT SUM(TS_ALLO_PAGES) AS SUM,                                       
+ DBNAME AS DB,                                                                  
+ TSNAME AS TS                                                                   
+FROM XXXX.CDB_REORG                                                             
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND PAGESAVE  =  0                                                            
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY DBNAME,                                                                
+         TSNAME ) AS TBTEMP                                                     
+WHERE X.DATE_CREATE = CURRENT DATE                                              
+  AND X.DBNAME = TBTEMP.DB                                                      
+  AND X.TSNAME = TBTEMP.TS                                                      
+  AND X.PARTITION = 0;                                                          
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_PAGES_NOCOMP = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00031 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TB.RATIO AS DECIMAL(5,2))                                           
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT  Y.DATE_CREATE,                                                  
+       SUM(CLUSTERRATIO*NB_ROWS)/(SUM(NB_ROWS)+1) AS RATIO                      
+FROM XXXX.CDB_REORG Y                                                           
+WHERE Y.DATE_CREATE = CURRENT DATE                                              
+  AND TSNAME LIKE 'S%'                                                          
+  AND IXCREATOR <> 'SOMME'                                                      
+GROUP BY  Y.DATE_CREATE) AS TB                                                  
+WHERE X.DATE_CREATE = CURRENT DATE;                                             
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET CLUST_TOTAL_DATA = ?                                                     
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00032 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TB.RATIO AS DECIMAL(5,2))                                           
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT  Y.DATE_CREATE,                                                  
+       SUM(CLUSTERRATIO*NB_ROWS)/(SUM(NB_ROWS)+1) AS RATIO                      
+FROM XXXX.CDB_REORG Y                                                           
+WHERE Y.DATE_CREATE = CURRENT DATE                                              
+  AND IXCREATOR <> 'SOMME'                                                      
+  AND (TSNAME LIKE 'SDOHEX%'                                                    
+   OR  TSNAME LIKE 'SV1998%'                                                    
+   OR  TSNAME LIKE 'SV1999%'                                                    
+   OR  TSNAME LIKE 'SV2000%'                                                    
+   OR  TSNAME LIKE 'SV2001%'                                                    
+   OR  TSNAME LIKE 'SOA%')                                                      
+GROUP BY  Y.DATE_CREATE) AS TB                                                  
+WHERE X.DATE_CREATE = CURRENT DATE;                                             
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET CLUST_DEAD_DATA = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00033 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CLUSTERRATIO                                                             
+     , DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE;                                               
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET CLUST_LIVE_DATA = ?                                                      
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00034 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT DATE_CREATE                                                              
+     , DBNAME                                                                   
+     , TSNAME                                                                   
+     , PARTITION                                                                
+  FROM XXXX.CDB_REORG                                                           
+WHERE DATE_CREATE = CURRENT DATE                                                
+  AND NB_ROWS = 0;                                                              
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET CLUSTERRATIO = 0                                                         
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+

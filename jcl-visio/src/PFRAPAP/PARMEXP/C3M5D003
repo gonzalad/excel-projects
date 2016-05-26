@@ -1,0 +1,18 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGXC0005.NELITT00.BPRIMA00' +                                      
+      JOUR.FLITG.IMPLITT2.DU0828                                                
+PUT 'PFRAFTS.SGXC0006.NELITT00.BPRIMC00' +                                      
+      JOUR.FLITG.IMPLITT4.DU0828                                                
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLITG.IMPLITT2.DU0828_INF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLITG.IMPLITT2.DU0828_EOF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLITG.IMPLITT4.DU0828_INF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLITG.IMPLITT4.DU0828_EOF                                            
+CLOSE                                                                           
+QUIT                                                                            

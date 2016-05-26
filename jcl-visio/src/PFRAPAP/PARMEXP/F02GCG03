@@ -1,0 +1,4 @@
+  SEND PART=M086204A,IDF=CEMS1809,                                              
+  FNAME= TPRGPPL.NGCG0002.BM050100.FMIGAURP,                                    
+  PARM= PFRAFTE.NGCG0002.BM050100.FMIGAURP,                                     
+  TYPE=FILE                                                                     

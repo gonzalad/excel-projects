@@ -1,0 +1,19 @@
+UPDATE PFRA.TBBPTVX                                                             
+ SET    TBTVDTRAIT =   CURRENT DATE,                                            
+        TBTVDMOD   =   CURRENT DATE,                                            
+        TBTVLUSERMOD  =   'CA7'                                                 
+ WHERE  TBTVLPROG = 'FDXDOS'                                                    
+ AND    TBTVLKJOB IN ('PFRGDP04','PFRGDP05','PFRGDP06','PFRGDP07',              
+                      'PFRGDP08','PFRGDP09','PFRGDP0A','PFRGDP0B',              
+                      'PFRGDP0C','PFRGDP0D','PFRGDP0E')                         
+ AND TBTVLTVX LIKE 'FICHIER AUTORISATION                  :%'                   
+ ;                                                                              
+ UPDATE PFRA.TBBPTVX                                                            
+ SET    TBTVDTRAIT =   CURRENT DATE,                                            
+        TBTVDMOD   =   CURRENT DATE,                                            
+        TBTVLUSERMOD  =   'CA7'                                                 
+ WHERE  TBTVLPROG = 'FDXDOS'                                                    
+ AND    TBTVLKJOB IN ('PFRGDP04','PFRGDP05','PFRGDP06','PFRGDP07',              
+                      'PFRGDP08','PFRGDP09','PFRGDP0A','PFRGDP0B',              
+                      'PFRGDP0C','PFRGDP0D','PFRGDP0E')                         
+AND    TBTVLTVX LIKE 'NBRE MAX ENTITES DB2-ARMIDE A PROBLEME:%'                 

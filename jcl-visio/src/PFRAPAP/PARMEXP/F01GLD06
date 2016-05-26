@@ -1,0 +1,12 @@
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC01)          
+   SELECT PFRA.TBVDPRO.*                                                        
+   FROM PFRA.TBVDPRO, PFRA.TBEXVDR                                              
+   WHERE TPRSOC = TEXVSOC AND TPRAGR = TEXVAGR                                  
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC02)          
+   SELECT PFRA.TBVDVDR.*                                                        
+   FROM PFRA.TBVDVDR, PFRA.TBEXVDR                                              
+   WHERE TVDSOC = TEXVSOC AND TVDAGR = TEXVAGR                                  
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC03)          
+   SELECT PFRA.TBVDBNP.*                                                        
+   FROM PFRA.TBVDBNP, PFRA.TBEXVDR                                              
+   WHERE TVBNNSOC = TEXVSOC AND TVBNNAGR = TEXVAGR                              

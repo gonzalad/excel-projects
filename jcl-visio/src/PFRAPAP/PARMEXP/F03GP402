@@ -1,0 +1,5 @@
+  SORT FIELDS=(1,6,BI,A,7,1,BI,A,8,1,BI,A,9,2,BI,A)                             
+  OUTFIL OMIT=(12,4,CH,EQ,C'SAVE'),                                             
+         OUTREC=(1,11),                                                         
+         FNAMES=LOT1                                                            
+  OUTFIL SAVE,OUTREC=(1,10),FNAMES=LOT2                                         

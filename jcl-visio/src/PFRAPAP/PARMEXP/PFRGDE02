@@ -1,0 +1,40 @@
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(TBPRCOM)                         
+  MODE(DB2SQL)                                                                  
+  SELECT                                                                        
+    TPCONFOY                                                                    
+  , TPCONCONT                                                                   
+  , TPCONCARTE                                                                  
+  , TPCONDT                                                                     
+  , TPCOCPOSA                                                                   
+  , TPCODMOD                                                                    
+  , TPCOCPROD                                                                   
+  , TPCONAGCMEP                                                                 
+  , CHAR(' ')                                                                   
+  , CHAR('O')                                                                   
+  , CHAR(' ',39)                                                                
+  FROM                                                                          
+   PFRA.TBPRCOM                                                                 
+  WHERE TPCONSOC IN ( 100                                                       
+                    , 135                                                       
+                    , 150                                                       
+                    , 168                                                       
+                    , 185                                                       
+                    , 185                                                       
+                    , 187                                                       
+                    , 188                                                       
+                    , 192                                                       
+                    , 257                                                       
+                    , 258                                                       
+                    , 637                                                       
+                    , 638                                                       
+                    , 639                                                       
+                    , 700                                                       
+                    , 740                                                       
+                    , 770                                                       
+                    , 775                                                       
+                    , 785                                                       
+                    , 788                                                       
+                    )                                                           
+  AND TPCODMOD >= CURRENT DATE - 2 MONTH                                        
+  ;                                                                             
+

@@ -1,0 +1,7 @@
+UPDATE PFRA.TBBPTVX                                                             
+SET    TBTVDTRAIT =   '28.08.2015',                                             
+      TBTVDMOD   =   '28.08.2015',                                              
+       TBTVLUSERMOD  =   'CA7'                                                  
+WHERE  TBTVLPROG = 'FDXDOS'                                                     
+AND    TBTVLKJOB = 'PFRGD030'                                                   
+AND    TBTVLTVX LIKE 'PASSAGE FDXDOS SANS TRANCHE%' ;                           

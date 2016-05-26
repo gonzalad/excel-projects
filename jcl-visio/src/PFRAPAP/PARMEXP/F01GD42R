@@ -1,0 +1,102 @@
+*+* FMC2FM: Beginning of File Manager statement output *+*                      
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 501 CORRESPONDANT AU FLUX 300 (emission)            
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-tete                                          
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a zero                                                        
+$$FILEM SET  PAD=X'00'                                                          
+$$FILEM DSC  INPUT=DD01,                                                        
+$$FILEM      OUTPUT=TYPEZERO,                                                   
+$$FILEM      PROC=*                                                             
+ IF FLD(1,3) == '000',                                                          
+  & FLD_TYPE(8,8,Z) = 1,                                                        
+  & FLD_TYPE(16,6,Z) = 1,                                                       
+  & FLD_TYPE(22,8,Z) = 1                                                        
+ THEN DO                                                                        
+  RSTR_OUT()                                                                    
+  OVLY_OUT('ENTETE ',2)                                                         
+  OVLY_OUT('DATE',9)                                                            
+  FLD_OUT(8,14,13)                                                              
+  WRITE(TYPEZERO)                                                               
+  SAVE_OUT()                                                                    
+  RETURN DROP                      /* drop record READNEXT           */         
+ END                                                                            
+ IF FLD(1,3) == '999',                                                          
+  & FLD_TYPE(8,8,Z) = 1,                                                        
+  & FLD_TYPE(16,6,Z) = 1,                                                       
+  & FLD_TYPE(22,8,Z) = 1,                                                       
+  & FLD_TYPE(30,9,Z) = 1                                                        
+ THEN DO                                                                        
+  RSTR_OUT()                                                                    
+  OVLY_OUT('ENQUEUE',2)                                                         
+  OVLY_OUT('DATE',9)                                                            
+  FLD_OUT(8,14,13)                                                              
+  OVLY_OUT('NOMBRE000',27)                                                      
+  FLD_OUT(33,6,36)                                                              
+  OVLY_OUT('MONTANT',42)                                                        
+  FLD_OUT(39,18,49)                                                             
+  WRITE(TYPENEUF)                                                               
+  SAVE_OUT()                                                                    
+  RETURN DROP                      /* drop record READNEXT           */         
+ END                                                                            
+ IF FLD(1,3) == '001'                                                           
+ THEN DO                                                                        
+  TALLY(1,1,Z,'TOTAL FLUX 501 ')                                                
+ END                                                                            
+ RETURN DROP                       /* done USER processing of record */         
+/+                                                                              
+* emetteur egal BNPP: inutile                                                   
+*            IF=(004,EQ,C'CTLM'),                                               
+* date creation numerique                                                       
+* heure creation numerique                                                      
+* date de periode numerique                                                     
+* si controle ok ecriture de l'enregistrement en-tete                           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-queue                                         
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a 999                                                         
+* emetteur egal BNPP : inutile                                                  
+*            IF=(004,EQ,C'CTLM'),                                               
+* date creation numerique                                                       
+* heure creation numerique                                                      
+* date de periode numerique : inutile                                           
+* nombre d'enregistrements transmis numerique                                   
+* si controle ok ecriture de l'enregistrement en-queue                          
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* cumul du montant reserve pour les enregistrements details 001 et 990          
+* le resultat est dans SYSTOTAL                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+*                                                                               
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* comptabilisation du nombre d'enregistrements details code 001 et 990          
+* le resultat est dans SYSPRINT                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$FILEM DSC  INPUT=DD02,                                                        
+$$FILEM      OUTPUT=DD02O,                                                      
+$$FILEM      PROC=*                                                             
+ IF FLD(1,3) == '001'                                                           
+ THEN DO                                                                        
+  SETN(COMPT,'+1','Lines COPIED=')                                              
+  RETURN                           /* process record                 */         
+ END                                                                            
+ RETURN DROP                       /* no criteria match, drop        */         
+*EOFPROC                                                                        
+ IF TESTN(COMPT,'EQ', 0) Then Do                                                
+    Say 'TOTAL FLUX 501  0'                                                     
+    Say '             OUTPUT=DD02O'                                             
+    Say 'Lines COPIED=   0'                                                     
+ End                                                                            
+/+                                                                              
+

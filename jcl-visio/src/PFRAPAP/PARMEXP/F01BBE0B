@@ -1,0 +1,8 @@
+PFRDWH01(EXIT=16                                                                
+SENDSITE                                                                        
+LOCSITE PRIMARY=20000 SECONDARY=1000 TRACKS RECFM=FB LRECL=2150                 
+CD /data/GIW/PROD/&ANNEE&MOIS/FR/AXA/CTX                                        
+BIN                                                                             
+GET HARRYIMXSICFR7A 'PFRATMP.SBBE0062.IEBGENER.SICFR7A0'                        
+CLOSE                                                                           
+QUIT                                                                            

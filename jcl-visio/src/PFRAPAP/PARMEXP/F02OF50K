@@ -1,0 +1,28 @@
+       WHERE                                                                    
+             TDPRCPOSA IN ('RET','ASM','ENC')              AND                  
+             TDCBNFOY    =  TDPRNFOY                       AND                  
+             TDCBNCONT   =  TDPRNCONT                      AND                  
+             TDCBNCARTE  =  TDPRNCARTE                     AND                  
+             TDCBNDT     =  TDPRNDT                        AND                  
+            (TDPRNFOY BETWEEN 4302812420 AND 4337169999)   AND                  
+             TDPRNOPERFIDEL = 14                           AND                  
+             TDPRNSOC     IN (100 , 114, 700, 714)         AND                  
+            ( (     CURRENT TIME >= '20.00.00'                                  
+                AND CURRENT TIME <= '23.59.59'                                  
+                AND (TDCBDCREAT = CURRENT DATE  OR                              
+                     TDCBDMOD   = CURRENT DATE)                                 
+              )                                                                 
+              OR                                                                
+              (     CURRENT TIME >= '00.00.00'                                  
+                AND CURRENT TIME <= '19.59.59'                                  
+                AND (TDCBDCREAT = (CURRENT DATE - 1 DAYS)  OR                   
+                     TDCBDMOD   = (CURRENT DATE - 1 DAYS))                      
+            ) )                                                                 
+             ORDER BY TDCBNFOY   ASC,                                           
+                      TDCBNCONT  ASC,                                           
+                      TDCBNCARTE ASC,                                           
+                      TDCBNDT    DESC,                                          
+                      TDCBDCREAT ASC,                                           
+                      TDCBDMOD   ASC,                                           
+                      TDCBNRANG  ASC                                            
+          WITH UR;                                                              

@@ -1,0 +1,61 @@
+$$FILEM SET  PAD=X'00'                                                          
+ $$FILEM DSC  INPUT=DD01,                                                       
+ $$FILEM      OUTPUT=DD02,                                                      
+ $$FILEM      PROC=*                                                            
+  IF FLD(1,8) == 'BOULANGR'                                                     
+  THEN DO                                                                       
+   RSTR_OUT()                                                                   
+   FLD_OUT(11,255,1)                                                            
+   FLD_OUT(266,45,256)                                                          
+   WRITE(DD02)                                                                  
+   SAVE_OUT()                                                                   
+  END                                                                           
+ ELSE IF FLD(1,8) == 'XDOSF702''                                                
+  THEN DO                                                                       
+   RSTR_OUT()                                                                   
+   FLD_OUT(11,150,1)                                                            
+   WRITE(DD03)                                                                  
+   SAVE_OUT()                                                                   
+  END                                                                           
+  ELSE IF FLD(1,8) == 'REFACEDF'                                                
+  THEN DO                                                                       
+   RSTR_OUT()                                                                   
+   FLD_OUT(11,150,1)                                                            
+   WRITE(DD04)                                                                  
+   SAVE_OUT()                                                                   
+  END                                                                           
+ ELSE IF FLD(1,5) == 'BYTEL'                                                    
+  THEN DO                                                                       
+   RSTR_OUT()                                                                   
+   FLD_OUT(11,16,1)                                                             
+   WRITE(DD05)                                                                  
+   SAVE_OUT()                                                                   
+  END                                                                           
+  ELSE IF FLD(1,5) == 'BTENC'                                                   
+  THEN DO                                                                       
+   RSTR_OUT()                                                                   
+   FLD_OUT(11,255,1)                                                            
+   FLD_OUT(266,95,256)                                                          
+   WRITE(DD06)                                                                  
+   SAVE_OUT()                                                                   
+  END                                                                           
+ ELSE IF FLD(1,6) == 'CPSFIN'                                                   
+  THEN DO                                                                       
+   RSTR_OUT()                                                                   
+   FLD_OUT(11,100,1)                                                            
+   WRITE(DD07)                                                                  
+   SAVE_OUT()                                                                   
+  END                                                                           
+  ELSE IF FLD(1,8) == 'PERMISUN'                                                
+  THEN DO                                                                       
+   RSTR_OUT()                                                                   
+   FLD_OUT(11,200,1)                                                            
+   WRITE(DD08)                                                                  
+   SAVE_OUT()                                                                   
+  END                                                                           
+  ELSE DO                                                                       
+   WRITE(DD99)                                                                  
+  END                                                                           
+  RETURN DROP                       /* DONE USER PROCESSING OF RECORD */        
+/+                                                                              
+

@@ -1,0 +1,8 @@
+SRCHFOR  ' EXEC '                                                               
+SRCHFOR  ' PROG ('                                                              
+SRCHFOR  ' PROG('                                                               
+SRCHFOR  '//STEPLIB '                                                           
+SRCHFOR  'CDS9.STEPLIB.INCLUDE'                                                 
+SRCHFOR  '//AJOULIBS '                                                          
+SRCHFOR  'TABLES.LINKLIB'                                                       
+SRCHFOR  'CREDIT.LNK'                                                           

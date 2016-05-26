@@ -1,0 +1,38 @@
+   WHERE ((( TDRPNFOYNEW > 7000000000     AND                                   
+             TDRPNFOYNEW < 8000000000 )   AND                                   
+             TDRPNDTNEW  = 11         )   OR                                    
+          (( TDRPNFOYNEW > 8800000000     AND                                   
+           ( TDRPNDTNEW  > 50 AND TDRPNDTNEW < 100))))                          
+      AND 'TDRPNCONTNEW'   = SUBSTR(CHAR(TBDONDOS),11,1)                        
+      AND 'TDRPNCARTENEW'  = SUBSTR(CHAR(TBDONDOS),12,1)                        
+      AND (   SUBSTR(TBDOLMSG,987,3)                                            
+                         IN ('PTX','PTM')                                       
+          OR  SUBSTR(TBDOLMSG,987,4)                                            
+                         IN ('PACP','PACS','PACD','PAEP','PAES','PAED',         
+                             'PAN1','PAN2','PAN3','PCCP','PCCS','PCCD',         
+                             'PCEP','PCES','PCED','PCN1','PCN2','PCN3',         
+                             'PMN1','PMN2',                                     
+                             'EAN1','EAN2','EAN3','EAEP','EAES','EAED',         
+                             'EACP','EACS','EACD','ECN1','ECN2','ECN3',         
+                             'ECNP','ECES','ECED','ECCP','ECCS','ECCD',         
+                             'AN24','AN36','AE01','AE06','AE12','AE18',         
+                             'AC01','AC06','AC12','CN12','CN24','CN36',         
+                             'CE01','CE06','CE12','CC01','CC06','CC12',         
+                             'MN12','MN24')                                     
+          OR  SUBSTR(TBDOLMSG,721,4)                                            
+                         IN ('EN15','EO25','EO30','EO35','EP27','EC27')         
+          )                                                                     
+      AND HEX(SUBSTR(TBDOLMSG,5,2)) <> '000C'                                   
+      AND TBDONDOS = (TDRPNFOYNEW * 10000)                                      
+                      + (TDRPNCONTNEW * 1000)                                   
+                      + (TDRPNCARTENEW * 100) + TDRPNDTNEW                      
+      AND ( ( TDRPDCREAT  = (CURRENT DATE - 1  DAYS)                            
+          AND ( CURRENT TIME >= '00.00.00'                                      
+          AND   CURRENT TIME <= '19.59.59'   ) )                                
+      OR ( (    CURRENT TIME >= '20.00.00'                                      
+          AND   CURRENT TIME <= '23.59.59')                                     
+          AND ( TDRPDCREAT  = CURRENT DATE)  )  )                               
+    ORDER BY TDRPNFOYOLD   ASC,                                                 
+             TDRPNCONTOLD  ASC,                                                 
+             TDRPNCARTEOLD ASC,                                                 
+             TDRPNDTOLD    DESC;                                                

@@ -1,0 +1,18 @@
+  UPDATE PFRA.TBBPTVX                                                           
+  SET    TBTVDTRAIT =   '28.08.2015',                                           
+         TBTVDMOD   =   '28.08.2015',                                           
+         TBTVLUSERMOD  =   'CA7PROD'                                            
+  WHERE  TBTVLPROG = 'FIBDXC'                                                   
+  AND    (TBTVLTVX LIKE 'EPURATION BORDEREAUX DE PLUS DE        :%');           
+  UPDATE PFRA.TBBPTVX                                                           
+  SET    TBTVDTRAIT =   '28.08.2015',                                           
+         TBTVDMOD   =   '28.08.2015',                                           
+         TBTVLUSERMOD  =   'CA7PROD'                                            
+  WHERE  TBTVLPROG = 'FEBOCH'                                                   
+  AND    (TBTVLTVX LIKE '1111%');                                               
+  UPDATE PFRA.TBBPTVX                                                           
+  SET    TBTVDTRAIT =   '28.08.2015',                                           
+         TBTVDMOD   =   '28.08.2015',                                           
+         TBTVLUSERMOD  =   'CA7PROD'                                            
+  WHERE  TBTVLPROG = 'FITBOR'                                                   
+  AND    (TBTVLTVX LIKE '0%');                                                  

@@ -1,0 +1,78 @@
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(TBDOPRN)                         
+  MODE(DB2SQL)                                                                  
+  SELECT                                                                        
+    TDPRNFOY                                                                    
+  , TDPRNCONT                                                                   
+  , TDPRNCARTE                                                                  
+  , TDPRNDT                                                                     
+  , TDPRCPOSA                                                                   
+  , TDPRDMOD                                                                    
+  , TDPRCPRODCOM                                                                
+  , TDOCNAGCMEP                                                                 
+  , CHAR('N')                                                                   
+  , TDPRCPRODBASE                                                               
+  , TDPRCTYPEPROD                                                               
+  , TDPRNSOCAGRO                                                                
+  , TDPRNAGRO                                                                   
+  , Z.TDMACMAT                                                                  
+  , TDPRDCREAT                                                                  
+  , TDPRCOPT                                                                    
+  , TDPRCOPTCO                                                                  
+  , TDCPCREFLEX                                                                 
+  , TDCOCTIT                                                                    
+  FROM                                                                          
+  PFRA.TBDOPRN                                                                  
+  LEFT OUTER JOIN PFRA.TBDOMAT Z                                                
+   ON Z.TDMANFOY   = TDPRNFOY                                                   
+   AND Z.TDMANCONT  = TDPRNCONT                                                 
+   AND Z.TDMANCARTE = TDPRNCARTE                                                
+   AND Z.TDMANDT    = TDPRNDT                                                   
+   AND Z.TDMANRANG  = 1                                                         
+   LEFT OUTER JOIN PFRA.TBDOCPL                                                 
+     ON TDCPNFOY   = TDPRNFOY                                                   
+    AND TDCPNCONT  = TDPRNCONT                                                  
+    AND TDCPNCARTE = TDPRNCARTE                                                 
+    AND TDCPNDT    = TDPRNDT                                                    
+   LEFT OUTER JOIN PFRA.TBDOOCT                                                 
+     ON TDOCNFOY   = TDPRNFOY                                                   
+    AND TDOCNCONT  = TDPRNCONT                                                  
+    AND TDOCNCARTE = TDPRNCARTE                                                 
+    AND TDOCNDT    = TDPRNDT                                                    
+    AND TDOCNRANG  = 1                                                          
+   INNER   JOIN PFRA.TBDOCTR                                                    
+     ON TDCONFOY   = TDPRNFOY                                                   
+    AND TDCONCONT  = TDPRNCONT                                                  
+  WHERE TDPRNSOC IN ( 100                                                       
+                  , 135                                                         
+                  , 150                                                         
+                  , 168                                                         
+                  , 185                                                         
+                  , 187                                                         
+                  , 188                                                         
+                  , 192                                                         
+                  , 257                                                         
+                  , 258                                                         
+                  , 637                                                         
+                  , 638                                                         
+                  , 639                                                         
+                  , 700                                                         
+                  , 740                                                         
+                  , 770                                                         
+                  , 775                                                         
+                  , 785                                                         
+                  , 788                                                         
+                  )                                                             
+  AND TDPRDMOD >= CURRENT DATE - 2 MONTH                                        
+  AND (                                                                         
+    ( TDCONCARTE = 0                                                            
+  AND TDCONDT  = 0                                                              
+  AND TDCOCTYPCONTRAT = 'S7'                                                    
+  AND TDPRCPRODBASE IN ( 'C7' , 'R7' ) )                                        
+       OR                                                                       
+    ( TDCONCARTE       = TDPRNCARTE                                             
+  AND TDCONDT          = TDPRNDT                                                
+  AND TDCOCTYPCONTRAT  <> 'S7'                                                  
+  AND TDPRCPRODBASE NOT IN ( 'C7' , 'R7' ) )                                    
+      )                                                                         
+;                                                                               
+

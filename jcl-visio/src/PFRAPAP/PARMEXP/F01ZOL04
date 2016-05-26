@@ -1,0 +1,18 @@
+SELECT                                                                          
+      A.TDCANFOY,                                                               
+      A.TDCANCONT,                                                              
+      A.TDCANCARTE,                                                             
+      A.TDCANDT,                                                                
+      A.TDCANRANG,                                                              
+      A.TDCACTIT,                                                               
+      A.TDCACRENOUV,                                                            
+      A.TDCACGES                                                                
+    FROM PFRA.TBDOCAR A                                                         
+    INNER JOIN PFRA.TBDOPRN B                                                   
+ ON     (B.TDPRNFOY   = A.TDCANFOY   AND                                        
+         B.TDPRNCONT  = A.TDCANCONT  AND                                        
+         B.TDPRNCARTE = A.TDCANCARTE AND                                        
+         B.TDPRNDT    = A.TDCANDT)                                              
+ WHERE B.TDPRCPRODCOM = 'AD7R'                                                  
+ AND   B.TDPRNSOC IN ( 257 , 258 )                                              
+        WITH UR;                                                                

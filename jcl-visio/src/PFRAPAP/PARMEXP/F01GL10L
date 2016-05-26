@@ -1,0 +1,6 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGL10010.TRICOMP0.SERIEA00' BILLCO.SERIEA                          
+CLOSE                                                                           
+QUIT                                                                            

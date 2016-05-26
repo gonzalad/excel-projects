@@ -1,0 +1,9 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGL00039.NEWBILNA.BPRIME00' BILLCP.SERIEC                          
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00022.BT000000.LG220000' BILLCP.SERIEC_EOF                      
+APPEND 'PFRATMP.SGL00037.NEWBILNA.SYSOUC00(0)' BILLCP.SERIEC_EOF                
+CLOSE                                                                           
+QUIT                                                                            

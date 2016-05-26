@@ -1,0 +1,15 @@
+UPDATE (COMMIT=10) PFRA.TBCTSNC A                                       00010000
+   SET A.TSNCCPLANIF = 0                                                00020000
+   WHERE NOT EXISTS (SELECT TSNWCENV,                                   00030000
+   TSNWLJOBTETE, TSNWCSCHTETE                                           00040000
+   FROM PFRA.TBCTSNW                                                    00050000
+    WHERE A.TSNCCENV = TSNWCENV                                         00060000
+    AND A.TSNCLJOB = TSNWLJOBTETE                                       00070000
+    AND A.TSNCCSCHED = TSNWCSCHTETE                                     00080000
+    AND TSNWNORD = 0)                                                   00090000
+    ORDER BY A.TSNCCENV  ASC,                                           00100000
+             A.TSNCLJOB  ASC,                                           00110000
+             A.TSNCCSCHED  ASC                                          00120000
+    ;                                                                   00130000
+    UPDATE (COMMIT=10) PFRA.TBCTSNC A, PFRA.TBCTSNW B                   00140000
+    SET A.TSNCCCRIT = B.TSNWCCRIT,                                      00150000

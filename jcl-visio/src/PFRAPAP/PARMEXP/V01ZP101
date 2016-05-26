@@ -1,0 +1,18 @@
+ UNLD DATA CONCURRENT                                                           
+     FORMAT(DSNTIAUL)                                                           
+     OUTDDN(TBBADOS)                                                            
+     SORTDEVT SYSDA SORTNUM 20                                                  
+     FROM TABLE PFRA.TBBADOS                                                    
+     SELECT TBDONDOS                                                            
+          , TBDOCTYP                                                            
+          , TBDOCRANG                                                           
+          , TBDOLMSG                                                            
+  WHERE ((SUBSTR(TBDOLMSG,58,3)   = '650'                                       
+  AND HEX(SUBSTR(TBDOLMSG,5,2)) NOT IN ('010C','011C','060C'))                  
+        OR                                                                      
+          (SUBSTR(TBDOLMSG,58,3)   IN ('610','640')                             
+           AND HEX(SUBSTR(TBDOLMSG,5,2)) NOT IN ('010C','060C'))                
+           )                                                                    
+       AND HEX(SUBSTR(TBDOLMSG,211,4)) < '0071206C'                             
+       AND HEX(SUBSTR(TBDOLMSG,211,4)) > '0051204C'                             
+       ORDER BY CLUSTER                                                         

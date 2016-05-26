@@ -1,0 +1,30 @@
+ UPDATE (COMMIT=10) PFRA.TBSTAVA                                                
+  SET TAVABEVTJPREC = TAVABEVTJ,                                                
+      TAVAMEVTJPREC = TAVAMEVTJ                                                 
+  WHERE TAVANAGCE > 0                                                           
+  ;                                                                             
+ UPDATE (COMMIT=10) PFRA.TBSTAVU                                                
+  SET TAVUBEVTJPREC = TAVUBEVTJ,                                                
+      TAVUMEVTJPREC = TAVUMEVTJ                                                 
+  WHERE TAVUNOID > 0                                                            
+  ;                                                                             
+ UPDATE (COMMIT=10) PFRA.TBSTAVH                                                
+  SET TAVHBEVTJPREC = TAVHBEVTJ,                                                
+      TAVHMEVTJPREC = TAVHMEVTJ                                                 
+  WHERE TAVHNAGCE > 0                                                           
+  ;                                                                             
+ UPDATE (COMMIT=10) PFRA.TBSTAVA                                                
+  SET TAVABEVTJ = 0,                                                            
+      TAVAMEVTJ = 0                                                             
+  WHERE TAVANAGCE > 0                                                           
+  ;                                                                             
+ UPDATE (COMMIT=10) PFRA.TBSTAVU                                                
+  SET TAVUBEVTJ = 0,                                                            
+      TAVUMEVTJ = 0                                                             
+  WHERE TAVUNOID > 0                                                            
+  ;                                                                             
+ UPDATE (COMMIT=10) PFRA.TBSTAVH                                                
+  SET TAVHBEVTJ = 0,                                                            
+      TAVHMEVTJ = 0                                                             
+  WHERE TAVHNAGCE > 0                                                           
+  ;                                                                             

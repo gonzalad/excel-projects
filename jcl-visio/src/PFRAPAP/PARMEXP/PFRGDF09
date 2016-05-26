@@ -1,0 +1,4 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTE.CFT.PFRGDF08.EDITAMOR(0)' JOURA.FFGAMOB.NETABCL                    

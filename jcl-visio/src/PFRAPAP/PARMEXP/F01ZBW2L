@@ -1,0 +1,244 @@
+                                                                                
+SELECT TDFPNSOCVDF, COUNT (*)                                                   
+FROM   PFRA.TBDOFPR                                                             
+WHERE  TDFPNSOCVDF IN (475,472,520,517,670,664)                                 
+GROUP BY TDFPNSOCVDF                                                            
+;                                                                               
+SELECT TDOCNSOCCHAINE, COUNT (*)                                                
+FROM   PFRA.TBDOOCT                                                             
+WHERE  TDOCNSOCCHAINE IN (475,472,520,517,670,664)                              
+GROUP BY TDOCNSOCCHAINE                                                         
+;                                                                               
+SELECT TCHINSOC, COUNT (*)                                                      
+FROM   PFRA.TBCHIMP                                                             
+WHERE  TCHINSOC  IN (475,472,520,517,670,664)                                   
+GROUP BY TCHINSOC                                                               
+;                                                                               
+SELECT TCHINSOCFIN, COUNT (*)                                                   
+FROM   PFRA.TBCHIMP                                                             
+WHERE  TCHINSOCFIN IN (475,472,520,517,670,664)                                 
+GROUP BY TCHINSOCFIN                                                            
+;                                                                               
+SELECT TCHINSOCFIN, COUNT (*)                                                   
+FROM   PFRA.TBCHIMP                                                             
+WHERE  TCHINSOCFIN IN (-475,-472,-520,-517,-670,-664)                           
+GROUP BY TCHINSOCFIN                                                            
+;                                                                               
+SELECT TLMONSOCAGR, COUNT (*)                                                   
+FROM   PFRA.TBLIMOT                                                             
+WHERE  TLMONSOCAGR IN (475,472,520,517,670,664)                                 
+GROUP BY TLMONSOCAGR                                                            
+;                                                                               
+SELECT TLMONSOC, COUNT (*)                                                      
+FROM   PFRA.TBLIMOT                                                             
+WHERE  TLMONSOC IN (475,472,520,517,670,664)                                    
+GROUP BY TLMONSOC                                                               
+;                                                                               
+SELECT TNDONSOC, COUNT (*)                                                      
+FROM   PFRA.TBNZDOS                                                             
+WHERE TNDONSOC    IN (475,472,520,517,670,664)                                  
+GROUP BY TNDONSOC                                                               
+;                                                                               
+SELECT TNDONDOS, COUNT(*)                                                       
+FROM   PFRA.TBNZDOS                                                             
+WHERE  TNDONDOS IN ( SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)                
+                                   ||SUBSTR(CHAR(TDPRNCONT),2,1)                
+                                   ||SUBSTR(CHAR(TDPRNCARTE),2,1)               
+                                   ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)            
+                     FROM PFRA.TBDOPRN                                          
+                     WHERE TDPRNSOC = 475 )                                     
+  AND  TNDONSOC = 475                                                           
+GROUP BY TNDONDOS                                                               
+;                                                                               
+SELECT TNDONDOS, COUNT(*)                                                       
+FROM   PFRA.TBNZDOS                                                             
+WHERE  TNDONDOS NOT IN (SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)             
+                                      ||SUBSTR(CHAR(TDPRNCONT),2,1)             
+                                      ||SUBSTR(CHAR(TDPRNCARTE),2,1)            
+                                      ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)         
+                        FROM PFRA.TBDOPRN                                       
+                        WHERE TDPRNSOC = 475 )                                  
+  AND  TNDONSOC = 475                                                           
+GROUP BY TNDONDOS                                                               
+;                                                                               
+SELECT TNDONDOS                                                                 
+FROM   PFRA.TBNZDOS                                                             
+WHERE  TNDONSOC = 475                                                           
+ORDER BY 1                                                                      
+;                                                                               
+SELECT TNDONDOS,COUNT(*)                                                        
+FROM   PFRA.TBNZDOS                                                             
+WHERE  TNDONDOS IN (SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)                 
+                                  ||SUBSTR(CHAR(TDPRNCONT),2,1)                 
+                                  ||SUBSTR(CHAR(TDPRNCARTE),2,1)                
+                                  ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)             
+                    FROM   PFRA.TBDOPRN                                         
+                    WHERE TDPRNSOC = 520 )                                      
+  AND TNDONSOC = 520                                                            
+GROUP BY TNDONDOS                                                               
+;                                                                               
+SELECT TNDONDOS,COUNT(*)                                                        
+FROM PFRA.TBNZDOS                                                               
+WHERE TNDONDOS NOT IN (SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)              
+                                     ||SUBSTR(CHAR(TDPRNCONT),2,1)              
+                                     ||SUBSTR(CHAR(TDPRNCARTE),2,1)             
+                                     ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)          
+                       FROM   PFRA.TBDOPRN                                      
+                       WHERE  TDPRNSOC = 520 )                                  
+  AND TNDONSOC = 520                                                            
+GROUP BY TNDONDOS                                                               
+;                                                                               
+SELECT TNDONDOS                                                                 
+FROM PFRA.TBNZDOS                                                               
+WHERE TNDONSOC = 520                                                            
+ORDER BY 1                                                                      
+;                                                                               
+SELECT TNDONDOS, COUNT(*)                                                       
+FROM   PFRA.TBNZDOS                                                             
+WHERE  TNDONDOS IN ( SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)                
+                                   ||SUBSTR(CHAR(TDPRNCONT),2,1)                
+                                   ||SUBSTR(CHAR(TDPRNCARTE),2,1)               
+                                   ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)            
+                     FROM PFRA.TBDOPRN                                          
+                     WHERE TDPRNSOC = 670 )                                     
+  AND  TNDONSOC = 670                                                           
+GROUP BY TNDONDOS                                                               
+;                                                                               
+SELECT TNDONDOS, COUNT(*)                                                       
+FROM   PFRA.TBNZDOS                                                             
+WHERE  TNDONDOS NOT IN (SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)             
+                                      ||SUBSTR(CHAR(TDPRNCONT),2,1)             
+                                      ||SUBSTR(CHAR(TDPRNCARTE),2,1)            
+                                      ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)         
+                        FROM PFRA.TBDOPRN                                       
+                        WHERE TDPRNSOC = 670 )                                  
+  AND  TNDONSOC = 670                                                           
+GROUP BY TNDONDOS                                                               
+;                                                                               
+SELECT TNDONDOS                                                                 
+FROM   PFRA.TBNZDOS                                                             
+WHERE  TNDONSOC = 670                                                           
+ORDER BY 1                                                                      
+;                                                                               
+SELECT TNDRNSOC, COUNT (*)                                                      
+FROM   PFRA.TBNZDRE                                                             
+WHERE TNDRNSOC    IN (475,472,520,517,670,664)                                  
+GROUP BY TNDRNSOC                                                               
+;                                                                               
+SELECT TNDRNDOS,COUNT(*)                                                        
+FROM PFRA.TBNZDRE                                                               
+WHERE TNDRNDOS IN ( SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)                 
+                                  ||SUBSTR(CHAR(TDPRNCONT),2,1)                 
+                                  ||SUBSTR(CHAR(TDPRNCARTE),2,1)                
+                                  ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)             
+                    FROM PFRA.TBDOPRN                                           
+                    WHERE TDPRNSOC = 475 )                                      
+  AND TNDRNSOC = 475                                                            
+GROUP BY TNDRNDOS                                                               
+;                                                                               
+SELECT TNDRNDOS, COUNT(*)                                                       
+FROM PFRA.TBNZDRE                                                               
+WHERE TNDRNDOS NOT IN (SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)              
+                                     ||SUBSTR(CHAR(TDPRNCONT),2,1)              
+                                     ||SUBSTR(CHAR(TDPRNCARTE),2,1)             
+                                     ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)          
+                       FROM PFRA.TBDOPRN                                        
+                       WHERE TDPRNSOC = 475 )                                   
+  AND TNDRNSOC = 475                                                            
+GROUP BY TNDRNDOS                                                               
+;                                                                               
+SELECT TNDRNDOS                                                                 
+FROM PFRA.TBNZDRE                                                               
+WHERE TNDRNSOC = 475                                                            
+ORDER BY 1                                                                      
+;                                                                               
+SELECT TNDRNDOS,COUNT(*)                                                        
+FROM PFRA.TBNZDRE                                                               
+WHERE TNDRNDOS IN ( SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)                 
+                                  ||SUBSTR(CHAR(TDPRNCONT),2,1)                 
+                                  ||SUBSTR(CHAR(TDPRNCARTE),2,1)                
+                                  ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)             
+                    FROM PFRA.TBDOPRN                                           
+                    WHERE TDPRNSOC = 520 )                                      
+  AND TNDRNSOC = 520                                                            
+GROUP BY TNDRNDOS                                                               
+;                                                                               
+SELECT TNDRNDOS,COUNT(*)                                                        
+FROM PFRA.TBNZDRE                                                               
+WHERE TNDRNDOS NOT IN ( SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)             
+                                      ||SUBSTR(CHAR(TDPRNCONT),2,1)             
+                                      ||SUBSTR(CHAR(TDPRNCARTE),2,1)            
+                                      ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)         
+                        FROM PFRA.TBDOPRN                                       
+                        WHERE TDPRNSOC = 520)                                   
+  AND TNDRNSOC = 520                                                            
+GROUP BY TNDRNDOS                                                               
+;                                                                               
+SELECT TNDRNDOS                                                                 
+FROM PFRA.TBNZDRE                                                               
+WHERE TNDRNSOC = 520                                                            
+ORDER BY 1                                                                      
+;                                                                               
+SELECT TNDRNDOS,COUNT(*)                                                        
+FROM PFRA.TBNZDRE                                                               
+WHERE TNDRNDOS IN ( SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)                 
+                                  ||SUBSTR(CHAR(TDPRNCONT),2,1)                 
+                                  ||SUBSTR(CHAR(TDPRNCARTE),2,1)                
+                                  ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)             
+                    FROM PFRA.TBDOPRN                                           
+                    WHERE TDPRNSOC = 670 )                                      
+  AND TNDRNSOC = 670                                                            
+GROUP BY TNDRNDOS                                                               
+;                                                                               
+SELECT TNDRNDOS, COUNT(*)                                                       
+FROM PFRA.TBNZDRE                                                               
+WHERE TNDRNDOS NOT IN (SELECT DECIMAL (SUBSTR(CHAR(TDPRNFOY),3,10)              
+                                     ||SUBSTR(CHAR(TDPRNCONT),2,1)              
+                                     ||SUBSTR(CHAR(TDPRNCARTE),2,1)             
+                                     ||SUBSTR(CHAR(TDPRNDT),3,2),15,0)          
+                       FROM PFRA.TBDOPRN                                        
+                       WHERE TDPRNSOC = 670 )                                   
+  AND TNDRNSOC = 670                                                            
+GROUP BY TNDRNDOS                                                               
+;                                                                               
+SELECT TNDRNDOS                                                                 
+FROM PFRA.TBNZDRE                                                               
+WHERE TNDRNSOC = 670                                                            
+ORDER BY 1                                                                      
+;                                                                               
+SELECT TDRENSOC, COUNT (*)                                                      
+FROM   PFRA.TBDOREC                                                             
+WHERE TDRENSOC    IN (475,472,520,517,670,664)                                  
+GROUP BY TDRENSOC                                                               
+;                                                                               
+SELECT TLECNSOC, COUNT (*)                                                      
+FROM   PFRA.TBAGLEC                                                             
+WHERE  TLECNSOC  IN (475,472,520,517,670,664)                                   
+GROUP BY TLECNSOC                                                               
+;                                                                               
+SELECT TLECNSOCAGR, COUNT (*)                                                   
+FROM   PFRA.TBAGLEC                                                             
+WHERE TLECNSOCAGR IN (475,472,520,517,670,664)                                  
+GROUP BY TLECNSOCAGR                                                            
+;                                                                               
+SELECT TLINNSOC, COUNT (*)                                                      
+FROM   PFRA.TBLIINS                                                             
+WHERE TLINNSOC    IN (475,472,520,517,670,664)                                  
+GROUP BY TLINNSOC                                                               
+;                                                                               
+SELECT TLINNSOCAGR, COUNT (*)                                                   
+FROM   PFRA.TBLIINS                                                             
+WHERE TLINNSOCAGR IN (475,472,520,517,670,664)                                  
+GROUP BY TLINNSOCAGR                                                            
+;                                                                               
+SELECT TLCMNSOCAGR,COUNT(*)                                                     
+FROM PFRA.TBLICMO                                                               
+WHERE TLCMNSOCAGR IN (475,472,520,517,670,664)                                  
+GROUP BY TLCMNSOCAGR                                                            
+;                                                                               
+SELECT TR10NSOC  ,COUNT(*)                                                      
+FROM PFRA.TBRE010                                                               
+WHERE TR10NSOC IN (475,472,520,517,670,664)                                     
+GROUP BY TR10NSOC                                                               
+;                                                                               
+

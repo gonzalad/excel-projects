@@ -1,0 +1,13 @@
+HELO MAILSERVER                                                                 
+MAIL FROM: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUPPORTàBNPPARIBAS.COM>               
+RCPT TO: <Mlist_CTIVàBNPPARIBAS.COM>                                            
+RCPT TO: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUIVI_FRANCEàBNPPARIBAS.COM>            
+RCPT TO: <philippe.noelàbnpparibas.com>                                         
+RCPT TO: <Dominique.bedouàbnpparibas.com>                                       
+DATA                                                                            
+FROM: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUPPORT BNPPARIBAS.COM>                    
+TO: <Mlist_CTIVàBNPPARIBAS.COM>                                                 
+CC: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUIVI_FRANCEàBNPPARIBAS.COM>                 
+CC: <philippe.noelàbnpparibas.com>                                              
+CC: <Dominique.bedouàbnpparibas.com>                                            
+SUBJECT: Rapatriement de K7 d'Archives Legales de Vaudreuil vers Marne  Nord    

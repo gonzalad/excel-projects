@@ -1,0 +1,21 @@
+ SORT FIELDS=(34,2,BI,A,337,3,BI,A),EQUALS                                      
+  OUTFIL INCLUDE=(35,1,BI,EQ,X'0C',OR,                                          
+                  35,1,BI,EQ,X'1C',OR,                                          
+                  35,1,BI,EQ,X'2C',OR,                                          
+                  35,1,BI,EQ,X'3C',OR,                                          
+                  35,1,BI,EQ,X'4C',OR,                                          
+                  35,1,BI,EQ,X'5C',OR,                                          
+                  35,1,BI,EQ,X'6C',OR,                                          
+                  35,1,BI,EQ,X'7C',OR,                                          
+                  35,1,BI,EQ,X'8C',OR,                                          
+                  35,1,BI,EQ,X'9C'),FNAMES=FECBKFRS                             
+  OUTFIL INCLUDE=(35,1,BI,EQ,X'0D',OR,                                          
+                  35,1,BI,EQ,X'1D',OR,                                          
+                  35,1,BI,EQ,X'2D',OR,                                          
+                  35,1,BI,EQ,X'3D',OR,                                          
+                  35,1,BI,EQ,X'4D',OR,                                          
+                  35,1,BI,EQ,X'5D',OR,                                          
+                  35,1,BI,EQ,X'6D',OR,                                          
+                  35,1,BI,EQ,X'7D',OR,                                          
+                  35,1,BI,EQ,X'8D',OR,                                          
+                  35,1,BI,EQ,X'9D'),FNAMES=FECBKEUR                             

@@ -1,0 +1,45 @@
+*+* FMC2FM: Beginning of File Manager statement output *+*                      
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 505 CORRESPONDANT AU FLUX 302 (EMISSION)            
+*                                 IDENTIFIANT    ECHSO001                       
+* CE FICHIER CONTIENT PLUSIEURS ENTETE ET FIN                                   
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* RFRAPAP.PARMEXP(F03BP33E)                                                     
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* RECONSTRUCTION D'UN ENREGISTREMENT ENQUEUE, A PARTIR DE TOUS LES              
+* ENREGISTREMENTS ENQUEUE PRESENTS DANS LE FICHIER                              
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$FILEM DSC  INPUT=DD01,                                                        
+$$FILEM      OUTPUT=DUMMY,                                                      
+$$FILEM      PROC=*                                                             
+ SETC(T_REC,'&ZINREC')             /* set input rec in user variable */         
+ IF TESTC(T_REC,2,'==','ENQUEUE')                                               
+ THEN DO                                                                        
+  RSTR_OUT()                                                                    
+  VAR_OUT(T_REC,1,133,1)                                                        
+  WRITE(DUMMY)                                                                  
+  SAVE_OUT()                                                                    
+ END                                                                            
+ IF TESTC(T_REC,2,'==','CUMUL MONT 505')                                        
+ THEN DO                                                                        
+  RSTR_OUT()                                                                    
+  VAR_OUT(T_REC,16,15,51)                                                       
+  CHG_VAR(T_REC,'-','0',1,1,0,' ')                                              
+  WRITE(DUMMY)                                                                  
+  SAVE_OUT()                                                                    
+ END                                                                            
+ IF TESTC(T_REC,2,'==','CUMUL NBRE 505')                                        
+ THEN DO                                                                        
+  RSTR_OUT()                                                                    
+  VAR_OUT(T_REC,22,9,33)                                                        
+  CHG_VAR(T_REC,'-','0',1,1,0,' ')                                              
+  WRITE(TYPENEUF)                                                               
+  SAVE_OUT()                                                                    
+ END                                                                            
+ RETURN DROP                       /* done USER processing of record */         
+/+                                                                              
+* STOCKAGE DES DONNEES DE L'ENREGISTREMENT TYPENEUF                             
+* RECUPERATION DU CUMUL DES MONTANTS LUS                                        
+* RECUPERATION DU CUMUL DES NOMBRES LUS, ECRITURE                               
+

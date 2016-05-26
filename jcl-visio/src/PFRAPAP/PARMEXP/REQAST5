@@ -1,0 +1,131 @@
+SELECT 'AST','TBQRCEF ','AVA',' TOT  ',COUNT(*) FROM PFRA.TBQRCEF       00002225
+WITH UR;                                                                00002322
+SELECT 'AST','TBCTNID ','CTA',' TOT  ',COUNT(*) FROM PFRA.TBCTNID       00002425
+WITH UR;                                                                00002522
+SELECT 'AST','TBCBAID ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBCBAID       00002825
+WITH UR;                                                                00002922
+SELECT 'AST','TBCOLET ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBCOLET       00003025
+WITH UR;                                                                00003122
+SELECT 'AST','TBDOCEF ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBDOCEF       00003225
+WITH UR;                                                                00003322
+SELECT 'AST','TBMVCEF ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBMVCEF       00004025
+WITH UR;                                                                00005022
+SELECT 'AST','TBAGCPL ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBAGCPL       00006025
+WITH UR;                                                                00006122
+SELECT 'AST','TBAGECH ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBAGECH       00007025
+WITH UR;                                                                00008022
+SELECT 'AST','TBAGENC ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBAGENC       00040025
+WITH UR;                                                                00041022
+SELECT 'AST','TBAGSYN ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBAGSYN       00050025
+WITH UR;                                                                00051022
+SELECT 'AST','TBFDGEO ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBFDGEO       00060025
+WITH UR;                                                                00061022
+SELECT 'AST','TBLICMO ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBLICMO       00070025
+WITH UR;                                                                00071022
+SELECT 'AST','TBLIMOT ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBLIMOT       00080025
+WITH UR;                                                                00081022
+SELECT 'AST','TBORAAG ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORAAG       00090025
+WITH UR;                                                                00091022
+SELECT 'AST','TBORAGC ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORAGC       00100025
+WITH UR;                                                                00101022
+SELECT 'AST','TBORANO ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORANO       00110025
+WITH UR;                                                                00111022
+SELECT 'AST','TBORBNC ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORBNC       00120025
+WITH UR;                                                                00121022
+SELECT 'AST','TBORCOL ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORCOL       00130025
+WITH UR;                                                                00131022
+SELECT 'AST','TBORCSG ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORCSG       00140025
+WITH UR;                                                                00141022
+SELECT 'AST','TBORDAG ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORDAG       00150025
+WITH UR;                                                                00151022
+SELECT 'AST','TBORDLG ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORDLG       00160025
+WITH UR;                                                                00161022
+SELECT 'AST','TBORHAG ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORHAG       00170025
+WITH UR;                                                                00171022
+SELECT 'AST','TBORTAG ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORTAG       00180025
+WITH UR;                                                                00181022
+SELECT 'AST','TBORXAG ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBORXAG       00190025
+WITH UR;                                                                00191022
+SELECT 'AST','TBPTRDG ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBPTRDG       00200025
+WITH UR;                                                                00201022
+SELECT 'AST','TBREORF ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBREORF       00210025
+WITH UR;                                                                00211022
+SELECT 'AST','TBALHIS ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBALHIS       00220025
+WITH UR;                                                                00220122
+SELECT 'AST','TBBFAPR ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBBFAPR       00221025
+WITH UR;                                                                00221122
+SELECT 'AST','TBBICOM ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBBICOM       00222025
+WITH UR;                                                                00223022
+SELECT 'AST','TBBICVA ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBBICVA       00230025
+WITH UR;                                                                00231022
+SELECT 'AST','TBCADOG ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBCADOG       00240025
+WITH UR;                                                                00241022
+SELECT 'AST','TBCAFLU ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBCAFLU       00250025
+WITH UR;                                                                00251022
+SELECT 'AST','TBCATRT ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBCATRT       00260025
+WITH UR;                                                                00261022
+SELECT 'AST','TBCATYP ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBCATYP       00270025
+WITH UR;                                                                00271022
+SELECT 'AST','TBCDPTT ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBCDPTT       00280025
+WITH UR;                                                                00280122
+SELECT 'AST','TBCPNUM ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBCPNUM       00281025
+WITH UR;                                                                00281122
+SELECT 'AST','TBPS009 ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBPS009       00282025
+WITH UR;                                                                00282122
+SELECT 'AST','TBSTATV ','STA',' TOT  ',COUNT(*) FROM PFRA.TBSTATV       00301425
+WITH UR;                                                                00301522
+SELECT 'AST','TBSTAVA ','STA',' TOT  ',COUNT(*) FROM PFRA.TBSTAVA       00302025
+WITH UR;                                                                00303022
+SELECT 'AST','TBSTAVP ','STA',' TOT  ',COUNT(*) FROM PFRA.TBSTAVP       00310025
+WITH UR;                                                                00311022
+SELECT 'AST','TBSTAVU ','STA',' TOT  ',COUNT(*) FROM PFRA.TBSTAVU       00320025
+WITH UR;                                                                00321022
+SELECT 'AST','TBNZCJU ','SUR',' TOT  ',COUNT(*) FROM PFRA.TBNZCJU       00330025
+WITH UR;                                                                00331022
+SELECT 'AST','TBCTPRO ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBCTPRO       00340025
+WITH UR;                                                                00341022
+SELECT 'AST','TBNUMER ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBNUMER       00350025
+WITH UR;                                                                00351022
+SELECT 'AST','TBPEFON ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBPEFON       00360025
+WITH UR;                                                                00361022
+SELECT 'AST','TBSTNUM ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBSTNUM       00370025
+WITH UR;                                                                00371022
+SELECT 'AST','TBSVABN ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBSVABN       00380025
+WITH UR;                                                                00381022
+SELECT 'AST','TBSVAID ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBSVAID       00390025
+WITH UR;                                                                00391022
+SELECT 'AST','TBSVAIS ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBSVAIS       00400025
+WITH UR;                                                                00401022
+SELECT 'AST','TBTCCLR ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBTCCLR       00410025
+WITH UR;                                                                00411022
+SELECT 'AST','TBTCENV ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBTCENV       00420025
+WITH UR;                                                                00421022
+SELECT 'AST','TBTEXCP ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBTEXCP       00430025
+WITH UR;                                                                00431022
+SELECT 'AST','TBVSTAT ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBVSTAT       00440025
+WITH UR;                                                                00441022
+SELECT 'AST','TBBSDOM ','DOM',' TOT  ',COUNT(*) FROM PFRA.TBBSDOM       00450025
+WITH UR;                                                                00451022
+SELECT 'AST','TBPD001 ','DOM',' TOT  ',COUNT(*) FROM PFRA.TBPD001       00460025
+WITH UR;                                                                00461022
+SELECT 'AST','TBPD002 ','DOM',' TOT  ',COUNT(*) FROM PFRA.TBPD002       00470025
+WITH UR;                                                                00471022
+SELECT 'AST','TBSIBQE ','DOM',' TOT  ',COUNT(*) FROM PFRA.TBSIBQE       00480025
+WITH UR;                                                                00481022
+SELECT 'AST','TBADPOS ','CTX',' TOT  ',COUNT(*) FROM PFRA.TBADPOS       00490025
+WITH UR;                                                                00491022
+SELECT 'AST','TBBLOCX ','CTX',' TOT  ',COUNT(*) FROM PFRA.TBBLOCX       00500025
+WITH UR;                                                                00510022
+SELECT 'AST','TBCXREF ','STA',' TOT  ',COUNT(*) FROM PFRA.TBCXREF       00520025
+WITH UR;                                                                00530022
+SELECT 'AST','TBRESTA ','RCT',' TOT  ',COUNT(*) FROM PFRA.TBRESTA       00531025
+WITH UR;                                                                00532024
+SELECT 'AST','TBRESTB ','RCT',' TOT  ',COUNT(*) FROM PFRA.TBRESTB       00533025
+WITH UR;                                                                00534024
+SELECT 'AST','TBRESTC ','RCT',' TOT  ',COUNT(*) FROM PFRA.TBRESTC       00535025
+WITH UR;                                                                00536024
+SELECT 'AST','TBRESTD ','RCT',' TOT  ',COUNT(*) FROM PFRA.TBRESTD       00537025
+WITH UR;                                                                00538024
+SELECT 'AST','TBREORG ','RCT',' TOT  ',COUNT(*) FROM PFRA.TBREORG       00539025
+WITH UR;                                                                00539124
+

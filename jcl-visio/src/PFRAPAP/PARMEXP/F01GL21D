@@ -1,0 +1,6 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGL20055.NEWBILNA.BPRIME00' BILLCA.SERIEE                          
+CLOSE                                                                           
+QUIT                                                                            

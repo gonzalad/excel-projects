@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SFV20264.NETIP000.BPRIME00' +                                      
+      JOURA.FTIP.IMPTIP.DUMOJJ                                                  
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FTIP.IMPTIP.DUMOJJ_INF                                              
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FTIP.IMPTIP.DUMOJJ_EOF                                              
+CLOSE                                                                           
+QUIT                                                                            

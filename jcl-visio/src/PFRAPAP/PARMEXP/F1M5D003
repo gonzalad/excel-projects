@@ -1,0 +1,11 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGDX0380.NECCBENA.BPRIME00' +                                      
+      JOURA.FCCBECL.IMPRESS.DUMOJJ                                              
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FCCBECL.IMPRESS.DUMOJJ_INF                                          
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FCCBECL.IMPRESS.DUMOJJ_EOF                                          
+CLOSE                                                                           
+QUIT                                                                            

@@ -1,0 +1,10 @@
+UPDATE (COMMIT=10) PFRA.TBCTSND A, PFRA.TBCTSNI B                       00010000
+SET A.TSNDCENVLIEN = B.TSNICENV                                         00020000
+ WHERE A.TSNDLJOBLIEN = B.TSNILJOB                                      00030000
+ ORDER BY A.TSNDLJOBLIEN ASC;                                           00040000
+DELETE (COMMIT=10) FROM PFRA.TBCTSNC, PFRA.TBCTSND                      00050000
+    WHERE TSNCCPLANIF = 50                                              00060000
+     AND   TSNDCTYPLIEN = 'T'                                           00070000
+     AND   TSNDLJOBLIEN = TSNCLJOB                                      00080000
+     AND   TSNDCSCHJOBLIEN = TSNCCSCHED                                 00090000
+                                                                        00100000

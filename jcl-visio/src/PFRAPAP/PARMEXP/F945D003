@@ -1,0 +1,40 @@
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL)                                         
+       OUTDDN(SYSREC00) MODE(AUTO)                                              
+    SELECT TADRNFOY           ,                                                 
+           TADRCTYPE          ,                                                 
+           TADRDCREAT         ,                                                 
+           TADRDMOD           ,                                                 
+           TADRLVBEA          ,                                                 
+           TADRLADRE          ,                                                 
+           TADRCPTT           ,                                                 
+           TADRLVILL          ,                                                 
+           TADRLLOCACH        ,                                                 
+           TADRCPAYS          ,                                                 
+           TADRLPAYS          ,                                                 
+           TADRCTDM           ,                                                 
+           TADRBCHAD          ,                                                 
+           TADRDEMFIADT                                                         
+            ,TDPRNSOC,TDPRNOPERFIDEL,TDPRCPRODCOM                               
+            ,TDPRNCONT,TDPRNCARTE,TDPRNDT                                       
+       FROM PFRA.TBADRES, PFRA.TBDOPRN                                          
+       WHERE                                                                    
+             TDPRCPOSA IN ('RET','ASM','ENC') AND                               
+               TADRNFOY    =  TDPRNFOY   AND                                    
+              (TADRCTYPE   = 'FO')       AND                                    
+              TDPRCPOSA IN ('RET','ASM','ENC') AND                              
+             ((TADRNFOY    BETWEEN 4337170000 AND 4499999999) OR                
+               TADRNFOY    >=      8800000000 )               AND               
+               TDPRNOPERFIDEL = 14                            AND               
+               TDPRNSOC     IN (100 , 114, 700, 714, 192)     AND               
+              ( (     CURRENT TIME >= '20.00.00'                                
+                  AND CURRENT TIME <= '23.59.59'                                
+                  AND TADRDMOD      = CURRENT DATE                              
+                )                                                               
+                OR                                                              
+                (     CURRENT TIME >= '00.00.00'                                
+                  AND CURRENT TIME <= '19.59.59'                                
+                  AND TADRDMOD      = (CURRENT DATE - 1 DAYS)                   
+              ) )                                                               
+       ORDER BY TADRNFOY   ASC                                                  
+       WITH UR;                                                                 
+

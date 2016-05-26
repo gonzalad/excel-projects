@@ -1,0 +1,4 @@
+      GENERATE MAXFLDS=3                                                        
+      RECORD FIELD=(11,23,,1),                                                  
+             FIELD=(14,02,ZP,11),                                               
+             FIELD=(1,34,,19)                                                   

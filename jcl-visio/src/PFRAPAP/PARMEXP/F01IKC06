@@ -1,0 +1,7 @@
+ OPTION COPY                                                                    
+ INREC IFTHEN=(WHEN=INIT,FINDREP=(STARTPOS=8,ENDPOS=17,                         
+   INOUT=(C' #',C'  £'))),                                                      
+       IFTHEN=(WHEN=INIT,FINDREP=(STARTPOS=10,ENDPOS=19,                        
+   INOUT=(C' #',C'  £'))),                                                      
+       IFTHEN=(WHEN=INIT,FINDREP=(STARTPOS=36,ENDPOS=71,                        
+   INOUT=(C' #',C'  £')))                                                       

@@ -1,0 +1,5 @@
+ GENERATE MAXFLDS=3,                                                    00020001
+               MAXLITS=60                                               00030001
+      RECORD FIELD=(60,1,,1),                                           00040001
+             FIELD=(1,X'0C',,61),                                       00050001
+             FIELD=(29,62,,62)                                          00060001

@@ -1,0 +1,54 @@
+*+* FMC2FM: Beginning of File Manager statement output *+*              00010001
+*                                                                       00020001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00030001
+* TRAITEMENT DU REFERENTIEL 008 CORRESPONDANT AU FLUX 307 (reception)   00040001
+*                                 IDENTIFIANT    EPAS0180               00050001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00060001
+*                                                                       00070001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00080001
+* Pas d'enregistrement en-tete                                          00090001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00100001
+*                                                                       00110001
+*                                                                       00120001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00130001
+* Pas d'enregistrement en-queue                                         00140001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00150001
+*                                                                       00160001
+*                                                                       00170001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00180001
+* cumul du montant MTO pos=034,long=11                                  00190001
+* le resultat est dans SYSTOTAL                                         00200001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00210001
+*                                                                       00220001
+$$FILEM SET  PAD=X'00'                                                  00230001
+$$FILEM DSC  INPUT=DD01,                                                00240001
+$$FILEM      OUTPUT=DDDUMMY,                                            00250001
+$$FILEM      INRDW=YES,                                                 00260001
+$$FILEM      PROC=*                                                     00270001
+ TALLY(34,11,Z,'TOTAL FLUX 008 ')                                       00280001
+/+                                                                      00290001
+*                                                                       00300001
+*                                                                       00310001
+*                                                                       00320001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00330001
+* comptabilisation du nombre d'enregistrements details                  00340001
+* le resultat est dans SYSPRINT                                         00350001
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00360001
+*                                                                       00370001
+$$FILEM DSC  INPUT=DD02,                                                00380001
+$$FILEM      OUTPUT=DD02O,                                              00390001
+$$FILEM      PROC=*                                                     00400001
+ IF FLD(1,1) \== 'Z'                                                    00410001
+ THEN DO                                                                00420001
+  SETN(COMPT,'+1','Lines COPIED=')                                      00430001
+  RETURN                           /* process record                 */ 00440001
+ END                                                                    00450001
+ RETURN DROP                       /* no criteria match, drop        */ 00460001
+*EOFPROC                                                                00470001
+ IF TESTN(COMPT,'EQ', 0) Then Do                                        00480001
+    Say 'TOTAL FLUX 008  0'                                             00490001
+    Say '             OUTPUT=DD02O'                                     00500001
+    Say 'Lines COPIED=   0'                                             00510001
+ End                                                                    00520001
+/+                                                                      00530001
+

@@ -1,0 +1,66 @@
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 002 CORRESPONDANT AU FLUX 205 (reception)           
+*                                 IDENTIFIANT    OSKSL050                       
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-tete                                          
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a zero                                                        
+$$DD01 USER IF=(001,EQ,C'000'),                                                 
+* emetteur egal BNPP                                                            
+             IF=(004,EQ,C'BNPP'),                                               
+* date creation numerique                                                       
+             IF=(008,08,EQN),                                                   
+* heure creation numerique                                                      
+             IF=(016,06,EQN),                                                   
+* si controle ok ecriture de l'enregistrement en-tete                           
+             MOVE=(2,C'ENTETE '),                                               
+             MOVE=(9,C'DATE'),                                                  
+             MOVE=(13,14,8),                                                    
+             WRITE=TYPEZERO,RN,                                                 
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-queue                                         
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a 999                                                         
+             IF=(001,EQ,C'999'),                                                
+* emetteur egal BNPP                                                            
+             IF=(004,EQ,C'BNPP'),                                               
+* date creation numerique                                                       
+             IF=(008,08,EQN),                                                   
+* heure creation numerique                                                      
+             IF=(016,06,EQN),                                                   
+* nombre d'enregistrements transmis numerique                                   
+             IF=(030,06,EQN),                                                   
+* si controle ok ecriture de l'enregistrement en-queue                          
+             MOVE=(2,C'ENQUEUE'),                                               
+             MOVE=(9,C'DATE'),                                                  
+             MOVE=(13,14,8),                                                    
+             MOVE=(27,C'NOMBRE000'),                                            
+             MOVE=(36,6,30),                                                    
+             MOVE=(42,C'MONTANT'),                                              
+             MOVE=(49,17C'0'),                                                  
+             WRITE=TYPENEUF,RN,                                                 
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* Artifice pour un montant a zero car il n'y a pas de cumul montant             
+* le resultat est dans SYSTOTAL                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+             IF=(001,EQ,C'001'),                                                
+             ACCUM=(1,1,C,'TOTAL FLUX 002 ')                                    
+*                                                                               
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* comptabilisation du nombre d'enregistrements details non 000 et 999           
+* le resultat est dans SYSPRINT                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$DD02 COPY  IF=(001,NE,C'000',C'999')                                          
+

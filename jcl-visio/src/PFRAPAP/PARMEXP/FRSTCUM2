@@ -1,0 +1,91 @@
+*-- DEMANDE       WATTECA WATTECA WATTECA.TRADXTRA.JCL(FRSTCUM2)                
+*-- REQUETE 00001 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.SUM1 AS INTEGER)                                             
+     , CAST(TBTEMP.SUM2 AS DECIMAL(9,0))                                        
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT SUM(NB_IX) AS SUM1,                                              
+        SUM(IX_USED_PAGES) AS SUM2                                              
+ FROM XXXX.CDB_REORG Y                                                          
+ WHERE DATE_CREATE = CURRENT DATE                                               
+   AND PARTITION = 0                                                            
+   AND TSNAME <> 'ALLTS') AS TBTEMP                                             
+WHERE DBNAME = 'ALLDBPFR'                                                       
+  AND TSNAME = 'ALLTS'                                                          
+  AND DATE_CREATE = CURRENT DATE;                                               
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_IX = ?                                                                
+     , IX_USED_PAGES = ?                                                        
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00002 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.SUM1 AS INTEGER)                                             
+     , CAST(TBTEMP.SUM2 AS DECIMAL(9,0))                                        
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT SUM(NB_IX) AS SUM1,                                              
+        SUM(IX_USED_PAGES) AS SUM2,                                             
+        DBNAME AS DB                                                            
+ FROM XXXX.CDB_REORG Y                                                          
+ WHERE DATE_CREATE = CURRENT DATE                                               
+   AND PARTITION = 0                                                            
+   AND TSNAME <> 'ALLTS'                                                        
+ GROUP BY DBNAME) AS TBTEMP                                                     
+WHERE X.DBNAME = TBTEMP.DB                                                      
+  AND TSNAME = 'ALLTS'                                                          
+  AND DATE_CREATE = CURRENT DATE;                                               
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_IX = ?                                                                
+     , IX_USED_PAGES = ?                                                        
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+*-- REQUETE 00003 UPDATE TBCDBRG                                                
+-->  INSCRIRE ICI LES COMMENTAIRES                                              
+-->  DECRIVANT LE BUT DE LA MISE A JOUR                                         
+*-- SELECT --------------------------------------------------*                  
+SELECT CAST(TBTEMP.SUM1 AS INTEGER)                                             
+     , CAST(TBTEMP.SUM2 AS DECIMAL(9,0))                                        
+     , X.DATE_CREATE                                                            
+     , X.DBNAME                                                                 
+     , X.TSNAME                                                                 
+     , X.PARTITION                                                              
+  FROM XXXX.CDB_REORG X                                                         
+     , (SELECT SUM(NB_IX) AS SUM1,                                              
+        SUM(IX_USED_PAGES) AS SUM2,                                             
+        DBNAME AS DB,                                                           
+        TSNAME AS TS                                                            
+ FROM XXXX.CDB_REORG Y                                                          
+ WHERE DATE_CREATE = CURRENT DATE                                               
+   AND PARTITION = 0                                                            
+ GROUP BY DBNAME,                                                               
+          TSNAME) AS TBTEMP                                                     
+WHERE X.DBNAME = TBTEMP.DB                                                      
+  AND X.TSNAME = TBTEMP.TS                                                      
+  AND X.DATE_CREATE = CURRENT DATE;                                             
+*-- UPDATE --------------------------------------------------*                  
+UPDATE XXXX.TBCDBRG                                                             
+   SET NB_IX = ?                                                                
+     , IX_USED_PAGES = ?                                                        
+ WHERE DATE_CREATE = ?                                                          
+   AND DBNAME = ?                                                               
+   AND TSNAME = ?                                                               
+   AND PARTITION = ?                                                            
+

@@ -1,0 +1,30 @@
+SORT FIELDS=(05,08,BI,A,73,1,CH,A,13,01,BI,A),EQUALS                            
+        OUTFIL INCLUDE=(5,8,BI,GE,X'000000000000000C',                          
+               AND,5,6,BI,LT,X'04099999999C'),FNAMES=CETELEM0                   
+        OUTFIL INCLUDE=(5,6,BI,GE,X'04099999999C',                              
+               AND,5,6,BI,LT,X'04223189673C'),FNAMES=CETELEM1                   
+        OUTFIL INCLUDE=(5,6,BI,GE,X'04223189673C',                              
+               AND,5,6,BI,LT,X'04242273631C'),FNAMES=CETELEM2                   
+        OUTFIL INCLUDE=(5,6,BI,GE,X'04242273631C',                              
+               AND,5,6,BI,LT,X'04262989447C'),FNAMES=CETELEM3                   
+        OUTFIL INCLUDE=(5,6,BI,GE,X'04262989447C',                              
+               AND,5,6,BI,LT,X'04284569599C'),FNAMES=CETELEM4                   
+        OUTFIL INCLUDE=(5,6,BI,GE,X'04284569599C',                              
+               AND,5,6,BI,LT,X'04298937964C'),FNAMES=CETELEM5                   
+        OUTFIL INCLUDE=(5,6,BI,GE,X'04298937964C',                              
+               AND,5,6,BI,LT,X'04325169999C'),FNAMES=CETELEM6                   
+        OUTFIL INCLUDE=(5,6,BI,GE,X'04325169999C',                              
+               AND,5,6,BI,LT,X'04343169999C'),FNAMES=CETELEM7                   
+        OUTFIL INCLUDE=(5,6,BI,GE,X'04343169999C',                              
+               AND,5,6,BI,LT,X'04358169999C'),FNAMES=CETELEM8                   
+        OUTFIL INCLUDE=((5,6,BI,GE,X'04358169999C',                             
+               AND,5,6,BI,LE,X'04500000000C'),                                  
+               OR,(5,6,BI,GE,X'04599999999C',                                   
+               AND,5,6,BI,LT,X'04800000000C')),FNAMES=CETELEM9                  
+        OUTFIL INCLUDE=(5,6,BI,GE,X'04810000000C',                              
+               AND,5,6,BI,LT,X'04999999999C'),FNAMES=CETELEMA                   
+        OUTFIL INCLUDE=(5,2,BI,EQ,X'0480'),FNAMES=DOMTOM                        
+        OUTFIL INCLUDE=(5,6,BI,GT,X'04500000000C',                              
+               AND,5,6,BI,LT,X'04599999999C'),FNAMES=CRLYON                     
+        OUTFIL INCLUDE=(5,2,BI,GE,X'0700'),FNAMES=COFICA                        
+        OUTFIL SAVE,FNAMES=ANOMALIE                                             

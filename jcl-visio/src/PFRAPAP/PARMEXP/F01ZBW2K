@@ -1,0 +1,122 @@
+    UPDATE PFRA.TBNZDOS                                                         
+       SET TNDONSOC = 472                                                       
+     WHERE TNDONDEPOT BETWEEN 1       AND 9                                     
+       AND TNDONFOY   BETWEEN 0       AND 8899999999                            
+       AND TNDONSOC   = 475                                                     
+    ;                                                                           
+    UPDATE PFRA.TBNZDOS                                                         
+       SET TNDONSOC = 517                                                       
+     WHERE TNDONDEPOT BETWEEN 1       AND 9                                     
+       AND TNDONFOY   BETWEEN 0       AND 8899999999                            
+       AND TNDONSOC   = 520                                                     
+    ;                                                                           
+    UPDATE PFRA.TBNZDOS                                                         
+       SET TNDONSOC = 664                                                       
+     WHERE TNDONDEPOT BETWEEN 1       AND 9                                     
+       AND TNDONFOY   BETWEEN 0       AND 8899999999                            
+       AND TNDONSOC   = 670                                                     
+    ;                                                                           
+    UPDATE PFRA.TBNZDRE                                                         
+       SET TNDRNSOC = 472                                                       
+    WHERE TNDRNDOS BETWEEN 0  AND 88999999999999                                
+      AND TNDRNSOC  = 475                                                       
+    ;                                                                           
+    UPDATE PFRA.TBNZDRE                                                         
+       SET TNDRNSOC = 517                                                       
+    WHERE TNDRNDOS BETWEEN 0  AND 88999999999999                                
+      AND TNDRNSOC  = 520                                                       
+    ;                                                                           
+    UPDATE PFRA.TBNZDRE                                                         
+       SET TNDRNSOC = 664                                                       
+    WHERE TNDRNDOS BETWEEN 0  AND 88999999999999                                
+      AND TNDRNSOC  = 670                                                       
+    ;                                                                           
+    DELETE FROM PFRA.TBDOREC A                                                  
+    WHERE EXISTS (SELECT *                                                      
+                   FROM PFRA.TBCXPRN B                                          
+                  WHERE B.TXPRNSOC IN (475,520,670)                             
+                    AND B.TXPRCPOSA IN ( 'CTX ' , 'ECX ' )                      
+                    AND B.TXPRNFOY  BETWEEN 3000000000 AND 8999999999           
+                    AND B.TXPRNFOY   = A.TDRENFOY                               
+                    AND B.TXPRNCONT  = A.TDRENCONT                              
+                    AND B.TXPRNCARTE = A.TDRENCARTE                             
+                    AND B.TXPRNDT    = A.TDRENDT                                
+                    AND B.TXPRNSOC   = A.TDRENSOC)                              
+    ;                                                                           
+    UPDATE PFRA.TBLICMO                                                         
+       SET TLCMNSOCAGR = 472                                                    
+     WHERE TLCMNSOCAGR = 475                                                    
+    ;                                                                           
+    UPDATE PFRA.TBLICMO                                                         
+       SET TLCMNSOCAGR = 517                                                    
+     WHERE TLCMNSOCAGR = 520                                                    
+    ;                                                                           
+    UPDATE PFRA.TBLICMO                                                         
+       SET TLCMNSOCAGR = 664                                                    
+     WHERE TLCMNSOCAGR = 670                                                    
+    ;                                                                           
+    UPDATE PFRA.TBRE010                                                         
+       SET TR10NSOC    = 517                                                    
+     WHERE TR10NSOC    = 520                                                    
+    ;                                                                           
+    UPDATE PFRA.TBRE010                                                         
+       SET TR10NSOC    = 472                                                    
+     WHERE TR10NSOC    = 475                                                    
+    ;                                                                           
+    UPDATE PFRA.TBRE010                                                         
+       SET TR10NSOC    = 664                                                    
+     WHERE TR10NSOC    = 670                                                    
+    ;                                                                           
+                                                                                
+   UPDATE PFRA.TBDOOCT                                                          
+   SET   TDOCNSOCCHAINE = 472                                                   
+   WHERE TDOCNSOCCHAINE = 475                                                   
+     ;                                                                          
+                                                                                
+   UPDATE PFRA.TBDOOCT                                                          
+   SET   TDOCNSOCCHAINE = 517                                                   
+   WHERE TDOCNSOCCHAINE = 520                                                   
+     ;                                                                          
+                                                                                
+   UPDATE PFRA.TBDOOCT                                                          
+   SET   TDOCNSOCCHAINE = 664                                                   
+   WHERE TDOCNSOCCHAINE = 670                                                   
+     ;                                                                          
+                                                                                
+   UPDATE PFRA.TBLIMOT                                                          
+   SET   TLMONSOCAGR = 472                                                      
+   WHERE TLMONSOCAGR = 475                                                      
+     ;                                                                          
+                                                                                
+   UPDATE PFRA.TBLIMOT                                                          
+   SET   TLMONSOCAGR = 517                                                      
+   WHERE TLMONSOCAGR = 520                                                      
+     ;                                                                          
+                                                                                
+   UPDATE PFRA.TBLIMOT                                                          
+   SET   TLMONSOCAGR = 664                                                      
+   WHERE TLMONSOCAGR = 670                                                      
+     ;                                                                          
+                                                                                
+   UPDATE PFRA.TBLIMOT                                                          
+   SET   TLMONSOC = 472                                                         
+   WHERE TLMONSOC = 475                                                         
+     ;                                                                          
+                                                                                
+   UPDATE PFRA.TBLIMOT                                                          
+   SET   TLMONSOC = 517                                                         
+   WHERE TLMONSOC = 520                                                         
+     ;                                                                          
+                                                                                
+   UPDATE PFRA.TBLIMOT                                                          
+   SET   TLMONSOC = 664                                                         
+   WHERE TLMONSOC = 670                                                         
+     ;                                                                          
+                                                                                
+   UPDATE PFRA.TBLIINS                                                          
+   SET   TLINNSOC     = 664                                                     
+        ,TLINNSOCAGR  = 664                                                     
+   WHERE TLINNSOC     = 670                                                     
+   ;                                                                            
+                                                                                
+

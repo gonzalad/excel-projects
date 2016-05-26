@@ -1,0 +1,31 @@
+SELECT CREADT                                                                   
+     , UPDTTS                                                                   
+     , PGMID                                                                    
+     , TECHID                                                                   
+     , INSTANCECD                                                               
+     , REFCONTRACTID                                                            
+     , HOLDERID                                                                 
+     , REFCONTRACTCREADT                                                        
+     , CONTRACTEXTREFVA                                                         
+     , PROTOCOLID                                                               
+     , CONTRACTUPDT                                                             
+     , PRODUCERREFCONTCD                                                        
+     , SICLIDFOYERID                                                            
+     , CREDITTRADERID                                                           
+     , PRODUCERID                                                               
+     , CONTRACTPRODUCTCD                                                        
+     , PRODUCTCOURSECD                                                          
+     , COMPPRODUCTBO                                                            
+     , CONTRACTPOSITIONID                                                       
+     , DISTRIBUTPRODUCTCD                                                       
+     , AGENCYCD                                                                 
+     , DEMATCONTRACTBO                                                          
+     , SOCAGRO                                                                  
+     , NUMAGRO                                                                  
+     , DECIMAL(COALESCE(A.TVDCHAINE, 0),7) AS VDCHAINE                          
+     , RATCHAINE                                                                
+     , RATSOC                                                                   
+ FROM PFRA.TBCC007 LEFT OUTER JOIN                                              
+ PFRA.TBVDVDR A                                                                 
+   ON  NUMAGRO = A.TVDAGR                                                       
+   AND SOCAGRO = A.TVDSOC;                                                      

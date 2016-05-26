@@ -1,0 +1,25 @@
+   UPDATE PFRA.TBBPTVX                                                          
+   SET    TBTVDTRAIT =   'JJ.MM.SSSS',                                          
+          TBTVDMOD   =   'JJ.MM.SSSS',                                          
+          TBTVLUSERMOD  =   'CA7'                                               
+   WHERE  TBTVLPROG = 'FDXDOS'                                                  
+   AND    TBTVLKJOB IN ('PFRGD00X','PFRGD00Y','PFRGD00Z','PFRGD010',            
+                        'PFRGD011','PFRGD007','PFRGD008','PFRGD009',            
+                        'PFRGD00A','PFRGD00B','PFRGD00C','PFRGD00D',            
+                        'PFRGD00E','PFRGD00F','PFRGD00G','PFRGD00H',            
+                        'PFRGD00I','PFRGD00J','PFRGD00K','PFRGD00L',            
+                        'PFRGD00M','PFRGD00N','PFRGD00O','PFRGD00P',            
+                        'PFRGD00Q','PFRGD00R','PFRGD00S','PFRGD00T',            
+                        'PFRGD00U','PFRGD00V','PFRGD00W','PFRGD01S',            
+                        'PFRGD01T','PFRGD01U','PFRGD01V','PFRGD01W',            
+                        'PFRGD01X','PFRGD01Y','PFRGD01Z','PFRGD020',            
+                        'PFRGD021','PFRGD01O','PFRGD01P','PFRGD01Q',            
+                        'PFRGD01R','PFRGD022','PFRGD023','PFRGD024',            
+                        'PFRGD025','PFRGD026','PFRGD027','PFRGD012',            
+                        'PFRGD013','PFRGD014','PFRGD015','PFRGD016',            
+                        'PFRGD017','PFRGD018','PFRGD019','PFRGD01A',            
+                        'PFRGD01B','PFRGD01C','PFRGD01D','PFRGD01E',            
+                        'PFRGD01F','PFRGD01G','PFRGD01H','PFRGD01I',            
+                        'PFRGD01J','PFRGD01K','PFRGD01L','PFRGD01M',            
+                        'PFRGD01N','PFRGD030')                                  
+   AND    TBTVLTVX LIKE 'NBRE MAX ENTITES DB2-ARMIDE A PROBLEME:%' ;            

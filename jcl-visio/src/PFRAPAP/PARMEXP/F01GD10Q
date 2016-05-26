@@ -1,0 +1,17 @@
+$$DD01  USER IF=(1,EQ,C'BOULANGR'),                                             
+        MOVE=(001,255,011),                                                     
+        MOVE=(256,045,266),WRITE=DD02,                                          
+        IF=(1,EQ,C'XDOSF702'),                                                  
+        MOVE=(001,150,011),WRITE=DD03,                                          
+        IF=(1,EQ,C'REFACEDF'),                                                  
+        MOVE=(001,150,011),WRITE=DD04,                                          
+        IF=(1,EQ,C'BYTEL'),                                                     
+        MOVE=(001,016,011),WRITE=DD05,                                          
+        IF=(1,EQ,C'BTENC'),                                                     
+        MOVE=(001,255,011),                                                     
+        MOVE=(256,095,266),WRITE=DD06,                                          
+        IF=(1,EQ,C'CPSFIN'),                                                    
+        MOVE=(001,100,011),WRITE=DD07,                                          
+        IF=(1,EQ,C'PERMISUN'),                                                  
+        MOVE=(001,200,011),WRITE=DD08                                           
+        DFLT_WRITE=DD99                                                         

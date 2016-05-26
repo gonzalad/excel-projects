@@ -1,0 +1,27 @@
+    SELECT HEX(TDPRNSOC),                                                       
+           HEX(SUM(                                                             
+               CASE WHEN SUBSTR(HEX(TDHILMSG),12,1) = 'C'                       
+               THEN DEC(SUBSTR(HEX(TDHILMSG),1,11))                             
+               ELSE 0 - DEC(SUBSTR(HEX(TDHILMSG),1,11))                         
+           END)),                                                               
+           'TBDOHIS'                                                            
+    FROM PFRA.TBDOHIS, PFRA.TBDOPRN                                             
+    WHERE (( TDHICTYPVAR = '2A' AND TDHINNAT = 55 )                             
+    OR ( TDHICTYPVAR = '1A'                                                     
+    AND ( SUBSTR(HEX(SUBSTR(TDHILMSG,94,1)),1,1) <> '9'                         
+    AND SUBSTR(TDHILMSG,109,1) <> 'O'                                           
+    OR (SUBSTR(TDHILMSG,109,1) = 'O'                                            
+    AND SUBSTR(HEX(SUBSTR(TDHILMSG,37,4)),1,7) =                                
+    '1459676')                                                                  
+    )                                                                           
+    )                                                                           
+    )                                                                           
+    AND TDHIDCOMPTA = '28.08.2015'                                              
+    AND TDHINFOY = TDPRNFOY                                                     
+    AND TDHINCONT = TDPRNCONT                                                   
+    AND TDHINCARTE = TDPRNCARTE                                                 
+    AND TDHINDT = TDPRNDT                                                       
+    AND TDPRCTYPEPROD = 'CP'                                                    
+    AND TDPRCPRODBASE <> 'C7'                                                   
+    GROUP BY TDPRNSOC                                                           
+    WITH UR;                                                                    

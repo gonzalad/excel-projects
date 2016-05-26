@@ -1,0 +1,8 @@
+HELO MAILSERVER                                                                 
+MAIL FROM: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUPPORT@BNPPARIBAS.COM>               
+RCPT TO: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUIVI_FRANCEàBNPPARIBAS.COM>            
+DATA                                                                            
+FROM: <Exploitation-supportàcetelem.fr>                                         
+TO: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUIVI_FRANCEàBNPPARIBAS.COM>                 
+CC: <Exploitation-supportàcetelem.fr>                                           
+SUBJECT: Aucune archive legale a valider / Cancel a Realiser sous CA-7          

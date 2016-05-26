@@ -1,0 +1,177 @@
+SELECT 'SAP','TBARAPV ','---',' TOT  ',COUNT(*) FROM PFRA.TBARAPV       00001013
+WITH UR;                                                                00001112
+SELECT 'SAP','TBARPCO ','---',' TOT  ',COUNT(*) FROM PFRA.TBARPCO       00001213
+WITH UR;                                                                00001312
+SELECT 'SAP','TBAS001 ','---',' TOT  ',COUNT(*) FROM PFRA.TBAS001       00001413
+WITH UR;                                                                00001512
+SELECT 'SAP','TBAS002 ','---',' TOT  ',COUNT(*) FROM PFRA.TBAS002       00001613
+WITH UR;                                                                00001712
+SELECT 'SAP','TBAS003 ','---',' TOT  ',COUNT(*) FROM PFRA.TBAS003       00001813
+WITH UR;                                                                00001912
+SELECT 'SAP','TBAS004 ','---',' TOT  ',COUNT(*) FROM PFRA.TBAS004       00002013
+WITH UR;                                                                00002112
+SELECT 'SAP','TBBSBIP ','---',' TOT  ',COUNT(*) FROM PFRA.TBBSBIP       00002213
+WITH UR;                                                                00002312
+SELECT 'SAP','TBCTRDJ ','---',' TOT  ',COUNT(*) FROM PFRA.TBCTRDJ       00002413
+WITH UR;                                                                00002512
+SELECT 'SAP','TBEVTCO ','---',' TOT  ',COUNT(*) FROM PFRA.TBEVTCO       00002613
+WITH UR;                                                                00002712
+SELECT 'SAP','TBEVTTR ','---',' TOT  ',COUNT(*) FROM PFRA.TBEVTTR       00002813
+WITH UR;                                                                00002912
+SELECT 'SAP','TBGEAPC ','---',' TOT  ',COUNT(*) FROM PFRA.TBGEAPC       00003013
+WITH UR;                                                                00003112
+SELECT 'SAP','TBGEPSA ','---',' TOT  ',COUNT(*) FROM PFRA.TBGEPSA       00003213
+WITH UR;                                                                00003312
+SELECT 'SAP','TBGPDOS ','---',' TOT  ',COUNT(*) FROM PFRA.TBGPDOS       00003413
+WITH UR;                                                                00003512
+SELECT 'SAP','TBIF001 ','---',' TOT  ',COUNT(*) FROM PFRA.TBIF001       00003613
+WITH UR;                                                                00003712
+SELECT 'SAP','TBIF002 ','---',' TOT  ',COUNT(*) FROM PFRA.TBIF002       00003813
+WITH UR;                                                                00003912
+SELECT 'SAP','TBIF003 ','---',' TOT  ',COUNT(*) FROM PFRA.TBIF003       00004013
+WITH UR;                                                                00004112
+SELECT 'SAP','TBPA002 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPA002       00004213
+WITH UR;                                                                00004312
+SELECT 'SAP','TBPL001 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPL001       00004413
+WITH UR;                                                                00004512
+SELECT 'SAP','TBPM001 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPM001       00004613
+WITH UR;                                                                00004712
+SELECT 'SAP','TBPM002 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPM002       00004813
+WITH UR;                                                                00004912
+SELECT 'SAP','TBPM003 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPM003       00005013
+WITH UR;                                                                00005112
+SELECT 'SAP','TBPM004 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPM004       00005213
+WITH UR;                                                                00005312
+SELECT 'SAP','TBPP002 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP002       00005413
+WITH UR;                                                                00005512
+SELECT 'SAP','TBPP003 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP003       00005613
+WITH UR;                                                                00005712
+SELECT 'SAP','TBPP004 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP004       00005813
+WITH UR;                                                                00005912
+SELECT 'SAP','TBPP005 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP005       00006013
+WITH UR;                                                                00006112
+SELECT 'SAP','TBPP006 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP006       00006213
+WITH UR;                                                                00006312
+SELECT 'SAP','TBPP007 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP007       00006413
+WITH UR;                                                                00006512
+SELECT 'SAP','TBPP009 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP009       00006613
+WITH UR;                                                                00006712
+SELECT 'SAP','TBPP010 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP010       00006813
+WITH UR;                                                                00006912
+SELECT 'SAP','TBPP011 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP011       00007013
+WITH UR;                                                                00007112
+SELECT 'SAP','TBPP013 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP013       00007213
+WITH UR;                                                                00007312
+SELECT 'SAP','TBPP016 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP016       00007413
+WITH UR;                                                                00007512
+SELECT 'SAP','TBPP018 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP018       00007613
+WITH UR;                                                                00007712
+SELECT 'SAP','TBPP020 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP020       00007813
+WITH UR;                                                                00007912
+SELECT 'SAP','TBPP021 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP021       00008013
+WITH UR;                                                                00008112
+SELECT 'SAP','TBPP022 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPP022       00008213
+WITH UR;                                                                00008312
+SELECT 'SAP','TBPS001 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS001       00008413
+WITH UR;                                                                00008512
+SELECT 'SAP','TBPS002 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS002       00008613
+WITH UR;                                                                00008712
+SELECT 'SAP','TBPS008 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS008       00008813
+WITH UR;                                                                00008912
+SELECT 'SAP','TBPS011 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS011       00009013
+WITH UR;                                                                00009112
+SELECT 'SAP','TBPS012 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS012       00009213
+WITH UR;                                                                00009312
+SELECT 'SAP','TBPS013 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS013       00009413
+WITH UR;                                                                00009512
+SELECT 'SAP','TBPS014 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS014       00009613
+WITH UR;                                                                00009712
+SELECT 'SAP','TBPS015 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS015       00009813
+WITH UR;                                                                00009912
+SELECT 'SAP','TBPS017 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS017       00010013
+WITH UR;                                                                00010112
+SELECT 'SAP','TBPS018 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS018       00010213
+WITH UR;                                                                00010312
+SELECT 'SAP','TBPS019 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS019       00010413
+WITH UR;                                                                00010512
+SELECT 'SAP','TBPS021 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS021       00010613
+WITH UR;                                                                00010712
+SELECT 'SAP','TBPS027 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS027       00010813
+WITH UR;                                                                00010912
+SELECT 'SAP','TBPS029 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS029       00011013
+WITH UR;                                                                00011112
+SELECT 'SAP','TBPS032 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS032       00011213
+WITH UR;                                                                00011312
+SELECT 'SAP','TBPS041 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS041       00011413
+WITH UR;                                                                00011512
+SELECT 'SAP','TBPS042 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS042       00011613
+WITH UR;                                                                00011712
+SELECT 'SAP','TBPS043 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS043       00011813
+WITH UR;                                                                00011912
+SELECT 'SAP','TBPS053 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS053       00012013
+WITH UR;                                                                00012112
+SELECT 'SAP','TBPS055 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS055       00012213
+WITH UR;                                                                00012312
+SELECT 'SAP','TBPS067 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS067       00012413
+WITH UR;                                                                00012512
+SELECT 'SAP','TBPS069 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS069       00012613
+WITH UR;                                                                00012712
+SELECT 'SAP','TBPS070 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS070       00012813
+WITH UR;                                                                00012912
+SELECT 'SAP','TBPS073 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS073       00013013
+WITH UR;                                                                00013112
+SELECT 'SAP','TBPS075 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS075       00013213
+WITH UR;                                                                00013312
+SELECT 'SAP','TBPS076 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS076       00013413
+WITH UR;                                                                00013512
+SELECT 'SAP','TBPS077 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS077       00013613
+WITH UR;                                                                00013712
+SELECT 'SAP','TBPS079 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS079       00013813
+WITH UR;                                                                00013912
+SELECT 'SAP','TBPS080 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS080       00014013
+WITH UR;                                                                00014112
+SELECT 'SAP','TBPS081 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS081       00014213
+WITH UR;                                                                00014312
+SELECT 'SAP','TBPS083 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS083       00014413
+WITH UR;                                                                00014512
+SELECT 'SAP','TBPS084 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS084       00014613
+WITH UR;                                                                00014712
+SELECT 'SAP','TBPS085 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS085       00014813
+WITH UR;                                                                00014912
+SELECT 'SAP','TBPS086 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS086       00015013
+WITH UR;                                                                00015112
+SELECT 'SAP','TBPS087 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS087       00015213
+WITH UR;                                                                00015312
+SELECT 'SAP','TBPS089 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS089       00015413
+WITH UR;                                                                00015512
+SELECT 'SAP','TBPS090 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS090       00015613
+WITH UR;                                                                00015712
+SELECT 'SAP','TBPS091 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS091       00015813
+WITH UR;                                                                00015912
+SELECT 'SAP','TBPS092 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS092       00016013
+WITH UR;                                                                00016112
+SELECT 'SAP','TBPS093 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS093       00016213
+WITH UR;                                                                00016312
+SELECT 'SAP','TBPS100 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS100       00016413
+WITH UR;                                                                00016512
+SELECT 'SAP','TBPS103 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS103       00016613
+WITH UR;                                                                00016712
+SELECT 'SAP','TBPS104 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPS104       00016813
+WITH UR;                                                                00016912
+SELECT 'SAP','TBPST08 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPST08       00017013
+WITH UR;                                                                00017112
+SELECT 'SAP','TBPST09 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPST09       00017213
+WITH UR;                                                                00017312
+SELECT 'SAP','TBPST10 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPST10       00017413
+WITH UR;                                                                00017512
+SELECT 'SAP','TBPST11 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPST11       00017613
+WITH UR;                                                                00017712
+SELECT 'SAP','TBPST12 ','---',' TOT  ',COUNT(*) FROM PFRA.TBPST12       00017813
+WITH UR;                                                                00017912
+SELECT 'SAP','TBRFTUX ','---',' TOT  ',COUNT(*) FROM PFRA.TBRFTUX       00018013
+WITH UR;                                                                00018112
+SELECT 'SAP','TBTY006 ','---',' TOT  ',COUNT(*) FROM PFRA.TBTY006       00019013
+WITH UR;                                                                00019112
+SELECT 'SAP','TBTY007 ','---',' TOT  ',COUNT(*) FROM PFRA.TBTY007       00020013
+WITH UR;                                                                00030012
+

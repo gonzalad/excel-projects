@@ -1,0 +1,20 @@
+   LOAD LOG NO REPLACE INDDN TBALPDA                                            
+   DISCARDS 1 SORTDEVT SYSDA SORTNUM 8                                          
+   INTO TABLE PFRA.TBALPDA                                                      
+   ( TAPDCREADT        POSITION(1:10)     DATE EXTERNAL,                        
+     TAPDUPDTTS        POSITION(11:36)    TIMESTAMP EXTERNAL,                   
+     TAPDPGMID         POSITION(37:44)    CHAR(8),                              
+     TAPDTECHID        POSITION(45:45)    CHAR(1),                              
+     TAPDCCPHONO       POSITION(46:55)    CHAR(10),                             
+     TAPDDNAIS         POSITION(56:65)    DATE EXTERNAL,                        
+     TAPDNSOC          POSITION(66:67)    DECIMAL,                              
+     TAPDCSECRBAN      POSITION(68:68)    CHAR(1),                              
+     TAPDCPRODCOM      POSITION(69:72)    CHAR(4),                              
+     TAPDMDMACP        POSITION(73:75)    DECIMAL,                              
+     TAPDMDMACPACTIF   POSITION(76:78)    DECIMAL,                              
+     TAPDMDMACPEXACTF  POSITION(79:81)    DECIMAL,                              
+     TAPDMDMACPEXAC18M POSITION(82:84)    DECIMAL,                              
+     TAPDBCP           POSITION(85:86)    DECIMAL,                              
+     TAPDBCPACTIF      POSITION(87:88)    DECIMAL,                              
+     TAPDBCPEXACTIF    POSITION(89:90)    DECIMAL,                              
+     TAPDBCPEXACTF18M  POSITION(91:92)    DECIMAL )                             

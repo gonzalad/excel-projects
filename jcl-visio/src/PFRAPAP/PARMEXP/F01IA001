@@ -1,0 +1,29 @@
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -               
+* EXTRACTION DES HOSTNAME A PARTIR DU FICHIER REFERENTIEL SYSTEME               
+* LE FICHIER RESULTAT SERA CONCATENE AVEC LE FICHIER SYSIN (ISRSUPC)            
+* QUI CONTIENT LES PARAMETRES D'EXTRACTION DES JOBS DE FLUX                     
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -               
+$$DD01 USER IF=(5,EQ,C' HOST'),                                                 
+            IF=(26,EQ,C':'),                                                    
+            MOVE=(1,C"SRCHFOR '        '"),                                     
+            MOVE=(10,8,28),                                                     
+            PADCHAR=C' ',                                                       
+            WRITE=DD01O,RN,                                                     
+            IF=(5,EQ,C' HOST'),                                                 
+            IF=(27,EQ,C':'),                                                    
+            MOVE=(1,C"SRCHFOR '        '"),                                     
+            MOVE=(10,8,29),                                                     
+            PADCHAR=C' ',                                                       
+            WRITE=DD01O,                                                        
+            IF=(5,EQ,C' HOST'),                                                 
+            IF=(28,EQ,C':'),                                                    
+            MOVE=(1,C"SRCHFOR '        '"),                                     
+            MOVE=(10,8,30),                                                     
+            PADCHAR=C' ',                                                       
+            WRITE=DD01O,                                                        
+            IF=(5,EQ,C' HOST'),                                                 
+            IF=(29,EQ,C':'),                                                    
+            MOVE=(1,C"SRCHFOR '        '"),                                     
+            MOVE=(10,8,31),                                                     
+            PADCHAR=C' ',                                                       
+            WRITE=DD01O                                                         

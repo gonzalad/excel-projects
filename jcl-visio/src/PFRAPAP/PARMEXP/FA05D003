@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SFV20588.NEFJFINA.BPRIME00' +                                      
+      JOURA.F@FJFI.IMPRESS.EX1.BPOP.DUMOJJ                                      
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.F@FJFI.IMPRESS.EX1.BPOP.DUMOJJ_INF                                  
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.F@FJFI.IMPRESS.EX1.BPOP.DUMOJJ_EOF                                  
+CLOSE                                                                           
+QUIT                                                                            

@@ -1,0 +1,6 @@
+PFRXNT01 (EXIT=16                                                               
+CD EXPLOIT                                                                      
+CD COLLECTE BRIEF                                                               
+PUT 'PFRATMP.SIS60002.COMMANDE.FICOUT01' BRIEFMENSUEL_080115.CSV                
+CLOSE                                                                           
+QUIT                                                                            

@@ -1,0 +1,162 @@
+SELECT TCPFNSOC, COUNT(*) AS TBCLPRF_STE670                                     
+  FROM PFRA.TBCLPRF                                                             
+ WHERE TCPFNSOC = 670 AND TCPFNFOY NOT IN                                       
+       (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                 
+ GROUP BY TCPFNSOC                                                              
+WITH UR ;                                                                       
+SELECT TCPFNSOC, COUNT(*) AS TBCLPRF_STE664                                     
+  FROM PFRA.TBCLPRF                                                             
+ WHERE TCPFNSOC = 664 AND TCPFNFOY NOT IN                                       
+       (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                 
+ GROUP BY TCPFNSOC                                                              
+WITH UR ;                                                                       
+SELECT TOTINSOCCOM, COUNT(*) AS TBOPTIW_STE670                                  
+  FROM PFRA.TBOPTIW                                                             
+ WHERE TOTINSOCCOM = 670 AND TOTINFOY NOT IN                                    
+       (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                 
+ GROUP BY TOTINSOCCOM                                                           
+WITH UR ;                                                                       
+SELECT TOTINSOCCOM, COUNT(*) AS TBOPTIW_STE664                                  
+  FROM PFRA.TBOPTIW                                                             
+ WHERE TOTINSOCCOM = 664 AND TOTINFOY NOT IN                                    
+       (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                 
+ GROUP BY TOTINSOCCOM                                                           
+WITH UR ;                                                                       
+SELECT TCPCNSOC, COUNT(*) AS TBCLPRC_STE670                                     
+  FROM PFRA.TBCLPRC                                                             
+ WHERE TCPCNSOC = 670 AND TCPCNFOY NOT IN                                       
+      (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                  
+ GROUP BY TCPCNSOC                                                              
+  WITH UR ;                                                                     
+SELECT TCPCNSOC, COUNT(*) AS TBCLPRC_STE664                                     
+  FROM PFRA.TBCLPRC                                                             
+ WHERE TCPCNSOC = 664 AND TCPCNFOY NOT IN                                       
+      (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                  
+ GROUP BY TCPCNSOC                                                              
+WITH UR ;                                                                       
+SELECT TCPVNSOC, COUNT(*) AS TBCLPRV_STE670                                     
+  FROM PFRA.TBCLPRV                                                             
+ WHERE TCPVNSOC = 670  AND TCPVNFOY NOT IN                                      
+      (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                  
+ GROUP BY TCPVNSOC                                                              
+WITH UR ;                                                                       
+SELECT TCPVNSOC, COUNT(*) AS TBCLPRV_STE664                                     
+  FROM PFRA.TBCLPRV                                                             
+ WHERE TCPVNSOC = 664  AND TCPVNFOY NOT IN                                      
+      (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                  
+ GROUP BY TCPVNSOC                                                              
+WITH UR ;                                                                       
+SELECT TCRLNSOC, COUNT(*)  AS TBCLREL_STE670                                    
+  FROM PFRA.TBCLREL                                                             
+ WHERE TCRLNSOC = 670 AND TCRLNFOY NOT IN                                       
+     ( SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                  
+ GROUP BY TCRLNSOC                                                              
+WITH UR ;                                                                       
+SELECT TCRLNSOC, COUNT(*) AS TBCLREL_STE664                                     
+  FROM PFRA.TBCLREL                                                             
+ WHERE TCRLNSOC = 664 AND TCRLNFOY NOT IN                                       
+     ( SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                  
+ GROUP BY TCRLNSOC                                                              
+WITH UR ;                                                                       
+SELECT TACLNSOC, COUNT(*) AS TBALCLI_STE670                                     
+  FROM PFRA.TBALCLI                                                             
+ WHERE TACLNSOC = 670 AND TACLNFOY NOT IN                                       
+     (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                   
+GROUP BY TACLNSOC                                                               
+WITH UR ;                                                                       
+SELECT TACLNSOC, COUNT(*) AS TBALCLI_STE664                                     
+  FROM PFRA.TBALCLI                                                             
+ WHERE TACLNSOC = 664 AND TACLNFOY NOT IN                                       
+     (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                   
+GROUP BY TACLNSOC                                                               
+WITH UR ;                                                                       
+SELECT TALPNSOC, COUNT(*) AS TBALPHA_STE670                                     
+  FROM PFRA.TBALPHA                                                             
+ WHERE TALPNSOC = 670 AND TALPNFOY NOT IN                                       
+     (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                   
+ GROUP BY TALPNSOC                                                              
+ WITH UR ;                                                                      
+SELECT TALPNSOC, COUNT(*) AS TBALPHA_STE664                                     
+  FROM PFRA.TBALPHA                                                             
+ WHERE TALPNSOC = 664 AND TALPNFOY NOT IN                                       
+     (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                   
+ GROUP BY TALPNSOC                                                              
+WITH UR ;                                                                       
+SELECT TALPNSOC, COUNT(*) AS NB_ALPHA                                           
+  FROM PFRA.TBALPHA                                                             
+ WHERE TALPNSOC IN ( 664 , 670 )                                                
+ GROUP BY TALPNSOC                                                              
+;                                                                               
+SELECT TOTINSOCCOM, COUNT(DISTINCT TOTINFOY) AS TBOPTIW_STE670                  
+  FROM PFRA.TBOPTIW                                                             
+ WHERE TOTINSOCCOM = 670 AND TOTINFOY NOT IN                                    
+       (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                 
+ GROUP BY TOTINSOCCOM                                                           
+WITH UR ;                                                                       
+SELECT TOTINSOCCOM, COUNT(DISTINCT TOTINFOY) AS TBOPTIW_STE664                  
+  FROM PFRA.TBOPTIW                                                             
+ WHERE TOTINSOCCOM = 664 AND TOTINFOY NOT IN                                    
+       (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                 
+ GROUP BY TOTINSOCCOM                                                           
+WITH UR ;                                                                       
+SELECT TCPCNSOC, COUNT(DISTINCT TCPCNFOY) AS TBCLPRC_STE670                     
+  FROM PFRA.TBCLPRC                                                             
+ WHERE TCPCNSOC = 670 AND TCPCNFOY NOT IN                                       
+      (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                  
+ GROUP BY TCPCNSOC                                                              
+  WITH UR ;                                                                     
+SELECT TCPCNSOC, COUNT(DISTINCT TCPCNFOY) AS TBCLPRC_STE664                     
+  FROM PFRA.TBCLPRC                                                             
+ WHERE TCPCNSOC = 664 AND TCPCNFOY NOT IN                                       
+      (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                  
+ GROUP BY TCPCNSOC                                                              
+WITH UR ;                                                                       
+SELECT TLECNSOC, COUNT(DISTINCT TLECNFOY) AS TBAGLEC_STE670                     
+  FROM PFRA.TBAGLEC                                                             
+ WHERE TLECNSOC = 670 AND TLECNFOY NOT IN                                       
+      (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 670)                  
+ GROUP BY TLECNSOC                                                              
+WITH UR ;                                                                       
+SELECT TLECNSOC, COUNT(DISTINCT TLECNFOY) AS TBAGLEC_STE664                     
+  FROM PFRA.TBAGLEC                                                             
+ WHERE TLECNSOC = 664 AND TLECNFOY NOT IN                                       
+      (SELECT TDPRNFOY FROM PFRA.TBDOPRN WHERE TDPRNSOC = 664)                  
+ GROUP BY TLECNSOC                                                              
+WITH UR ;                                                                       
+SELECT TLINNSOC, TLINNSOCAGR, COUNT(*) AS NB_ENREG                              
+  FROM PFRA.TBLIINS                                                             
+ WHERE TLINNSOC IN (664, 670)                                                   
+    OR TLINNSOCAGR IN (664, 670)                                                
+ GROUP BY TLINNSOC, TLINNSOCAGR                                                 
+;                                                                               
+SELECT TLECNSOC, TLECNSOCAGR, COUNT(*) AS NB_ENREG                              
+  FROM PFRA.TBAGLEC                                                             
+ WHERE TLECNSOC IN (664, 670)                                                   
+    OR TLECNSOCAGR IN (664, 670)                                                
+ GROUP BY TLECNSOC, TLECNSOCAGR                                                 
+;                                                                               
+SELECT COUNT(*)                                                                 
+FROM   PFRA.TBALPHA                                                             
+WHERE TALPNSOC  = 670                                                           
+AND   TALPNFOY  IN    ( SELECT  TXPRNFOY                                        
+                        FROM     PFRA.TBCXPRN                                   
+                        WHERE   TXPRNSOC = 670)                                 
+;                                                                               
+SELECT COUNT(*)                                                                 
+FROM   PFRA.TBALPHA                                                             
+WHERE TALPNSOC  = 664                                                           
+AND   TALPNFOY  IN    ( SELECT  TXPRNFOY                                        
+                        FROM     PFRA.TBCXPRN                                   
+                        WHERE   TXPRNSOC = 664)                                 
+;                                                                               
+SELECT TACLNSOC, COUNT(DISTINCT(TACLNFOY))                                      
+FROM PFRA.TBALCLI                                                               
+WHERE TACLNSOC IN (670)                                                         
+GROUP BY TACLNSOC                                                               
+;                                                                               
+SELECT TACLNSOC, COUNT(DISTINCT(TACLNFOY))                                      
+FROM PFRA.TBALCLI                                                               
+WHERE TACLNSOC IN (664)                                                         
+GROUP BY TACLNSOC                                                               
+;                                                                               
+

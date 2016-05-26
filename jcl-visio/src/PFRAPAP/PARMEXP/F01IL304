@@ -1,0 +1,13 @@
+HELO MAILSERVER                                                                 
+MAIL FROM: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUPPORT@BNPPARIBAS.COM>               
+RCPT TO: <paris_bp2i_marne_nordàbnpparibas.com>                                 
+RCPT TO: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUIVI_FRANCE@BNPPARIBAS.COM>            
+RCPT TO: <philippe.noelàbnpparibas.com>                                         
+RCPT TO: <Dominique.bedouàbnpparibas.com>                                       
+DATA                                                                            
+FROM: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUPPORT@BNPPARIBAS.COM>                    
+TO: <paris_bp2i_marne_nordàbnpparibas.com>                                      
+CC: <PARIS_ITPS_RB_PF_MEO_CONSO_MF_SUIVI_FRANCE@BNPPARIBAS.COM>                 
+CC: <philippe.noelàbnpparibas.com>                                              
+CC: <Dominique.bedouàbnpparibas.com>                                            
+SUBJECT: Bordereau Cetelem France Archives Legales (Retour Vaudreuil)           

@@ -1,0 +1,11 @@
+SELECT   TSNYLJOB   ,                                                   00020001
+         TSNYDCWA   ,                                                   00030001
+         TSNYDDEBUT ,                                                   00050001
+         TSNYTDEBUT ,                                                   00060001
+         TSNYDFIN   ,                                                   00070001
+         TSNYTFIN   ,                                                   00080001
+         TSNYCTERM                                                      00090001
+FROM     PFRA.TBCTSNY                                                   00100001
+WHERE TSNYDCWA > '01.03.2014'                                           00110025
+AND TSNYLJOB = 'PFRCB0ZZ'                                               00112025
+ORDER BY TSNYDDEBUT ;                                                   00160001

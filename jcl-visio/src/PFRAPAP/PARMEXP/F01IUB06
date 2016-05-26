@@ -1,0 +1,42 @@
+  LOAD DATA LOG NO REPLACE INDDN TBCLPRE                                        
+       SORTNUM 25 DISCARDS 1                                                    
+       INTO TABLE PFRA.TBCLPRE                                                  
+   (                                                                            
+   TCPPNFOY                               POSITION(       1:      11)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPNSOC                               POSITION(      12:      14)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPNRANG                              POSITION(      15:      17)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPDCREAT                             POSITION(      18         )           
+   DATE EXTERNAL(            10) ,                                              
+   TCPPDMOD                               POSITION(      28         )           
+   DATE EXTERNAL(            10) ,                                              
+   TCPPNCONT                              POSITION(      38:      38)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPNCARTE                             POSITION(      39:      39)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPNDT                                POSITION(      40:      42)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPCPRECONIS                          POSITION(      43         )           
+   CHAR(                      1) ,                                              
+   TCPPCPREACCEP                          POSITION(      44         )           
+   CHAR(                      1) ,                                              
+   TCPPCPRIORITE                          POSITION(      45:      45)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPDLIMITEOFFRE                       POSITION(      46         )           
+   DATE EXTERNAL(            10) ,                                              
+   TCPPCUTILEXCLUS                        POSITION(      56         )           
+   CHAR(                      4) ,                                              
+   TCPPCPROD                              POSITION(      60         )           
+   CHAR(                      4) ,                                              
+   TCPPMDEC                               POSITION(      64:      74)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPMMENS                              POSITION(      75:      85)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPTAUX                               POSITION(      86:      90)           
+   DECIMAL EXTERNAL              ,                                              
+   TCPPCSCOREFIN                          POSITION (     91         )           
+   CHAR(                      1)                                                
+   )                                                                            
+

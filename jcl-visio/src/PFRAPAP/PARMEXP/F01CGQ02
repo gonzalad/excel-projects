@@ -1,0 +1,29 @@
+ SELECT  TDHINFOY                                                               
+       ,TDHINCONT                                                               
+       ,TDHINCARTE                                                              
+       ,TDHINDT                                                                 
+       ,TDHITIMESTAMP                                                           
+       ,TDHICTYPVAR                                                             
+       ,TDHIDCOMPTA                                                             
+       ,TDHILMSG                                                                
+ FROM PFRA.TBDOPRN,PFRA.TBDOCTR,PFRA.TBDOHIS                                    
+ WHERE TDPRNFOY   = TDCONFOY                                                    
+   AND TDPRNCONT  = TDCONCONT                                                   
+   AND ((    TDPRNCARTE = TDCONCARTE                                            
+         AND TDPRNDT    = TDCONDT                                               
+         AND TDCOCTYPCONTRAT <> 'S7')                                           
+    OR  (    TDCONCARTE = 0                                                     
+             AND TDCONDT = 0                                                    
+         AND TDPRNDT = TDCONDT                                                  
+         AND TDCOCTYPCONTRAT = 'S7'))                                           
+   AND TDPRNFOY   = TDHINFOY                                                    
+   AND TDPRNCONT  = TDHINCONT                                                   
+   AND TDPRNCARTE = TDHINCARTE                                                  
+   AND TDPRNDT    = TDHINDT                                                     
+   AND TDPRCTYPEPROD = 'CP'                                                     
+   AND TDCODENGAGCTR > '01.05.2011'                                             
+   AND TDPRCPOSA IN ('ENC', 'RET', 'ASM')                                       
+   AND TDPRTDEG  NOT IN (987 , 997)                                             
+   AND TDHICTYPVAR IN ('1A', '5A')                                              
+   AND TDHITIMESTAMP >= '2011-06-01-00.00.00.000000'                            
+   AND TDHIDCOMPTA >= TDCODENGAGCTR                                             

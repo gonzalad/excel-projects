@@ -1,0 +1,6 @@
+PFRXNT01 (EXIT=16                                                               
+CD EXPLOIT                                                                      
+CD COLLECTE SG/FRANCE/FIN DE MOIS                                               
+PUT 'PFRATMP.NIEQ0003.DFSORT00.SORTOUT0' FM_080115.CSV                          
+CLOSE                                                                           
+QUIT                                                                            

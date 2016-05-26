@@ -1,0 +1,20 @@
+ SORT FIELDS=(1,8,BI,A,37,6,BI,A)                                               
+ SUM FIELDS=NONE                                                                
+ OUTFIL INCLUDE=(45,6,BI,GT,X'00000000000C'),                                   
+        FNAMES=SERIE11                                                          
+ OUTFIL INCLUDE=(43,1,BI,NE,C'M'),                                              
+        FNAMES=SERIE12                                                          
+ OUTFIL INCLUDE=(37,3,CH,EQ,C'RET'),                                            
+        FNAMES=SERIE13                                                          
+ OUTFIL INCLUDE=(57,6,BI,GT,X'00000000000C',AND,                                
+                 37,3,CH,NE,C'ANN'),                                            
+        FNAMES=SERIE14                                                          
+ OUTFIL INCLUDE=(19,6,BI,LE,X'00000000762C',AND,                                
+                 37,3,CH,NE,C'ANN',AND,                                         
+                 57,6,BI,GT,X'00000000000C'),                                   
+        FNAMES=SERIE15                                                          
+ OUTFIL INCLUDE=(73,6,BI,GT,X'00000000000C',AND,                                
+                  40,2,BI,NE,X'084C',AND,                                       
+                  37,3,CH,EQ,C'ENC',AND,                                        
+                  127,2,CH,LT,C'81',AND,                                        
+                  127,2,CH,GT,C'59',AND,                                        

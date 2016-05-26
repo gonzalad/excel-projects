@@ -1,0 +1,5 @@
+PFRXNT01 (EXIT=16                                                               
+CD SECTORDT                                                                     
+PUT 'PFRAFTE.SGV60076.NEVDMI10.SORTIE00' IDT_1507.TXT                           
+CLOSE                                                                           
+QUIT                                                                            

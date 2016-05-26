@@ -1,0 +1,8 @@
+DELETE (COMMIT=10) FROM  PFRA.TBALJUC                                   00010000
+WHERE NOT EXISTS                                                        00020000
+(SELECT TACLNFOY FROM  PFRA.TBALCLI                                     00030000
+        WHERE                                                           00040000
+        TAJCNFOY     = TACLNFOY    AND                                  00050000
+        TAJCNSOC     = TACLNSOC    AND                                  00060000
+        TAJCNECOUTE  = TACLNECOUTE AND                                  00070000
+        TAJCNALERTE  = TACLNALERTE)                                     00080000

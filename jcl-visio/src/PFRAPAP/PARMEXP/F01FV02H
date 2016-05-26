@@ -1,0 +1,4 @@
+OPTION HIPRMAX=OPTIMAL                                                  00010000
+   SORT FIELDS=COPY,STOPAFT=1                                           00020000
+   OUTREC FIELDS=(C'$$DD01 UPDATE EDIT=(1,0,C"&DATE",C"',               00030000
+15,2,C'.',13,2,C'.',9,4,C'")',33C' ')                                   00040000

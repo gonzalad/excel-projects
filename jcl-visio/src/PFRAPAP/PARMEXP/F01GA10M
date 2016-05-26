@@ -1,0 +1,22 @@
+SELECT  TDCTNFOY, TCPFNSOC, TDCTNCONT, TDCTNCARTE, TDCTNDT,                     
+TDCTNRANG, TDCTLNOMPREN, TDCTLNOMJF, TDCTBINDP, TDCTDNAIS,                      
+TCPFCSECRBAN, TDPRMSREC, TDPRMCRD, TDCOCCAUTION                                 
+FROM PFRA.TBDOCAU, PFRA.TBCLPRF, PFRA.TBDOPRN, PFRA.TBDOCTR                     
+WHERE TCPFNSOC    =  TDPRNSOC                                                   
+  AND TDPRNCONT BETWEEN 1 AND 8                                                 
+  AND    TDCTNFOY    =  TDPRNFOY                                                
+  AND    TDCTNCONT   =  TDPRNCONT                                               
+  AND    TDCTNCARTE  =  0                                                       
+  AND    TDCTNDT     =  0                                                       
+  AND    TDCTNFOY    =  TDCONFOY                                                
+  AND    TDCTNCONT   =  TDCONCONT                                               
+  AND    TDCTNCARTE  =  TDCONCARTE                                              
+  AND    TDCTNDT     =  TDCONDT                                                 
+  AND    TDCONFOY    =  TDPRNFOY                                                
+  AND    TDCONCONT   =  TDPRNCONT                                               
+  AND    TDCONCARTE  =  0                                                       
+  AND    TDCONDT     =  0                                                       
+  AND    TCPFNFOY    =  TDPRNFOY                                                
+  AND    TCPFNFOY    =  TDCTNFOY                                                
+  AND    TCPFNFOY    =  TDCONFOY                                                
+  WITH UR ;                                                                     

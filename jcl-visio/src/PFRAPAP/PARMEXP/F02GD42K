@@ -1,0 +1,14 @@
+CHAP 001 10 TOTAL FLUX                                                  00010001
+ZONE 012 03 TYPFIC   510                                                00020001
+ZONE 019 18 MNTCAL   002                                                00030002
+PARA 014 12 OUTPUT=DD02O                                                00040001
+LIGN 001 13 Lines COPIED=                                               00050001
+ZONE +01 11 NBCAL    003 000 07 COPIED=                                 00060001
+LIGN 001 07 ENTETE                                                      00070001
+ZONE +01 14 DATHEUR1 004 000 04 DATE                                    00080001
+LIGN 001 07 ENQUEUE                                                     00090001
+REPE                                                                    00100001
+ZONE +01 14 DATHEUR2 005 000 04 DATE                                    00110001
+ZONE +01 09 NBLU     006 000 06 NOMBRE                                  00120001
+ZONE +01 17 MNTLU    007 000 07 MONTANT                                 00130001
+FREP                                                                    00140001

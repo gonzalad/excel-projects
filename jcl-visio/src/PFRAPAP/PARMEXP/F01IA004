@@ -1,0 +1,75 @@
+CHAP 003 21 NAME    ID  MEMBER                                                  
+LIGN +02                                                                        
+ZONE 001 08 NOMJOB   001                                                        
+ZONE 014 08 NOMJCL   003                                                        
+ZONE 023 08 NOMCHA   004                                                        
+ZONE 055 03 NBSTEP   050                                                        
+PARA 026 36 --------- JOB INFORMATION ----------                                
+LIGN 045 27 -- JOB SET FOR EXEC ON MAIN                                         
+ZONE 043 01 JOBREEL  011                                                        
+LIGN 010 07 JOBNET=                                                             
+ZONE 017 08 PAYS     002                                                        
+PARA 026 36 ------------ SCHEDULES -------------                                
+REPE                                                                            
+LIGN 008 03 ID=                                                                 
+ZONE 011 03 NSCHID   021                                                        
+LIGN 008 05 SCAL=                                                               
+ZONE +01 04 LIMIT    021 017 05 DOTM=                                           
+LIGN +01                                                                        
+ZONE 017 08 PERIOD   021                                                        
+FREP                                                                            
+PARA 026 36 -------------- PROSE ---------------                                
+LIGN 000 00                                                                     
+ZONE 008 72 PROSE    009                                                        
+PARA 026 36 TRIGGERED BY JOBS/DATASETS/NETWORKS                                 
+REPE                                                                            
+LIGN 011 04 JOB=                                                                
+LIEN 015 08 JOBTRIG  031                                                        
+ZONL 030 03 SCHID1   031                                                        
+ZONL 034 03 SCHID2   031                                                        
+ZONL +01 04 RLIMIT   031 038 05 DOTM=                                           
+LIGN 011 04 DSN=                                                                
+ZONE 015 55 PFICH    022                                                        
+REPE                                                                            
+LIGN 011 19              SCHID=                                                 
+ZONE 030 03 FSCHIA   022                                                        
+ZONE 034 03 FSCHID   022                                                        
+ZONE +01 04 FLIMIT   022 038 05 DOTM=                                           
+FREP                                                                            
+FREP                                                                            
+PARA 026 36 --------- TRIGGERED JOBS -----------                                
+PARA 026 36 --------- SUCCESSOR JOBS -----------                                
+REPE                                                                            
+LIGN 011 04 JOB=                                                                
+ZONE +01 08 JOBINC   041 011 05 JOB=/                                           
+LIEN 015 08 JOBBLO   043                                                        
+ZONL +01 03 DSCHID   043 024 06 SCHID=                                          
+ZONE +01 03 DSCHID   043 025 06 SCHID=                                          
+FREP                                                                            
+PARA 026 36 ----- STEP AND DD INFORMATION ------                                
+REPE                                                                            
+LIGN 008 02N01                                                                  
+ZONE +01 08 PGM      051 020 04 PGM=                                            
+REPE                                                                            
+LIGN 011 03N001     255                                                         
+ZONE 015 08 SNOM     051                                                        
+ZONE +01 06 TTYPE    051 000 05 TYPE=                                           
+ZONE +01 03 TDISP    051 000 05 DISP=                                           
+ZONE +01 04 TDEV     051 000 04 DEV=                                            
+LIGN 024 04 DSN=                                                                
+ZONE +01 50 TDSN     051 000 04 DSN=                                            
+FREP                                                                            
+FREP                                                                            
+PARA 025 36 REQUIREMENTS AND NETWORK CONNECTIONS                                
+REPE                                                                            
+LIGN 008 04 JOB=                                                                
+ZONE +01 08 DEPCOND  042 008 05 JOB=?                                           
+ZONE +01 08 DEPBID   042 008 05 JOB=/                                           
+ZONE 012 08 DEPPERM  042                                                        
+ZONE +01 02 DLEADTM  042 058 07 LEADTM=                                         
+LIGN 008 04 DSN=                                                                
+ZONE 012 42 DSNDEP   044                                                        
+LIGN 012 11 CREATED BY                                                          
+ZONE 023 08 JOBCRE   044                                                        
+FREP                                                                            
+

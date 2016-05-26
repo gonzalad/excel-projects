@@ -1,0 +1,90 @@
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL)                                         
+       OUTDDN(SYSREC00) MODE(AUTO)                                              
+    SELECT TCLFNFOY           ,                                                 
+           TCLFDCREAT         ,                                                 
+           TCLFDMOD           ,                                                 
+           TCLFDPCTX          ,                                                 
+           TCLFDPSAD          ,                                                 
+           TCLFCHAB1          ,                                                 
+           TCLFCCLINONRAP     ,                                                 
+           TCLFCANCHAB1       ,                                                 
+           TCLFCHAB2          ,                                                 
+           TCLFNTELP          ,                                                 
+           TCLFCSITFAM        ,                                                 
+           TCLFBENF           ,                                                 
+           TCLFNNAISENF1      ,                                                 
+           TCLFNNAISENF2      ,                                                 
+           TCLFNNAISENF3      ,                                                 
+           TCLFNNAISENF4      ,                                                 
+           TCLFNNAISENF5      ,                                                 
+           TCLFNNAISENF6      ,                                                 
+           TCLFMALLOCFAM      ,                                                 
+           TCLFMALLOCLOG      ,                                                 
+           TCLFMVPENSALIM     ,                                                 
+           TCLFMRPENSALIM     ,                                                 
+           TCLFMFRAISGARD     ,                                                 
+           TCLFMIMPOTS        ,                                                 
+           TCLFMAUTREV        ,                                                 
+           TCLFBJAUTREV       ,                                                 
+           TCLFLBQAUTREV      ,                                                 
+           TCLFDMODBUDGD      ,                                                 
+           TCLFDMODBUDGP      ,                                                 
+           TCLFDMODBUDGA      ,                                                 
+           TCLFCTITBQ         ,                                                 
+           TCLFCBQCCP         ,                                                 
+           TCLFCANCBQCCP      ,                                                 
+           TCLFBTRSSR         ,                                                 
+           TCLFLTELIND1       ,                                                 
+           TCLFNTELNO1        ,                                                 
+           TCLFLTELIND2       ,                                                 
+           TCLFNTELNO2        ,                                                 
+           TCLFLTELIND3       ,                                                 
+           TCLFNTELNO3        ,                                                 
+           TCLFLTELIND4       ,                                                 
+           TCLFNTELNO4        ,                                                 
+           TCLFLTELIND5       ,                                                 
+           TCLFNTELNO5        ,                                                 
+           TCLFLTELIND6       ,                                                 
+           TCLFNTELNO6        ,                                                 
+           TCLFCMOTCLESSR1    ,                                                 
+           TCLFDMOTCLESSR1    ,                                                 
+           TCLFCMOTCLESSR2    ,                                                 
+           TCLFDMOTCLESSR2    ,                                                 
+           TCLFCMOTCLESSR3    ,                                                 
+           TCLFDMOTCLESSR3    ,                                                 
+           TCLFCMOTCLESSR4    ,                                                 
+           TCLFDMOTCLESSR4    ,                                                 
+           TCLFCMOTCLESSR5    ,                                                 
+           TCLFDMOTCLESSR5    ,                                                 
+           TCLFCMOTCLESSR6    ,                                                 
+           TCLFDMOTCLESSR6    ,                                                 
+           TCLFCMOTCLESSR7    ,                                                 
+           TCLFDMOTCLESSR7    ,                                                 
+           TCLFCMOTCLESSR8    ,                                                 
+           TCLFDMOTCLESSR8    ,                                                 
+           TCLFCNIVPSA        ,                                                 
+           TCLFCCOLLECTI      ,                                                 
+           TCLFCMARQUEUR      ,                                                 
+           TCLFCSEPARATION                                                      
+            ,TDPRNSOC,TDPRNOPERFIDEL,TDPRCPRODCOM                               
+            ,TDPRNCONT,TDPRNCARTE,TDPRNDT                                       
+       FROM PFRA.TBCLFOY, PFRA.TBDOPRN                                          
+       WHERE                                                                    
+         TDPRCPOSA IN ('RET','ASM','ENC')                  AND                  
+         TCLFNFOY    =  TDPRNFOY                           AND                  
+        (TDPRNFOY       BETWEEN 4302812420 AND 4337169999) AND                  
+         TDPRCPOSA IN ('RET','ASM','ENC')                  AND                  
+         TDPRNOPERFIDEL = 14                               AND                  
+         TDPRNSOC     IN (100 , 114, 700, 714, 192)        AND                  
+         ( (     CURRENT TIME >= '20.00.00'                                     
+             AND CURRENT TIME <= '23.59.59'                                     
+             AND TCLFDPSAD     = CURRENT DATE                                   
+           )                                                                    
+           OR                                                                   
+           (     CURRENT TIME >= '00.00.00'                                     
+             AND CURRENT TIME <= '19.59.59'                                     
+             AND TCLFDPSAD     = (CURRENT DATE - 1 DAYS)                        
+         ) )                                                                    
+         ORDER BY TCLFNFOY   ASC                                                
+         WITH UR;                                                               
+

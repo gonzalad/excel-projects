@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'TPRGPPL.SIMON32.IN738955.FACTURE.PRIMEX' +                                 
+      JOURA.PRIME.IMPRESS.DU0711                                                
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.PRIME.IMPRESS.DU0711_INF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.PRIME.IMPRESS.DU0711_EOF                                            
+CLOSE                                                                           
+QUIT                                                                            

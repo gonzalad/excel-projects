@@ -1,0 +1,6 @@
+PFRXNT01 (EXIT=16                                                               
+ASCII                                                                           
+cd transfert/ibm/partecis                                                       
+PUT 'PFRAFTE.NFCF0015.BM015200.FCC00000' litiges_CTLM.CSV                       
+CLOSE                                                                           
+QUIT                                                                            

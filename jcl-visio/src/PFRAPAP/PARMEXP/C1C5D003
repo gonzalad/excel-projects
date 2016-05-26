@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGO00084.NERFIMP0.IMPREMRC' +                                      
+      JOURA.FRFIMP.IMPRESS.MDT1.DU0828                                          
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FRFIMP.IMPRESS.MDT1.DU0828_INF                                      
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FRFIMP.IMPRESS.MDT1.DU0828_EOF                                      
+CLOSE                                                                           
+QUIT                                                                            

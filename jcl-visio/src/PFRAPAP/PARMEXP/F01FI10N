@@ -1,0 +1,35 @@
+    DELETE FROM PFRA.TBPRAQP                                                    
+    WHERE TBPRASEQUENCE = 'Q';                                                  
+    INSERT  INTO PFRA.TBPRAQP                                                   
+      SELECT                                                                    
+          'Q',                                                                  
+          TIMESTAMP,                                                            
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0,                                                                   
+           0                                                                    
+    FROM SYSIBM.SYSCOPY ,                                                       
+               ( SELECT MAX(START_RBA) AS MAXRBA                                
+                 FROM SYSIBM.SYSCOPY WHERE ICTYPE ='Q'                          
+                 AND DBNAME = 'PDOSSIFR'                                        
+                 AND TSNAME = 'SDOPRNFR'                                        
+                 AND DSNUM = 0                                                  
+               ) AS MATAB                                                       
+    WHERE START_RBA = MAXRBA                                                    
+      AND DBNAME = 'PDOSSIFR'                                                   
+      AND TSNAME = 'SDOPRNFR'                                                   
+      AND DSNUM = 0;                                                            
+/*                                                                              

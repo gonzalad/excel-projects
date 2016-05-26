@@ -1,0 +1,102 @@
+   LOAD DATA  INDDN TBALPHC  REPLACE   MAPDDN SYSMAP DISCARDS 1                 
+   INTO TABLE RFRA.TBALPHC                                                      
+   (TALCCPHONO          POSITION(1:10)       CHAR(10),                          
+   TALCDNAIS           POSITION(11:20)      DATE EXTERNAL,                      
+   TALCNSOC            POSITION(21:22)      DECIMAL,                            
+   TALCCSECRBAN        POSITION(23:23)      CHAR(01),                           
+   TALCDCREAT          POSITION(24:33)      DATE EXTERNAL,                      
+   TALCDMOD            POSITION(34:43)      DATE EXTERNAL,                      
+   TALCCMONOSOC        POSITION(44:44)      DECIMAL,                            
+   TALCCPMFICHEXT      POSITION(45:47)      CHAR(3),                            
+   TALCCPMCPOSCLIA     POSITION(48:50)      CHAR(3),                            
+   TALCCPMCPOSDOSA     POSITION(51:53)      CHAR(3),                            
+   TALCCPMCINCIDPAI    POSITION(54:54)      CHAR(1),                            
+   TALCCPMNOTQUAENC    POSITION(55:55)      CHAR(1),                            
+   TALCCPMSCNEIERTZ    POSITION(56:58)      DECIMAL,                            
+   TALCCPMSCCLOCTROI   POSITION(59:61)      DECIMAL,                            
+   TALCCPMSCASSMAL     POSITION(62:62)      CHAR(1),                            
+   TALCCPMSCASSCHO     POSITION(63:63)      CHAR(1),                            
+   TALCCPMFIASSMAL     POSITION(64:64)      CHAR(1),                            
+   TALCCPMFIASSCHO     POSITION(65:65)      CHAR(1),                            
+   TALCCREACTDON       POSITION(66:66)      CHAR(1),                            
+   TALCMMENSPOTPD      POSITION(67:69)      DECIMAL,                            
+   TALCMMENSPOTD       POSITION(70:72)      DECIMAL,                            
+   TALCMENCPOTPD       POSITION(73:75)      DECIMAL,                            
+   TALCMENCPOTD        POSITION(76:78)      DECIMAL,                            
+   TALCMENCAUTPD       POSITION(79:81)      DECIMAL,                            
+   TALCMENCAUTD        POSITION(82:84)      DECIMAL,                            
+   TALCMENCREEL        POSITION(85:87)      DECIMAL,                            
+   TALCMENCREELMLT     POSITION(88:90)      DECIMAL,                            
+   TALCMMENSMINI       POSITION(91:93)      DECIMAL,                            
+   TALCMMENSACTU       POSITION(94:96)      DECIMAL,                            
+   TALCMMENSACTUMLT    POSITION(97:99)      DECIMAL,                            
+   TALCBDPREACCEPT     POSITION(100:101)    DECIMAL,                            
+   TALCMDPREACCEPT     POSITION(102:104)    DECIMAL,                            
+   TALCBDETUDSIMPLI    POSITION(105:106)    DECIMAL,                            
+   TALCMDETUDSIMPLI    POSITION(107:109)    DECIMAL,                            
+   TALCBDETUDCOMPL     POSITION(110:111)    DECIMAL,                            
+   TALCMDETUDCOMPL     POSITION(112:114)    DECIMAL,                            
+   TALCBCTLMDISTRIB    POSITION(115:115)    DECIMAL,                            
+   TALCBCTLMPART       POSITION(116:116)    DECIMAL,                            
+   TALCBCOFICA         POSITION(117:117)    DECIMAL,                            
+   TALCBDOSCLCCF7      POSITION(118:119)    DECIMAL,                            
+   TALCBDOSCLCAUT      POSITION(120:121)    DECIMAL,                            
+   TALCBDOSCLKCF7      POSITION(122:123)    DECIMAL,                            
+   TALCBDOSCLKAUT      POSITION(124:125)    DECIMAL,                            
+   TALCBDOSCACF7       POSITION(126:127)    DECIMAL,                            
+   TALCBDOSCAAUT       POSITION(128:129)    DECIMAL,                            
+   TALCBDOSCPCF7       POSITION(130:131)    DECIMAL,                            
+   TALCBDOSCPAUT       POSITION(132:133)    DECIMAL,                            
+   TALCBCONTCF7        POSITION(134:135)    DECIMAL,                            
+   TALCBDOSBAIL        POSITION(136:137)    DECIMAL,                            
+   TALCBCA             POSITION(138:139)    DECIMAL,                            
+   TALCBCB             POSITION(140:141)    DECIMAL,                            
+   TALCBDOSREF3        POSITION(142:142)    DECIMAL,                            
+   TALCBDTS            POSITION(143:143)    DECIMAL,                            
+   TALCMDTS            POSITION(144:146)    DECIMAL,                            
+   TALCDVALQUAENC      POSITION(147:156)    DATE EXTERNAL,                      
+   TALCMMENSDTSACTF7   POSITION(157:159)    DECIMAL,                            
+   TALCMMENSDTSAMLTF7  POSITION(160:162)    DECIMAL,                            
+   TALCMENCVAT         POSITION(168:170)    DECIMAL,                            
+   TALCMENCREV         POSITION(174:176)    DECIMAL,                            
+   TALCMENCR3          POSITION(171:173)    DECIMAL,                            
+   TALCNNBRVAT         POSITION(177:178)    DECIMAL,                            
+   TALCBSCOCLIINC      POSITION(179:179)    DECIMAL,                            
+   TALCBVALCLIACQ      POSITION(180:182)    DECIMAL,                            
+   TALCBVALCLIPOTACQ   POSITION(183:185)    DECIMAL,                            
+   TALCBVALCLIPOT      POSITION(186:188)    DECIMAL                             
+ , TALCNUTILCLI        POSITION(00189:00194) DECIMAL                            
+ , TALCNAUTCLI         POSITION(00195:00200) DECIMAL                            
+ , TALCNEXPLOS         POSITION(00201:00206) DECIMAL                            
+ , TALCNVAR            POSITION(00207:00212) DECIMAL                            
+ , TALCNUNLOS          POSITION(00213:00218) DECIMAL                            
+ , TALCMDMACP          POSITION(00219:00221) DECIMAL                            
+ , TALCMDMACPACTIF     POSITION(00222:00224) DECIMAL                            
+ , TALCMDMACPEXACTIF   POSITION(00225:00227) DECIMAL                            
+ , TALCMDMACPEXACT18M  POSITION(00228:00230) DECIMAL                            
+ , TALCBCP             POSITION(00231:00232) DECIMAL                            
+ , TALCBCPDISTRIB      POSITION(00233:00234) DECIMAL                            
+ , TALCBCPDIRECT       POSITION(00235:00236) DECIMAL                            
+ , TALCBCPAUTO         POSITION(00237:00238) DECIMAL                            
+ , TALCBCPACTIFDISTR   POSITION(00239:00240) DECIMAL                            
+ , TALCBCPACTIFDIRECT  POSITION(00241:00242) DECIMAL                            
+ , TALCBCPACTIFAUTO    POSITION(00243:00244) DECIMAL                            
+ , TALCBCPEXACTIF      POSITION(00245:00246) DECIMAL                            
+ , TALCBCPEXACTIFDIST  POSITION(00247:00248) DECIMAL                            
+ , TALCBCPEXACTIFDIRC  POSITION(00249:00250) DECIMAL                            
+ , TALCBCPEXACTIFAUTO  POSITION(00251:00252) DECIMAL                            
+ , TALCBCPEXACTIF18M   POSITION(00253:00254) DECIMAL                            
+ , TALCBCPEXACDIST18M  POSITION(00255:00256) DECIMAL                            
+ , TALCBCPEXACDIRC18M  POSITION(00257:00258) DECIMAL                            
+ , TALCBCPEXACAUTO18M  POSITION(00259:00260) DECIMAL                            
+ , TALCMTODUCPDISTRIB  POSITION(00261:00263) DECIMAL                            
+ , TALCMTODUCPDIRECT   POSITION(00264:00266) DECIMAL                            
+ , TALCMTODUCPAUTO     POSITION(00267:00269) DECIMAL                            
+ , TALCMMENSCPACTDIST  POSITION(00270:00272) DECIMAL                            
+ , TALCMMENSCPACTDIRC  POSITION(00273:00275) DECIMAL                            
+ , TALCMMENSCPACTAUTO  POSITION(00276:00278) DECIMAL                            
+ , TALCCPHASES         POSITION(00279:00290) CHAR(12)                           
+ , TALCTREPBDF         POSITION(00291:00316) TIMESTAMP EXTERNAL                 
+ , TALCNSOCORIGAPPEL   POSITION(00317:00318) DECIMAL                            
+ , TALCCUSURPIDEN      POSITION(00318:00319) CHAR(1))                           
+

@@ -1,0 +1,48 @@
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL)                                         
+       OUTDDN(TBCLFOY) MODE(AUTO)                                               
+    SELECT                                                                      
+           TCPFNFOY,                                                            
+           TCPFNSOC,                                                            
+           TCLFDCREAT,                                                          
+           TCLFDPCTX,                                                           
+           TCPFCPOSA,                                                           
+           TCPFDPOSA                                                            
+     FROM PFRA.TBCLFOY, PFRA.TBCLPRF,                                           
+          PFRA.INSTANCE A, PFRA.LOCALPARAMETERS B                               
+    WHERE                                                                       
+         TCPFNFOY = TCLFNFOY                                                    
+         AND                                                                    
+         B.INSTANCECD = A.INSTANCECD                                            
+         AND                                                                    
+           TCLFDCREAT <= (CURRENT DATE -                                        
+           B.PRODATAKEEPMONTHNB MONTH)                                          
+         AND                                                                    
+           TCPFDCREAT <= (CURRENT DATE -                                        
+           B.PRODATAKEEPMONTHNB MONTH)                                          
+    ORDER BY                                                                    
+         TCLFDCREAT DESC,                                                       
+         TCPFNFOY ASC,                                                          
+         TCPFNSOC ASC                                                           
+   WITH UR;                                                                     
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL)                                         
+       OUTDDN(TBCLFOY) MODE(AUTO)                                               
+    SELECT                                                                      
+           TCPFNFOY,                                                            
+           TCPFNSOC,                                                            
+           TCLFDCREAT,                                                          
+           TCLFDPCTX,                                                           
+           TCPFCPOSA,                                                           
+           TCPFDPOSA                                                            
+     FROM PFRA.TBCLFOY, PFRA.TBCLPRF,                                           
+          PFRA.INSTANCE A, PFRA.LOCALPARAMETERS B                               
+    WHERE                                                                       
+         TCPFNFOY = TCLFNFOY                                                    
+         AND                                                                    
+         B.INSTANCECD = A.INSTANCECD                                            
+         AND                                                                    
+           TCLFDCREAT <= (CURRENT DATE -                                        
+           B.PRODATAKEEPMONTHNB MONTH)                                          
+    ORDER BY                                                                    
+         TCPFNFOY ASC                                                           
+   WITH UR;                                                                     
+

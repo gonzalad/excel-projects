@@ -1,0 +1,5 @@
+     GENERATE MAXFLDS=3,                                                        
+              MAXLITS=10                                                        
+     RECORD FIELD=(10,12,,1),                                                   
+            FIELD=(1,292,,11),                                                  
+            FIELD=(4,293,,12)                                                   

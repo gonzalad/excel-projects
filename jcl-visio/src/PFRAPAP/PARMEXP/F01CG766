@@ -1,0 +1,35 @@
+  OUTREC FIELDS=(1,3,ZD,TO=PD,LENGTH=2, -                                       
+                 4,3,ZD,TO=PD,LENGTH=2, -                                       
+                 7,3,ZD,TO=PD,LENGTH=2, -                                       
+                 10,261, -                                                      
+                 271,13,SFF,TO=ZDC,LENGTH=13, -                                 
+                 284,670, -                                                     
+                 954,18,SFF,TO=ZDC,LENGTH=18, -                                 
+                 972,18,SFF,TO=ZDC,LENGTH=18, -                                 
+                 990,18,SFF,TO=ZDC,LENGTH=18, -                                 
+                 1008,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1026,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1044,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1062,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1080,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1098,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1116,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1134,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1152,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1170,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1188,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1206,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1224,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1242,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1260,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1278,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1296,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1314,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1368,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1386,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1404,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1422,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1440,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1458,18,SFF,TO=ZDC,LENGTH=18, -                                
+                 1476,18,SFF,TO=ZDC,LENGTH=18)                                  
+    OPTION COPY                                                                 

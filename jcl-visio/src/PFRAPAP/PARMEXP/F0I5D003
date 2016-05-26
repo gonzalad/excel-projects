@@ -1,0 +1,11 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SCG80005.EXISPOOL.DDN00100' +                                      
+      JOURA.COMPTA.BALANCE.B17.IMP2EX.DUMOJJ                                    
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.COMPTA.BALANCE.B17.IMP2EX.DUMOJJ_INF                                
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.COMPTA.BALANCE.B17.IMP2EX.DUMOJJ_EOF                                
+CLOSE                                                                           
+QUIT                                                                            

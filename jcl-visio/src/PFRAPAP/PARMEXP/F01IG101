@@ -1,0 +1,43 @@
+DELETE (COMMIT=10) FROM PFRA.TBSTAVA                                            
+  WHERE TAVABEVTMOIS = 0                                                        
+    AND TAVAMEVTMOIS = 0                                                        
+  ;                                                                             
+DELETE (COMMIT=10) FROM PFRA.TBSTAVU                                            
+  WHERE TAVUBEVTMOIS = 0                                                        
+    AND TAVUMEVTMOIS = 0                                                        
+  ;                                                                             
+DELETE (COMMIT=10) FROM PFRA.TBSTAVH                                            
+  WHERE TAVHBEVTMOIS = 0                                                        
+    AND TAVHMEVTMOIS = 0                                                        
+  ;                                                                             
+UPDATE (COMMIT=10) PFRA.TBSTAVA                                                 
+  SET TAVABEVTMOISPREC = TAVABEVTMOIS,                                          
+      TAVAMEVTMOISPREC = TAVAMEVTMOIS                                           
+  WHERE TAVANAGCE > 0                                                           
+  ;                                                                             
+UPDATE (COMMIT=10) PFRA.TBSTAVU                                                 
+  SET TAVUBEVTMOISPREC = TAVUBEVTMOIS,                                          
+      TAVUMEVTMOISPREC = TAVUMEVTMOIS                                           
+  WHERE TAVUNOID  > 0                                                           
+  ;                                                                             
+UPDATE (COMMIT=10) PFRA.TBSTAVH                                                 
+  SET TAVHBEVTMOISPREC = TAVHBEVTMOIS,                                          
+      TAVHMEVTMOISPREC = TAVHMEVTMOIS                                           
+  WHERE TAVHNAGCE > 0                                                           
+  ;                                                                             
+UPDATE (COMMIT=10) PFRA.TBSTAVA                                                 
+  SET TAVABEVTMOIS = 0,                                                         
+      TAVAMEVTMOIS = 0                                                          
+  WHERE TAVANAGCE > 0                                                           
+  ;                                                                             
+UPDATE (COMMIT=10) PFRA.TBSTAVU                                                 
+  SET TAVUBEVTMOIS = 0,                                                         
+      TAVUMEVTMOIS = 0                                                          
+  WHERE TAVUNOID  > 0                                                           
+  ;                                                                             
+UPDATE (COMMIT=10) PFRA.TBSTAVH                                                 
+  SET TAVHBEVTMOIS = 0,                                                         
+      TAVHMEVTMOIS = 0                                                          
+  WHERE TAVHNAGCE > 0                                                           
+  ;                                                                             
+

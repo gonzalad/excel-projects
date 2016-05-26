@@ -1,0 +1,36 @@
+*+* FMC2FM: Beginning of File Manager statement output *+*                      
+* RFRAPAP.PARMEXP(F02BP33E)                                                     
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 505 CORRESPONDANT AU FLUX 302 (EMISSION)            
+*                                 IDENTIFIANT    ECHSO001                       
+* CE FICHIER CONTIENT PLUSIEURS ENTETE ET FIN                                   
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* COPY D'UN SEUL ENREGISTREMENT EN-TETE                                         
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$FILEM DSC  INPUT=DD01,                                                        
+$$FILEM      OUTPUT=DD01O,                                                      
+$$FILEM      NLRECS=1                                                           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* CUMUL DES NOMBRES ET MONTANTS DES ENREGISTREMENTS EN-QUEUE                    
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$FILEM DSC  INPUT=DD02,                                                        
+$$FILEM      OUTPUT=DD02O,                                                      
+$$FILEM      PROC=*                                                             
+ TALLY(49,15,Z,'CUMUL MONT 505 ')                                               
+ TALLY(33,9,Z,'CUMUL NBRE 505 ')                                                
+/+                                                                              
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* COPY D'UN SEUL ENREGISTREMENT EN-QUEUE                                        
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$FILEM DSC  INPUT=DD03,                                                        
+$$FILEM      OUTPUT=DD03O,                                                      
+$$FILEM      NLRECS=1                                                           
+*                                                                               

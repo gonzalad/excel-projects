@@ -1,0 +1,24 @@
+UNLD FORMAT(DSNTIAUL) OUTDDN(SYSREC01)                                          
+FROM TABLE PFRA.TBCLIDE                                                         
+(TCLINFOY,                                                                      
+ TCLIDNAIS,                                                                     
+ TCLINRANG)                                                                     
+ WHERE TCLIDNAIS >= '01.M+0Y-75' AND TCLIDNAIS < '01.M+1Y-75'                   
+UNLD FORMAT(DSNTIAUL) OUTDDN(SYSREC02)                                          
+FROM TABLE PFRA.TBCLIDE                                                         
+(TCLINFOY,                                                                      
+ TCLIDNAIS,                                                                     
+ TCLINRANG)                                                                     
+ WHERE TCLIDNAIS >= '01.M+0Y-70' AND TCLIDNAIS < '01.M+1Y-70'                   
+UNLD FORMAT(DSNTIAUL) OUTDDN(SYSREC03)                                          
+FROM TABLE PFRA.TBCLIDE                                                         
+(TCLINFOY,                                                                      
+ TCLIDNAIS,                                                                     
+ TCLINRANG)                                                                     
+ WHERE TCLIDNAIS >= '01.01.A-65' AND TCLIDNAIS <= '31.12.A-65'                  
+UNLD FORMAT(DSNTIAUL) OUTDDN(SYSREC04)                                          
+FROM TABLE PFRA.TBCLIDE                                                         
+(TCLINFOY,                                                                      
+ TCLIDNAIS,                                                                     
+ TCLINRANG)                                                                     
+ WHERE TCLIDNAIS >= '01.M+0Y-60' AND TCLIDNAIS < '01.M+1Y-60'                   

@@ -1,0 +1,6 @@
+UNLD DATA FORMAT(DSNTIAUL) OUTDDN(TBTMRNC) MODE(AUTO)                           
+SELECT TTRNNFOY,TTRNNCONT,TTRNNCARTE,TTRNNDT,                                   
+    TTRNNSOC, TTRNDENVOILET, TTRNDBASCDOS, TTRNCPOSBASC                         
+FROM PFRA.TBTMRNC                                                               
+WHERE TTRNCPOSBASC <> 'B'                                                       
+WITH UR                                                                         

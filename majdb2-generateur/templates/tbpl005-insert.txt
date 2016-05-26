@@ -1,0 +1,34 @@
+*-- REQUETE ${_requestNumber++} DELETE TBPL005
+${TL05NSOCCOMU}-${TL05CCOMU} - Suppression de la lettre
+*-- SELECT --------------------------------------------------*                  
+SELECT TL05NSOCCOMU                                                             
+     , TL05CCOMU                                                                
+  FROM XXXX.TBPL004                                                             
+ WHERE TL05NSOCCOMU = '${TL05NSOCCOMU}'                                                     
+   AND TL05CCOMU = '${TL05CCOMU}'                                                      
+ORDER BY TL05NSOCCOMU                                                           
+       , TL05CCOMU                                                              
+ FOR FETCH ONLY                                                                 
+*-- DELETE ----- !!! NE PAS MODIFIER LA CLAUSE WHERE !!! ----*
+DELETE FROM XXXX.TBPL005
+ WHERE TL05NSOCCOMU = ?   <-- TL05NSOCCOMU
+   AND TL05CCOMU = ?       <-- TL05CCOMU
+*-- REQUETE ${_requestNumber++} INSERT TBPL005
+${TL05NSOCCOMU}-${TL05CCOMU} - Insertion de la lettre
+*-- PAS DE SELECT --------------------------------------------*
+*-- INSERT --------------------------------------------------*
+INSERT INTO XXXX.TBPL005
+VALUES (CURRENT DATE,
+        CURRENT TIMESTAMP,
+        'MAJDB2',
+        ' ',
+        ' ',
+        ' ',
+        ${TL05NSOCCOMU},
+        '${TL05CCOMU}',
+        '${TL05LCOMU}',
+        '${TL05CEDITION}',
+        '${TL05CP950DINDCTR}',
+        '${TL05CP950DINDBQE}',
+        '${TL05CP950DINDCAR}',
+        '${TL05CP950DINDVDR}')

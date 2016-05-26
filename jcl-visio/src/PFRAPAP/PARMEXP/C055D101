@@ -1,0 +1,3 @@
+UNLD DATA FORMAT(IBM) OUTDDN(TBDOHEX) FROM TABLE PFRA.TBV2015                   
+WHERE (THISTIMESTAMP >= '2015-07-01-00.00.00.000000'                            
+  AND THISTIMESTAMP < '2015-08-01-00.00.00.000000')                             

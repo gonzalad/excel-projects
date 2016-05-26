@@ -1,0 +1,5 @@
+SELECT CHAR(VALUE('$$DD01 UPDATE EDIT=(1,0,C''&PARTI'',C'''     ||              
+RTRIM(CHAR(PFRASFUN.FRDJFILST(DATE('&DATE')))) || ''')' ||                      
+          REPEAT(' ',36)                                                        
+          ,' ') )                                                               
+FROM SYSIBM.SYSDUMMY1 ;                                                         

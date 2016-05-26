@@ -1,0 +1,11 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SCG70076.NEEJPE00.BPRIME00' +                                      
+      JOURA.F@EJP.IMPDSK.DUMOJJ                                                 
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.F@EJP.IMPDSK.DUMOJJ_INF                                             
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.F@EJP.IMPDSK.DUMOJJ_EOF                                             
+CLOSE                                                                           
+QUIT                                                                            

@@ -1,0 +1,23 @@
+      WHERE                                                                     
+            (    (     (     CURRENT TIME >= '20.00.00'                         
+                         AND CURRENT TIME <= '23.59.59'                         
+                       )                                                        
+                   AND (     TDPRDPOSA = CURRENT DATE                           
+                          OR TDPRDMOD = CURRENT DATE                            
+                 )     )                                                        
+              OR                                                                
+                 (     (     CURRENT TIME >= '00.00.00'                         
+                         AND CURRENT TIME <= '19.59.59'                         
+                       )                                                        
+                   AND (     TDPRDPOSA = (CURRENT DATE - 1 DAYS)                
+                          OR TDPRDMOD  = (CURRENT DATE - 1 DAYS)                
+            )    )     )                                                        
+        AND TDPRCPOSA IN ('RET','ASM','ENC')                                    
+        AND TDPRNSOC IN (175,176,177,178,182)                                   
+        AND (TDPRNFOY BETWEEN 4262989448 AND 4302812419)                        
+      ORDER BY TDPRNFOY   ASC,                                                  
+               TDPRNCONT  ASC,                                                  
+               TDPRNCARTE ASC,                                                  
+               TDPRNDT    DESC,                                                 
+               TDPRNSOC   ASC                                                   
+    WITH UR;                                                                    

@@ -1,0 +1,8 @@
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -                 
+* On ne conserve que les lignes ayant les chaines de caracteres                 
+* DPROC, PUT ou GET                                                             
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -                 
+$$DD01 USER IF=(1,0,C'DPROC'),                                                  
+            WRITE=DD01O,RN,                                                     
+            IF=(1,EQ,C'PUT,GET'),                                               
+            WRITE=DD01O                                                         

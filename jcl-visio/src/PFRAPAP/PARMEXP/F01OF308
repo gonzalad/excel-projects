@@ -1,0 +1,12 @@
+    SELECT TDRPNFOYOLD        ,                                                 
+           TDRPNCONTOLD       ,                                                 
+           TDRPNCARTEOLD      ,                                                 
+           TDRPNDTOLD         ,                                                 
+           TDRPDCREAT         ,                                                 
+           TDRPDMOD           ,                                                 
+           TDRPNFOYNEW        ,                                                 
+           TDRPNCONTNEW       ,                                                 
+           TDRPNCARTENEW      ,                                                 
+           TDRPNDTNEW         ,                                                 
+           TDRPCTRAIT         ,                                                 
+           TDRPTIMESTAMP                                                        

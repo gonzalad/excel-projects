@@ -1,0 +1,77 @@
+.CONTROL +                                                                      
+ LOGID(DBP1) UNIT(SYSDA)                                                        
+.LIST SYSOUT(*)                                                                 
+.OPTION NOERRORS                                                                
+.CONNECT DBP1                                                                   
+                                                                                
+                                                                                
+.ALLOC FI(LADXTRCT)                                                    +        
+ DATASET('PFRAQSM.PFRISB01.EXTRACT')                                   +        
+ CYL SPACE(2000,80) BLKSIZE(23200) LRECL(23200) RECFM(F,S)             +        
+ NEW REPLACE CATALOG UNIT(SYSDA)                                                
+                                                                                
+.ALLOC FI(LADXCNTL)                                                    +        
+ DATASET('PFRAQSM.PFRISB01.CONTROL')                                   +        
+ TRACKS SPACE(50,50) BLKSIZE(7400) LRECL(7400) RECFM(F,S)              +        
+ NEW REPLACE CATALOG UNIT(SYSDA)                                                
+                                                                                
+.ALLOC FI(LADLOAD)                                                     +        
+ DATASET('PFRAQSM.PFRISB01.CNTL')                                      +        
+ TRACKS SPACE(50,50) BLKSIZE(3120) LRECL(80) RECFM(F,B)                +        
+ NEW REPLACE CATALOG UNIT(SYSDA)                                                
+                                                                                
+.CALL LOG                                                                       
+.DATA                                                                           
+ SSID     = (DBP1)                                                              
+ STRATEGY = (DBP1,DB2ADM2,BCCFACET,SAVE)                                        
+ RESUME   = (48)                                                                
+ START    = (DATE(2005-03-28),TIME(19:00:00.00))                                
+ END      = (DATE(2005-03-29),TIME(06:00:00.00))                                
+ LOGSRC   = (BSDS)                                                              
+ OBJSRC   = (CATALOG)                                                           
+ COPYSRC  = (BOTH)                                                              
+ ICGROUP  = (DUMMY,DUMMY)                                                       
+ DYNSORT  = (DSNUM(500),SPACE(6000,6000),MAINSIZE(1000),MSG(N))                 
+ GENUNIT  = (SYSDA)                                                             
+ RPTLINES = (60)                                                                
+ S99WAIT  = (YES)                                                               
+ RESOLVUR = (YES)                                                               
+ WORKLOAD = (SMALL)                                                             
+ DMLREPT  = (LEVEL    (DETAIL)                                                  
+            ,ROLLBACK (INCLUDE)                                                 
+            ,CATALOG  (EXCLUDE)                                                 
+            ,ORDERBY  (URID)                                                    
+            ,INCLUDE  (AND                                                      
+                      ,TABLE (PFRA.TBADRES,                                     
+                              PFRA.TBCLFOY,                                     
+                              PFRA.TBCLPRF,                                     
+                              PFRA.TBCLIDE,                                     
+                              PFRA.TBTETEL,                                     
+                              PFRA.TBTEWEB)                                     
+                      )                                                         
+            ,EXCLUDE  (AND                                                      
+                      ,PLAN  (PFRATP  )                                         
+                      )                                                         
+            ,DISCARDS (0)                                                       
+            ,GENFILE  (FIXED                                                    
+                      ,UTILITY (APPLY)                                          
+                      ,TBFILES (NO) ,EMPTY (NO)                                 
+                      ,INCLUDE (REDO    , UNDO    )                             
+                      ,LADFILE (                                                
+                       'PFRAQSM.SORE0001.TRIFICH0.SORTOUT0(+1)'                 
+                               ,SPACE(1000,500)                                 
+                               ,UNIT(SYSDA)                                     
+                               )                                                
+                      ,COLPRFX (PLA_)                                           
+                      ,TARGSSID (DBP1)                                          
+                      ,DISCARDS (0)                                             
+                      ,LOG     (YES)                                            
+                      )                                                         
+            )                                                                   
+ EXTRACT  = (FILTER)                                                            
+.ENDDATA                                                                        
+                                                                                
+.FREE  FI(LADXTRCT)                                                             
+.FREE  FI(LADXCNTL)                                                             
+.FREE  FI(LADLOAD)                                                              
+

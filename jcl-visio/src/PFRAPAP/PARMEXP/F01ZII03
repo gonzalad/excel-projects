@@ -1,0 +1,13 @@
+SELECT TKCCCREADT                                                               
+ ,TKCCUPDTTS                                                                    
+ ,TKCCPGMID                                                                     
+ ,TKCCTECHID                                                                    
+ ,TKCCNIDCONTRAT                                                                
+ , DECIMAL(0,3) AS TKCCNSOCAGRO                                                 
+ , DECIMAL(0,7) AS TKCCNAGRO                                                    
+ , TKCCCMAT                                                                     
+ , TKCCDOUVERTURE                                                               
+ , TKCCCTYPEPROD                                                                
+ , TKCCCPRODBASE                                                                
+ , TKCCCREFLEX                                                                  
+FROM PFRA.TBKCCCO;                                                              

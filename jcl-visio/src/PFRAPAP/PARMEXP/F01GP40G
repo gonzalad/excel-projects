@@ -1,0 +1,2 @@
+    DELETE (COMMIT=10) FROM  PFRA.TBEXDOS                                       
+     WHERE TEXDCTRAIT IN ('C','D','PSEUDO');                                    

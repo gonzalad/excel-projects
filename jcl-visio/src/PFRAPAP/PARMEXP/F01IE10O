@@ -1,0 +1,17 @@
+  /* KSDS VSAM - LETTRES VARIABLE */                                            
+  DELETE-                                                                       
+  (PFRAVSM.LETVAR)-                                                             
+  PURGE                                                                         
+       IF LASTCC = 0 -                                                          
+       THEN -                                                                   
+  DEFINE CLUSTER(NAME(PFRAVSM.LETVAR))-                                         
+  DATA(NAME(PFRAVSM.LETVAR.DATA)-                                               
+  VOL(EDUC02) SHR(2 3)-                                                         
+  CYL(80 5)-                                                                    
+  RECSZ(175,175) FSPC(10 10)-                                                   
+  CISZ(4096)-                                                                   
+  RECOVERY-                                                                     
+  KEYS(11,0))-                                                                  
+  INDEX(NAME(PFRAVSM.LETVAR.INDEX)-                                             
+  VOL(EDUC02) SHR(2 3)-                                                         
+  CISZ(4096))                                                                   

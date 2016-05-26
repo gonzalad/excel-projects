@@ -1,0 +1,5 @@
+  DSN SYSTEM(DBP1)                                                              
+   RUN PROG (CTTBNP) -                                                          
+   PARMS ('NOARC                          ') -                                  
+   PLAN (PFRABA)                                                                
+  END                                                                           

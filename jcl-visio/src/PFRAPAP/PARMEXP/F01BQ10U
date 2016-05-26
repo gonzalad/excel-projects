@@ -1,0 +1,31 @@
+  ( TCHVNSOCGEST     DECIMAL ZONED,                                             
+    TCHVNCHQ         ,                                                          
+    TCHVNCPTE        ,                                                          
+    TCHVCOPER        DECIMAL ZONED,                                             
+    TCHVTIMESTAMP    ,                                                          
+    TCHVCDEST        ,                                                          
+    TCHVCREGLERDJ    ,                                                          
+    TCHVNCRE         ,                                                          
+    TCHVCDEVISE      ,                                                          
+    TCHVDOPER        ,                                                          
+    TCHVDTRAIT       ,                                                          
+    TCHVDVAL         ,                                                          
+    TCHVMCHQ         DECIMAL ZONED (15)   ,                                     
+    TCHVCMODREGL     ,                                                          
+    TCHVNDOSS        DECIMAL ZONED,                                             
+    TCHVNVDR         DECIMAL ZONED   ,                                          
+    TCHVCANNUL       ,                                                          
+    TCHVCAGENC       DECIMAL ZONED   ,                                          
+    TCHVDRECEPDBL    ,                                                          
+    TCHVCRECEPDBL    ,                                                          
+    TCHVCEMARG       ,                                                          
+    TCHVDEMARG       ,                                                          
+    TCHVCMAJ         ,                                                          
+    TCHVDMAJ         ,                                                          
+    TCHVCANO         ,                                                          
+    TCHVCOPPOSIT )                                                              
+      WHEN ( ( TCHVCEMARG = '00'                                                
+      AND  TCHVDEMARG < CURRENT_DATE - 30 DAY )                                 
+      OR  TCHVCEMARG > '01')                                                    
+      UNLDDN SYSREC00                                                           
+      SHRLEVEL CHANGE ISOLATION UR                                              

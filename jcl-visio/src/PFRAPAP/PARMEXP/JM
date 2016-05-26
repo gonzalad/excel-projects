@@ -1,0 +1,4 @@
+  C  I=DDIN,O=DDOUT                                                             
+     S M=((CATLG,,R))                                                           
+     S M=((CATLGDG,,R))                                                         
+     S M=((CATLG1,,R))                                                          

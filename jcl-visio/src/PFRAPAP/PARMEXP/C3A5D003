@@ -1,0 +1,6 @@
+PFRXNT01 (EXIT=16                                                               
+ASCII                                                                           
+cd COORLOGI/OBERTHUR                                                            
+PUT 'PFRATMP.SOA40071.TRICOMP0.FILE2000' FCO_DU0209.TXT                         
+CLOSE                                                                           
+QUIT                                                                            

@@ -1,0 +1,23 @@
+    SELECT                                                                      
+    TDFNCREADT,                                                                 
+    TDFNUPDTTS,                                                                 
+    TDFNPGMID,                                                                  
+    TDFNTECHID,                                                                 
+    CAST(DIGITS(TDFNNFOY) AS CHAR(11)),                                         
+    CAST(DIGITS(TDFNNCONT) AS CHAR(1)),                                         
+    CAST(DIGITS(TDFNNCARTE) AS CHAR(1)),                                        
+    CAST(DIGITS(TDFNNDT) AS CHAR(3)),                                           
+    TDFNDFINAN,                                                                 
+    CAST(DIGITS(TDFNMFINANINI) AS CHAR(13)),                                    
+    CAST(DIGITS(TDFNMFINANRES) AS CHAR(13)),                                    
+    CAST(DIGITS(TDFNMTODUINI) AS CHAR(13))                                      
+    FROM PFRA.TBDOFIN                                                           
+    WHERE NOT EXISTS ( SELECT 1 FROM PFRA.TBDOREV                               
+                        WHERE TDFNNFOY = TDRVNFOY                               
+                          AND TDFNNCONT = TDRVNCONT                             
+                          AND TDFNNCARTE = TDRVNCARTE                           
+                          AND TDFNNDT = TDRVNDT                                 
+                          AND TDFNDFINAN = TDRVDT0)                             
+      AND TDFNDFINAN = '28.08.2015'                                             
+      AND TDFNMFINANRES > 0                                                     
+      WITH UR;                                                                  

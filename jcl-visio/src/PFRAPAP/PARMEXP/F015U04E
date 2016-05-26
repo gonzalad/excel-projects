@@ -1,0 +1,11 @@
+SET CURRENT DEGREE = 'ANY';                                                     
+INSERT INTO PFRA.TBJEST1                                                        
+    SELECT 28,04307331036,04311893004,                                          
+           TDPRNSOC,TDPRCPRODCOM,TDCPCSOUSGEST,COUNT(*),0                       
+FROM PFRA.TBDOPRN,PFRA.TBDOCPL                                                  
+    WHERE TDPRNFOY   = TDCPNFOY                                                 
+      AND TDPRNCONT  = TDCPNCONT                                                
+      AND TDPRNCARTE = TDCPNCARTE                                               
+      AND TDPRNDT    = TDCPNDT                                                  
+      AND TDPRNFOY BETWEEN 04307331036 AND 04311893004                          
+    GROUP BY TDPRNSOC,TDPRCPRODCOM,TDCPCSOUSGEST;                               

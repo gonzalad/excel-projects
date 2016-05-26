@@ -1,0 +1,24 @@
+SELECT                                                                          
+                    SOCIETE          AS VUE1,                                   
+                    BENEF            AS VUE2,                                   
+                    MONTANT          AS VUE3,                                   
+                    SOMME            AS VUE4                                    
+  FROM                                                                          
+     (SELECT       A.TCCONSOC        AS SOCIETE,                                
+                   A.TCCONBEN        AS BENEF,                                  
+                   A.TCCOMVC       AS MONTANT,                                  
+  SUM(DECIMAL(SUBSTR(HEX(SUBSTR(TCHCLMSG,1,6)),1,11),11,0))/100                 
+                                     AS SOMME                                   
+      FROM PFRA.TBCOCOM A, PFRA.TBCOHIS B                                       
+        WHERE A.TCCONSOC  = B.TCHCNSOC                                          
+        AND   A.TCCONBEN  = B.TCHCNBEN                                          
+        AND   B.TCHCTIMESTAMP > '2014-01-01-00.00.00.000000'                    
+        AND   B.TCHCLIDENT = 'FCOM'                                             
+        AND   B.TCHCNNAT   = 650                                                
+        AND   A.TCCOMVC > 0                                                     
+                AND   A.TCCOMVC > 0                                             
+                AND   A.TCCOMVC > 0                                             
+                AND   A.TCCONSOC  = 240                                         
+                  GROUP BY A.TCCONSOC, A.TCCONBEN, A.TCCOMVC) AS TABLE          
+            WHERE SOMME <> TABLE.MONTANT                                        
+         WITH UR;                                                               

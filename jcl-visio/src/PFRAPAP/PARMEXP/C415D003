@@ -1,0 +1,13 @@
+SELECT SUBSTR (DIGITS(TBLONFOY),2,10),                                          
+       TBLOTIMESTAMP,                                                           
+       TADRDMOD           ,                                                     
+       TADRLADRE          ,                                                     
+       TADRCPTT           ,                                                     
+       TADRLVILL                                                                
+ FROM  PFRA.TBBLOCN X, PFRA.TBADRES Y                                           
+ WHERE X.TBLOTIMESTAMP > TIMESTAMP('28.07.2015','00.00.00')+ 1 DAY              
+   AND X.TBLONNAT     =  62172                                                  
+   AND X.TBLONFOY       =   Y.TADRNFOY                                          
+   AND Y.TADRDMOD  >'28.07.2015'                                                
+ WITH UR                                                                        
+;                                                                               

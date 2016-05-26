@@ -1,0 +1,53 @@
+         DSD OUTPUT=(SEQOUT1),INPUT=(SEQIN)                                     
+         FD NAME=FIELD1,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                  
+         CREATE INPUT=SEQIN,NAME=(FIELD1)                                       
+         END                                                                    
+         DSD OUTPUT=(SEQOUT2),INPUT=(SEQIN)                                     
+         FD NAME=FIELD2,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                  
+         CREATE INPUT=SEQIN,NAME=(FIELD2)                                       
+         END                                                                    
+         DSD OUTPUT=(SEQOUT3),INPUT=(SEQIN)                                     
+         FD NAME=FIELD3,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                  
+         CREATE INPUT=SEQIN,NAME=(FIELD3)                                       
+         END                                                                    
+         DSD OUTPUT=(SEQOUT4),INPUT=(SEQIN)                                     
+         FD NAME=FIELD4,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                  
+         CREATE INPUT=SEQIN,NAME=(FIELD4)                                       
+         END                                                                    
+         DSD OUTPUT=(SEQOUT5),INPUT=(SEQIN)                                     
+         FD NAME=FIELD5,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                  
+         CREATE INPUT=SEQIN,NAME=(FIELD5)                                       
+         END                                                                    
+         DSD OUTPUT=(SEQOUT6),INPUT=(SEQIN)                                     
+         FD NAME=FIELD6,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                  
+         CREATE INPUT=SEQIN,NAME=(FIELD6)                                       
+         END                                                                    
+         DSD OUTPUT=(SEQOUT7),INPUT=(SEQIN)                                     
+         FD NAME=FIELD7,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                  
+         CREATE INPUT=SEQIN,NAME=(FIELD7)                                       
+         END                                                                    
+         DSD OUTPUT=(SEQOUT8),INPUT=(SEQIN)                                     
+         FD NAME=FIELD8,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                  
+         CREATE INPUT=SEQIN,NAME=(FIELD8)                                       
+         END                                                                    
+         DSD OUTPUT=(SEQOUT9),INPUT=(SEQIN)                                     
+         FD NAME=FIELD9,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                  
+         CREATE INPUT=SEQIN,NAME=(FIELD9)                                       
+         END                                                                    
+         DSD OUTPUT=(SEQOUT10),INPUT=(SEQIN)                                    
+         FD NAME=FIELD10,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                 
+         CREATE INPUT=SEQIN,NAME=(FIELD10)                                      
+         END                                                                    
+         DSD OUTPUT=(SEQOUT11),INPUT=(SEQIN)                                    
+         FD NAME=FIELD11,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                 
+         CREATE INPUT=SEQIN,NAME=(FIELD11)                                      
+         END                                                                    
+         DSD OUTPUT=(SEQOUT12),INPUT=(SEQIN)                                    
+         FD NAME=FIELD12,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                 
+         CREATE INPUT=SEQIN,NAME=(FIELD12)                                      
+         END                                                                    
+         DSD OUTPUT=(SEQOUT13),INPUT=(SEQIN)                                    
+         FD NAME=FIELD13,LENGTH=10,STARTLOC=1,FORMAT=ZD,INDEX=1                 
+         CREATE INPUT=SEQIN,NAME=(FIELD13)                                      
+         END                                                                    
+

@@ -1,0 +1,73 @@
+  SET CURRENT DEGREE = 'ANY';                                           00024204
+                                                                        00024304
+    DELETE FROM PFRA.TBPRAQP ;                                          00024404
+                                                                        00024504
+    INSERT  INTO PFRA.TBPRAQP                                           00024604
+      SELECT                                                            00024704
+          'D',                                                          00024804
+           CURRENT TIMESTAMP,                                           00024904
+           TDPRNSOC,                                                    00025004
+           TDPRNCC,                                                     00025104
+           COUNT(*),                                                    00025204
+           SUM(TDPRMCRD),                                               00025304
+           SUM(TDPRMSREC),                                              00025404
+           SUM(TDPRMFORIG),                                             00025504
+           SUM(TDPRMAGAC),                                              00025604
+           SUM(TDPRMASSREG),                                            00025704
+           SUM(TDPRMPCREGLE),                                           00025804
+           SUM(TDPRMFREPORT),                                           00025904
+           SUM(TDPRMIR),                                                00026004
+           SUM(TDPRMFRCHQUANT),                                         00026104
+           SUM(TDPRMCDVERSE),                                           00026204
+           SUM(TDPRMIANTI),                                             00026304
+           SUM(TDPRMPP),                                                00026404
+           SUM(TDPRMFRDIVERS),                                          00026504
+           SUM(TDPRMREGORIG)                                            00026604
+    FROM PFRA.TBDOPRN                                                   00026704
+    GROUP BY  TDPRNSOC, TDPRNCC                                         00026804
+    ;                                                                   00026904
+                                                                        00027004
+    INSERT                                                              00027104
+    INTO PFRA.TBPRAQP                                                   00027204
+    (TBPRASEQUENCE,                                                     00027304
+     TBPRAHFINSEL,                                                      00027404
+     TBPRANSOC,                                                         00027504
+     TBPRANCC,                                                          00027604
+     TBPRACOMPTEUR,                                                     00027704
+     TBPRAMCRD,                                                         00027804
+     TBPRASREC,                                                         00027904
+     TBPRAMFORIG,                                                       00028004
+     TBPRAMAGAC,                                                        00028104
+     TBPRAMASSREG,                                                      00028204
+     TBPRAMPCREGLE,                                                     00028304
+     TBPRAMFREPORT,                                                     00028404
+     TBPRAMIR,                                                          00028504
+     TBPRAFRCHQUANT,                                                    00028604
+     TBPRACDVERSE,                                                      00028704
+     TBPRAMIANTI,                                                       00028804
+     TBPRAMPP,                                                          00028904
+     TBPRAMFRDIVERS,                                                    00029004
+     TBPRAMREGORIG)                                                     00029104
+     VALUES                                                             00029204
+     ('F',                                                              00029304
+      CURRENT TIMESTAMP,                                                00029404
+      0,                                                                00029504
+      0,                                                                00029604
+      0,                                                                00029704
+      0,                                                                00029804
+      0,                                                                00029904
+      0,                                                                00030004
+      0,                                                                00030104
+      0,                                                                00030204
+      0,                                                                00030304
+      0,                                                                00030404
+      0,                                                                00030504
+      0,                                                                00030604
+      0,                                                                00030704
+      0,                                                                00030804
+      0,                                                                00030904
+      0,                                                                00031004
+      0)                                                                00031104
+    ;                                                                   00032000
+/*                                                                      00040000
+

@@ -1,0 +1,10 @@
+   SELECT                                                                       
+      TTCDNFOY ,                                                                
+      TTCDNCONT ,                                                               
+      TTCDNCARTE ,                                                              
+      TTCDNDT ,                                                                 
+      TTCDNCONTCACF ,                                                           
+      TTCDNPDEROGCACF,                                                          
+      TTCDCREADT                                                                
+    FROM PFRA.TBTMCCD                                                           
+    WITH UR;                                                                    

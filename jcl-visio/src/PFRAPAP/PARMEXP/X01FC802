@@ -1,0 +1,110 @@
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC01)                        
+  MODE(DB2SQL)                                                                  
+     SELECT                                                                     
+     TDCBNFOY,TDCBNCONT,TDCBNCARTE,TDCBNDT,TDCBNRANG,TDCBNBIN,                  
+     TDCBNCARTPHY,TDCBDCREAT,TDCBDMOD,TDCBCTIT,TDCBCEXPED,                      
+     TDCBDECH,TDCBBDURVAL,TDCBBRENOUVANN,TDCBDPERTE,                            
+     TDCBCLETPERTE,TDCBCMOTIFOPP,TDCBCCARTEREN,TDCBCPOSA,                       
+     TDCBDPOSA,TDCBCPOSP,TDCBDPOSP,TDCBCORIGNRE,TDCBCTYPCB,                     
+     TDCBDFAB,TDCBCDEMURG,TDCBCTARIF,TDCBCSAV,TDCBCSERV,                        
+     TDCBNOIDMAP,TDCBNAGCMEP, COALESCE(TSPCDCOTIDER,TDCBDCOTIS),                
+     COALESCE(TSPCMCOTIDER,TDCBMCOTIS),TDCBMPLAFCOM,TDCBBPERIODCOM,             
+     TDCBMPLAFRET,TDCBBPERIODRET,                                               
+     TDCBDDUTIL,TDCBCCONFID,TDCBBINCABUS,TDCBMINCABUS,                          
+     TDCBBRETRAITM,TDCBMRETRAITM,TDCBBACHATM,                                   
+     TDCBMACHATM,TDCBBINTERNM,TDCBMINTERNM,TDCBMCRIMP,                          
+     COALESCE(TSPCMCUCOTIORI,TDCBMCOTISORIG),                                   
+     TDCBMUTILORIG,TDCBMCRIMPORIG,TDCBDSIGNCTR,                                 
+     TDCBTHOPPO,TDCBCPANSEQNUM,TDCBBLIMBASFRA,TDCBBLIMHAUTFRA,                  
+     TDCBMCONSECFRA,TDCBBLIMBASINTER,TDCBBLIMHAUTINTER,                         
+     TDCBCDKI,TDCBCCLEPUBEMET,TDCBCLONGMAC,TDCBCHISTORIS,                       
+     TDCBCBLOMULTAPP,TDCBCTRANS,TDCBCAUC1,TDCBCAUC2,TDCBCDKI2,                  
+     TDCBCAIP,TDCBCAID1,TDCBCAID2,TDCBCPROFIL,TDCBBVERSPROFIL,                  
+     TDCBCFMP,TDCBCPLAFEMV,TDCBCBLOPUCE,TDCBCBLOAPPL                            
+     FROM (SELECT * FROM PFRA.TBDOCBL                                           
+           WHERE TDCBNCARTPHY BETWEEN 4976899999999999                          
+                              AND     4976910000000000                          
+           UNION ALL                                                            
+           SELECT * FROM PFRA.TBDOCBL                                           
+           WHERE TDCBNCARTPHY BETWEEN 4979189999999999                          
+                              AND     4979200000000000 ) A                      
+           LEFT  OUTER JOIN PFRA.TBSUPCO C                                      
+           ON  C.TSPCNFOY      = A.TDCBNFOY                                     
+           AND C.TSPCNCONT     = A.TDCBNCONT                                    
+           AND C.TSPCNCARTE    = A.TDCBNCARTE                                   
+           AND C.TSPCNDT       = A.TDCBNDT                                      
+           AND C.TSPCNRANG     = A.TDCBNRANG                                    
+           AND C.TSPCNRANG     = A.TDCBNRANG                                    
+           AND A.TDCBCTIT      = C.TSPCCTITCAR                                  
+           AND C.TSPCCTYPCA    LIKE 'CB%';                                      
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC02)                        
+  MODE(DB2SQL)                                                                  
+     SELECT                                                                     
+     TDCBNFOY,TDCBNCONT,TDCBNCARTE,TDCBNDT,TDCBNRANG,TDCBNBIN,                  
+     TDCBNCARTPHY,TDCBDCREAT,TDCBDMOD,TDCBCTIT,TDCBCEXPED,                      
+     TDCBDECH,TDCBBDURVAL,TDCBBRENOUVANN,TDCBDPERTE,                    00130000
+     TDCBCLETPERTE,TDCBCMOTIFOPP,TDCBCCARTEREN,TDCBCPOSA,                       
+     TDCBDPOSA,TDCBCPOSP,TDCBDPOSP,TDCBCORIGNRE,TDCBCTYPCB,                     
+     TDCBDFAB,TDCBCDEMURG,TDCBCTARIF,TDCBCSAV,TDCBCSERV,                        
+     TDCBNOIDMAP,TDCBNAGCMEP, COALESCE(TSPCDCOTIDER,TDCBDCOTIS),                
+     COALESCE(TSPCMCOTIDER,TDCBMCOTIS),TDCBMPLAFCOM,TDCBBPERIODCOM,             
+     TDCBMPLAFRET,TDCBBPERIODRET,                                               
+     TDCBDDUTIL,TDCBCCONFID,TDCBBINCABUS,TDCBMINCABUS,                          
+     TDCBBRETRAITM,TDCBMRETRAITM,TDCBBACHATM,                                   
+     TDCBMACHATM,TDCBBINTERNM,TDCBMINTERNM,TDCBMCRIMP,                          
+     COALESCE(TSPCMCUCOTIORI,TDCBMCOTISORIG),                                   
+     TDCBMUTILORIG,TDCBMCRIMPORIG,TDCBDSIGNCTR,                                 
+     TDCBTHOPPO,TDCBCPANSEQNUM,TDCBBLIMBASFRA,TDCBBLIMHAUTFRA,                  
+     TDCBMCONSECFRA,TDCBBLIMBASINTER,TDCBBLIMHAUTINTER,                         
+     TDCBCDKI,TDCBCCLEPUBEMET,TDCBCLONGMAC,TDCBCHISTORIS,                       
+     TDCBCBLOMULTAPP,TDCBCTRANS,TDCBCAUC1,TDCBCAUC2,TDCBCDKI2,                  
+     TDCBCAIP,TDCBCAID1,TDCBCAID2,TDCBCPROFIL,TDCBBVERSPROFIL,                  
+     TDCBCFMP,TDCBCPLAFEMV,TDCBCBLOPUCE,TDCBCBLOAPPL                            
+     FROM (SELECT * FROM PFRA.TBDOCBL A                                         
+           WHERE    TDCBNCARTPHY > 4976839999999999                             
+           AND      TDCBNCARTPHY < 4976850000000000 ) A                         
+           LEFT  OUTER JOIN PFRA.TBSUPCO C                                      
+           ON  C.TSPCNFOY      = A.TDCBNFOY                                     
+           AND C.TSPCNCONT     = A.TDCBNCONT                                    
+           AND C.TSPCNCARTE    = A.TDCBNCARTE                                   
+           AND C.TSPCNDT       = A.TDCBNDT                                      
+           AND C.TSPCNRANG     = A.TDCBNRANG                                    
+           AND C.TSPCNRANG     = A.TDCBNRANG                                    
+           AND A.TDCBCTIT      = C.TSPCCTITCAR                                  
+           AND C.TSPCCTYPCA    LIKE 'CB%';                                      
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC03)                        
+  MODE(DB2SQL)                                                                  
+     SELECT                                                                     
+     TDCBNFOY,TDCBNCONT,TDCBNCARTE,TDCBNDT,TDCBNRANG,TDCBNBIN,                  
+     TDCBNCARTPHY,TDCBDCREAT,TDCBDMOD,TDCBCTIT,TDCBCEXPED,                      
+     TDCBDECH,TDCBBDURVAL,TDCBBRENOUVANN,TDCBDPERTE,                            
+     TDCBCLETPERTE,TDCBCMOTIFOPP,TDCBCCARTEREN,TDCBCPOSA,                       
+     TDCBDPOSA,TDCBCPOSP,TDCBDPOSP,TDCBCORIGNRE,TDCBCTYPCB,                     
+     TDCBDFAB,TDCBCDEMURG,TDCBCTARIF,TDCBCSAV,TDCBCSERV,                00130000
+     TDCBNOIDMAP,TDCBNAGCMEP, COALESCE(TSPCDCOTIDER,TDCBDCOTIS),                
+     COALESCE(TSPCMCOTIDER,TDCBMCOTIS),TDCBMPLAFCOM,TDCBBPERIODCOM,             
+     TDCBMPLAFRET,TDCBBPERIODRET,                                               
+     TDCBDDUTIL,TDCBCCONFID,TDCBBINCABUS,TDCBMINCABUS,                          
+     TDCBBRETRAITM,TDCBMRETRAITM,TDCBBACHATM,                                   
+     TDCBMACHATM,TDCBBINTERNM,TDCBMINTERNM,TDCBMCRIMP,                          
+     COALESCE(TSPCMCUCOTIORI,TDCBMCOTISORIG),                                   
+     TDCBMUTILORIG,TDCBMCRIMPORIG,TDCBDSIGNCTR,                                 
+     TDCBTHOPPO,TDCBCPANSEQNUM,TDCBBLIMBASFRA,TDCBBLIMHAUTFRA,                  
+     TDCBMCONSECFRA,TDCBBLIMBASINTER,TDCBBLIMHAUTINTER,                         
+     TDCBCDKI,TDCBCCLEPUBEMET,TDCBCLONGMAC,TDCBCHISTORIS,                       
+     TDCBCBLOMULTAPP,TDCBCTRANS,TDCBCAUC1,TDCBCAUC2,TDCBCDKI2,                  
+     TDCBCAIP,TDCBCAID1,TDCBCAID2,TDCBCPROFIL,TDCBBVERSPROFIL,                  
+     TDCBCFMP,TDCBCPLAFEMV,TDCBCBLOPUCE,TDCBCBLOAPPL                            
+     FROM (SELECT * FROM PFRA.TBDOCBL A                                         
+           WHERE    TDCBNCARTPHY > 4978179999999999                             
+           AND      TDCBNCARTPHY < 4978190000000000 ) A                         
+           LEFT  OUTER JOIN PFRA.TBSUPCO C                                      
+           ON  C.TSPCNFOY      = A.TDCBNFOY                                     
+           AND C.TSPCNCONT     = A.TDCBNCONT                                    
+           AND C.TSPCNCARTE    = A.TDCBNCARTE                                   
+           AND C.TSPCNDT       = A.TDCBNDT                                      
+           AND C.TSPCNRANG     = A.TDCBNRANG                                    
+           AND C.TSPCNRANG     = A.TDCBNRANG                                    
+           AND A.TDCBCTIT      = C.TSPCCTITCAR                                  
+           AND C.TSPCCTYPCA    LIKE 'CB%';                                      
+

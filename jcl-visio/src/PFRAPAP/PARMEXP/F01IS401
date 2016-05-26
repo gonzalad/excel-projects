@@ -1,0 +1,126 @@
++------------------------------------------------------------+                  
+¨ Reference    ¨  NOMENCLATURE                               ¨                  
++--------------+---------------------------------------------+                  
+¨ INTITULEMAJ1 ¨  Analyse de la nuit Batch France            ¨                  
+¨ INTITULEMAJ2 ¨  Analyse de la nuit Batch Dom-Tom           ¨                  
+¨ INTITULEMAJ3 ¨  Analyse de la nuit Batch S2P               ¨                  
+¨ INTITULE1    ¨  Principales Informations sur la Nuit Batch ¨                  
+¨ INTITULE2    ¨  Ouverture du Transactionnel                ¨                  
+¨ INTITULE3    ¨  Traitement(s) exceptionnel(s)              ¨                  
+¨ INTITULE4    ¨  Principales Informations sur la Nuit Batch ¨                  
+¨ INTITULE5    ¨  Ouverture du Transactionnel                ¨                  
+¨ INTITULE6    ¨  Traitement(s) exceptionnel(s)              ¨                  
+¨ INTITULE7    ¨  Principales Informations sur la Nuit Batch ¨                  
+¨ INTITULE8    ¨  Ouverture du Transactionnel                ¨                  
+¨ INTITULE9    ¨  Traitement(s) exceptionnel(s)              ¨                  
++------------------------------------------------------------+                  
+                                                                                
++-------------------------+                                                     
+¨ INTITULEMAJ1 ¨ ¨ Ptitle ¨                                                     
++-------------------------+                                                     
+                                                                                
++----------------------------------------------------------------------------+  
+¨ INTITULE3 ¨ START JOB ¨ S.Theorique¨ END JOB  ¨ E.Theorique  ¨ Duree ¨     ¨  
++-----------+-----------+------------+----------+--------------+-------------+  
+¨ PFR0      ¨ PFRGL000  ¨ NONE       ¨ PFRGL0ZZ ¨ NONE         ¨ Duree ¨ `EX ¨  
++----------------------------------------------------------------------------+  
+                                                                                
++----------------------------------------------------------------------+        
+¨ INTITULE1 ¨ START JOB ¨ S.Theorique¨ END JOB  ¨ E.Theorique  ¨ Duree ¨        
++-----------+-----------+------------+----------+--------------+-------+        
+¨ PFR0      ¨ PFRBR000  ¨ 20:32:00   ¨ PFRBR01G ¨ 04:39:00     ¨ Duree ¨        
+¨ PFR0      ¨ PFR8R10M  ¨ 00:20:00   ¨ PFR8R110 ¨ 00:40:00     ¨ Duree ¨        
+¨ PFR0      ¨ PFR8W10D  ¨ 00:15:00   ¨ PFRGK001 ¨ 01:45:00     ¨ Duree ¨        
+¨ PFR0      ¨ PFRFI00L  ¨ 20:32:00   ¨ PFRFI0ZZ ¨ 22:35:00     ¨ Duree ¨        
+¨ PFR0      ¨ PFRGD006  ¨ 23:10:00   ¨ PFRGD02A ¨ 00:15:00     ¨ Duree ¨        
++----------------------------------------------------------------------+        
+                                                                                
++-------------------------------------------------------+                       
+¨ INTITULE2 ¨ Ouverture Cics ¨ Theorique ¨ Nouvelle Cwa ¨                       
++-----------+----------------+-----------+--------------+                       
+¨ PFR0      ¨ PFRIES05       ¨ 02:20:00  ¨ NDATECWA     ¨                       
++-------------------------------------------------------+                       
+                                                                                
++-------------------------+                                                     
+¨ INTITULEMAJ2 ¨ ¨ Ptitle ¨                                                     
++-------------------------+                                                     
+                                                                                
++----------------------------------------------------------------------------+  
+¨ INTITULE6 ¨ START JOB ¨ S.Theorique¨ END JOB  ¨ E.Theorique  ¨ Duree ¨     ¨  
++-----------+-----------+------------+----------+--------------+-------------+  
+¨ PFR0      ¨ PDOGL000  ¨ NONE       ¨ PDOGL0ZZ ¨ NONE         ¨ Duree ¨ `EX ¨  
++----------------------------------------------------------------------------+  
+                                                                                
++----------------------------------------------------------------------+        
+¨ INTITULE4 ¨ START JOB ¨ S.Theorique¨ END JOB  ¨ E.Theorique  ¨ Duree ¨        
++-----------+-----------+------------+----------+--------------+-------+        
+¨ PFR0      ¨ PDOBR009  ¨ 04:18:00   ¨ PDOBR010 ¨ 04:39:00     ¨ Duree ¨        
+¨ PFR0      ¨ PDOFI000  ¨ 04:16:00   ¨ PDOFI008 ¨ 04:18:00     ¨ Duree ¨        
+¨ PFR0      ¨ PDOGD000  ¨ 04:25:00   ¨ PDOGD00B ¨ 04:36:00     ¨ Duree ¨        
+¨ PFR0      ¨ PDO8R10M  ¨ 04:36:00   ¨ PDO8R10Y ¨ 04:39:00     ¨ Duree ¨        
+¨ PFR0      ¨ PDOGK005  ¨ 04:38:00   ¨ PDOGK001 ¨ 04:38:00     ¨ Duree ¨        
++----------------------------------------------------------------------+        
+                                                                                
++-------------------------------------------------------+                       
+¨ INTITULE5 ¨ Ouverture Cics ¨ Theorique ¨ Nouvelle Cwa ¨                       
++-----------+----------------+-----------+--------------+                       
+¨ PFR0      ¨ K03IED01       ¨ 05:00:00  ¨ NDATECWA     ¨                       
++-------------------------------------------------------+                       
+                                                                                
++-------------------------+                                                     
+¨ INTITULEMAJ3 ¨ ¨ Ptitle ¨                                                     
++-------------------------+                                                     
+                                                                                
++----------------------------------------------------------------------------+  
+¨ INTITULE9 ¨ START JOB ¨ S.Theorique¨ END JOB  ¨ E.Theorique  ¨ Duree ¨     ¨  
++-----------+-----------+------------+----------+--------------+-------------+  
+¨ PS20      ¨ PSCGL000  ¨ NONE       ¨ PSCGL0ZZ ¨ NONE         ¨ Duree ¨ `EX ¨  
++----------------------------------------------------------------------------+  
+                                                                                
++----------------------------------------------------------------------+        
+¨ INTITULE7 ¨ START JOB ¨ S.Theorique¨ END JOB  ¨ E.Theorique  ¨ Duree ¨        
++-----------+-----------+------------+----------+--------------+-------+        
+¨ PS20      ¨ PSCBR009  ¨ 22:15:00   ¨ PSCBR004 ¨ 23:40:00     ¨ Duree ¨        
+¨ PS20      ¨ PSCFI100  ¨ 22:15:00   ¨ PSCFI10J ¨ 22:45:00     ¨ Duree ¨        
+¨ PS20      ¨ PSCGD00C  ¨ 00:25:00   ¨ PSCGD0ZZ ¨ 01:00:00     ¨ Duree ¨        
+¨ PS20      ¨ PSC8R10M  ¨ 00:55:00   ¨ PSC8R10Y ¨ 01:25:00     ¨ Duree ¨        
+¨ PS20      ¨ PSCGK002  ¨ 01:25:00   ¨ PSCGK001 ¨ 01:30:00     ¨ Duree ¨        
++----------------------------------------------------------------------+        
+                                                                                
++-------------------------------------------------------+                       
+¨ INTITULE8 ¨ Ouverture Cics ¨ Theorique ¨ Nouvelle Cwa ¨                       
++-----------+----------------+-----------+--------------+                       
+¨ PS20      ¨ K02IEE0C       ¨ 02:10:00  ¨ NDATECWA     ¨                       
++-------------------------------------------------------+                       
+                                                                                
++-------------------------------------------------------------+                 
+¨ STRUCTURATION ¨   COLOR HTML       ¨ ¨ NOMENCLATURE         ¨                 
++---------------+--------------------+-+----------------------+                 
+¨  PFR0         ¨   `HC:GreenYellow  ¨ ¨ France               ¨                 
+¨  PS20         ¨   `HC:DeepSkyBlue  ¨ ¨ S2P                  ¨                 
+¨  PDOM         ¨   `HC:Coral        ¨ ¨ Dom-Tom              ¨                 
++-------------------------------------------------------------+                 
+                                                                                
++---------------------------------------------------+                           
+¨ Information Chaine ¨   Descriptif                 ¨                           
++--------------------+------------------------------+                           
+¨  PFRGL000          ¨   `DE:Billing                ¨                           
+¨  PFRBR000          ¨   `DE:Reglements             ¨                           
+¨  PFR8R10M          ¨   `DE:Recouvrement Quotidien ¨                           
+¨  PFR8W10D          ¨   `DE:Gestion Eclatements    ¨                           
+¨  PFRFI00L          ¨   `DE:Instances              ¨                           
+¨  PFRGD006          ¨   `DE:Batch Dossier          ¨                           
+¨  PDOGL000          ¨   `DE:Billing                ¨                           
+¨  PDOBR009          ¨   `DE:Reglements             ¨                           
+¨  PDOFI000          ¨   `DE:Instances              ¨                           
+¨  PDOGD000          ¨   `DE:Batch Dossier          ¨                           
+¨  PDO8R10M          ¨   `DE:Recouvrement Quotidien ¨                           
+¨  PDOGK005          ¨   `DE:Gestion Eclatements    ¨                           
+¨  PSCGL000          ¨   `DE:Billing                ¨                           
+¨  PSCBR009          ¨   `DE:Reglements             ¨                           
+¨  PSCFI100          ¨   `DE:Instances              ¨                           
+¨  PSCGD00C          ¨   `DE:Batch Dossier          ¨                           
+¨  PSC8R10M          ¨   `DE:Recouvrement Quotidien ¨                           
+¨  PSCGK002          ¨   `DE:Gestion Eclatements    ¨                           
++---------------------------------------------------+                           
+

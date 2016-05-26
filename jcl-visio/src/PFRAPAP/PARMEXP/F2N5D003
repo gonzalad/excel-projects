@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SOFX0162.TRICOMP0.DITTO000' +                                      
+      JOURA.FFCWP.DITTO.DUMOJJ                                                  
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FFCWP.DITTO.DUMOJJ_INF                                              
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FFCWP.DITTO.DUMOJJ_EOF                                              
+CLOSE                                                                           
+QUIT                                                                            

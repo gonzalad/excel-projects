@@ -1,0 +1,6 @@
+ EXTRACT                                                                        
+ ACCESS_DEFINITION REFRESH.PFRA.FULLVENDAN14                                    
+ EXTRACT_FILE (DSNAME PFRAFTE.SIXD0020.PDPMMAIN.EXTVDR40                        
+               MODE REP)                                                        
+ ROW_LIMIT  90000000                                                            
+ UNKNOWN ALLOW                                                                  

@@ -1,0 +1,11 @@
+    SELECT CAST(DIGITS(TDPRNSOC) AS CHAR(3)),                                   
+           CAST(DIGITS(INT(SUM(TDFNMFINANINI) * 100)) AS CHAR(10)),             
+           'TBDOFIN'                                                            
+    FROM PFRA.TBDOFIN, PFRA.TBDOPRN                                             
+    WHERE TDFNDFINAN = '28.08.2015'                                             
+      AND TDFNNFOY = TDPRNFOY                                                   
+      AND TDFNNCONT = TDPRNCONT                                                 
+      AND TDFNNCARTE = TDPRNCARTE                                               
+      AND TDFNNDT = TDPRNDT                                                     
+    GROUP BY TDPRNSOC                                                           
+    WITH UR;                                                                    

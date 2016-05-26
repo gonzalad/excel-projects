@@ -1,0 +1,25 @@
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 505 CORRESPONDANT AU FLUX 302 (EMISSION)            
+*                                 IDENTIFIANT    ECHSO001                       
+* CE FICHIER CONTIENT PLUSIEURS ENTETE ET FIN                                   
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* RECONSTRUCTION D'UN ENREGISTREMENT ENQUEUE, A PARTIR DE TOUS LES              
+* ENREGISTREMENTS ENQUEUE PRESENTS DANS LE FICHIER                              
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$DD01 USER IF=(002,EQ,C'ENQUEUE'),                                             
+* STOCKAGE DES DONNEES DE L'ENREGISTREMENT TYPENEUF                             
+            MOVE=(1,133,1),                                                     
+            WRITE=DUMMY,                                                        
+* RECUPERATION DU CUMUL DES MONTANTS LUS                                        
+            IF=(012,EQ,C'CUMUL MONT 505'),                                      
+            MOVE=(49,17,62),                                                    
+            EDIT=(1,0,C'-',C'0'),                                               
+            WRITE=DUMMY,                                                        
+* RECUPERATION DU CUMUL DES NOMBRES LUS, ECRITURE                               
+            IF=(012,EQ,C'CUMUL NBRE 505'),                                      
+            MOVE=(33,09,70),                                                    
+            EDIT=(1,0,C'-',C'0'),                                               
+            WRITE=TYPENEUF                                                      

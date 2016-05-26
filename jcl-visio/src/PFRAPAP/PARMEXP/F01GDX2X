@@ -1,0 +1,86 @@
+MR100005080       BD ACHAT DE COPROPRIETE AVEC LA DGPF                          
+MR100310080       BD REPARATIONS TRAVAUX                                        
+MR100320060       BB MENAGER                                                    
+MR100322060       BB REFRIGIRATEURS CONGELATEURS                                
+MR100323060       BB LAVE VAISELLE                                              
+MR100324060       BB LAVE LINGE                                                 
+MR100325060       BB ACHATS MENAGERS GROUPES                                    
+MR100329060       BB IDEM 325                                                   
+MR100330070       BC MOBILIER DIVERS                                            
+MR100331070       BC SALON                                                      
+MR100332070       BC SALLE A MANGER                                             
+MR100333070       BC CHAMBRE                                                    
+MR100334070       BC MOBILIER GROUPE DEVIENT 335                                
+MR100335070       BC MOBILIER GROUPE DEVIENT                                    
+MR100340080       BD TEXTILE D'AMEUBLEMENT                                      
+MR100511020       AA VOITURE NEUVE                                              
+MR100514030       AB VOTURE D'OCCASION                                          
+MR100516030       AB VOITURE D'OCCASION COLLABORATEUR D'USINE                   
+MR100610050       BA AUTRES MATERIEL TELEVISION, HI FI                          
+MR100611050       BA MAGNETOSCOPE                                               
+MR100613050       BA HIFI                                                       
+MR100614050       BA TV NOIR ET BLANC                                           
+MR100615050       BA TV COULEUR                                                 
+MR100616050       BA MICRO INFORMATIQUE                                         
+MR100617050       BA MINI ORDINATEURS                                           
+MR100618050       BA IBM                                                        
+MR100619050       BA ACHATS GROUPES DE MATERIEL TELEVISION, HI FI               
+MR100622050       BA MICRO INFORMATIQUE DEVIENT 616                             
+MR100660080       BD DIVERS                                                     
+MR100699050       BA OPERATIONS PHILIPS                                         
+MR100815020       AA CAMPING CAR                                                
+MR100922080       BD CUISINE INTEGREE DEVIENT 94                                
+MR100941070       BC CUISINE INTEGREE                                           
+MR100942070       BC CUISINE                                                    
+MR100985050       BA ORDINATEUR                                                 
+MR100986020       AA VEHICULE UTILITAIRE                                        
+MR100987020       AA STOCK DE DEMONSTRATION                                     
+MR999999999999999 XX          CARTE MR COFICA                                   
+MR700259100100020 CACAAA VEHICULES DE LOCATION                                  
+MR700359100100020 CACAAA DEMONSTRATION NON GAGE                                 
+MR700450100100030 CACAAB STOCK VEHICULES OCCAS                                  
+MR700459100100020 CACAAA STOCK VEHICULES NEUFS                                  
+MR700500020030100 AAABCA BERLINE <= 12 CV                                       
+MR700501020030100 AAABCA BERLINE >= 13 CV                                       
+MR700502020030100 AAABCA COUPE - CABRIOLET - SPORT                              
+MR700503020030100 AAABCA CONDUITE INTERIEURE ET COMMERCIALE                     
+MR700505030030100 ABABCA CP AVIS                                                
+MR700519080080100 BDBDCA REPARATIONS ENTRETIENS                                 
+MR700520050050100 BABACA RADIO TELEPHONE                                        
+MR700521080080100 BDBDCA SERVICES ASSU ET ENTR                                  
+MR700522080080100 BDBDCA ACCESSOIRES ACCE ET RTEL                               
+MR700549100100020 CACAAA VEHICULES UTILITAIRES                                  
+MR700559100100020 CACAAA DEMONSTRATION GAGE                                     
+MR700611100100020 CACAAA STOCKS FORFAITAIRES                                    
+MR700612100100020 CACAAA STOCK FORFAITAIRE + 12 MOIS                            
+MR700613100100020 CACAAA STOCK FORFAITAIRE + 24 MOIS                            
+MR700640100100030 CACAAB STOCK OCCASION + GARANTIE VU                           
+MR700650100100030 CACAAB STOCK OCCASION + GARANTIE VP                           
+MR700659100100020 CACAAA STOCK NEUF +GARANTIE PV                                
+MR700811100100080 CACABD PRETS DIVERS                                           
+MR700814100100080 CACABD PRETS DIVERS                                           
+MR700815020030100 AAABCA CAMPING CAR                                            
+MR700821020030100 AAABCA VEHICULE UTILITAIRE                                    
+MR700822030030100 ABABCA VU AVIS - CFV : AMENAGT LOCAUX PROF                    
+MR700860050050100 BABACA MATERIEL INFORMATIQUE                                  
+MR700861030030100 ABABCA MATERIEL MEDICAL                                       
+MR700862030030100 ABABCA MATERIEL MEDICAL                                       
+MR700863030030100 ABABCA MATERIEL MEDICAL                                       
+MR700900020020100 AAAACA AUTO NEUVE                                             
+MR700901030030100 ABABCA AUTO OCCASSION                                         
+MR700906080080100 BDBDCA DIVERS EQUIPEMENT DU FOYER                             
+MR700907080080100 BDBDCA DIVERS HORS EQUIP DU FOYER                             
+MR700909050050100 BABACA MATERIEL INFORMATIQUE                                  
+LR0100 A* - VEHICULES                                                           
+LR0201    AA - VEHICULES NEUFS                                                  
+LR0301    AB - VEHICULES D OCCASIONS                                            
+LR0400 B* - BIEN D EQUIPEMENT MENAGER                                           
+LR0501    BA - APPAREIL ELECTRONIQUE                                            
+LR0601    BB - APPAREIL MENAGER                                                 
+LR0701    BC - MEUBLES                                                          
+LR0801    BD - DIVERS                                                           
+LR0900 C* - AUTRES BIENS OU SERVICES                                            
+LR1001    CA - DIVERS                                                           
+LR1109         TOTAL GENERAL                                                    
+FF                                                                              
+

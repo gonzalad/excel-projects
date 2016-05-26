@@ -1,0 +1,7 @@
+ CONVERT                                                                        
+ INPUT_FILE PFRAFTE.SIXD0016.PDPMMAIN.EXTVDR30                                  
+ CONVERTED_FILE (DSNAME PFRATMP.SIXD0017.PDPMMAIN.CONVDR30                      
+                 MODE REP)                                                      
+ CONTROL_FILE   (DSNAME PFRATMP.SIXD0018.PDPMMAIN.CONVDR30                      
+                 MODE REP)                                                      
+ TABLE_MAP REFRVDR.ANONFRFULL13                                                 

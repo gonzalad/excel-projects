@@ -1,0 +1,3 @@
+SEND PART=M086242F,IDF=TDSALFCQ,                                                
+FNAME=K01DTDS.DBK1.COGNOS.DCOLLEC,                                              
+TYPE=FILE                                                                       

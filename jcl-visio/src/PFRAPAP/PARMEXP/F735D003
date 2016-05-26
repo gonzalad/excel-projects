@@ -1,0 +1,5 @@
+PFRXNT01 (EXIT=16                                                               
+CD SECTORDT                                                                     
+PUT 'PFRAFTE.SGV60080.NEVDMI20.STAT1000' ST1_AAMM.TXT                           
+CLOSE                                                                           
+QUIT                                                                            

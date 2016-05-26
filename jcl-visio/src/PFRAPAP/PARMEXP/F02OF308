@@ -1,0 +1,42 @@
+    WHERE                                                                       
+    (                                                                           
+         SUBSTR(TPCOCPROD,1,3)                                                  
+                         IN ('VOC','PTX','PTM')                                 
+     OR  SUBSTR(TPCOCPROD,1,4)                                                  
+                         IN ('VOC1','VOC2','VOC3','GM01','GM12','GM24',         
+                             'GM36',                                            
+                             'EN15','EO25','EO30','EO35','EP27','EC27',         
+                             'PACP','PACS','PACD','PAEP','PAES','PAED',         
+                             'PAN1','PAN2','PAN3','PCCP','PCCS','PCCD',         
+                             'PCEP','PCES','PCED','PCN1','PCN2','PCN3',         
+                             'PMN1','PMN2',                                     
+                             'EAN1','EAN2','EAN3','EAEP','EAES','EAED',         
+                             'EACP','EACS','EACD','ECN1','ECN2','ECN3',         
+                             'ECNP','ECES','ECED','ECCP','ECCS','ECCD',         
+                             'AN24','AN36','AE01','AE06','AE12','AE18',         
+                             'AC01','AC06','AC12','CN12','CN24','CN36',         
+                             'CE01','CE06','CE12','CC01','CC06','CC12',         
+                             'MN12','MN24','HM01','HM12','HM24','HM36')         
+    )                                                                           
+    AND TPCOCPOSA NOT IN ('INS','REF','   ','SS')                               
+    AND TPCONCONT  = 0                                                          
+    AND TPCONCARTE = 9                                                          
+    AND TPCONFOY   = TDRPNFOYNEW                                                
+    AND TPCONCONT  = TDRPNCONTNEW                                               
+    AND TPCONCARTE = TDRPNCARTENEW                                              
+    AND TPCONDT    = TDRPNDTNEW                                                 
+    AND                                                                         
+    ( (     CURRENT TIME >= '20.00.00'                                          
+        AND CURRENT TIME <= '23.59.59'                                          
+        AND TDRPDCREAT = CURRENT DATE                                           
+      )                                                                         
+      OR                                                                        
+      (     CURRENT TIME >= '00.00.00'                                          
+        AND CURRENT TIME <= '19.59.59'                                          
+        AND TDRPDCREAT = (CURRENT DATE - 1 DAYS)                                
+    ) )                                                                         
+    ORDER BY TDRPNFOYOLD   ASC,                                                 
+             TDRPNCONTOLD  ASC,                                                 
+             TDRPNCARTEOLD ASC,                                                 
+             TDRPNDTOLD    DESC;                                                
+

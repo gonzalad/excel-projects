@@ -1,0 +1,95 @@
+UNLD DATA FORMAT(DSNTIAUL) OUTDDN(SYSREC01)                                     
+        STMTDDN(SYSPUNCH) MODE(DB2SQL)                                          
+        SORTDEVT SYSDA SORTNUM 10                                               
+   SELECT                                                                       
+            TDPRNFOY         ,                                                  
+            TDPRNCONT        ,                                                  
+            TDPRNCARTE       ,                                                  
+            TDPRNDT          ,                                                  
+            CURRENT DATE     ,                                                  
+            CURRENT DATE     ,                                                  
+            TDPRNSOC         ,                                                  
+            TDPRNAGCRCVT     ,                                                  
+            TDPRCRCVTB       ,                                                  
+            TRDOPHASEA       ,                                                  
+            TRDODPHASEA      ,                                                  
+            TRDOPHASEP       ,                                                  
+            TRDOTRAITA       ,                                                  
+                                                                                
+            DECIMAL(                                                            
+             CASE WHEN (TDPRCDEVISE = 'EUR')                                    
+             THEN                                                               
+                   CASE WHEN (TDPRMCRD - TDPRMSREC) > 999999                    
+                   THEN                                                         
+                   999999                                                       
+                   ELSE                                                         
+                  (TDPRMCRD - TDPRMSREC) END                                    
+             ELSE                                                               
+                   CASE WHEN (TDPRMCRD - TDPRMSREC) > 999999                    
+                   THEN                                                         
+                   999999                                                       
+                   ELSE                                                         
+                  ((TDPRMCRD - TDPRMSREC)/6.55957) END                          
+             END, 9,0 ) AS TRSEMTODU ,                                          
+            DECIMAL(                                                            
+             CASE WHEN (TDPRCDEVISE = 'EUR')                                    
+             THEN                                                               
+                   CASE WHEN TDPRMMENS > 99999                                  
+                   THEN                                                         
+                   99999                                                        
+                   ELSE                                                         
+                   TDPRMMENS END                                                
+           ELSE                                                                 
+                   CASE WHEN TDPRMMENS > 99999                                  
+                   THEN                                                         
+                  99999                                                         
+                   ELSE                                                         
+                   (TDPRMMENS/6.55957) END                                      
+           END, 9,0 ) AS TRSEMMENS ,                                            
+          DECIMAL(                                                              
+           CASE WHEN (TDPRCDEVISE = 'EUR')                                      
+           THEN                                                                 
+                   CASE WHEN (TRDORGMTM/100) > 99999                            
+                   THEN                                                         
+                   99999                                                        
+                   ELSE                                                         
+                   (TRDORGMTM/100) END                                          
+             ELSE                                                               
+                   CASE WHEN (TRDORGMTM/100) > 99999                            
+                   THEN                                                         
+                   99999                                                        
+                   ELSE                                                         
+                   ((TRDORGMTM/100)/6.55957) END                                
+             END, 9,2 ) AS TRSEMRGMTM,                                          
+            CASE WHEN TDPRDDREG <>'01.01.0001'                                  
+            THEN TDPRDDREG                                                      
+            ELSE '01.01.1980' END AS TRSEDDREG,                                 
+            TRDOPRTYP        ,                                                  
+            DECIMAL(                                                            
+             CASE WHEN ((TRDOPRDATE1 <>'01.01.0001') AND                        
+                (TRDOPRDACC  <>'01.01.0001')  AND (TRDOTRAITA ='E'))            
+             THEN                                                               
+              CASE                                                              
+               WHEN (DAYS(TRDOPRDATE1) - DAYS(TRDOPRDACC)) > 999                
+              THEN 999                                                          
+               ELSE (DAYS(TRDOPRDATE1) - DAYS(TRDOPRDACC))                      
+              END                                                               
+             ELSE 0                                                             
+             END, 3,0 )                                                         
+                   AS TRSEBECPLA,                                               
+            TRDOINACTMAX     ,                                                  
+            TRDORETMAX       ,                                                  
+            CHAR ('  ',2)    ,                                                  
+            TDPRCPRODCOM     ,                                                  
+            TDCPCSOUSGEST                                                       
+     FROM PFRA.TBREDOS, PFRA.TBDOPRN ,PFRA.TBDOCPL                              
+    WHERE TDPRNFOY   = TRDONFOY                                                 
+      AND TDPRNCONT  = TRDONCONT                                                
+      AND TDPRNCARTE = TRDONCARTE                                               
+      AND TDPRNDT    = TRDONDT                                                  
+      AND TDCPNFOY   = TRDONFOY                                                 
+      AND TDCPNCONT  = TRDONCONT                                                
+      AND TDCPNCARTE = TRDONCARTE                                               
+      AND TDCPNDT    = TRDONDT                                                  
+     WITH UR ;                                                                  
+

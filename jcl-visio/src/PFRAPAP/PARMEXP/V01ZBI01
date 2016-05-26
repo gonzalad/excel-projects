@@ -1,0 +1,2 @@
+AND  B.TDRVDRECOND  BETWEEN '01.08.2011' AND '31.08.2011'                       
+WITH UR ;                                                                       

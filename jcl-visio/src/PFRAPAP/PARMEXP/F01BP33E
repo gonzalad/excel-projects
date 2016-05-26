@@ -1,0 +1,113 @@
+*+* FMC2FM: Beginning of File Manager statement output *+*                      
+* (F01 RFRAPAP.PARMEXP(F01BP33E)                                                
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 505 CORRESPONDANT AU FLUX 302 (EMISSION)            
+*                                 IDENTIFIANT    ECHSO001                       
+* CE FICHIER CONTIENT PLUSIEURS ENTETE ET FIN                                   
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* CONTROLE DES ENREGISTREMENTS EN-TETE                                          
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* CODE LIGNE EGAL A 01                                                          
+$$FILEM DSC  INPUT=DD01,                                                        
+$$FILEM      OUTPUT=TYPEZERO,                                                   
+$$FILEM      PROC=*                                                             
+ IF TESTN(NOT_FIRST,'=','0')                                                    
+ THEN DO                           /* SET DUPLICATED CONSTANT(S) */             
+  SETN(NOT_FIRST,'1')                                                           
+  SETC(C_STR1,' ',133)                                                          
+  SETC(C_STR2,'0',6)                                                            
+  SETC(C_STR3,'0',14)                                                           
+ END                                                                            
+ IF FLD(7,2) == '01',                                                           
+  & FLD_TYPE(12,6,Z) = 1,                                                       
+  & RECSOUT(TYPEZERO) < 1                                                       
+ THEN DO                                                                        
+  RSTR_OUT()                                                                    
+  OVLY_OUT('&C_STR1',1)                                                         
+  OVLY_OUT('ENTETE ',2)                                                         
+  OVLY_OUT('DATE',9)                                                            
+  OVLY_OUT('20',13)                                                             
+  FLD_OUT(16,2,15)                                                              
+  FLD_OUT(14,2,17)                                                              
+  FLD_OUT(12,2,19)                                                              
+  OVLY_OUT('&C_STR2',21)                                                        
+  WRITE(TYPEZERO)                                                               
+  SAVE_OUT()                                                                    
+  RETURN DROP                      /* drop record READNEXT           */         
+ END                                                                            
+ IF FLD(7,2) == '09',                                                           
+  & FLD_TYPE(17,6,Z) = 1,                                                       
+  & FLD_TYPE(76,9,Z) = 1,                                                       
+  & FLD_TYPE(85,16,Z) = 1,                                                      
+  & RECSOUT(TYPENEUF) < 1                                                       
+ THEN DO                                                                        
+  RSTR_OUT()                                                                    
+  OVLY_OUT('ENQUEUE',2)                                                         
+  OVLY_OUT('DATE',9)                                                            
+  OVLY_OUT('&C_STR3',13)                                                        
+  OVLY_OUT('20',13)                                                             
+  FLD_OUT(16,2,15)                                                              
+  FLD_OUT(14,2,17)                                                              
+  FLD_OUT(12,2,19)                                                              
+  FLD_OUT(9,3,21)                                                               
+  OVLY_OUT('NOMBRE000',27)                                                      
+  FLD_OUT(79,6,36)                                                              
+  OVLY_OUT('MONTANT00',42)                                                      
+  FLD_OUT(86,15,51)                                                             
+  WRITE(TYPENEUF)                                                               
+  SAVE_OUT()                                                                    
+  RETURN DROP                      /* drop record READNEXT           */         
+ END                                                                            
+ IF FLD(7,2) == '02'                                                            
+ THEN DO                                                                        
+  TALLY(38,15,Z,'TOTAL FLUX 505 ')                                              
+ END                                                                            
+ RETURN DROP                       /* done USER processing of record */         
+/+                                                                              
+* DATE CREATION NUMERIQUE JJMMAA                                                
+* SI CONTROLE OK ECRITURE DE L'ENREGISTREMENT EN-TETE                           
+* MISE EN FORME DE LA DATE AU FORMAT SSAAMMJJ                                   
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* CONTROLE DE L'ENREGISTREMENT EN-QUEUE                                         
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* CODE LIGNE EGAL A 09                                                          
+* DATE CREATION NUMERIQUE JJMMAA                                                
+* NOMBRE D'ENREGISTREMENTS TRANSMIS NUMERIQUE                                   
+* CUMUL NUMERIQUE                                                               
+* SI CONTROLE OK ECRITURE DE L'ENREGISTREMENT EN-QUEUE                          
+* MISE EN FORME DE LA DATE AU FORMAT SSAAMMJJ                                   
+* AJOUT DU TYPE D'OPERATION ASSOCIE A LA DATE                                   
+* RECUPERATION DU NOMBRE ENREGISTREMENTS FOURNIS                                
+* RECUPERATION DU MONTANT FOURNI                                                
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* CUMUL DU MONTANT MT-COMP POUR LES ENREGISTREMENTS DETAILS                     
+* LE RESULTAT EST DANS SYSTOTAL                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+*                                                                               
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* COMPTABILISATION DU NOMBRE D'ENREGISTREMENTS DETAILS                          
+* LE RESULTAT EST DANS SYSPRINT                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$FILEM DSC  INPUT=DD02,                                                        
+$$FILEM      OUTPUT=DD02O,                                                      
+$$FILEM      PROC=*                                                             
+ IF FLD(7,2) \== '01',                                                          
+  & FLD(7,2) \== '09'                                                           
+ THEN DO                                                                        
+  SETN(COMPT,'+1','Lines COPIED=')                                              
+  RETURN                           /* process record                 */         
+ END                                                                            
+ RETURN DROP                       /* no criteria match, drop        */         
+/+                                                                              
+

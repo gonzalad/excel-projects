@@ -1,0 +1,7 @@
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -                   
+* extraction des membres de la bibliotheque                                     
+* (CDA9.CA7.PFR0.DRIVER ou CDA9.CA7.PS20.DRIVER)                                
+* qui ont au moins                                                              
+* une ligne avec PUT ou GET sur les 3 premiers carcateres                       
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -                   
+$$DD01 COPYMEM IF=(1,EQ,C'PUT,GET')                                             

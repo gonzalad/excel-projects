@@ -1,0 +1,13 @@
+  C  I=DDIN,O=DDOUT                                                             
+     S M=((TAJBTZA,,R))                                                         
+     S M=((TAJBTZP,,R))                                                         
+     S M=((TAJBTZD,,R))                                                         
+     S M=((TAJBTZC,,R))                                                         
+     S M=((TAJLIBA,,R))                                                         
+     S M=((TAJLIBP,,R))                                                         
+     S M=((TAJLIBD,,R))                                                         
+     S M=((TAJLIBC,,R))                                                         
+     S M=((TAJTZBA,,R))                                                         
+     S M=((TAJTZBP,,R))                                                         
+     S M=((TAJTZBD,,R))                                                         
+     S M=((TAJTZBC,,R))                                                         

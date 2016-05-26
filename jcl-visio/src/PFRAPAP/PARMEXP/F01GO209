@@ -1,0 +1,221 @@
+SELECT  TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                     
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 700                                                      
+     ORDER BY  TCCONBEN ;                                                       
+SELECT  TCCONSOC,SUM(TCCOMCRC)-SUM(TCCOMDBC)                                    
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 700                                                      
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCONSOC,SUM(TCCOMVC)                                                   
+ FROM  PFRA.TBCOCOM                                                             
+ WHERE TCCONSOC = 700                                                           
+      GROUP BY TCCONSOC;                                                        
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMPRINS                                   
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 700                                                              
+AND TCCOMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT  TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                     
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 730                                                      
+     ORDER BY  TCCONBEN ;                                                       
+SELECT  TCCONSOC,SUM(TCCOMCRC)-SUM(TCCOMDBC)                                    
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 730                                                      
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCONSOC,SUM(TCCOMVC)                                                   
+ FROM  PFRA.TBCOCOM                                                             
+ WHERE TCCONSOC = 730                                                           
+      GROUP BY TCCONSOC;                                                        
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMPRINS                                   
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 730                                                              
+AND TCCOMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT  TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                     
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 750                                                      
+     ORDER BY  TCCONBEN ;                                                       
+SELECT  TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                     
+ FROM  PFRA.TBCOCOB                                                             
+     WHERE  TCCBMCRC <> TCCBMDBC                                                
+        AND TCCBNSOC = 750                                                      
+     ORDER BY TCCBNBEN ;                                                        
+SELECT  TCCONSOC,SUM(TCCOMCRC)-SUM(TCCOMDBC)                                    
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 750                                                      
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCBNSOC,SUM(TCCBMCRC)-SUM(TCCBMDBC)                                    
+ FROM  PFRA.TBCOCOB                                                             
+     WHERE  TCCBMCRC <> TCCBMDBC                                                
+        AND TCCBNSOC = 750                                                      
+      GROUP BY TCCBNSOC;                                                        
+SELECT  TCCONSOC,SUM(TCCOMVC)                                                   
+ FROM  PFRA.TBCOCOM                                                             
+ WHERE TCCONSOC = 750                                                           
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCBNSOC,SUM(TCCBMVC)                                                   
+ FROM  PFRA.TBCOCOB                                                             
+ WHERE TCCBNSOC = 750                                                           
+      GROUP BY TCCBNSOC;                                                        
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMPRINS                                   
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 750                                                              
+AND TCCOMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT TCCBNSOC,TCIDNAGCE,TCCBNBEN,TCCBMPRINS                                   
+FROM PFRA.TBCOCOB,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCBNBEN                                                       
+AND TCCBNSOC = 750                                                              
+AND TCCBMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT  TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                     
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 775                                                      
+     ORDER BY  TCCONBEN ;                                                       
+SELECT  TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                     
+ FROM  PFRA.TBCOCOB                                                             
+     WHERE  TCCBMCRC <> TCCBMDBC                                                
+        AND TCCBNSOC = 775                                                      
+     ORDER BY TCCBNBEN ;                                                        
+SELECT  TCCONSOC,SUM(TCCOMCRC)-SUM(TCCOMDBC)                                    
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 775                                                      
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCBNSOC,SUM(TCCBMCRC)-SUM(TCCBMDBC)                                    
+ FROM  PFRA.TBCOCOB                                                             
+     WHERE  TCCBMCRC <> TCCBMDBC                                                
+        AND TCCBNSOC = 775                                                      
+      GROUP BY TCCBNSOC;                                                        
+SELECT  TCCONSOC,SUM(TCCOMVC)                                                   
+ FROM  PFRA.TBCOCOM                                                             
+ WHERE TCCONSOC = 775                                                           
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCBNSOC,SUM(TCCBMVC)                                                   
+ FROM  PFRA.TBCOCOB                                                             
+ WHERE TCCBNSOC = 775                                                           
+      GROUP BY TCCBNSOC;                                                        
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMPRINS                                   
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 775                                                              
+AND TCCOMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT TCCBNSOC,TCIDNAGCE,TCCBNBEN,TCCBMPRINS                                   
+FROM PFRA.TBCOCOB,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCBNBEN                                                       
+AND TCCBNSOC = 775                                                              
+AND TCCBMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT  TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                     
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 785                                                      
+     ORDER BY  TCCONBEN ;                                                       
+SELECT  TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                     
+ FROM  PFRA.TBCOCOB                                                             
+     WHERE  TCCBMCRC <> TCCBMDBC                                                
+        AND TCCBNSOC = 785                                                      
+     ORDER BY TCCBNBEN ;                                                        
+SELECT  TCCONSOC,SUM(TCCOMCRC)-SUM(TCCOMDBC)                                    
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 785                                                      
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCBNSOC,SUM(TCCBMCRC)-SUM(TCCBMDBC)                                    
+ FROM  PFRA.TBCOCOB                                                             
+     WHERE  TCCBMCRC <> TCCBMDBC                                                
+        AND TCCBNSOC = 785                                                      
+      GROUP BY TCCBNSOC;                                                        
+SELECT  TCCONSOC,SUM(TCCOMVC)                                                   
+ FROM  PFRA.TBCOCOM                                                             
+ WHERE TCCONSOC = 785                                                           
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCBNSOC,SUM(TCCBMVC)                                                   
+ FROM  PFRA.TBCOCOB                                                             
+ WHERE TCCBNSOC = 785                                                           
+      GROUP BY TCCBNSOC;                                                        
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMPRINS                                   
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 785                                                              
+AND TCCOMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT TCCBNSOC,TCIDNAGCE,TCCBNBEN,TCCBMPRINS                                   
+FROM PFRA.TBCOCOB,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCBNBEN                                                       
+AND TCCBNSOC = 785                                                              
+AND TCCBMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT  TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                     
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 788                                                      
+     ORDER BY  TCCONBEN ;                                                       
+SELECT  TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                     
+ FROM  PFRA.TBCOCOB                                                             
+     WHERE  TCCBMCRC <> TCCBMDBC                                                
+        AND TCCBNSOC = 788                                                      
+     ORDER BY TCCBNBEN ;                                                        
+SELECT  TCCONSOC,SUM(TCCOMCRC)-SUM(TCCOMDBC)                                    
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 788                                                      
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCBNSOC,SUM(TCCBMCRC)-SUM(TCCBMDBC)                                    
+ FROM  PFRA.TBCOCOB                                                             
+     WHERE  TCCBMCRC <> TCCBMDBC                                                
+        AND TCCBNSOC = 788                                                      
+      GROUP BY TCCBNSOC;                                                        
+SELECT  TCCONSOC,SUM(TCCOMVC)                                                   
+ FROM  PFRA.TBCOCOM                                                             
+ WHERE TCCONSOC = 788                                                           
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCBNSOC,SUM(TCCBMVC)                                                   
+ FROM  PFRA.TBCOCOB                                                             
+ WHERE TCCBNSOC = 788                                                           
+      GROUP BY TCCBNSOC;                                                        
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMPRINS                                   
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 788                                                              
+AND TCCOMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT TCCBNSOC,TCIDNAGCE,TCCBNBEN,TCCBMPRINS                                   
+FROM PFRA.TBCOCOB,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCBNBEN                                                       
+AND TCCBNSOC = 788                                                              
+AND TCCBMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+SELECT  TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                     
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 790                                                      
+     ORDER BY  TCCONBEN ;                                                       
+SELECT  TCCONSOC,SUM(TCCOMCRC)-SUM(TCCOMDBC)                                    
+ FROM  PFRA.TBCOCOM                                                             
+     WHERE TCCOMCRC <> TCCOMDBC                                                 
+        AND TCCONSOC = 790                                                      
+      GROUP BY TCCONSOC;                                                        
+SELECT  TCCONSOC,SUM(TCCOMVC)                                                   
+ FROM  PFRA.TBCOCOM                                                             
+ WHERE TCCONSOC = 790                                                           
+      GROUP BY TCCONSOC;                                                        
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMPRINS                                   
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 790                                                              
+AND TCCOMPRINS <> 0                                                             
+ORDER BY 1,2;                                                                   
+

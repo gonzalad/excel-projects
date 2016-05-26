@@ -1,0 +1,18 @@
+  OUTFIL INCLUDE=(1,6,BI,LE,X'04199999999C'),FNAMES=SORTI1                      
+  OUTFIL INCLUDE=(1,6,BI,GT,X'04199999999C',AND,                                
+    1,6,BI,LE,X'04245039999C'),FNAMES=SORTI2                                    
+  OUTFIL INCLUDE=(1,6,BI,GT,X'04245039999C',AND,                                
+    1,6,BI,LE,X'04280589999C'),FNAMES=SORTI3                                    
+  OUTFIL INCLUDE=(1,6,BI,GT,X'04280589999C',AND,                                
+    1,6,BI,LE,X'04311889999C'),FNAMES=SORTI4                                    
+  OUTFIL INCLUDE=(1,6,BI,GT,X'04311889999C',AND,                                
+    1,6,BI,LE,X'04352169999C'),FNAMES=SORTI5                                    
+  OUTFIL INCLUDE=(1,6,BI,GT,X'04352169999C',AND,                                
+    1,6,BI,LE,X'04386669999C'),FNAMES=SORTI6                                    
+  OUTFIL INCLUDE=(1,6,BI,GT,X'04386669999C',AND,                                
+    1,6,BI,LE,X'04422669999C'),FNAMES=SORTI7                                    
+  OUTFIL INCLUDE=(1,6,BI,GT,X'04422669999C',AND,                                
+    1,6,BI,LE,X'04458669999C'),FNAMES=SORTI8                                    
+  OUTFIL INCLUDE=(1,6,BI,GT,X'04458669999C',AND,                                
+    1,6,BI,LE,X'04493669999C'),FNAMES=SORTI9                                    
+  OUTFIL INCLUDE=(1,6,BI,GT,X'04493669999C'),FNAMES=SORTI10                     

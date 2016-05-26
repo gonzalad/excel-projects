@@ -1,0 +1,1106 @@
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '00000000001'                                           
+      ,TBENLENTITEFIN = '04102940000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00X'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '00000000001'                                           
+      ,TBRFLENTITEFIN = '04102940000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00X'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04102940000'                                           
+      ,TBENLENTITEFIN = '04105880000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00Y'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04102940000'                                           
+      ,TBRFLENTITEFIN = '04105880000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00Y'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04105880000'                                           
+      ,TBENLENTITEFIN = '04108820000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00Z'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04105880000'                                           
+      ,TBRFLENTITEFIN = '04108820000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00Z'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04108820000'                                           
+      ,TBENLENTITEFIN = '04111760000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD010'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04108820000'                                           
+      ,TBRFLENTITEFIN = '04111760000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD010'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04111760000'                                           
+      ,TBENLENTITEFIN = '04114700000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD011'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04111760000'                                           
+      ,TBRFLENTITEFIN = '04114700000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD011'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04114700000'                                           
+      ,TBENLENTITEFIN = '04117640000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD018'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04114700000'                                           
+      ,TBRFLENTITEFIN = '04117640000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD018'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04117640000'                                           
+      ,TBENLENTITEFIN = '04120580000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD019'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04117640000'                                           
+      ,TBRFLENTITEFIN = '04120580000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD019'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04120580000'                                           
+      ,TBENLENTITEFIN = '04123520000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01A'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04120580000'                                           
+      ,TBRFLENTITEFIN = '04123520000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01A'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04123520000'                                           
+      ,TBENLENTITEFIN = '04126460000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01B'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04123520000'                                           
+      ,TBRFLENTITEFIN = '04126460000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01B'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04126460000'                                           
+      ,TBENLENTITEFIN = '04129400000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01C'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04126460000'                                           
+      ,TBRFLENTITEFIN = '04129400000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01C'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04129400000'                                           
+      ,TBENLENTITEFIN = '04132340000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD007'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04129400000'                                           
+      ,TBRFLENTITEFIN = '04132340000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD007'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04132340000'                                           
+      ,TBENLENTITEFIN = '04135280000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD008'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04132340000'                                           
+      ,TBRFLENTITEFIN = '04135280000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD008'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04135280000'                                           
+      ,TBENLENTITEFIN = '04138220000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD009'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04135280000'                                           
+      ,TBRFLENTITEFIN = '04138220000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD009'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04138220000'                                           
+      ,TBENLENTITEFIN = '04141160000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00A'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04138220000'                                           
+      ,TBRFLENTITEFIN = '04141160000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00A'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04141160000'                                           
+      ,TBENLENTITEFIN = '04144100000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00B'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04141160000'                                           
+      ,TBRFLENTITEFIN = '04144100000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00B'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04144100000'                                           
+      ,TBENLENTITEFIN = '04147040000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00C'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04144100000'                                           
+      ,TBRFLENTITEFIN = '04147040000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00C'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04147040000'                                           
+      ,TBENLENTITEFIN = '04152920000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00D'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04147040000'                                           
+      ,TBRFLENTITEFIN = '04152920000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00D'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04152920000'                                           
+      ,TBENLENTITEFIN = '04158800000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00E'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04152920000'                                           
+      ,TBRFLENTITEFIN = '04158800000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00E'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04158800000'                                           
+      ,TBENLENTITEFIN = '04164680000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00F'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04158800000'                                           
+      ,TBRFLENTITEFIN = '04164680000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00F'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04164680000'                                           
+      ,TBENLENTITEFIN = '04170560000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00G'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04164680000'                                           
+      ,TBRFLENTITEFIN = '04170560000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00G'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04170560000'                                           
+      ,TBENLENTITEFIN = '04176440000'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00H'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04170560000'                                           
+      ,TBRFLENTITEFIN = '04176440000'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00H'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04176440000'                                           
+      ,TBENLENTITEFIN = '04199999999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00I'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04176440000'                                           
+      ,TBRFLENTITEFIN = '04199999999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00I'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04199999999'                                           
+      ,TBENLENTITEFIN = '04204634596'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00J'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04199999999'                                           
+      ,TBRFLENTITEFIN = '04204634596'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00J'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04204634596'                                           
+      ,TBENLENTITEFIN = '04209269192'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00K'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04204634596'                                           
+      ,TBRFLENTITEFIN = '04209269192'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00K'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04209269192'                                           
+      ,TBENLENTITEFIN = '04212510824'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00L'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04209269192'                                           
+      ,TBRFLENTITEFIN = '04212510824'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00L'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04212510824'                                           
+      ,TBENLENTITEFIN = '04215752454'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00M'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04212510824'                                           
+      ,TBRFLENTITEFIN = '04215752454'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00M'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04215752454'                                           
+      ,TBENLENTITEFIN = '04219471064'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00N'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04215752454'                                           
+      ,TBRFLENTITEFIN = '04219471064'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00N'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04219471064'                                           
+      ,TBENLENTITEFIN = '04223189673'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00O'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04219471064'                                           
+      ,TBRFLENTITEFIN = '04223189673'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00O'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04223189673'                                           
+      ,TBENLENTITEFIN = '04226779100'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00P'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04223189673'                                           
+      ,TBRFLENTITEFIN = '04226779100'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00P'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04226779100'                                           
+      ,TBENLENTITEFIN = '04230368526'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00Q'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04226779100'                                           
+      ,TBRFLENTITEFIN = '04230368526'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00Q'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04230368526'                                           
+      ,TBENLENTITEFIN = '04233672363'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00R'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04230368526'                                           
+      ,TBRFLENTITEFIN = '04233672363'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00R'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04233672363'                                           
+      ,TBENLENTITEFIN = '04236976199'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00S'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04233672363'                                           
+      ,TBRFLENTITEFIN = '04236976199'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00S'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04236976199'                                           
+      ,TBENLENTITEFIN = '04242273631'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00T'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04236976199'                                           
+      ,TBRFLENTITEFIN = '04242273631'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00T'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04242273631'                                           
+      ,TBENLENTITEFIN = '04260518499'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00U'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04242273631'                                           
+      ,TBRFLENTITEFIN = '04260518499'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00U'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04260518499'                                           
+      ,TBENLENTITEFIN = '04274173523'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00V'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04260518499'                                           
+      ,TBRFLENTITEFIN = '04274173523'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00V'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04274173523'                                           
+      ,TBENLENTITEFIN = '04284569596'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD00W'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04274173523'                                           
+      ,TBRFLENTITEFIN = '04284569596'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD00W'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04284569596'                                           
+      ,TBENLENTITEFIN = '04297506891'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01S'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04284569596'                                           
+      ,TBRFLENTITEFIN = '04297506891'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01S'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04297506891'                                           
+      ,TBENLENTITEFIN = '04300875192'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01T'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04297506891'                                           
+      ,TBRFLENTITEFIN = '04300875192'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01T'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04300875192'                                           
+      ,TBENLENTITEFIN = '04302812419'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01U'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04300875192'                                           
+      ,TBRFLENTITEFIN = '04302812419'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01U'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04302812419'                                           
+      ,TBENLENTITEFIN = '04305071728'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01V'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04302812419'                                           
+      ,TBRFLENTITEFIN = '04305071728'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01V'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04305071728'                                           
+      ,TBENLENTITEFIN = '04307331035'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01W'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04305071728'                                           
+      ,TBRFLENTITEFIN = '04307331035'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01W'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04307331035'                                           
+      ,TBENLENTITEFIN = '04309612020'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01X'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04307331035'                                           
+      ,TBRFLENTITEFIN = '04309612020'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01X'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04309612020'                                           
+      ,TBENLENTITEFIN = '04311893004'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01Y'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04309612020'                                           
+      ,TBRFLENTITEFIN = '04311893004'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01Y'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04311893004'                                           
+      ,TBENLENTITEFIN = '04314026578'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01Z'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04311893004'                                           
+      ,TBRFLENTITEFIN = '04314026578'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01Z'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04314026578'                                           
+      ,TBENLENTITEFIN = '04316160151'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD020'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04314026578'                                           
+      ,TBRFLENTITEFIN = '04316160151'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD020'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04316160151'                                           
+      ,TBENLENTITEFIN = '04317665076'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD021'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04316160151'                                           
+      ,TBRFLENTITEFIN = '04317665076'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD021'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04317665076'                                           
+      ,TBENLENTITEFIN = '04335669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01O'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04317665076'                                           
+      ,TBRFLENTITEFIN = '04335669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01O'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04335669999'                                           
+      ,TBENLENTITEFIN = '04350669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01P'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04335669999'                                           
+      ,TBRFLENTITEFIN = '04350669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01P'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04350669999'                                           
+      ,TBENLENTITEFIN = '04361169999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01Q'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04350669999'                                           
+      ,TBRFLENTITEFIN = '04361169999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01Q'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04361169999'                                           
+      ,TBENLENTITEFIN = '04374669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01R'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04361169999'                                           
+      ,TBRFLENTITEFIN = '04374669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01R'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04374669999'                                           
+      ,TBENLENTITEFIN = '04386669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD022'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04374669999'                                           
+      ,TBRFLENTITEFIN = '04386669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD022'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04386669999'                                           
+      ,TBENLENTITEFIN = '04397169999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD023'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04386669999'                                           
+      ,TBRFLENTITEFIN = '04397169999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD023'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04397169999'                                           
+      ,TBENLENTITEFIN = '04400169999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD024'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04397169999'                                           
+      ,TBRFLENTITEFIN = '04400169999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD024'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04400169999'                                           
+      ,TBENLENTITEFIN = '04401669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD025'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04400169999'                                           
+      ,TBRFLENTITEFIN = '04401669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD025'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04401669999'                                           
+      ,TBENLENTITEFIN = '04403169999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD026'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04401669999'                                           
+      ,TBRFLENTITEFIN = '04403169999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD026'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04403169999'                                           
+      ,TBENLENTITEFIN = '04404669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD027'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04403169999'                                           
+      ,TBRFLENTITEFIN = '04404669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD027'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04404669999'                                           
+      ,TBENLENTITEFIN = '04406169999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD012'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04404669999'                                           
+      ,TBRFLENTITEFIN = '04406169999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD012'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04406169999'                                           
+      ,TBENLENTITEFIN = '04407669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD013'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04406169999'                                           
+      ,TBRFLENTITEFIN = '04407669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD013'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04407669999'                                           
+      ,TBENLENTITEFIN = '04409169999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD014'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04407669999'                                           
+      ,TBRFLENTITEFIN = '04409169999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD014'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04409169999'                                           
+      ,TBENLENTITEFIN = '04413669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD015'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04409169999'                                           
+      ,TBRFLENTITEFIN = '04413669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD015'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04413669999'                                           
+      ,TBENLENTITEFIN = '04421169999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD016'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04413669999'                                           
+      ,TBRFLENTITEFIN = '04421169999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD016'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04421169999'                                           
+      ,TBENLENTITEFIN = '04431669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD017'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04421169999'                                           
+      ,TBRFLENTITEFIN = '04431669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD017'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04431669999'                                           
+      ,TBENLENTITEFIN = '04442169999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01D'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04431669999'                                           
+      ,TBRFLENTITEFIN = '04442169999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01D'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04442169999'                                           
+      ,TBENLENTITEFIN = '04448169999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01F'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04442169999'                                           
+      ,TBRFLENTITEFIN = '04448169999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01F'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04448169999'                                           
+      ,TBENLENTITEFIN = '04458669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01G'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04448169999'                                           
+      ,TBRFLENTITEFIN = '04458669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01G'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04458669999'                                           
+      ,TBENLENTITEFIN = '04467669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01H'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04458669999'                                           
+      ,TBRFLENTITEFIN = '04467669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01H'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04467669999'                                           
+      ,TBENLENTITEFIN = '04476669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01I'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04467669999'                                           
+      ,TBRFLENTITEFIN = '04476669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01I'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04476669999'                                           
+      ,TBENLENTITEFIN = '04485669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01J'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04476669999'                                           
+      ,TBRFLENTITEFIN = '04485669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01J'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPENT                                                            
+   SET TBENLENTITEDEB = '04485669999'                                           
+      ,TBENLENTITEFIN = '04494669999'                                           
+      ,TBENDMOD       = '16.02.2011'                                            
+      ,TBENLUSERMOD   = 'B.T.'                                                  
+ WHERE TBENLKJOB      = 'PFRGD01K'                                              
+  AND  TBENDTRAIT     = '01.01.0001';                                           
+                                                                                
+ UPDATE PFRA.TBBPREF                                                            
+   SET TBRFLENTITEDEB = '04485669999'                                           
+      ,TBRFLENTITEFIN = '04494669999'                                           
+      ,TBRFDMOD       = '16.02.2011'                                            
+      ,TBRFLUSERMOD   = 'B.T.'                                                  
+ WHERE TBRFLKJOB      = 'PFRGD01K'                                              
+  AND  TBRFDTRAIT     = '01.01.0001';                                           
+                                                                                
+

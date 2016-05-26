@@ -1,0 +1,23 @@
+SELECT  TDCTNFOY, TCPFNSOC, TDCTNCONT, TDCTNCARTE, TDCTNDT,                     
+TDCTNRANG, TDCTLNOMPREN, TDCTLNOMJF, TDCTBINDP, TDCTDNAIS,                      
+TCPFCSECRBAN, TDPRMSREC, TDPRMCRD, TDCOCCAUTION                                 
+FROM PFRA.TBDOCAU, PFRA.TBCLPRF, PFRA.TBDOPRN, PFRA.TBDOCTR                     
+WHERE TCPFNSOC    =  TDPRNSOC                                                   
+  AND TDPRNFOY    =  TDCTNFOY                                                   
+  AND TDPRNCONT   =  TDCTNCONT                                                  
+  AND TDPRNCARTE  =  TDCTNCARTE                                                 
+  AND TDPRNDT     =  TDCTNDT                                                    
+  AND TDCTNFOY    =  TDCONFOY                                                   
+  AND TDCTNCONT   =  TDCONCONT                                                  
+  AND TDCTNCARTE  =  TDCONCARTE                                                 
+  AND TDCTNDT     =  TDCONDT                                                    
+  AND TDCONFOY    =  TDPRNFOY                                                   
+  AND TDCONCONT   =  TDPRNCONT                                                  
+  AND TDCONCARTE  =  TDPRNCARTE                                                 
+  AND TDCONDT     =  TDPRNDT                                                    
+  AND TCPFNFOY    =  TDPRNFOY                                                   
+  AND TCPFNFOY    =  TDCTNFOY                                                   
+  AND TCPFNFOY    =  TDCONFOY                                                   
+  AND TDCTNFOY BETWEEN 04296075818 AND 04337169999                              
+  AND TCPFNFOY BETWEEN 04296075818 AND 04337169999                              
+  WITH UR ;                                                                     

@@ -1,0 +1,166 @@
+SELECT TVDSOC, COUNT(*)                                                         
+  FROM PFRA.TBVDVDR                                                             
+ WHERE TVDSOC IN (472,475,517,520,664,670)                                      
+ GROUP BY TVDSOC                                                                
+;                                                                               
+ SELECT COUNT(*) AS NB_VDRS_475                                                 
+ FROM   PFRA.TBVDVDR A                                                          
+ WHERE  TVDSOC = 475                                                            
+   AND  NOT EXISTS                                                              
+        ( SELECT 1                                                              
+          FROM   PFRA.TBVDVDR B                                                 
+          WHERE  B.TVDSOC = 472                                                 
+            AND  B.TVDAGR = A.TVDAGR )                                          
+;                                                                               
+SELECT A.TVDSOC                                                                 
+     , A.TVDAGR                                                                 
+     , A.TVDCPOSA                                                               
+     , A.TVDCHAINE                                                              
+     , A.TVDRGPT                                                                
+     , A.TVDREFEXT                                                              
+FROM   PFRA.TBVDVDR A                                                           
+WHERE  TVDSOC = 475                                                             
+  AND  NOT EXISTS                                                               
+       ( SELECT 1                                                               
+         FROM   PFRA.TBVDVDR B                                                  
+         WHERE  B.TVDSOC = 472                                                  
+           AND  B.TVDAGR = A.TVDAGR )                                           
+;                                                                               
+ SELECT COUNT(*) AS NB_VDRS_520                                                 
+ FROM   PFRA.TBVDVDR A                                                          
+ WHERE  TVDSOC = 520                                                            
+   AND  NOT EXISTS                                                              
+        ( SELECT 1                                                              
+          FROM   PFRA.TBVDVDR B                                                 
+          WHERE  B.TVDSOC = 517                                                 
+            AND  B.TVDAGR = A.TVDAGR )                                          
+;                                                                               
+SELECT A.TVDSOC                                                                 
+     , A.TVDAGR                                                                 
+     , A.TVDCPOSA                                                               
+     , A.TVDCHAINE                                                              
+     , A.TVDRGPT                                                                
+     , A.TVDREFEXT                                                              
+FROM   PFRA.TBVDVDR A                                                           
+WHERE  TVDSOC = 520                                                             
+  AND  NOT EXISTS                                                               
+       ( SELECT 1                                                               
+         FROM   PFRA.TBVDVDR B                                                  
+         WHERE  B.TVDSOC = 517                                                  
+           AND  B.TVDAGR = A.TVDAGR )                                           
+;                                                                               
+ SELECT COUNT(*) AS NB_VDRS_670                                                 
+ FROM   PFRA.TBVDVDR A                                                          
+ WHERE  TVDSOC = 670                                                            
+   AND  NOT EXISTS                                                              
+        ( SELECT 1                                                              
+          FROM   PFRA.TBVDVDR B                                                 
+          WHERE  B.TVDSOC = 664                                                 
+            AND  B.TVDAGR = A.TVDAGR )                                          
+;                                                                               
+SELECT A.TVDSOC                                                                 
+     , A.TVDAGR                                                                 
+     , A.TVDCPOSA                                                               
+     , A.TVDCHAINE                                                              
+     , A.TVDRGPT                                                                
+     , A.TVDREFEXT                                                              
+FROM   PFRA.TBVDVDR A                                                           
+WHERE  TVDSOC = 670                                                             
+  AND  NOT EXISTS                                                               
+       ( SELECT 1                                                               
+         FROM   PFRA.TBVDVDR B                                                  
+         WHERE  B.TVDSOC = 664                                                  
+           AND  B.TVDAGR = A.TVDAGR )                                           
+;                                                                               
+SELECT TVDSOC, TVDCHAINE, COUNT(*)                                              
+    FROM PFRA.TBVDVDR                                                           
+   WHERE TVDSOC IN (472,475,517,520,664,670)                                    
+   GROUP BY TVDSOC, TVDCHAINE                                                   
+;                                                                               
+ SELECT TPRSOC, TPRLPROD, COUNT(*)                                              
+   FROM PFRA.TBVDPRO                                                            
+  WHERE TPRSOC IN (472,475,517,520,664,670)                                     
+  GROUP BY TPRSOC, TPRLPROD                                                     
+;                                                                               
+    SELECT TVDAGR,COUNT(*)                                                      
+    FROM PFRA.TBVDVDR                                                           
+    WHERE TVDSOC IN (472,475)                                                   
+    GROUP BY TVDAGR                                                             
+    HAVING COUNT(*) > 1                                                         
+    ;                                                                           
+    SELECT TPRAGR,TPRLPROD,COUNT(*)                                             
+    FROM PFRA.TBVDPRO                                                           
+    WHERE TPRSOC IN (472,475)                                                   
+    GROUP BY TPRAGR,TPRLPROD                                                    
+    HAVING COUNT(*) > 1                                                         
+    ;                                                                           
+    DECLARE GLOBAL TEMPORARY TABLE PRDTS_DUPLIC_475                             
+         (PRODUIT  CHAR(4))                                                     
+    ;                                                                           
+    INSERT INTO SESSION.PRDTS_DUPLIC_475                                        
+          SELECT TPRLPROD                                                       
+          FROM PFRA.TBVDPRO                                                     
+          WHERE TPRSOC IN (472,475)                                             
+          GROUP BY TPRAGR,TPRLPROD                                              
+          HAVING COUNT(*) > 1                                                   
+                                                                                
+    ;                                                                           
+    SELECT PRODUIT,COUNT(*) AS "NB FOIS DEJA DUPL"                              
+    FROM SESSION.PRDTS_DUPLIC_475                                               
+    GROUP BY PRODUIT                                                            
+    ;                                                                           
+    SELECT TVDAGR,COUNT(*)                                                      
+    FROM PFRA.TBVDVDR                                                           
+    WHERE TVDSOC IN (517,520)                                                   
+    GROUP BY TVDAGR                                                             
+    HAVING COUNT(*) > 1                                                         
+    ;                                                                           
+    SELECT TPRAGR,TPRLPROD,COUNT(*)                                             
+    FROM PFRA.TBVDPRO                                                           
+    WHERE TPRSOC IN (517,520)                                                   
+    GROUP BY TPRAGR,TPRLPROD                                                    
+    HAVING COUNT(*) > 1                                                         
+    ;                                                                           
+    DECLARE GLOBAL TEMPORARY TABLE PRDTS_DUPLIC_520                             
+         (PRODUIT  CHAR(4))                                                     
+    ;                                                                           
+    INSERT INTO SESSION.PRDTS_DUPLIC_520                                        
+          SELECT TPRLPROD                                                       
+          FROM PFRA.TBVDPRO                                                     
+          WHERE TPRSOC IN (517,520)                                             
+          GROUP BY TPRAGR,TPRLPROD                                              
+          HAVING COUNT(*) > 1                                                   
+                                                                                
+    ;                                                                           
+    SELECT PRODUIT,COUNT(*) AS "NB FOIS DEJA DUPL"                              
+    FROM SESSION.PRDTS_DUPLIC_520                                               
+    GROUP BY PRODUIT                                                            
+    ;                                                                           
+    SELECT TVDAGR,COUNT(*)                                                      
+    FROM PFRA.TBVDVDR                                                           
+    WHERE TVDSOC IN (664,670)                                                   
+    GROUP BY TVDAGR                                                             
+    HAVING COUNT(*) > 1                                                         
+    ;                                                                           
+    SELECT TPRAGR,TPRLPROD,COUNT(*)                                             
+    FROM PFRA.TBVDPRO                                                           
+    WHERE TPRSOC IN (664,670)                                                   
+    GROUP BY TPRAGR,TPRLPROD                                                    
+    HAVING COUNT(*) > 1                                                         
+    ;                                                                           
+    DECLARE GLOBAL TEMPORARY TABLE PRDTS_DUPLIC_670                             
+         (PRODUIT  CHAR(4))                                                     
+    ;                                                                           
+    INSERT INTO SESSION.PRDTS_DUPLIC_670                                        
+          SELECT TPRLPROD                                                       
+          FROM PFRA.TBVDPRO                                                     
+          WHERE TPRSOC IN (664,670)                                             
+          GROUP BY TPRAGR,TPRLPROD                                              
+          HAVING COUNT(*) > 1                                                   
+                                                                                
+    ;                                                                           
+    SELECT PRODUIT,COUNT(*) AS "NB FOIS DEJA DUPL"                              
+    FROM SESSION.PRDTS_DUPLIC_670                                               
+    GROUP BY PRODUIT                                                            
+    ;                                                                           
+

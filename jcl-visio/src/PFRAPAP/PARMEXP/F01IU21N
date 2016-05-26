@@ -1,0 +1,55 @@
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC01)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKCASS ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC02)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKCCAS ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC03)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKCCCO ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC04)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKCEPA ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC05)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKPPEE ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC06)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKPPER ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC07)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKPRAP ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC08)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKRCPO ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC09)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKRPEP ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC10)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKRPOS ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC11)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKRPRO ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC12)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKRROP ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC13)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKPRAC ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC14)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKRCSP ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC15)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKRETA ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC16)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKROPL ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC17)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKRPAY ORDER BY CLUSTER                                       
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(SYSREC18)                         
+ SORTDEVT SYSDA  SORTNUM  20                                                    
+ FROM TABLE PFRA.TBKCASO ORDER BY CLUSTER                                       
+

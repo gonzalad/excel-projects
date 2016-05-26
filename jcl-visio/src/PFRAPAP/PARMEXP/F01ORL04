@@ -1,0 +1,4 @@
+ SORT FIELDS=(1,1,CH,A)                                                         
+ OUTFIL FNAMES=ATRAITER,STARTREC=1,ENDREC=250000,OUTREC=(2,11),                 
+         INCLUDE=(1,1,CH,EQ,C'1')                                               
+ OUTFIL FNAMES=ARECYCLE,SAVE                                                    

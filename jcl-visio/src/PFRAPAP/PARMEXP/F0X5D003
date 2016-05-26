@@ -1,0 +1,28 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGX60250.NELITT00.BPRIME00' +                                      
+      JOUR.FLIT4.IMPLITT1.DUMOJJ                                                
+PUT 'PFRAFTS.SGX60252.NELITT00.BPRIMB00' +                                      
+      JOUR.FLIT4.IMPLITT4.DUMOJJ                                                
+PUT 'PFRAFTS.SGX60253.NELITT00.BPRIMC00' +                                      
+      JOUR.FLIT4.IMPLITT3.DUMOJJ                                                
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT4.IMPLITT1.DUMOJJ_INF                                            
+APPEND 'PFRAFTS.SGX60637.NELITT00.SYSOUC00' +                                   
+      JOUR.FLIT4.IMPLITT1.DUMOJJ_INF                                            
+APPEND 'PFRAFTS.SGX60638.NELITT00.IMPRIMAN' +                                   
+      JOUR.FLIT4.IMPLITT1.DUMOJJ_INF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT4.IMPLITT1.DUMOJJ_EOF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT4.IMPLITT4.DUMOJJ_INF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT4.IMPLITT4.DUMOJJ_EOF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT4.IMPLITT3.DUMOJJ_INF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT4.IMPLITT3.DUMOJJ_EOF                                            
+CLOSE                                                                           
+QUIT                                                                            

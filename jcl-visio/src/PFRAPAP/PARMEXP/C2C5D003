@@ -1,0 +1,11 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SCG20042.SORT0000.SORTOUT0' +                                      
+      JOURA.F#JAFA.IMPTM302.EX1.DU0828                                          
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.F#JAFA.IMPTM302.EX1.DU0828_INF                                      
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.F#JAFA.IMPTM302.EX1.DU0828_EOF                                      
+CLOSE                                                                           
+QUIT                                                                            

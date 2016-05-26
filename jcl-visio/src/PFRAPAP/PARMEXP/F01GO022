@@ -1,0 +1,12 @@
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 240                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 240;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 240;                                                           

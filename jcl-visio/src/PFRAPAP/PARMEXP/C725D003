@@ -1,0 +1,5 @@
+PFRXNT01 (EXIT=16                                                               
+CD SECTORDT                                                                     
+PUT 'PFRAFTE.SGV60078.NEVDMI20.CONTREND' CRV_1507.TXT                           
+CLOSE                                                                           
+QUIT                                                                            

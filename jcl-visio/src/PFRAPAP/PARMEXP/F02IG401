@@ -1,0 +1,4 @@
+   REORG TABLESPACE P%FR.S%FR RTS                                               
+         EXCLUDE TABLESPACE PCDBUTFR.%                                          
+         CONCURRENT SHRLEVEL CHANGE                                             
+         SORTDEVT SYSDA SORTNUM 20                                              

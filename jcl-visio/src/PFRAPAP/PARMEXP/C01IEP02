@@ -1,0 +1,10 @@
+PFRXNT01 (EXIT=16                                                               
+CD EXPLOIT                                                                      
+CD COLLECTE SG/FRANCE/HEBDOMADAIRE/SGPPRW                                       
+PUT 'PFRATMP.NIEP0001.TRICOMP0.FICOUT01' SGPPRW_083115.CSV                      
+CD                                                                              
+CD EXPLOIT                                                                      
+CD COLLECTE SG/FRANCE/HEBDOMADAIRE/SGPFRQ                                       
+PUT 'PFRATMP.NIEP0002.TRICOMP0.FICOUT02' SGPFRQ_083115.CSV                      
+CLOSE                                                                           
+QUIT                                                                            

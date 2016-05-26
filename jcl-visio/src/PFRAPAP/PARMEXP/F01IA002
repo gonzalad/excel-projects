@@ -1,0 +1,24 @@
+* 1 : LE STEP EXECUTE UN PROGRAMME DES ETUDES                                   
+1 STEP PROGRAMME                                                                
+* 2 : INUTILISE, ANCIENNE FACON DE DETECTER LES FLUX                            
+* 3 : ENVOIS ENTREPOT DE DONNEES                                                
+3 STRING UNIT=EUROPE                                                            
+* 4 : CHARGEMENTS HARRY                                                         
+4 STEP VECTREP                                                                  
+4 STEP VECTOR                                                                   
+* 5 : REQUETES DE CONTROLE                                                      
+5 SYSTEM GZA                                                                    
+* 6 : INUTILISE                                                                 
+* 6 PROSE   - RELANCE APRES CORRECTION      : OUI                               
+* 7 : ENVOIS COMPTABILITE                                                       
+7 STRING 'CD /TRANSFERT/IBM'                                                    
+* 8 : ENVOIS LOGISTIQUE                                                         
+8 STRING 'CD /DATA-APMX/APM_FILES/INPUT'                                        
+* 9 A 12 : SAUVEGARDES                                                          
+9 STRING '//***--SAUVEGARDE LOCALE'                                             
+10 STRING '//***--SAUVEGARDE DE RECOURS'                                        
+11 STRING '//***--MIGRATION'                                                    
+12 STRING '//***--VALIDATION SAUVEGARDE'                                        
+* 13 : QUIESCE                                                                  
+13 STRING 'QUIESCE '                                                            
+* 14 : POSITIONNE PAR L'APPLICATION FLUX                                        

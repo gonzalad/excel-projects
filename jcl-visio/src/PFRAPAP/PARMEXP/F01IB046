@@ -1,0 +1,113 @@
+*+* FMC2FM: Beginning of File Manager statement output *+*              00010000
+*                                                                       00020000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00030000
+* TRAITEMENT DU REFERENTIEL 009 CORRESPONDANT AU FLUX 308 (reception)   00040000
+*                                 IDENTIFIANT    ECHSO003               00050000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00060000
+*                                                                       00070000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00080000
+* controle de l'enregistrement en-tete                                  00090000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00100000
+*                                                                       00110000
+* code ligne egal a zero et 8 blancs pour ne pas rejeter les dossiers   00120000
+* a zero.                                                               00130000
+$$FILEM SET  PAD=X'00'                                                  00140000
+$$FILEM DSC  INPUT=DD01,                                                00150000
+$$FILEM      OUTPUT=TYPEZERO,                                           00160000
+$$FILEM      PROC=*                                                     00170000
+ IF FLD(1,10) == '00        ',                                          00180000
+  & FLD_TYPE(11,6,Z) = 1                                                00190000
+ THEN DO                                                                00200000
+  RSTR_OUT()                                                            00210000
+  OVLY_OUT('ENTETE ',2)                                                 00220000
+  OVLY_OUT('DATE',9)                                                    00230000
+  OVLY_OUT('20',13)                                                     00240000
+  FLD_OUT(15,2,15)                                                      00250000
+  FLD_OUT(13,2,17)                                                      00260000
+  FLD_OUT(11,2,19)                                                      00270000
+  OVLY_OUT('010000',21)                                                 00280000
+  WRITE(TYPEZERO)                                                       00290000
+  SAVE_OUT()                                                            00300000
+  RETURN DROP                      /* drop record READNEXT           */ 00310000
+ END                                                                    00320000
+ IF FLD(1,10) == '99        ',                                          00330000
+  & FLD_TYPE(11,6,Z) = 1,                                               00340000
+  & FLD_TYPE(24,9,Z) = 1,                                               00350000
+  & FLD_TYPE(33,18,Z) = 1                                               00360000
+ THEN DO                                                                00370000
+  RSTR_OUT()                                                            00380000
+  OVLY_OUT('ENQUEUE',2)                                                 00390000
+  OVLY_OUT('DATE',9)                                                    00400000
+  OVLY_OUT('20',13)                                                     00410000
+  FLD_OUT(15,2,15)                                                      00420000
+  FLD_OUT(13,2,17)                                                      00430000
+  FLD_OUT(11,2,19)                                                      00440000
+  OVLY_OUT('010000',21)                                                 00450000
+  OVLY_OUT('NOMBRE000',27)                                              00460000
+  FLD_OUT(27,6,36)                                                      00470000
+  OVLY_OUT('MONTANT',42)                                                00480000
+  FLD_OUT(34,17,49)                                                     00490000
+  WRITE(TYPENEUF)                                                       00500000
+  SAVE_OUT()                                                            00510000
+  RETURN DROP                      /* drop record READNEXT           */ 00520000
+ END                                                                    00530000
+ IF FLD(1,10) \== '00        ',                                         00540000
+  & FLD(1,10) \== '99        '                                          00550000
+ THEN DO                                                                00560000
+  TALLY(34,11,Z,'TOTAL FLUX 009 ')                                      00570000
+ END                                                                    00580000
+ RETURN DROP                       /* done USER processing of record */ 00590000
+/+                                                                      00600000
+* date creation numerique                                               00610000
+* si controle ok ecriture de l'enregistrement en-tete                   00620000
+* reformat de la date jjmmaa en SSAAMMJJ                                00630000
+* initialisation heure a zero                                           00640000
+*                                                                       00650000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00660000
+* controle de l'enregistrement en-queue                                 00670000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00680000
+*                                                                       00690000
+* code ligne egal a 99 et 8 blancs pour ne pas rejeter les dossiers     00700000
+* a zero                                                                00710000
+* date creation numerique                                               00720000
+* nombre d'enregistrements transmis numerique                           00730000
+* cumul numerique                                                       00740000
+* si controle ok ecriture de l'enregistrement en-queue                  00750000
+* reformat de la date jjmmaa en SSAAMMJJ                                00760000
+* initialisation heure a zero                                           00770000
+*                                                                       00780000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00790000
+* cumul du montant MTO (pos=34,lg=11) pour les enregistrements details  00800000
+* le resultat est dans SYSTOTAL                                         00810000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00820000
+*                                                                       00830000
+* code ligne egal a 00 et 8 blancs ou 99 et 8 blancs                    00840000
+* pour ne pas rejeter les dossiers a zero                               00850000
+*                                                                       00860000
+*                                                                       00870000
+*                                                                       00880000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00890000
+* comptabilisation du nombre d'enregistrements details                  00900000
+* le resultat est dans SYSPRINT                                         00910000
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   00920000
+*                                                                       00930000
+* code ligne egal a 00 et 8 blancs ou 99 et 8 blancs                    00940000
+* pour ne pas rejeter les dossiers a zero                               00950000
+$$FILEM DSC  INPUT=DD02,                                                00960000
+$$FILEM      OUTPUT=DD02O,                                              00970000
+$$FILEM      PROC=*                                                     00980000
+ IF FLD(1,10) \== '00        ',                                         00990000
+  & FLD(1,10) \== '99        '                                          01000000
+ THEN DO                                                                01010000
+  SETN(COMPT,'+1','Lines COPIED=')                                      01020000
+  RETURN                           /* process record                 */ 01030000
+ END                                                                    01040000
+ RETURN DROP                       /* no criteria match, drop        */ 01050000
+*EOFPROC                                                                01060000
+ IF TESTN(COMPT,'EQ', 0) Then Do                                        01070000
+    Say 'TOTAL FLUX 009  0'                                             01080000
+    Say '             OUTPUT=DD02O'                                     01090000
+    Say 'Lines COPIED=   0'                                             01100000
+ End                                                                    01110000
+/+                                                                      01120000
+

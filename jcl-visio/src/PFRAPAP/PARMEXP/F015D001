@@ -1,0 +1,17 @@
+ OUTFIL INCLUDE=(5,3,BI,EQ,C'SJD',AND,                                          
+         79,5,BI,EQ,C'IET0H'),                                                  
+         OUTREC=(1,4,C'FJOUR',89,46,73,1),                                      
+         FNAMES=FJOUR                                                           
+  OUTFIL INCLUDE=(5,3,BI,EQ,C'SJD',AND,                                         
+         79,5,BI,EQ,C'GLB01'),                                                  
+         OUTREC=(1,4,C'FBILA',89,46,73,1),                                      
+         FNAMES=FBILA                                                           
+  OUTFIL INCLUDE=(5,3,BI,EQ,C'SJD',AND,                                         
+         79,5,BI,EQ,C'GLC01'),                                                  
+         OUTREC=(1,4,C'FBILC',89,46,73,1),                                      
+         FNAMES=FBILC                                                           
+  OUTFIL INCLUDE=(5,3,BI,EQ,C'SJD',AND,                                         
+         79,5,BI,EQ,C'GLE01'),                                                  
+         OUTREC=(1,4,C'FBILD',89,46,73,1),                                      
+         FNAMES=FBILD                                                           
+ OPTION COPY,VLSHRT                                                             

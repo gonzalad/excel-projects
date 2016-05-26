@@ -1,0 +1,28 @@
+       WHERE                                                                    
+             TDPRCPOSA IN ('RET','ASM','ENC') AND                               
+             TDCANFOY    =  TDPRNFOY   AND                                      
+             TDCANCONT   =  TDPRNCONT  AND                                      
+             TDCANCARTE  =  TDPRNCARTE AND                                      
+             TDCANDT     =  TDPRNDT    AND                                      
+            (TDPRNFOY BETWEEN 4262989448 AND 4302812419) AND                    
+             TDPRNOPERFIDEL = 14                         AND                    
+             TDPRNSOC     IN (100 , 114, 700, 714)       AND                    
+            ( (     CURRENT TIME >= '20.00.00'                                  
+                AND CURRENT TIME <= '23.59.59'                                  
+                AND (TDCADCREAT = CURRENT DATE  OR                              
+                     TDCADMOD   = CURRENT DATE)                                 
+              )                                                                 
+              OR                                                                
+              (     CURRENT TIME >= '00.00.00'                                  
+                AND CURRENT TIME <= '19.59.59'                                  
+                AND (TDCADCREAT = (CURRENT DATE - 1 DAYS)  OR                   
+                     TDCADMOD   = (CURRENT DATE - 1 DAYS))                      
+            ) )                                                                 
+             ORDER BY TDCANFOY   ASC,                                           
+                      TDCANCONT  ASC,                                           
+                      TDCANCARTE ASC,                                           
+                      TDCANDT    DESC,                                          
+                      TDCADCREAT ASC,                                           
+                      TDCADMOD   ASC,                                           
+                      TDCANRANG  ASC                                            
+            WITH UR;                                                            

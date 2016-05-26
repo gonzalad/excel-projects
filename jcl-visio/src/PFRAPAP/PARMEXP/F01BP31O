@@ -1,0 +1,77 @@
+* (F01                                                                          
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 505 CORRESPONDANT AU FLUX 302 (EMISSION)            
+*                                 IDENTIFIANT    ECHSO001                       
+* CE FICHIER CONTIENT PLUSIEURS ENTETE ET FIN                                   
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* CONTROLE DES ENREGISTREMENTS EN-TETE                                          
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* CODE LIGNE EGAL A 01                                                          
+$$DD01 USER RDW=3,IF=(007,EQ,C'01'),                                            
+* DATE CREATION NUMERIQUE JJMMAA                                                
+             IF=(012,06,EQN),                                                   
+* SI CONTROLE OK ECRITURE DE L'ENREGISTREMENT EN-TETE                           
+             MOVE=(1,133C' '),                                                  
+             MOVE=(2,C'ENTETE '),                                               
+             MOVE=(9,C'DATE'),                                                  
+* MISE EN FORME DE LA DATE AU FORMAT SSAAMMJJ                                   
+             MOVE=(13,C'20'),                                                   
+             MOVE=(15,02,16),                                                   
+             MOVE=(17,02,14),                                                   
+             MOVE=(19,02,12),                                                   
+             MOVE=(21,6C'0'),                                                   
+             WRITE=TYPEZERO,RN,                                                 
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* CONTROLE DE L'ENREGISTREMENT EN-QUEUE                                         
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* CODE LIGNE EGAL A 09                                                          
+             IF=(007,EQ,C'09'),                                                 
+* DATE CREATION NUMERIQUE JJMMAA                                                
+             IF=(017,06,EQN),                                                   
+* NOMBRE D'ENREGISTREMENTS TRANSMIS NUMERIQUE                                   
+             IF=(076,09,EQN),                                                   
+* CUMUL NUMERIQUE                                                               
+             IF=(085,16,EQN),                                                   
+* SI CONTROLE OK ECRITURE DE L'ENREGISTREMENT EN-QUEUE                          
+             MOVE=(2,C'ENQUEUE'),                                               
+             MOVE=(9,C'DATE'),                                                  
+* MISE EN FORME DE LA DATE AU FORMAT SSAAMMJJ                                   
+             MOVE=(13,14C'0'),                                                  
+             MOVE=(13,C'20'),                                                   
+             MOVE=(15,02,16),                                                   
+             MOVE=(17,02,14),                                                   
+             MOVE=(19,02,12),                                                   
+* AJOUT DU TYPE D'OPERATION ASSOCIE A LA DATE                                   
+             MOVE=(21,03,09),                                                   
+* RECUPERATION DU NOMBRE ENREGISTREMENTS FOURNIS                                
+             MOVE=(27,C'NOMBRE000'),                                            
+             MOVE=(36,6,79),                                                    
+* RECUPERATION DU MONTANT FOURNI                                                
+             MOVE=(42,C'MONTANT'),                                              
+             MOVE=(49,15,86),                                                   
+             WRITE=TYPENEUF,RN,                                                 
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* CUMUL DU MONTANT MT-COMP POUR LES ENREGISTREMENTS DETAILS                     
+* LE RESULTAT EST DANS SYSTOTAL                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+             IF=(007,EQ,C'02'),                                                 
+             ACCUM=(38,15,C,'TOTAL FLUX 505 ')                                  
+*                                                                               
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* COMPTABILISATION DU NOMBRE D'ENREGISTREMENTS DETAILS                          
+* LE RESULTAT EST DANS SYSPRINT                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$DD02 COPY  IF=(007,NE,C'01',C'09')                                            
+*                                                                               
+

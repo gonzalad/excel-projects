@@ -1,0 +1,5 @@
+  OPTION COPY                                                                   
+  INREC IFTHEN=(WHEN=INIT,FINDREP=(STARTPOS=1,                                  
+    INOUT=(C'@',C' '))),                                                        
+        IFTHEN=(WHEN=INIT,FINDREP=(STARTPOS=1,                                  
+    INOUT=(C'TRPMTV01',C'DSNMTV01')))                                           

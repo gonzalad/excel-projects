@@ -1,0 +1,14 @@
+UPDATE PS2P.TBBPTVX                                                             
+SET    TBTVDTRAIT =   'CURRENT DATE',                                           
+       TBTVDMOD   =   'CURRENT DATE',                                           
+WHERE  TBTVLPROG = 'FROPPO'                                                     
+AND    TBTVLKJOB = 'PSCOA601'                                                   
+AND TBTVLTVX = 'FICHIER RS6000 TOTAL CONTROLEUR       : 8888'                   
+AND TBTVDCREAT = '01.08.2003';                                                  
+UPDATE PS2P.TBBPTVX                                                             
+SET    TBTVDTRAIT =   'CURRENT DATE',                                           
+       TBTVDMOD   =   'CURRENT DATE',                                           
+WHERE  TBTVLPROG = 'FROPP8'                                                     
+AND    TBTVLKJOB = 'PSCOA602'                                                   
+AND TBTVLTVX = 'FICHIER RS6000 TOTAL CONTROLEUR       : 8888'                   
+AND TBTVDCREAT = '01.08.2003';                                                  

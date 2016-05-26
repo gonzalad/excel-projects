@@ -1,0 +1,4 @@
+    SELECT TBDONDOS           ,                                                 
+           TBDOCTYP           ,                                                 
+           TBDOCRANG          ,                                                 
+           TBDOLMSG                                                             

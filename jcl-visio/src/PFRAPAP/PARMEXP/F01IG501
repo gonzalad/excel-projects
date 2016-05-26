@@ -1,0 +1,15 @@
+TEMPLATE TEMPFIC DISP(NEW,CATLG,CATLG) GDGLIMIT 15 UNIT SYSDA                   
+  DSN 'PFRABU0.DFQP.&DB..&TS..A&PART(3,3).(+1)'                                 
+                                                                                
+LISTDEF QSCTS                                                                   
+  INCLUDE TABLESPACES TABLE PFRA.TBVDBNO                                        
+                                                                                
+QUIESCE LIST QSCTS                                                              
+                                                                                
+REORG TABLESPACE PVDRPRFR.SVDBNOFR LOG NO                                       
+  NOSYSREC SORTDATA SORTKEYS SORTDEVT SYSDA SORTNUM 6                           
+  SHRLEVEL REFERENCE FASTSWITCH YES                                             
+  STATISTICS TABLE(ALL) INDEX(ALL) KEYCARD HISTORY NONE                         
+  COPYDDN(TEMPFIC) DISCARDDN(SYSDISC)                                           
+  DISCARD FROM TABLE PFRA.TBVDBNO                                               
+          WHEN (TBNDENT < CURRENT DATE - 24 MONTHS))                            

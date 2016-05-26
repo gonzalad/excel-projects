@@ -1,0 +1,122 @@
+//PFRGXEZZ JOB (FRGXE),'PFRA',MSGCLASS=C,CLASS=2,                               
+//         USER=DB2EXP,REGION=8M                                                
+/*JOBPARM  SYSAFF=PFR0                                                          
+//*==================================================================*          
+//* JCL generated the 2014/01/08 at 16:35:42 by VIALA                           
+//*==================================================================*          
+//*%%CI TITRE  : JOB de fin de cha‘ne                                           
+//*                                                                             
+//*==================================================================*          
+//LISTCQ05 EXEC PGM=IDCAMS                                                      
+//SYSPRINT DD  SYSOUT=*                                                         
+//SYSIN    DD  DATA,DLM=£$                                                      
+   LISTCAT ENT (PFRAQSM.SGXEZZX.RXDSLIST.SYSTSPRT)                              
+£$                                                                              
+//STEP0005 EXEC PGM=IDCAMS,COND=(4,NE,LISTCQ05)                                 
+//SYSPRINT DD  SYSOUT=*                                                         
+//SYSIN    DD  DATA,DLM=£$                                                      
+ DEFINE GDG (NAME(PFRAQSM.SGXEZZX.RXDSLIST.SYSTSPRT) -                          
+      SCRATCH -                                                                 
+     LIMIT(2))                                                                  
+£$                                                                              
+//RXDSLIST EXEC REXBAT01,                                                       
+//         ENVIR=PFR0,                                                          
+//         COND=(4,LT)                                                          
+//REXBAT01.ISPLOG  DD DUMMY                                                     
+//REXBAT01.SYSEXEC DD DISP=SHR,DSN=CDA9.EXPL.DIALOG.EXEC                        
+//REXBAT01.SYSTSIN DD DATA,DLM=£$                                               
+ISPSTART CMD(%DSLIST PFRAQSM.%GXE*.**)                                          
+ISPSTART CMD(%DSLIST PFRAFTS.%GXE*.**)                                          
+ISPSTART CMD(%DSLIST PFRATMP.SGXE*.**)                                          
+ISPSTART CMD(%DSLIST PFRATMP.SFRGXE*.**)                                        
+ISPSTART CMD(%DSLIST PFRAFTE.%GXE*.**)                                          
+£$                                                                              
+//REXBAT01.SYSTSPRT DD DSN=PFRAQSM.SGXEZZX.RXDSLIST.SYSTSPRT(+1),               
+//         DISP=(NEW,CATLG,DELETE),                                             
+//         UNIT=SYSDA,SPACE=(TRK,(300,100),RLSE),                               
+//         DCB=(RECFM=FBA,LRECL=133,BLKSIZE=1330)                               
+//*                                                                             
+//STEP0007 EXEC REXBAT01,                                                       
+//         ENVIR=PFR0,                                                          
+//         COND=(4,LT)                                                          
+//REXBAT01.SYSEXEC DD DSN=CDA9.EXPL.DIALOG.EXEC,DISP=SHR                        
+//REXBAT01.SYSTSIN DD DATA,DLM=£$                                               
+ ISPSTART CMD(%QWSTGRP)                                                         
+£$                                                                              
+//STGRLIST  DD DSN=CDA9.PFR0.STGRLIST,DISP=SHR                                  
+//QWPRINT  DD  DSN=&&QWPRINT,                                                   
+//             DISP=(,PASS,DELETE),                                             
+//             UNIT=SYSDA,                                                      
+//             SPACE=(TRK,(1,1),RLSE),                                          
+//             DCB=(RECFM=FBA,LRECL=133,BLKSIZE=1330)                           
+//QWSTATS  DD  DSN=CDA9.PFR0.QWIKREF.QWSTATS,                                   
+//             DISP=(MOD,KEEP,KEEP),                                            
+//             UNIT=SYSDA,                                                      
+//             SPACE=(CYL,(100,10),RLSE),                                       
+//             DCB=(RECFM=FB,LRECL=80,BLKSIZE=27920)                            
+//*                                                                             
+//LISTCQ10 EXEC PGM=IDCAMS,COND=(4,LT)                                          
+//SYSPRINT DD  SYSOUT=*                                                         
+//SYSIN    DD  DATA,DLM=£$                                                      
+   LISTCAT ENT (PFRAQSM.SGXEZZY.SAVEAPPL.SYSPRINT)                              
+£$                                                                              
+//STEP0010 EXEC PGM=IDCAMS,COND=(4,NE,LISTCQ10)                                 
+//SYSPRINT DD  SYSOUT=*                                                         
+//SYSIN    DD  DATA,DLM=£$                                                      
+ DEFINE GDG (NAME(PFRAQSM.SGXEZZY.SAVEAPPL.SYSPRINT) -                          
+      SCRATCH -                                                                 
+     LIMIT(40))                                                                 
+ DEFINE GDG (NAME(PFRASVA.SGXEZZZ.SAVEAPPL.FILESEQS) -                          
+      SCRATCH -                                                                 
+     LIMIT(40))                                                                 
+£$                                                                              
+//STEP0020 EXEC PGM=ADRDSSU,COND=(4,LT)                                         
+//SYSPRINT DD  DSN=PFRAQSM.SGXEZZY.SAVEAPPL.SYSPRINT(+1),                       
+//         DISP=(NEW,CATLG,DELETE),                                             
+//         UNIT=SYSDA,SPACE=(TRK,(300,100),RLSE)                                
+//FILESEQS DD  DSN=PFRASVA.SGXEZZZ.SAVEAPPL.FILESEQS(+1),                       
+//         DISP=(NEW,CATLG,DELETE),                                             
+//         UNIT=SYSDA,SPACE=(TRK,(10000,5000),RLSE)                             
+//SYSIN    DD  DATA,DLM=£$                                                      
+ DUMP  ODD(FILESEQS) -                                                          
+   OPTIMIZE(4) COMP -                                                           
+   DS(INCL(PFRAQSM.%GXE*.** -                                                   
+           PFRAFTS.%GXE*.** -                                                   
+           PFRATMP.SGXE*.** -                                                   
+           PFRATMP.SFRGXE*.** -                                                 
+           PFRAFTE.%GXE*.** -                                                   
+                 ) -                                                            
+                ) SPHERE ALLDATA(*) TOL(ENQF)                                   
+£$                                                                              
+//CONTROLE EXEC PGM=VFIBUQRY,COND=(4,LT)                                        
+//VFIIN    DD  DSN=*.STEP0020.SYSPRINT,DISP=(SHR,PASS)                          
+//ERRLOG   DD  SYSOUT=*                                                         
+/*                                                                              
+//VFIUPDT  EXEC PGM=VFIBDSS,                                                    
+//         PARM=('PFRGXEZZ'),                                                   
+//         COND=(4,LT)                                                          
+//TAPEHOLD DD  DSN=*.STEP0020.FILESEQS,DISP=SHR,UNIT=SYSDA                      
+//DSSOUT   DD  DSN=*.STEP0020.SYSPRINT,DISP=SHR                                 
+//DDIN     DD  DSN=&&VFITEMP,DISP=(NEW,DELETE),                                 
+//         UNIT=SYSDA,SPACE=(CYL,(5,5)),                                        
+//         DCB=(LRECL=1741,BLKSIZE=31338,RECFM=FB,DSORG=PS)                     
+//SYSUDUMP DD  SYSOUT=*                                                         
+//SYSPRINT DD  SYSOUT=*                                                         
+//ERRORS   DD  SYSOUT=*                                                         
+//ERRVSAM  DD  SYSOUT=*                                                         
+//BKUPTBL  DD  DSN=CDA9.VFI.PFR0.BKUPTBL,DISP=SHR,                              
+//         AMP=('BUFNI=12,BUFND=49')                                            
+//BKUPAUD  DD  DSN=CDA9.VFI.PFR0.BKUPAUD,DISP=SHR                               
+/*                                                                              
+//STEPDELT EXEC PGM=ADRDSSU,COND=(4,LT)                                         
+//SYSPRINT DD  SYSOUT=*                                                         
+//TAPE     DD  DUMMY                                                            
+//SYSIN    DD  DATA,DLM=£$                                                      
+ DUMP  ODD(TAPE) -                                                              
+   OPTIMIZE(4) -                                                                
+   DS(INCL(PFRATMP.%GXE*.** -                                                   
+           PFRAFTE.%GXE*.** -                                                   
+           PFRATMP.%FRGXE*.** -                                                 
+           PFRAFTS.%GXE*.** -                                                   
+                )) DELETE                                                       
+£$                                                                              

@@ -1,0 +1,191 @@
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBAGLAC',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBAGLAC X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TLACNFOY                                               
+ AND   Y.TEXDNCONT   = X.TLACNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TLACNCARTE                                             
+ AND   Y.TEXDNDT     = X.TLACNDT                                                
+ AND Y.TEXDCTRAIT   = 'D';                                                      
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBAGLAC';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBAGLAG',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBAGLAG X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TLAGNFOY                                               
+ AND   Y.TEXDNCONT   = X.TLAGNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TLAGNCARTE                                             
+ AND   Y.TEXDNDT     = X.TLAGNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBAGLAG';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBAGLEC',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBAGLEC X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TLECNFOY                                               
+ AND   Y.TEXDNCONT   = X.TLECNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TLECNCARTE                                             
+ AND   Y.TEXDNDT     = X.TLECNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBAGLEC';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBAGLNT',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBAGLNT X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TLNTNFOY                                               
+ AND   Y.TEXDNCONT   = X.TLNTNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TLNTNCARTE                                             
+ AND   Y.TEXDNDT     = X.TLNTNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBAGLNT';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBAGREL',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBAGREL X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TRELNFOY                                               
+ AND   Y.TEXDNCONT   = X.TRELNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TRELNCARTE                                             
+ AND   Y.TEXDNDT     = X.TRELNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBAGREL';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBALDOS',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBALDOS X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TADONFOY                                               
+ AND   Y.TEXDNCONT   = X.TADONCONT                                              
+ AND   Y.TEXDNCARTE  = X.TADONCARTE                                             
+ AND   Y.TEXDNDT     = X.TADONDT                                                
+ AND Y.TEXDCTRAIT   = 'D';                                                      
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBALDOS';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBCBAUT',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBCBAUT X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TCBANFOY                                               
+ AND   Y.TEXDNCONT   = X.TCBANCONT                                              
+ AND   Y.TEXDNCARTE  = X.TCBANCARTE                                             
+ AND   Y.TEXDNDT     = X.TCBANDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBCBAUT';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBCLPRE',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBCLPRE X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TCPPNFOY                                               
+ AND   Y.TEXDNCONT   = X.TCPPNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TCPPNCARTE                                             
+ AND   Y.TEXDNDT     = X.TCPPNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBCLPRE';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBCLREL',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBCLREL X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TCRLNFOY                                               
+ AND   Y.TEXDNCONT   = X.TCRLNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TCRLNCARTE                                             
+ AND   Y.TEXDNDT     = X.TCRLNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBCLREL';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBECDOS',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBECDOS X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TECDNFOY                                               
+ AND   Y.TEXDNCONT   = X.TECDNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TECDNCARTE                                             
+ AND   Y.TEXDNDT     = X.TECDNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBECDOS';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBECRAC',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBECRAC X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TECRNFOY                                               
+ AND   Y.TEXDNCONT   = X.TECRNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TECRNCARTE                                             
+ AND   Y.TEXDNDT     = X.TECRNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBECRAC';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBLIINS',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBLIINS X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TLINNFOY                                               
+ AND   Y.TEXDNCONT   = X.TLINNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TLINNCARTE                                             
+ AND   Y.TEXDNDT     = X.TLINNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBLIINS';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBORCSG',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBORCSG X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TCSGNFOY                                               
+ AND   Y.TEXDNCONT   = X.TCSGNCONT                                              
+ AND   Y.TEXDNCARTE  = X.TCSGNCARTE                                             
+ AND   Y.TEXDNDT     = X.TCSGNDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBORCSG';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBLIMOT',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBLIMOT X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY      = X.TLMONFOY                                             
+ AND Y.TEXDNCONT       = X.TLMONCONT                                            
+ AND Y.TEXDNCARTE      = X.TLMONCARTE                                           
+ AND Y.TEXDNDT         = X.TLMONDT                                              
+ AND Y.TEXDCTRAIT      = 'D';                                                   
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBLIMOT';                                                 
+ INSERT (COMMIT=10) INTO PFRA.TBSTATD                                           
+ SELECT 'TBDOIMP',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;        
+ DELETE (COMMIT=10) FROM PFRA.TBDOIMP X, PFRA.TBEXDOS Y                         
+ WHERE Y.TEXDNFOY    = X.TDPINFOY                                               
+ AND   Y.TEXDNCONT   = X.TDPINCONT                                              
+ AND   Y.TEXDNCARTE  = X.TDPINCARTE                                             
+ AND   Y.TEXDNDT     = X.TDPINDT                                                
+ AND   Y.TEXDCTRAIT  = 'D';                                                     
+ UPDATE (COMMIT=10) PFRA.TBSTATD                                                
+ SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                     
+ WHERE TSTD_TBNAME = 'TBDOIMP';                                                 
+INSERT (COMMIT=10) INTO PFRA.TBSTATD                                            
+SELECT 'TBDOCEF',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;         
+DELETE (COMMIT=10) FROM PFRA.TBDOCEF X, PFRA.TBEXDOS Y                          
+WHERE Y.TEXDNFOY    = X.TDCENFOY                                                
+AND   Y.TEXDNCONT   = X.TDCENCONT                                               
+AND   Y.TEXDNCARTE  = X.TDCENCARTE                                              
+AND   Y.TEXDNDT     = X.TDCENDT                                                 
+AND   Y.TEXDCTRAIT  = 'D';                                                      
+UPDATE (COMMIT=10) PFRA.TBSTATD                                                 
+SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                      
+WHERE TSTD_TBNAME = 'TBDOCEF';                                                  
+UPDATE (COMMIT=10) PFRA.TBSTATD                                                 
+SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                      
+WHERE TSTD_TBNAME = 'TBDOCEF';                                                  
+INSERT (COMMIT=10) INTO PFRA.TBSTATD                                            
+SELECT 'TBSEBAL',CURRENT TIMESTAMP,CURRENT TIMESTAMP FROM PFRA.TBSYDAT;         
+DELETE (COMMIT=10) FROM PFRA.TBSEBAL X, PFRA.TBEXDOS Y                          
+WHERE Y.TEXDNFOY    = X.TSBANFOY                                                
+AND   Y.TEXDNCONT   = X.TSBANCONT                                               
+AND   Y.TEXDNCARTE  = X.TSBANCARTE                                              
+AND   Y.TEXDNDT     = X.TSBANDT                                                 
+AND   Y.TEXDCTRAIT  = 'D';                                                      
+UPDATE (COMMIT=10) PFRA.TBSTATD                                                 
+SET TSTD_TIMESTAMP_FIN = CURRENT TIMESTAMP                                      
+WHERE TSTD_TBNAME = 'TBSEBAL';                                                  
+

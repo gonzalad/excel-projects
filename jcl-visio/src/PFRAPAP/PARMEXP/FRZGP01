@@ -1,0 +1,21 @@
+UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(TBDOCTR) MODE(DB2SQL)              
+     SELECT TDCONFOY, TDCONCONT, TDCONCARTE, TDCONDT                            
+          , TDCODCREAT, TDCODMOD, TDCODSIGN, TDCODOFFRE                         
+          , TDCODEDITION, TDCODENGAGCTR                                         
+     FROM PFRA.TBDOCTR, PFRA.TBDOPRN, PFRA.TBDOOCT                              
+   WHERE TDCODOFFRE > '30.04.2011'                                              
+   AND TDCODSIGN < '01.05.2011'                                                 
+   AND TDCODCREAT < '10.05.2011'                                                
+    AND TDCONFOY  = TDPRNFOY                                                    
+    AND TDCONCONT = TDPRNCONT                                                   
+    AND TDCONCARTE = 0                                                          
+    AND TDCONDT = 0                                                             
+    AND TDCONDT = TDPRNDT                                                       
+    AND TDCONFOY  = TDOCNFOY                                                    
+    AND TDCONCONT = TDOCNCONT                                                   
+    AND TDCONDT = TDOCNDT                                                       
+    AND TDOCNCARTE = TDPRNCARTE                                                 
+    AND TDPRNSOC > 419 AND TDPRNSOC < 456                                       
+    AND ((TDOCCMODECONTACT = 'E' AND TDPRCPRODCOM = 'AX7 ') OR                  
+             (TDOCCMODECONTACT = 'E' AND TDPRCPRODCOM = 'DC7 ') OR              
+             (TDPRCPRODCOM = 'AX7R'));                                          

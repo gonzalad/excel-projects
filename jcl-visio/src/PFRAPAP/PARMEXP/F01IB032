@@ -1,0 +1,78 @@
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 007 CORRESPONDANT AU FLUX 305 (reception)           
+*                                 IDENTIFIANT    ECHSO002                       
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-tete                                          
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a zero et 8 blancs pour ne pas rejeter les dossiers           
+* a zero                                                                        
+$$DD01 USER IF=(001,EQ,C'00        '),                                          
+* date creation numerique                                                       
+             IF=(011,06,EQN),                                                   
+* si controle ok ecriture de l'enregistrement en-tete                           
+             MOVE=(2,C'ENTETE '),                                               
+             MOVE=(9,C'DATE'),                                                  
+* reformat de la date jjmmaa en SSAAMMJJ                                        
+             MOVE=(13,C'20'),                                                   
+             MOVE=(15,02,15),                                                   
+             MOVE=(17,02,13),                                                   
+             MOVE=(19,02,11),                                                   
+* initialisation heure a zero                                                   
+             MOVE=(21,C'010000'),                                               
+             WRITE=TYPEZERO,RN,                                                 
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-queue                                         
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a 99 et 8 blancs pour ne pas rejeter les dossiers             
+* a zero                                                                        
+             IF=(001,EQ,C'99        '),                                         
+* date creation numerique                                                       
+             IF=(011,06,EQN),                                                   
+* nombre d'enregistrements transmis numerique                                   
+             IF=(024,09,EQN),                                                   
+* cumul numerique                                                               
+             IF=(033,18,EQN),                                                   
+* si controle ok ecriture de l'enregistrement en-queue                          
+             MOVE=(2,C'ENQUEUE'),                                               
+             MOVE=(9,C'DATE'),                                                  
+* reformat de la date jjmmaa en SSAAMMJJ                                        
+             MOVE=(13,C'20'),                                                   
+             MOVE=(15,02,15),                                                   
+             MOVE=(17,02,13),                                                   
+             MOVE=(19,02,11),                                                   
+* initialisation heure a zero                                                   
+             MOVE=(21,C'010000'),                                               
+             MOVE=(27,C'NOMBRE000'),                                            
+             MOVE=(36,6,27),                                                    
+             MOVE=(42,C'MONTANT'),                                              
+             MOVE=(49,17,34),                                                   
+             WRITE=TYPENEUF,RN,                                                 
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* cumul du montant MT-COMP pour les enregistrements details CD-ARC=02           
+* le resultat est dans SYSTOTAL                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a 00 et 8 blancs ou 99 et 8 blancs                            
+* pour ne pas rejeter les dossiers zero                                         
+             IF=(001,NE,C'00        ,99        '),                              
+             IF=(007,EQ,C'02'),                                                 
+             ACCUM=(0038,15,C,'TOTAL FLUX 007 ')                                
+*                                                                               
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* comptabilisation du nombre d'enregistrements details                          
+* le resultat est dans SYSPRINT                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a 00 et 8 blancs ou 99 et 8 blancs                            
+* pour ne pas rejeter les dossiers zero                                         
+$$DD02 COPY  IF=(001,NE,C'00        ',C'99        ')                            
+

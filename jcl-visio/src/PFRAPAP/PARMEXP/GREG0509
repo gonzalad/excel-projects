@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'TPRGPPL.SGX60204.NELITT00.BPRIMC00.DU0905'  +                              
+      JOUR.FLIT2.IMPLITT4.DU0509                                                
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT2.IMPLITT4.DU0509_INF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT2.IMPLITT4.DU0509_EOF                                            
+CLOSE                                                                           
+QUIT                                                                            

@@ -1,0 +1,17 @@
+   /* KSDS VSAM - LETTRES BATCH */                                              
+   DELETE-                                                                      
+   (PFRAVSM.LETBAT)-                                                            
+   PURGE                                                                        
+        IF LASTCC = 0 -                                                         
+        THEN -                                                                  
+   DEFINE CLUSTER(NAME(PFRAVSM.LETBAT))-                                        
+   DATA(NAME(PFRAVSM.LETBAT.DATA)-                                              
+   VOL(R30012) SHR(2 3)-                                                        
+   CYL(150 20)-                                                                 
+   RECSZ(175,175)-                                                              
+   RECOVERY-                                                                    
+   KEYS(11,0))-                                                                 
+   INDEX(NAME(PFRAVSM.LETBAT.INDEX)-                                            
+   VOL(R30012)-                                                                 
+   CISZ(2048)-                                                                  
+   SHR(2 3))                                                                    

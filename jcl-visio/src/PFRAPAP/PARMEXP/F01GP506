@@ -1,0 +1,188 @@
+*---------------------------------------                                        
+* CLIENT 01.01.0001 AVEC PHASE ACTIVE = CLIENTS NON TRAITES                     
+*=======================================                                        
+SELECT TRCLNFOY,TRCLPHASEA FROM PFRA.TBRECLI                                    
+WHERE TRCLDTRAIT = '01.01.0001'                                                 
+  AND TRCLPHASEA <> '0';                                                        
+*---------------------------------------                                        
+* CLIENTS SORTIS AVEC DATE TRAIT ALIMENTEE                                      
+*=======================================                                        
+SELECT TRCLNFOY,TRCLDTRAIT FROM PFRA.TBRECLI                                    
+WHERE  TRCLPHASEA = '0'                                                         
+  AND  TRCLDTRAIT <> '01.01.0001';                                              
+*---------------------------------------                                        
+* DOSSIER01.01.0001 AVEC PHASE ACTIVE                                           
+*=======================================                                        
+SELECT TRDONCLI,TRDOPHASEA FROM PFRA.TBREDOS                                    
+WHERE TRDODECH   = '01.01.0001'                                                 
+  AND TRDOPHASEA <> '0';                                                        
+*---------------------------------------                                        
+* DOSSIER SORTIS AVEC DATE TRAIT ALIMENTEE                                      
+*=======================================                                        
+SELECT TRDONCLI,TRDODECH   FROM PFRA.TBREDOS                                    
+WHERE  TRDOPHASEA = '0'                                                         
+  AND  TRDODECH   <> '01.01.0001';                                              
+*---------------------------------------                                        
+* CLIENTS : VERIF CODE TRAITEMENT ACTUEL                                        
+*=======================================                                        
+SELECT TRCLNFOY,TRCLTRAITA FROM PFRA.TBRECLI                                    
+WHERE TRCLTRAITA NOT IN (' ','C','T');                                          
+*---------------------------------------                                        
+* DOS       : VERIF CODE TRAITEMENT ACTUEL                                      
+*=======================================                                        
+SELECT TRDONFOY,TRDONCONT,TRDONCARTE,TRDONDT,TRDOTRAITA                         
+       FROM PFRA.TBREDOS                                                        
+WHERE TRDOTRAITA NOT IN (' ','C','T','E');                                      
+*---------------------------------------                                        
+* DOSSIERS PLAN EN COURS ET DATE ECH ECHU                                       
+*=======================================                                        
+SELECT TRDONFOY,TRDONCONT,TRDONCARTE,TRDONDT,TRDOTRAITA,                        
+       TRDODECH,TRDOPRCPLAN,TRDODECHSE  FROM PFRA.TBREDOS                       
+WHERE TRDOTRAITA = 'E'                                                          
+  AND TRDODECH <> '01.01.0001'                                                  
+  AND TRDODECH < CURRENT DATE;                                                  
+*---------------------------------------                                        
+* DOSSIER ACTIFS AVEC DATE BUTOIR A ZERO                                        
+*=======================================                                        
+SELECT TRDONFOY,TRDONCONT,TRDONCARTE,TRDONDT,TRDOTRAITA,                        
+       TRDODECHSE,TRDOPHASEA FROM PFRA.TBREDOS                                  
+WHERE TRDODECHSE =  '01.01.0001'                                                
+  AND TRDOPHASEA <> '0'                                                         
+  AND TRDODECH   <> '01.01.0001'                                                
+  AND TRDODECH   <> '31.12.9999';                                               
+*---------------------------------------                                        
+* DOSSIER ACTIFS AVEC DATE BUTOIR ECHUE                                         
+*=======================================                                        
+SELECT TRDONFOY,TRDONCONT,TRDONCARTE,TRDONDT,TRDOTRAITA,                        
+       TRDODECHSE,TRDOPHASEA FROM PFRA.TBREDOS                                  
+WHERE TRDODECHSE < CURRENT DATE                                                 
+  AND TRDOTRAITA <> 'E'                                                         
+  AND TRDOPHASEA <> '0'                                                         
+  AND TRDODECHSE <> '01.01.0001'                                                
+  AND TRDODECH   <> '31.12.9999';                                               
+*---------------------------------------                                        
+* VERIF DU NB PLANS EN COURS SUR CLIENTS / DOSSIERS EN TRAIT 'E'                
+*=======================================                                        
+SELECT TRCLNFOY,TRCLNBPLAN FROM PFRA.TBRECLI X                                  
+WHERE TRCLNBPLAN <> (SELECT COUNT(*) FROM PFRA.TBREDOS                          
+                     WHERE  TRDONCLI = X.TRCLNFOY                               
+                       AND  TRDOPHASEA <> '0'                                   
+                       AND  TRDOTRAITA = 'E');                                  
+*---------------------------------------                                        
+* VERIF DU NB DOSSIERS EN COURS SUR CLIENTS / DOSSIERS                          
+*=======================================                                        
+SELECT TRCLNFOY,TRCLNBDOS,TRCLPHASEA FROM PFRA.TBRECLI X                        
+WHERE TRCLNBDOS <> (SELECT COUNT(*) FROM PFRA.TBREDOS                           
+                    WHERE  TRDONCLI = X.TRCLNFOY                                
+                      AND  TRDOPHASEA <> '0')                                   
+  AND  TRCLDTRAIT <> '31.12.9999';                                              
+*---------------------------------------                                        
+* CLIENTS PHASE <> 0 DONT TOUS LES DOSSIERS SONT EN PHASE 0                     
+*=======================================                                        
+SELECT TRCLNFOY,TRCLPHASEA FROM PFRA.TBRECLI X                                  
+WHERE '0' = ALL (SELECT TRDOPHASEA FROM PFRA.TBREDOS                            
+                  WHERE  TRDONCLI = X.TRCLNFOY)                                 
+  AND TRCLPHASEA <> '0';                                                        
+*---------------------------------------                                        
+* CLIENTS PHASE    0 ET EXISTE AU MOINS 1 DOSSIERS PHASE <> 0                   
+*=======================================                                        
+SELECT TRCLNFOY FROM PFRA.TBRECLI X                                             
+WHERE  '0' <> SOME (SELECT TRDOPHASEA FROM PFRA.TBREDOS                         
+                  WHERE  TRDONCLI = X.TRCLNFOY)                                 
+  AND TRCLPHASEA = '0';                                                         
+*---------------------------------------                                        
+* DOSSIERS SANS CLIENT                                                          
+*=======================================                                        
+SELECT TRDONCLI FROM PFRA.TBREDOS X                                             
+WHERE  NOT EXISTS (SELECT TRCLNFOY FROM PFRA.TBRECLI                            
+                     WHERE  TRCLNFOY = X.TRDONCLI);                             
+*---------------------------------------                                        
+* CLIENTS SANS DOSSIER                                                          
+*=======================================                                        
+SELECT TRCLNFOY FROM PFRA.TBRECLI X                                             
+WHERE  NOT EXISTS (SELECT TRDONCLI FROM PFRA.TBREDOS                            
+                     WHERE  TRDONCLI = X.TRCLNFOY);                             
+*---------------------------------------                                        
+* DOSSIERS AVEC CODE PLAN A 'E' ET    CODE TRAITEMENT <> E                      
+*=======================================                                        
+SELECT TRDONFOY,TRDONCONT,TRDONCARTE,TRDONDT                                    
+       FROM PFRA.TBREDOS                                                        
+WHERE TRDOTRAITA <> 'E' AND TRDOPRCPLAN = 'E';                                  
+*---------------------------------------                                        
+* DOSSIERS CONTROLE SUR MOTIF FA                                                
+*=======================================                                        
+SELECT TRDONFOY,TRDONCONT,TRDONCARTE,TRDONDT                                    
+       FROM PFRA.TBREDOS                                                        
+WHERE TRDOFAMOTIF = 0                                                           
+ AND  TRDODECH   <>  '01.01.0001'                                               
+ AND  TRDODECH   <>  '31.12.9999'                                               
+ AND  TRDOPHASEA <>  '0';                                                       
+*---------------------------------------                                        
+* CLIENT EN RECHERCHE AVEC MOTIF A ZERO                                         
+*=======================================                                        
+SELECT TRCLNFOY FROM PFRA.TBRECLI                                               
+WHERE TRCLDENTRECH <> '01.01.0001'                                              
+ AND  TRCLDENTRECH > TRCLDSORRECH                                               
+ AND  TRCLDTRAIT <> '01.01.0001'                                                
+ AND  TRCLDTRAIT <> '31.12.9999'                                                
+ AND  TRCLPHASEA <> '0'                                                         
+ AND  TRCLMOTIFRECH = 0;                                                        
+*---------------------------------------                                        
+* ZONE TABLE CLIENT A LOW-VALUE                                                 
+*=======================================                                        
+ SELECT * FROM PFRA.TBRECLI                                                     
+ WHERE        TRCLCORRESP       < ' '                                           
+           OR TRCLCLIMAT        < ' '                                           
+           OR TRCLPHASEA        < ' '                                           
+           OR TRCLPHASEP        < ' '                                           
+           OR TRCLTRAITA        < ' '                                           
+           OR TRCLTRAITP        < ' '                                           
+           OR TRCLFORCPHAS      < ' '                                           
+           OR TRCLPHORI         < ' '                                           
+           OR TRCLPHSORT        < ' '                                           
+           OR TRCLCLIBRE        < ' '                                           
+           OR TRCLVIEPHASE      < ' '                                           
+           OR TRCLVIEVEHIC      < ' ';                                          
+*---------------------------------------                                        
+* ZONE TABLE DOSSIER A LOW-VALUE                                                
+*=======================================                                        
+ SELECT * FROM PFRA.TBREDOS                                                     
+ WHERE        TRDOPHASEA        < ' '                                           
+           OR TRDOPHASEP        < ' '                                           
+           OR TRDOTRAITA        < ' '                                           
+           OR TRDOTRAITP        < ' '                                           
+           OR TRDOTRAITANT      < ' '                                           
+           OR TRDOCRMONTEE      < ' '                                           
+           OR TRDOCRBANQUE      < ' '                                           
+           OR TRDOPHMONTEE1     < ' '                                           
+           OR TRDOPHMONTEE2     < ' '                                           
+           OR TRDOPHMONTEE3     < ' '                                           
+           OR TRDOPHMONTEE4     < ' '                                           
+           OR TRDOPHMONTEE5     < ' '                                           
+           OR TRDOPHMONTEE6     < ' '                                           
+           OR TRDOPHMONTEE7     < ' '                                           
+           OR TRDOMONTEE        < ' '                                           
+           OR TRDOTYPACT        < ' '                                           
+           OR TRDOCSORT         < ' '                                           
+           OR TRDOPRCPLAN       < ' '                                           
+           OR TRDOPRTYP         < ' '                                           
+           OR TRDOPRCMSO1       < ' '                                           
+           OR TRDOPRCMSO2       < ' '                                           
+           OR TRDOPRCMSO3       < ' '                                           
+           OR TRDOPRCMSO4       < ' '                                           
+           OR TRDOPRCMSO5       < ' '                                           
+           OR TRDOPRCMSO6       < ' '                                           
+           OR TRDOPRCFAC        < ' '                                           
+           OR TRDOPRCRAP        < ' '                                           
+           OR TRDOIMPACRET      < ' '                                           
+           OR TRDOIMPACNAT      < ' '                                           
+           OR TRDORGCPAI1       < ' '                                           
+           OR TRDORGCPAI2       < ' '                                           
+           OR TRDORGCPAI3       < ' '                                           
+           OR TRDORPNB          < ' '                                           
+           OR TRDOCSEL          < ' '                                           
+           OR TRDOCTRA          < ' '                                           
+           OR TRDOPRLVT         < ' '                                           
+           OR TRDOCBDF          < ' '                                           
+           OR TRDOCCPII         < ' '                                           
+

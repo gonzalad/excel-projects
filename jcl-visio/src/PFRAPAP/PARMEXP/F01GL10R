@@ -1,0 +1,6 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGL10013.TRICOMP0.SERIED00' BILLCO.SERIED                          
+CLOSE                                                                           
+QUIT                                                                            

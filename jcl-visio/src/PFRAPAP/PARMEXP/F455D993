@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGO20024.COPYFICH.SORTOUT0' +                                      
+      JOUR.FLIT4.IMPLITT4.DU0131                                                
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT4.IMPLITT4.DU0131_INF                                            
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOUR.FLIT4.IMPLITT4.DU0131_EOF                                            
+CLOSE                                                                           
+QUIT                                                                            

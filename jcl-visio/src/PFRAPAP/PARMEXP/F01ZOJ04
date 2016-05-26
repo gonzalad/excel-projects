@@ -1,0 +1,8 @@
+SELECT                                                                          
+      TCPUNIDPFNFOY,                                                            
+      TCPUNRANG,                                                                
+      TCPUNIDPERSRGPPAR,                                                        
+      TCPUCREADT                                                                
+    FROM PFRA.TBCIPUN                                                           
+    WHERE TCPUNIDRGPPART = 0                                                    
+    WITH UR;                                                                    

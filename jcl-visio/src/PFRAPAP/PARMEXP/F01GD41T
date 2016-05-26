@@ -1,0 +1,59 @@
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 509 CORRESPONDANT AU FLUX 412 (emission)            
+*                                 IDENTIFIANT    OSKSK180                       
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-tete                                          
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a 1                                                           
+$$DD01 USER IF=(001,EQ,C'1'),                                                   
+* date creation numerique (jjmmssaa)                                            
+             IF=(002,08,EQN),                                                   
+* date de periode numerique (jjmmssaa)                                          
+             IF=(010,08,EQN),                                                   
+* si controle ok ecriture de l'enregistrement en-tete                           
+             MOVE=(2,C'ENTETE '),                                               
+             MOVE=(9,C'DATE'),                                                  
+             MOVE=(13,04,6),                                                    
+             MOVE=(17,02,4),                                                    
+             MOVE=(19,02,2),                                                    
+             MOVE=(21,6C'0'),                                                   
+             WRITE=TYPEZERO,RN,                                                 
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-queue                                         
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a 3                                                           
+             IF=(001,EQ,C'3'),                                                  
+* nombre d'enregistrements transmis numerique                                   
+             IF=(002,11,EQN),                                                   
+* si controle ok ecriture de l'enregistrement en-queue                          
+             MOVE=(2,C'ENQUEUE'),                                               
+             MOVE=(9,C'DATE'),                                                  
+             MOVE=(13,14C'0'),                                                  
+             MOVE=(27,C'NOMBRE000'),                                            
+             MOVE=(36,6,07),                                                    
+             MOVE=(42,C'MONTANT'),                                              
+             MOVE=(49,18C'0'),                                                  
+             WRITE=TYPENEUF,RN,                                                 
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* Cumul montant pos=36,lg=11, le resultat est dans SYSTOTAL                     
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+             IF=(001,EQ,C'2'),                                                  
+             ACCUM=(36,11,C,'TOTAL FLUX 509 ')                                  
+*                                                                               
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* comptabilisation du nombre d'enregistrements details code 2                   
+* le resultat est dans SYSPRINT                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$DD02 COPY  IF=(001,EQ,C'2')                                                   
+

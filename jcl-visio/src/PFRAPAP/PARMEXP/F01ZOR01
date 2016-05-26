@@ -1,0 +1,40 @@
+SELECT A.TDPRNFOY, A.TDPRNCONT, A.TDPRNCARTE, A.TDPRNDT,                        
+A.TDPRCPRODCOM, A.TDPRNSOCAGRO, A.TDPRNAGR, A.TDPRNSOC,                         
+A.TDPRNSOCFIN, A.TDPRNAGCFIN, A.TDPRCAPVP,                                      
+A.TDPRNAGCAPV, A.TDPRCRCVTP, A.TDPRNAGCRCVT, A.TDPRCRCVTB,                      
+A.TDPRCPAIEMENT, A.TDPRNCC, A.TDPRCVERROU, A.TDPRDVERROU,                       
+A.TDPRNQUANTBIL, A.TDPRDCREAT, A.TDPRNSOCAGR, A.TDPRCBQ,                        
+A.TDPRNSOCCOMMU, A.TDPRMMENS, A.TDPRCPRODVDR, A.TDPRMDECO,                      
+A.TDPRMCRD, A.TDPRMSREC, A.TDPRMTODD, A.TDPRCPOSA,                              
+A.TDPRNBINDTS, A.TDPRNCARTPHY,                                                  
+B.TDRVDRECOND, B.TDRVCNRECOND, B.TDRVDENVOIFRECOND,                             
+C.TDCPCSOUSGEST, C.TDCPCTYPCONTRAT,                                             
+D.TCLFCSITFAM, D.TCLFBENF, D.TCLFDPSAD                                          
+FROM PFRA.TBDOPRN A, PFRA.TBDOREV B, PFRA.TBDOCPL C,                            
+PFRA.TBCLFOY D, PFRA.TBTMCCD E                                                  
+WHERE A.TDPRNFOY             = B.TDRVNFOY                                       
+AND   A.TDPRNCONT            = B.TDRVNCONT                                      
+AND   A.TDPRNCARTE           = B.TDRVNCARTE                                     
+AND   A.TDPRNDT              = B.TDRVNDT                                        
+AND   B.TDRVNFOY             = C.TDCPNFOY                                       
+AND   B.TDRVNCONT            = C.TDCPNCONT                                      
+AND   B.TDRVNCARTE           = C.TDCPNCARTE                                     
+AND   B.TDRVNDT              = C.TDCPNDT                                        
+AND   C.TDCPNFOY             = D.TCLFNFOY                                       
+AND   A.TDPRNFOY             = E.TTCDNFOY                                       
+AND   A.TDPRNCONT            = E.TTCDNCONT                                      
+AND   A.TDPRNCARTE           = E.TTCDNCARTE                                     
+AND   A.TDPRNDT              = E.TTCDNDT                                        
+AND   A.TDPRNDT              = 0                                                
+AND   A.TDPRNSOC    IN (257,258)                                                
+AND   A.TDPRCPRODCOM = 'AD7R'                                                   
+AND  (A.TDPRCVERROU        < '60' OR A.TDPRCVERROU > '79')                      
+AND   B.TDRVCNRECOND        NOT IN ('C','E','Y','O','S')                        
+AND ((TDPRNFOY NOT BETWEEN 4900000001 AND 4999999999) OR                        
+(TDPRNFOY NOT BETWEEN 5200000001 AND 8799999999) OR                             
+(TDPRNFOY NOT BETWEEN 9800000001 AND 9999999999))                               
+AND E.TTCDCREADT           >= '01.07.2013'                                      
+AND (MONTH(TDRVDRECOND) = 04 AND YEAR(TDRVDRECOND) = 2014)                      
+AND NOT (TDPRCVERROU= '90' AND TDPRDVERROU < '31.12.9999' )                     
+AND NOT (TDPRCVERROU= '92' AND TDPRDVERROU > CURRENT DATE) ;                    
+

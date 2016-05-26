@@ -1,0 +1,573 @@
+SELECT 'AST','TBDOPRN ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBDOPRN       00001017
+WHERE (TDPRNSOC > 199 AND TDPRNSOC < 232)                               00002010
+   OR (TDPRNSOC > 469 AND TDPRNSOC < 503)                               00002110
+   OR (TDPRNSOC > 419 AND TDPRNSOC < 456)                               00002207
+   OR (TDPRNSOC > 514 AND TDPRNSOC < 550)                               00002310
+   OR (TDPRNSOC > 660 AND TDPRNSOC < 692)                               00002407
+   OR (TDPRNSOC = 160 ) OR (TDPRNSOC = 270 )                            00002510
+WITH UR;                                                                00002610
+SELECT 'AST','TBDORAC ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBDORAC       00002717
+WHERE (TDRANSOC > 199 AND TDRANSOC < 232)                               00002810
+   OR (TDRANSOC > 469 AND TDRANSOC < 503)                               00002910
+   OR (TDRANSOC > 419 AND TDRANSOC < 456)                               00003007
+   OR (TDRANSOC > 514 AND TDRANSOC < 550)                               00003110
+   OR (TDRANSOC > 660 AND TDRANSOC < 692)                               00003207
+   OR (TDRANSOC = 160 ) OR (TDRANSOC = 270 )                            00003310
+WITH UR;                                                                00003410
+SELECT 'AST','TBDOREC ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBDOREC       00003517
+WHERE (TDRENSOC > 199 AND TDRENSOC < 232)                               00003610
+   OR (TDRENSOC > 469 AND TDRENSOC < 503)                               00003710
+   OR (TDRENSOC > 419 AND TDRENSOC < 456)                               00003807
+   OR (TDRENSOC > 514 AND TDRENSOC < 550)                               00003910
+   OR (TDRENSOC > 660 AND TDRENSOC < 692)                               00004007
+   OR (TDRENSOC = 160 ) OR (TDRENSOC = 270 )                            00004110
+WITH UR;                                                                00004210
+SELECT 'AST','TBNZDOS ','SUR',' TOT  ',COUNT(*) FROM PFRA.TBNZDOS       00004317
+WHERE (TNDONSOC > 199 AND TNDONSOC < 232)                               00005010
+   OR (TNDONSOC > 469 AND TNDONSOC < 503)                               00005110
+   OR (TNDONSOC > 419 AND TNDONSOC < 456)                               00005207
+   OR (TNDONSOC > 514 AND TNDONSOC < 550)                               00005310
+   OR (TNDONSOC > 660 AND TNDONSOC < 692)                               00005407
+   OR (TNDONSOC = 160 ) OR (TNDONSOC = 270 )                            00005510
+WITH UR;                                                                00005610
+SELECT 'AST','TBOPTIW ','CLI',' TOT  ',COUNT(*) FROM PFRA.TBOPTIW       00006517
+WHERE (TOTINSOCCOM > 199 AND TOTINSOCCOM < 232)                         00006610
+   OR (TOTINSOCCOM > 469 AND TOTINSOCCOM < 503)                         00006710
+   OR (TOTINSOCCOM > 419 AND TOTINSOCCOM < 456)                         00006807
+   OR (TOTINSOCCOM > 514 AND TOTINSOCCOM < 550)                         00006910
+   OR (TOTINSOCCOM > 660 AND TOTINSOCCOM < 692)                         00007007
+   OR (TOTINSOCCOM = 160 ) OR (TOTINSOCCOM = 270 )                      00007110
+WITH UR;                                                                00007210
+SELECT 'AST','TBCXPRN ','CTX',' TOT  ',COUNT(*) FROM PFRA.TBCXPRN       00007317
+WHERE (TXPRNSOC > 199 AND TXPRNSOC < 232)                               00007410
+   OR (TXPRNSOC > 469 AND TXPRNSOC < 503)                               00007510
+   OR (TXPRNSOC > 419 AND TXPRNSOC < 456)                               00007607
+   OR (TXPRNSOC > 514 AND TXPRNSOC < 550)                               00007710
+   OR (TXPRNSOC > 660 AND TXPRNSOC < 692)                               00007807
+   OR (TXPRNSOC = 160 ) OR (TXPRNSOC = 270 )                            00007910
+WITH UR;                                                                00008010
+SELECT 'AST','TBDOEPU ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBDOEPU       00008117
+WHERE (TDEPNSOC > 199 AND TDEPNSOC < 232)                               00008210
+   OR (TDEPNSOC > 469 AND TDEPNSOC < 503)                               00008310
+   OR (TDEPNSOC > 419 AND TDEPNSOC < 456)                               00008407
+   OR (TDEPNSOC > 514 AND TDEPNSOC < 550)                               00009010
+   OR (TDEPNSOC > 660 AND TDEPNSOC < 692)                               00010007
+   OR (TDEPNSOC = 160 ) OR (TDEPNSOC = 270 )                            00020010
+WITH UR;                                                                00021010
+SELECT 'AST','TBFILST ','CTA',' TOT  ',COUNT(*) FROM PFRA.TBFILST       00050017
+WHERE (TFLCSOCIETE > 199 AND TFLCSOCIETE < 232)                         00060010
+   OR (TFLCSOCIETE > 469 AND TFLCSOCIETE < 503)                         00070010
+   OR (TFLCSOCIETE > 419 AND TFLCSOCIETE < 456)                         00080008
+   OR (TFLCSOCIETE > 514 AND TFLCSOCIETE < 550)                         00090010
+   OR (TFLCSOCIETE > 660 AND TFLCSOCIETE < 692)                         00100008
+   OR (TFLCSOCIETE = 160 ) OR (TFLCSOCIETE = 270 )                      00110010
+WITH UR;                                                                00111010
+SELECT 'AST','TBCXCPL ','CTX',' TOT  ',COUNT(*) FROM PFRA.TBCXCPL       00120017
+WHERE (TXCPNSOC    > 199 AND TXCPNSOC    < 232)                         00130010
+   OR (TXCPNSOC    > 469 AND TXCPNSOC    < 503)                         00140010
+   OR (TXCPNSOC    > 419 AND TXCPNSOC    < 456)                         00150008
+   OR (TXCPNSOC    > 514 AND TXCPNSOC    < 550)                         00160010
+   OR (TXCPNSOC    > 660 AND TXCPNSOC    < 692)                         00170008
+   OR (TXCPNSOC    = 160 ) OR (TXCPNSOC    = 270 )                      00180010
+WITH UR;                                                                00181010
+SELECT 'AST','TBCXCTR ','CTX',' TOT  ',COUNT(*) FROM PFRA.TBCXCTR       00190017
+WHERE (TXCONSOCAGR > 199 AND TXCONSOCAGR < 232)                         00200010
+   OR (TXCONSOCAGR > 469 AND TXCONSOCAGR < 503)                         00210010
+   OR (TXCONSOCAGR > 419 AND TXCONSOCAGR < 456)                         00220008
+   OR (TXCONSOCAGR > 514 AND TXCONSOCAGR < 550)                         00230010
+   OR (TXCONSOCAGR > 660 AND TXCONSOCAGR < 692)                         00240008
+   OR (TXCONSOCAGR = 160 ) OR (TXCONSOCAGR = 270 )                      00250010
+WITH UR;                                                                00251010
+SELECT 'AST','TBDOANO ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBDOANO       00300017
+WHERE (TDANNSOC    > 199 AND TDANNSOC    < 232)                         00310010
+   OR (TDANNSOC    > 469 AND TDANNSOC    < 503)                         00320010
+   OR (TDANNSOC    > 419 AND TDANNSOC    < 456)                         00330008
+   OR (TDANNSOC    > 514 AND TDANNSOC    < 550)                         00340010
+   OR (TDANNSOC    > 660 AND TDANNSOC    < 692)                         00350008
+   OR (TDANNSOC    = 160 ) OR (TDANNSOC    = 270 )                      00360010
+WITH UR;                                                                00361010
+SELECT 'AST','TBDOEP2 ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBDOEP2       00370017
+WHERE (TDE2NSOC    > 199 AND TDE2NSOC    < 232)                         00380010
+   OR (TDE2NSOC    > 469 AND TDE2NSOC    < 503)                         00390010
+   OR (TDE2NSOC    > 419 AND TDE2NSOC    < 456)                         00400008
+   OR (TDE2NSOC    > 514 AND TDE2NSOC    < 550)                         00410010
+   OR (TDE2NSOC    > 660 AND TDE2NSOC    < 692)                         00420008
+   OR (TDE2NSOC    = 160 ) OR (TDE2NSOC    = 270 )                      00430010
+WITH UR;                                                                00431010
+SELECT 'AST','TBDOMOD ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBDOMOD       00440017
+WHERE (TDMONSOC    > 199 AND TDMONSOC    < 232)                         00450010
+   OR (TDMONSOC    > 469 AND TDMONSOC    < 503)                         00460010
+   OR (TDMONSOC    > 419 AND TDMONSOC    < 456)                         00470008
+   OR (TDMONSOC    > 514 AND TDMONSOC    < 550)                         00480010
+   OR (TDMONSOC    > 660 AND TDMONSOC    < 692)                         00490008
+   OR (TDMONSOC    = 160 ) OR (TDMONSOC    = 270 )                      00500010
+WITH UR;                                                                00501010
+SELECT 'AST','TBDOUFM ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBDOUFM       00510017
+WHERE (TDUFNSOC    > 199 AND TDUFNSOC    < 232)                         00520010
+   OR (TDUFNSOC    > 469 AND TDUFNSOC    < 503)                         00530010
+   OR (TDUFNSOC    > 419 AND TDUFNSOC    < 456)                         00540008
+   OR (TDUFNSOC    > 514 AND TDUFNSOC    < 550)                         00550010
+   OR (TDUFNSOC    > 660 AND TDUFNSOC    < 692)                         00560008
+   OR (TDUFNSOC    = 160 )  OR (TDUFNSOC    = 270 )                     00570010
+WITH UR;                                                                00571010
+SELECT 'AST','TBLIGTX ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBLIGTX       00580017
+WHERE (TLTXNSOC    > 199 AND TLTXNSOC    < 232)                         00590010
+   OR (TLTXNSOC    > 469 AND TLTXNSOC    < 503)                         00600010
+   OR (TLTXNSOC    > 419 AND TLTXNSOC    < 456)                         00610008
+   OR (TLTXNSOC    > 514 AND TLTXNSOC    < 550)                         00620010
+   OR (TLTXNSOC    > 660 AND TLTXNSOC    < 692)                         00630008
+   OR (TLTXNSOC    = 160 ) OR (TLTXNSOC    = 270 )                      00640010
+WITH UR;                                                                00641010
+SELECT 'AST','TBPOIMP ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBPOIMP       00650017
+WHERE (TIMPNSOC    > 199 AND TIMPNSOC    < 232)                         00660010
+   OR (TIMPNSOC    > 469 AND TIMPNSOC    < 503)                         00670010
+   OR (TIMPNSOC    > 419 AND TIMPNSOC    < 456)                         00680008
+   OR (TIMPNSOC    > 514 AND TIMPNSOC    < 550)                         00690010
+   OR (TIMPNSOC    > 660 AND TIMPNSOC    < 692)                         00700008
+   OR (TIMPNSOC    = 160 ) OR (TIMPNSOC    = 270 )                      00710010
+WITH UR;                                                                00711010
+SELECT 'AST','TBSTOFI ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBSTOFI       00720017
+WHERE (TSTFNSOC    > 199 AND TSTFNSOC    < 232)                         00730010
+   OR (TSTFNSOC    > 469 AND TSTFNSOC    < 503)                         00740010
+   OR (TSTFNSOC    > 419 AND TSTFNSOC    < 456)                         00750008
+   OR (TSTFNSOC    > 514 AND TSTFNSOC    < 550)                         00760010
+   OR (TSTFNSOC    > 660 AND TSTFNSOC    < 692)                         00770008
+   OR (TSTFNSOC    = 160 ) OR (TSTFNSOC    = 270 )                      00780010
+WITH UR;                                                                00781010
+SELECT 'AST','TBAGLAC ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBAGLAC       00790017
+WHERE (TLACCSOCCONNUE > 199 AND TLACCSOCCONNUE < 232)                   00800010
+   OR (TLACCSOCCONNUE > 469 AND TLACCSOCCONNUE < 503)                   00810010
+   OR (TLACCSOCCONNUE > 419 AND TLACCSOCCONNUE < 456)                   00820008
+   OR (TLACCSOCCONNUE > 514 AND TLACCSOCCONNUE < 550)                   00830010
+   OR (TLACCSOCCONNUE > 660 AND TLACCSOCCONNUE < 692)                   00840008
+   OR (TLACCSOCCONNUE = 160 )  OR (TLACCSOCCONNUE = 270 )               00850010
+WITH UR;                                                                00851010
+SELECT 'AST','TBAGLAG ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBAGLAG       00860017
+WHERE (TLAGCSOCCONNUE > 199 AND TLAGCSOCCONNUE < 232)                   00870010
+   OR (TLAGCSOCCONNUE > 469 AND TLAGCSOCCONNUE < 503)                   00880010
+   OR (TLAGCSOCCONNUE > 419 AND TLAGCSOCCONNUE < 456)                   00890008
+   OR (TLAGCSOCCONNUE > 514 AND TLAGCSOCCONNUE < 550)                   00900010
+   OR (TLAGCSOCCONNUE > 660 AND TLAGCSOCCONNUE < 692)                   00910008
+   OR (TLAGCSOCCONNUE = 160 ) OR (TLAGCSOCCONNUE = 270 )                00920010
+WITH UR;                                                                00921010
+SELECT 'AST','TBPTAGC ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBPTAGC       00930017
+WHERE (TAGCSOC     > 199 AND TAGCSOC     < 232)                         00940010
+   OR (TAGCSOC     > 469 AND TAGCSOC     < 503)                         00950010
+   OR (TAGCSOC     > 419 AND TAGCSOC     < 456)                         00960008
+   OR (TAGCSOC     > 514 AND TAGCSOC     < 550)                         00970010
+   OR (TAGCSOC     > 660 AND TAGCSOC     < 692)                         00980008
+   OR (TAGCSOC     = 160 ) OR (TAGCSOC     = 270 )                      00990010
+WITH UR;                                                                00991010
+SELECT 'AST','TBPTGEM ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBPTGEM       01000017
+WHERE (TGEMSOC     > 199 AND TGEMSOC     < 232)                         01010010
+   OR (TGEMSOC     > 469 AND TGEMSOC     < 503)                         01020010
+   OR (TGEMSOC     > 419 AND TGEMSOC     < 456)                         01030008
+   OR (TGEMSOC     > 514 AND TGEMSOC     < 550)                         01040010
+   OR (TGEMSOC     > 660 AND TGEMSOC     < 692)                         01050008
+   OR (TGEMSOC     = 160 ) OR (TGEMSOC     = 270 )                      01060010
+WITH UR;                                                                01061010
+SELECT 'AST','TBPTGEO ','ORG',' TOT  ',COUNT(*) FROM PFRA.TBPTGEO       01070017
+WHERE (TGEOSOC     > 199 AND TGEOSOC     < 232)                         01080010
+   OR (TGEOSOC     > 469 AND TGEOSOC     < 503)                         01090010
+   OR (TGEOSOC     > 419 AND TGEOSOC     < 456)                         01100008
+   OR (TGEOSOC     > 514 AND TGEOSOC     < 550)                         01110010
+   OR (TGEOSOC     > 660 AND TGEOSOC     < 692)                         01120008
+   OR (TGEOSOC     = 160 ) OR (TGEOSOC     = 270 )                      01130010
+WITH UR;                                                                01131010
+SELECT 'AST','TBPS099 ','PAR',' TOT  ',COUNT(*) FROM PFRA.TBPS099       01140017
+WHERE (T099NSOC    > 199 AND T099NSOC    < 232)                         01150010
+   OR (T099NSOC    > 469 AND T099NSOC    < 503)                         01160010
+   OR (T099NSOC    > 419 AND T099NSOC    < 456)                         01170008
+   OR (T099NSOC    > 514 AND T099NSOC    < 550)                         01180010
+   OR (T099NSOC    > 660 AND T099NSOC    < 692)                         01190008
+   OR (T099NSOC    = 160 ) OR (T099NSOC    = 270 )                      01200010
+WITH UR;                                                                01201010
+SELECT 'AST','TBFILAT ','SUR',' TOT  ',COUNT(*) FROM PFRA.TBFILAT       01280017
+WHERE (TFATNSOC    > 199 AND TFATNSOC    < 232)                         01290010
+   OR (TFATNSOC    > 469 AND TFATNSOC    < 503)                         01300010
+   OR (TFATNSOC    > 419 AND TFATNSOC    < 456)                         01310008
+   OR (TFATNSOC    > 514 AND TFATNSOC    < 550)                         01320010
+   OR (TFATNSOC    > 660 AND TFATNSOC    < 692)                         01330008
+   OR (TFATNSOC    = 160 ) OR (TFATNSOC    = 270 )                      01340010
+WITH UR;                                                                01341010
+SELECT 'AST','TBJEST1 ','TEC',' TOT  ',COUNT(*) FROM PFRA.TBJEST1       01350017
+WHERE (TJE1NSOC    > 199 AND TJE1NSOC    < 232)                         01360010
+   OR (TJE1NSOC    > 469 AND TJE1NSOC    < 503)                         01370010
+   OR (TJE1NSOC    > 419 AND TJE1NSOC    < 456)                         01380009
+   OR (TJE1NSOC    > 514 AND TJE1NSOC    < 550)                         01390010
+   OR (TJE1NSOC    > 660 AND TJE1NSOC    < 692)                         01400009
+   OR (TJE1NSOC    = 160 ) OR (TJE1NSOC    = 270 )                      01410010
+WITH UR;                                                                01420010
+SELECT 'AST','TBALPHC ','CLI',' TOT  ',COUNT(*) FROM PFRA.TBALPHC       01490017
+WHERE (TALCNSOC    > 199   AND TALCNSOC    < 232)                       01500011
+   OR (TALCNSOC    > 469   AND TALCNSOC    < 503)                       01510011
+   OR (TALCNSOC    > 419   AND TALCNSOC    < 456)                       01520011
+   OR (TALCNSOC    > 514   AND TALCNSOC    < 550)                       01530011
+   OR (TALCNSOC    > 660   AND TALCNSOC    < 692)                       01540011
+   OR (TALCNSOC    = 160 ) OR (TALCNSOC    = 270 )                      01550011
+WITH UR;                                                                01560011
+SELECT 'AST','TBALPHE ','CLI',' TOT  ',COUNT(*) FROM PFRA.TBALPHE       01570017
+WHERE (TALENSOC    > 199   AND TALENSOC    < 232)                       01580011
+   OR (TALENSOC    > 469   AND TALENSOC    < 503)                       01590011
+   OR (TALENSOC    > 419   AND TALENSOC    < 456)                       01600011
+   OR (TALENSOC    > 514   AND TALENSOC    < 550)                       01610011
+   OR (TALENSOC    > 660   AND TALENSOC    < 692)                       01620011
+   OR (TALENSOC    = 160 ) OR (TALENSOC    = 270 )                      01630011
+WITH UR;                                                                01640011
+SELECT 'AST','TBCLREL ','CLI',' TOT  ',COUNT(*) FROM PFRA.TBCLREL       01641017
+WHERE (TCRLNSOC    > 199   AND TCRLNSOC    < 232)                       01642015
+   OR (TCRLNSOC    > 469   AND TCRLNSOC    < 503)                       01643015
+   OR (TCRLNSOC    > 419   AND TCRLNSOC    < 456)                       01644015
+   OR (TCRLNSOC    > 514   AND TCRLNSOC    < 550)                       01645015
+   OR (TCRLNSOC    > 660   AND TCRLNSOC    < 692)                       01646015
+   OR (TCRLNSOC    = 160 ) OR (TCRLNSOC    = 270 )                      01647015
+WITH UR;                                                                01648015
+SELECT 'AST','TBCLSCP ','CLI',' TOT  ',COUNT(*) FROM PFRA.TBCLSCP       01649017
+WHERE (TCSCNSOC    > 199   AND TCSCNSOC    < 232)                       01649115
+   OR (TCSCNSOC    > 469   AND TCSCNSOC    < 503)                       01649215
+   OR (TCSCNSOC    > 419   AND TCSCNSOC    < 456)                       01649315
+   OR (TCSCNSOC    > 514   AND TCSCNSOC    < 550)                       01649415
+   OR (TCSCNSOC    > 660   AND TCSCNSOC    < 692)                       01649515
+   OR (TCSCNSOC    = 160 ) OR (TCSCNSOC    = 270 )                      01649615
+WITH UR;                                                                01649715
+SELECT 'AST','TBALPH2 ','CLI',' TOT  ',COUNT(*) FROM PFRA.TBALPH2       01650017
+WHERE (TAL2NSOC    > 199   AND TAL2NSOC    < 232)                       01660011
+   OR (TAL2NSOC    > 469   AND TAL2NSOC    < 503)                       01670011
+   OR (TAL2NSOC    > 419   AND TAL2NSOC    < 456)                       01680011
+   OR (TAL2NSOC    > 514   AND TAL2NSOC    < 550)                       01690011
+   OR (TAL2NSOC    > 660   AND TAL2NSOC    < 692)                       01700011
+   OR (TAL2NSOC    = 160 ) OR (TAL2NSOC    = 270 )                      01710011
+WITH UR;                                                                01720011
+SELECT 'AST','TBCHHIS ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBCHHIS       01730017
+WHERE (TCHHNSOCGEST = 270)                                              01740014
+WITH UR;                                                                01741014
+SELECT 'AST','TBCHINV ','DOS',' TOT  ',COUNT(*) FROM PFRA.TBCHINV       01750017
+WHERE (TCHVNSOCGEST = 270)                                              01760014
+WITH UR;                                                                01761014
+SELECT 'AST','TBRGBO2 ','CTA',' TOT  ',COUNT(*) FROM PFRA.TBRGBO2       01770017
+WHERE (TRGBNSOC    = -270)                                              01780014
+WITH UR;                                                                01781014
+SELECT 'AST','TBRJMEC ','CTA',' TOT  ',COUNT(*) FROM PFRA.TBRJMEC       01790017
+WHERE (TRMENSOC    =  270)                                              01800014
+WITH UR;                                                                01810014
+SELECT 'AST','TBDOPRN ','DOS',TDPRNSOC AS SOC                           01840014
+                             ,COUNT(*) FROM PFRA.TBDOPRN                01841017
+WHERE (TDPRNSOC > 199 AND TDPRNSOC < 232)                               01850014
+   OR (TDPRNSOC > 469 AND TDPRNSOC < 503)                               01860014
+   OR (TDPRNSOC > 419 AND TDPRNSOC < 456)                               01870014
+   OR (TDPRNSOC > 514 AND TDPRNSOC < 550)                               01880014
+   OR (TDPRNSOC > 660 AND TDPRNSOC < 692)                               01890014
+   OR (TDPRNSOC = 160 ) OR (TDPRNSOC = 270 )                            01900014
+   GROUP BY TDPRNSOC                                                    01901014
+WITH UR;                                                                01910014
+SELECT 'AST','TBDORAC ','DOS',TDRANSOC AS SOC                           01920014
+                             ,COUNT(*) FROM PFRA.TBDORAC                01921017
+WHERE (TDRANSOC > 199 AND TDRANSOC < 232)                               01930014
+   OR (TDRANSOC > 469 AND TDRANSOC < 503)                               01940014
+   OR (TDRANSOC > 419 AND TDRANSOC < 456)                               01950014
+   OR (TDRANSOC > 514 AND TDRANSOC < 550)                               01960014
+   OR (TDRANSOC > 660 AND TDRANSOC < 692)                               01970014
+   OR (TDRANSOC = 160 ) OR (TDRANSOC = 270 )                            01980014
+   GROUP BY TDRANSOC                                                    01981014
+WITH UR;                                                                01990014
+SELECT 'AST','TBDOREC ','DOS',TDRENSOC AS SOC                           02000014
+                             ,COUNT(*) FROM PFRA.TBDOREC                02001017
+WHERE (TDRENSOC > 199 AND TDRENSOC < 232)                               02010014
+   OR (TDRENSOC > 469 AND TDRENSOC < 503)                               02020014
+   OR (TDRENSOC > 419 AND TDRENSOC < 456)                               02030014
+   OR (TDRENSOC > 514 AND TDRENSOC < 550)                               02040014
+   OR (TDRENSOC > 660 AND TDRENSOC < 692)                               02050014
+   OR (TDRENSOC = 160 ) OR (TDRENSOC = 270 )                            02060014
+   GROUP BY TDRENSOC                                                    02061014
+WITH UR;                                                                02070014
+SELECT 'AST','TBNZDOS ','SUR',TNDONSOC AS SOC                           02080014
+                             ,COUNT(*) FROM PFRA.TBNZDOS                02081017
+WHERE (TNDONSOC > 199 AND TNDONSOC < 232)                               02090014
+   OR (TNDONSOC > 469 AND TNDONSOC < 503)                               02100014
+   OR (TNDONSOC > 419 AND TNDONSOC < 456)                               02110014
+   OR (TNDONSOC > 514 AND TNDONSOC < 550)                               02120014
+   OR (TNDONSOC > 660 AND TNDONSOC < 692)                               02130014
+   OR (TNDONSOC = 160 ) OR (TNDONSOC = 270 )                            02140014
+   GROUP BY TNDONSOC                                                    02141014
+WITH UR;                                                                02150014
+SELECT 'AST','TBOPTIW ','CLI',TOTINSOCCOM AS SOC                        02160014
+                             ,COUNT(*) FROM PFRA.TBOPTIW                02161017
+WHERE (TOTINSOCCOM > 199 AND TOTINSOCCOM < 232)                         02170014
+   OR (TOTINSOCCOM > 469 AND TOTINSOCCOM < 503)                         02180014
+   OR (TOTINSOCCOM > 419 AND TOTINSOCCOM < 456)                         02190014
+   OR (TOTINSOCCOM > 514 AND TOTINSOCCOM < 550)                         02200014
+   OR (TOTINSOCCOM > 660 AND TOTINSOCCOM < 692)                         02210014
+   OR (TOTINSOCCOM = 160 ) OR (TOTINSOCCOM = 270 )                      02220014
+   GROUP BY TOTINSOCCOM                                                 02221014
+WITH UR;                                                                02230014
+SELECT 'AST','TBCXPRN ','CTX',TXPRNSOC AS SOC                           02240014
+                             ,COUNT(*) FROM PFRA.TBCXPRN                02241017
+WHERE (TXPRNSOC > 199 AND TXPRNSOC < 232)                               02250014
+   OR (TXPRNSOC > 469 AND TXPRNSOC < 503)                               02260014
+   OR (TXPRNSOC > 419 AND TXPRNSOC < 456)                               02270014
+   OR (TXPRNSOC > 514 AND TXPRNSOC < 550)                               02280014
+   OR (TXPRNSOC > 660 AND TXPRNSOC < 692)                               02290014
+   OR (TXPRNSOC = 160 ) OR (TXPRNSOC = 270 )                            02300014
+   GROUP BY TXPRNSOC                                                    02301014
+WITH UR;                                                                02310014
+SELECT 'AST','TBDOEPU ','DOS',TDEPNSOC AS SOC                           02320014
+                             ,COUNT(*) FROM PFRA.TBDOEPU                02321017
+WHERE (TDEPNSOC > 199 AND TDEPNSOC < 232)                               02330014
+   OR (TDEPNSOC > 469 AND TDEPNSOC < 503)                               02340014
+   OR (TDEPNSOC > 419 AND TDEPNSOC < 456)                               02350014
+   OR (TDEPNSOC > 514 AND TDEPNSOC < 550)                               02360014
+   OR (TDEPNSOC > 660 AND TDEPNSOC < 692)                               02370014
+   OR (TDEPNSOC = 160 ) OR (TDEPNSOC = 270 )                            02380014
+   GROUP BY TDEPNSOC                                                    02381014
+WITH UR;                                                                02390014
+SELECT 'AST','TBFILST ','CTA',TFLCSOCIETE AS SOC                        02400014
+                             ,COUNT(*) FROM PFRA.TBFILST                02401017
+WHERE (TFLCSOCIETE > 199 AND TFLCSOCIETE < 232)                         02410014
+   OR (TFLCSOCIETE > 469 AND TFLCSOCIETE < 503)                         02420014
+   OR (TFLCSOCIETE > 419 AND TFLCSOCIETE < 456)                         02430014
+   OR (TFLCSOCIETE > 514 AND TFLCSOCIETE < 550)                         02440014
+   OR (TFLCSOCIETE > 660 AND TFLCSOCIETE < 692)                         02450014
+   OR (TFLCSOCIETE = 160 ) OR (TFLCSOCIETE = 270 )                      02460014
+   GROUP BY TFLCSOCIETE                                                 02461014
+WITH UR;                                                                02470014
+SELECT 'AST','TBCXCPL ','CTX',TXCPNSOC AS SOC                           02480014
+                             ,COUNT(*) FROM PFRA.TBCXCPL                02481017
+WHERE (TXCPNSOC    > 199 AND TXCPNSOC    < 232)                         02490014
+   OR (TXCPNSOC    > 469 AND TXCPNSOC    < 503)                         02500014
+   OR (TXCPNSOC    > 419 AND TXCPNSOC    < 456)                         02510014
+   OR (TXCPNSOC    > 514 AND TXCPNSOC    < 550)                         02520014
+   OR (TXCPNSOC    > 660 AND TXCPNSOC    < 692)                         02530014
+   OR (TXCPNSOC    = 160 ) OR (TXCPNSOC    = 270 )                      02540014
+   GROUP BY TXCPNSOC                                                    02541014
+WITH UR;                                                                02550014
+SELECT 'AST','TBCXCTR ','CTX',TXCONSOCAGR AS SOC                        02560014
+                             ,COUNT(*) FROM PFRA.TBCXCTR                02561017
+WHERE (TXCONSOCAGR > 199 AND TXCONSOCAGR < 232)                         02570014
+   OR (TXCONSOCAGR > 469 AND TXCONSOCAGR < 503)                         02580014
+   OR (TXCONSOCAGR > 419 AND TXCONSOCAGR < 456)                         02590014
+   OR (TXCONSOCAGR > 514 AND TXCONSOCAGR < 550)                         02600014
+   OR (TXCONSOCAGR > 660 AND TXCONSOCAGR < 692)                         02610014
+   OR (TXCONSOCAGR = 160 ) OR (TXCONSOCAGR = 270 )                      02620014
+   GROUP BY TXCONSOCAGR                                                 02621014
+WITH UR;                                                                02630014
+SELECT 'AST','TBDOANO ','DOS',TDANNSOC AS SOC                           02640014
+                             ,COUNT(*) FROM PFRA.TBDOANO                02641017
+WHERE (TDANNSOC    > 199 AND TDANNSOC    < 232)                         02650014
+   OR (TDANNSOC    > 469 AND TDANNSOC    < 503)                         02660014
+   OR (TDANNSOC    > 419 AND TDANNSOC    < 456)                         02670014
+   OR (TDANNSOC    > 514 AND TDANNSOC    < 550)                         02680014
+   OR (TDANNSOC    > 660 AND TDANNSOC    < 692)                         02690014
+   OR (TDANNSOC    = 160 ) OR (TDANNSOC    = 270 )                      02700014
+   GROUP BY TDANNSOC                                                    02701014
+WITH UR;                                                                02710014
+SELECT 'AST','TBDOEP2 ','DOS',TDE2NSOC AS SOC                           02720014
+                             ,COUNT(*) FROM PFRA.TBDOEP2                02721017
+WHERE (TDE2NSOC    > 199 AND TDE2NSOC    < 232)                         02730014
+   OR (TDE2NSOC    > 469 AND TDE2NSOC    < 503)                         02740014
+   OR (TDE2NSOC    > 419 AND TDE2NSOC    < 456)                         02750014
+   OR (TDE2NSOC    > 514 AND TDE2NSOC    < 550)                         02760014
+   OR (TDE2NSOC    > 660 AND TDE2NSOC    < 692)                         02770014
+   OR (TDE2NSOC    = 160 ) OR (TDE2NSOC    = 270 )                      02780014
+   GROUP BY TDE2NSOC                                                    02781014
+WITH UR;                                                                02790014
+SELECT 'AST','TBDOMOD ','DOS',TDMONSOC AS SOC                           02800014
+                             ,COUNT(*) FROM PFRA.TBDOMOD                02801017
+WHERE (TDMONSOC    > 199 AND TDMONSOC    < 232)                         02810014
+   OR (TDMONSOC    > 469 AND TDMONSOC    < 503)                         02820014
+   OR (TDMONSOC    > 419 AND TDMONSOC    < 456)                         02830014
+   OR (TDMONSOC    > 514 AND TDMONSOC    < 550)                         02840014
+   OR (TDMONSOC    > 660 AND TDMONSOC    < 692)                         02850014
+   OR (TDMONSOC    = 160 ) OR (TDMONSOC    = 270 )                      02860014
+   GROUP BY TDMONSOC                                                    02861014
+WITH UR;                                                                02870014
+SELECT 'AST','TBDOUFM ','DOS',TDUFNSOC AS SOC                           02880014
+                             ,COUNT(*) FROM PFRA.TBDOUFM                02881017
+WHERE (TDUFNSOC    > 199 AND TDUFNSOC    < 232)                         02890014
+   OR (TDUFNSOC    > 469 AND TDUFNSOC    < 503)                         02900014
+   OR (TDUFNSOC    > 419 AND TDUFNSOC    < 456)                         02910014
+   OR (TDUFNSOC    > 514 AND TDUFNSOC    < 550)                         02920014
+   OR (TDUFNSOC    > 660 AND TDUFNSOC    < 692)                         02930014
+   OR (TDUFNSOC    = 160 )  OR (TDUFNSOC    = 270 )                     02940014
+   GROUP BY TDUFNSOC                                                    02941014
+WITH UR;                                                                02950014
+SELECT 'AST','TBLIGTX ','DOS',TLTXNSOC AS SOC                           02960014
+                             ,COUNT(*) FROM PFRA.TBLIGTX                02961017
+WHERE (TLTXNSOC    > 199 AND TLTXNSOC    < 232)                         02970014
+   OR (TLTXNSOC    > 469 AND TLTXNSOC    < 503)                         02980014
+   OR (TLTXNSOC    > 419 AND TLTXNSOC    < 456)                         02990014
+   OR (TLTXNSOC    > 514 AND TLTXNSOC    < 550)                         03000014
+   OR (TLTXNSOC    > 660 AND TLTXNSOC    < 692)                         03010014
+   OR (TLTXNSOC    = 160 ) OR (TLTXNSOC    = 270 )                      03020014
+   GROUP BY TLTXNSOC                                                    03021014
+WITH UR;                                                                03030014
+SELECT 'AST','TBPOIMP ','DOS',TIMPNSOC AS SOC                           03040014
+                             ,COUNT(*) FROM PFRA.TBPOIMP                03041017
+WHERE (TIMPNSOC    > 199 AND TIMPNSOC    < 232)                         03050014
+   OR (TIMPNSOC    > 469 AND TIMPNSOC    < 503)                         03060014
+   OR (TIMPNSOC    > 419 AND TIMPNSOC    < 456)                         03070014
+   OR (TIMPNSOC    > 514 AND TIMPNSOC    < 550)                         03080014
+   OR (TIMPNSOC    > 660 AND TIMPNSOC    < 692)                         03090014
+   OR (TIMPNSOC    = 160 ) OR (TIMPNSOC    = 270 )                      03100014
+   GROUP BY TIMPNSOC                                                    03101014
+WITH UR;                                                                03110014
+SELECT 'AST','TBSTOFI ','DOS',TSTFNSOC AS SOC                           03120014
+                             ,COUNT(*) FROM PFRA.TBSTOFI                03121017
+WHERE (TSTFNSOC    > 199 AND TSTFNSOC    < 232)                         03130014
+   OR (TSTFNSOC    > 469 AND TSTFNSOC    < 503)                         03140014
+   OR (TSTFNSOC    > 419 AND TSTFNSOC    < 456)                         03150014
+   OR (TSTFNSOC    > 514 AND TSTFNSOC    < 550)                         03160014
+   OR (TSTFNSOC    > 660 AND TSTFNSOC    < 692)                         03170014
+   OR (TSTFNSOC    = 160 ) OR (TSTFNSOC    = 270 )                      03180014
+   GROUP BY TSTFNSOC                                                    03181014
+WITH UR;                                                                03190014
+SELECT 'AST','TBAGLAC ','ORG',TLACCSOCCONNUE AS SOC                     03200014
+                             ,COUNT(*) FROM PFRA.TBAGLAC                03201017
+WHERE (TLACCSOCCONNUE > 199 AND TLACCSOCCONNUE < 232)                   03210014
+   OR (TLACCSOCCONNUE > 469 AND TLACCSOCCONNUE < 503)                   03220014
+   OR (TLACCSOCCONNUE > 419 AND TLACCSOCCONNUE < 456)                   03230014
+   OR (TLACCSOCCONNUE > 514 AND TLACCSOCCONNUE < 550)                   03240014
+   OR (TLACCSOCCONNUE > 660 AND TLACCSOCCONNUE < 692)                   03250014
+   OR (TLACCSOCCONNUE = 160 )  OR (TLACCSOCCONNUE = 270 )               03260014
+   GROUP BY TLACCSOCCONNUE                                              03261014
+WITH UR;                                                                03270014
+SELECT 'AST','TBAGLAG ','ORG',TLAGCSOCCONNUE AS SOC                     03280014
+                             ,COUNT(*) FROM PFRA.TBAGLAG                03281017
+WHERE (TLAGCSOCCONNUE > 199 AND TLAGCSOCCONNUE < 232)                   03290014
+   OR (TLAGCSOCCONNUE > 469 AND TLAGCSOCCONNUE < 503)                   03300014
+   OR (TLAGCSOCCONNUE > 419 AND TLAGCSOCCONNUE < 456)                   03310014
+   OR (TLAGCSOCCONNUE > 514 AND TLAGCSOCCONNUE < 550)                   03320014
+   OR (TLAGCSOCCONNUE > 660 AND TLAGCSOCCONNUE < 692)                   03330014
+   OR (TLAGCSOCCONNUE = 160 ) OR (TLAGCSOCCONNUE = 270 )                03340014
+   GROUP BY TLAGCSOCCONNUE                                              03341014
+WITH UR;                                                                03350014
+SELECT 'AST','TBPTAGC ','ORG',TAGCSOC AS SOC                            03360014
+                             ,COUNT(*) FROM PFRA.TBPTAGC                03361017
+WHERE (TAGCSOC     > 199 AND TAGCSOC     < 232)                         03370014
+   OR (TAGCSOC     > 469 AND TAGCSOC     < 503)                         03380014
+   OR (TAGCSOC     > 419 AND TAGCSOC     < 456)                         03390014
+   OR (TAGCSOC     > 514 AND TAGCSOC     < 550)                         03400014
+   OR (TAGCSOC     > 660 AND TAGCSOC     < 692)                         03410014
+   OR (TAGCSOC     = 160 ) OR (TAGCSOC     = 270 )                      03420014
+   GROUP BY TAGCSOC                                                     03421014
+WITH UR;                                                                03430014
+SELECT 'AST','TBPTGEM ','ORG',TGEMSOC AS SOC                            03440014
+                             ,COUNT(*) FROM PFRA.TBPTGEM                03441017
+WHERE (TGEMSOC     > 199 AND TGEMSOC     < 232)                         03450014
+   OR (TGEMSOC     > 469 AND TGEMSOC     < 503)                         03460014
+   OR (TGEMSOC     > 419 AND TGEMSOC     < 456)                         03470014
+   OR (TGEMSOC     > 514 AND TGEMSOC     < 550)                         03480014
+   OR (TGEMSOC     > 660 AND TGEMSOC     < 692)                         03490014
+   OR (TGEMSOC     = 160 ) OR (TGEMSOC     = 270 )                      03500014
+   GROUP BY TGEMSOC                                                     03501014
+WITH UR;                                                                03510014
+SELECT 'AST','TBPTGEO ','ORG',TGEOSOC AS SOC                            03520014
+                             ,COUNT(*) FROM PFRA.TBPTGEO                03521017
+WHERE (TGEOSOC     > 199 AND TGEOSOC     < 232)                         03530014
+   OR (TGEOSOC     > 469 AND TGEOSOC     < 503)                         03540014
+   OR (TGEOSOC     > 419 AND TGEOSOC     < 456)                         03550014
+   OR (TGEOSOC     > 514 AND TGEOSOC     < 550)                         03560014
+   OR (TGEOSOC     > 660 AND TGEOSOC     < 692)                         03570014
+   OR (TGEOSOC     = 160 ) OR (TGEOSOC     = 270 )                      03580014
+   GROUP BY TGEOSOC                                                     03581014
+WITH UR;                                                                03590014
+SELECT 'AST','TBPS099 ','PAR',T099NSOC AS SOC                           03600014
+                             ,COUNT(*) FROM PFRA.TBPS099                03601017
+WHERE (T099NSOC    > 199 AND T099NSOC    < 232)                         03610014
+   OR (T099NSOC    > 469 AND T099NSOC    < 503)                         03620014
+   OR (T099NSOC    > 419 AND T099NSOC    < 456)                         03630014
+   OR (T099NSOC    > 514 AND T099NSOC    < 550)                         03640014
+   OR (T099NSOC    > 660 AND T099NSOC    < 692)                         03650014
+   OR (T099NSOC    = 160 ) OR (T099NSOC    = 270 )                      03660014
+   GROUP BY T099NSOC                                                    03661014
+WITH UR;                                                                03670014
+SELECT 'AST','TBFILAT ','SUR',TFATNSOC AS SOC                           03760014
+                             ,COUNT(*) FROM PFRA.TBFILAT                03761017
+WHERE (TFATNSOC    > 199 AND TFATNSOC    < 232)                         03770014
+   OR (TFATNSOC    > 469 AND TFATNSOC    < 503)                         03780014
+   OR (TFATNSOC    > 419 AND TFATNSOC    < 456)                         03790014
+   OR (TFATNSOC    > 514 AND TFATNSOC    < 550)                         03800014
+   OR (TFATNSOC    > 660 AND TFATNSOC    < 692)                         03810014
+   OR (TFATNSOC    = 160 ) OR (TFATNSOC    = 270 )                      03820014
+   GROUP BY TFATNSOC                                                    03821014
+WITH UR;                                                                03830014
+SELECT 'AST','TBJEST1 ','TEC',TJE1NSOC AS SOC                           03840014
+                             ,COUNT(*) FROM PFRA.TBJEST1                03841017
+WHERE (TJE1NSOC    > 199 AND TJE1NSOC    < 232)                         03850014
+   OR (TJE1NSOC    > 469 AND TJE1NSOC    < 503)                         03860014
+   OR (TJE1NSOC    > 419 AND TJE1NSOC    < 456)                         03870014
+   OR (TJE1NSOC    > 514 AND TJE1NSOC    < 550)                         03880014
+   OR (TJE1NSOC    > 660 AND TJE1NSOC    < 692)                         03890014
+   OR (TJE1NSOC    = 160 ) OR (TJE1NSOC    = 270 )                      03900014
+   GROUP BY TJE1NSOC                                                    03901014
+WITH UR;                                                                03910014
+SELECT 'AST','TBALPHC ','CLI',TALCNSOC AS SOC                           03920014
+                             ,COUNT(*) FROM PFRA.TBALPHC                03921017
+WHERE (TALCNSOC    > 199   AND TALCNSOC    < 232)                       03930014
+   OR (TALCNSOC    > 469   AND TALCNSOC    < 503)                       03940014
+   OR (TALCNSOC    > 419   AND TALCNSOC    < 456)                       03950014
+   OR (TALCNSOC    > 514   AND TALCNSOC    < 550)                       03960014
+   OR (TALCNSOC    > 660   AND TALCNSOC    < 692)                       03970014
+   OR (TALCNSOC    = 160 ) OR (TALCNSOC    = 270 )                      03980014
+   GROUP BY TALCNSOC                                                    03981014
+WITH UR;                                                                03990014
+SELECT 'AST','TBALPHE ','CLI',TALENSOC AS SOC                           04000014
+                             ,COUNT(*) FROM PFRA.TBALPHE                04001017
+WHERE (TALENSOC    > 199   AND TALENSOC    < 232)                       04010014
+   OR (TALENSOC    > 469   AND TALENSOC    < 503)                       04020014
+   OR (TALENSOC    > 419   AND TALENSOC    < 456)                       04030014
+   OR (TALENSOC    > 514   AND TALENSOC    < 550)                       04040014
+   OR (TALENSOC    > 660   AND TALENSOC    < 692)                       04050014
+   OR (TALENSOC    = 160 ) OR (TALENSOC    = 270 )                      04060014
+   GROUP BY TALENSOC                                                    04061014
+WITH UR;                                                                04070014
+SELECT 'AST','TBCLREL ','CLI',TCRLNSOC AS SOC                           04071015
+                             ,COUNT(*) FROM PFRA.TBCLREL                04072017
+WHERE (TCRLNSOC    > 199   AND TCRLNSOC    < 232)                       04073015
+   OR (TCRLNSOC    > 469   AND TCRLNSOC    < 503)                       04074015
+   OR (TCRLNSOC    > 419   AND TCRLNSOC    < 456)                       04075015
+   OR (TCRLNSOC    > 514   AND TCRLNSOC    < 550)                       04076015
+   OR (TCRLNSOC    > 660   AND TCRLNSOC    < 692)                       04077015
+   OR (TCRLNSOC    = 160 ) OR (TCRLNSOC    = 270 )                      04078015
+   GROUP BY TCRLNSOC                                                    04079015
+WITH UR;                                                                04079115
+SELECT 'AST','TBCLSCP ','CLI',TCSCNSOC AS SOC                           04079215
+                             ,COUNT(*) FROM PFRA.TBCLSCP                04079317
+WHERE (TCSCNSOC    > 199   AND TCSCNSOC    < 232)                       04079415
+   OR (TCSCNSOC    > 469   AND TCSCNSOC    < 503)                       04079515
+   OR (TCSCNSOC    > 419   AND TCSCNSOC    < 456)                       04079615
+   OR (TCSCNSOC    > 514   AND TCSCNSOC    < 550)                       04079715
+   OR (TCSCNSOC    > 660   AND TCSCNSOC    < 692)                       04079815
+   OR (TCSCNSOC    = 160 ) OR (TCSCNSOC    = 270 )                      04079915
+   GROUP BY TCSCNSOC                                                    04080015
+WITH UR;                                                                04080115
+SELECT 'AST','TBALPH2 ','CLI',TAL2NSOC AS SOC                           04080215
+                             ,COUNT(*) FROM PFRA.TBALPH2                04081017
+WHERE (TAL2NSOC    > 199   AND TAL2NSOC    < 232)                       04090014
+   OR (TAL2NSOC    > 469   AND TAL2NSOC    < 503)                       04100014
+   OR (TAL2NSOC    > 419   AND TAL2NSOC    < 456)                       04110014
+   OR (TAL2NSOC    > 514   AND TAL2NSOC    < 550)                       04120014
+   OR (TAL2NSOC    > 660   AND TAL2NSOC    < 692)                       04130014
+   OR (TAL2NSOC    = 160 ) OR (TAL2NSOC    = 270 )                      04140014
+   GROUP BY TAL2NSOC                                                    04141014
+WITH UR;                                                                04150014
+SELECT 'AST','TBCHHIS ','DOS',TCHHNSOCGEST AS SOC                       04160014
+                             ,COUNT(*) FROM PFRA.TBCHHIS                04161017
+WHERE (TCHHNSOCGEST = 270)                                              04170014
+   GROUP BY TCHHNSOCGEST                                                04171014
+WITH UR;                                                                04180014
+SELECT 'AST','TBCHINV ','DOS',TCHVNSOCGEST AS SOC                       04190014
+                             ,COUNT(*) FROM PFRA.TBCHINV                04191017
+WHERE (TCHVNSOCGEST = 270)                                              04200014
+   GROUP BY TCHVNSOCGEST                                                04201014
+WITH UR;                                                                04210014
+SELECT 'AST','TBRGBO2 ','CTA',TRGBNSOC AS SOC                           04220014
+                             ,COUNT(*) FROM PFRA.TBRGBO2                04221017
+WHERE (TRGBNSOC    = -270)                                              04230014
+   GROUP BY TRGBNSOC                                                    04231014
+WITH UR;                                                                04240014
+SELECT 'AST','TBRJMEC ','CTA',TRMENSOC AS SOC                           04250014
+                             ,COUNT(*) FROM PFRA.TBRJMEC                04251017
+WHERE (TRMENSOC    =  270)                                              04260014
+   GROUP BY TRMENSOC                                                    04261014
+WITH UR;                                                                04270014
+

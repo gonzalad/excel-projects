@@ -1,0 +1,3 @@
+  SORT FIELDS=(12,6,BI,A)                                                       
+  OUTFIL OMIT=(146,2,BI,EQ,C'PC'),                                              
+         FNAMES=SERIE1                                                          

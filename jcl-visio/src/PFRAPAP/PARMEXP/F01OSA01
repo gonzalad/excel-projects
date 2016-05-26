@@ -1,0 +1,14 @@
+UNLD DATA FORMAT(DSNTIAUL) OUTDDN(TBTMRNC) MODE(AUTO)                           
+SELECT TTRNNFOY,                                                                
+       TTRNNCONT,                                                               
+       TTRNNCARTE,                                                              
+       TTRNNDT,                                                                 
+       TTRNNSOC,                                                                
+       TTRNDENVOILET,                                                           
+       TTRNDBASCDOS,                                                            
+       TTRNCPOSBASC                                                             
+FROM PFRA.TBTMRNC                                                               
+WHERE TTRNCPOSBASC    = 'E'                                                     
+AND TTRNDBASCDOS > CURRENT DATE                                                 
+ORDER BY TTRNNSOC,  TTRNNFOY, TTRNNCONT, TTRNNCARTE, TTRNNDT    ASC             
+WITH UR                                                                         

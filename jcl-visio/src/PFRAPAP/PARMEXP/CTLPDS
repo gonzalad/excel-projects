@@ -1,0 +1,7 @@
+PFRAAPP.CREDIT.LNKMPEMG                                                 00010000
+PFRAAPP.CREDIT.LNKMPLIB                                                 00020000
+PFRAAPP.CREDIT.LNKTPEMG                                                 00030000
+PFRAAPP.CREDIT.LNKTPLIB                                                 00040000
+PFRAAPP.CREDIT.LNKTTEMG                                                 00050000
+PFRAAPP.CREDIT.LNKTTLIB                                                 00060000
+PFRAAPP.TABLES.CICSLINK                                                 00070000

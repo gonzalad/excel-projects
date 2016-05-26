@@ -1,0 +1,13 @@
+ OPTION COPY                                                                    
+  OUTFIL OUTREC=(1,272),FNAMES=TEMPA                                            
+  OUTFIL OUTREC=(273,261),FNAMES=TEMPB                                          
+  OUTFIL OUTREC=(534,209),FNAMES=TEMPC                                          
+  OUTFIL OUTREC=(743,267),FNAMES=TEMPD                                          
+  OUTFIL OUTREC=(1010,279),FNAMES=TEMPE                                         
+  OUTFIL OUTREC=(1289,651),FNAMES=TEMPF                                         
+  OUTFIL OUTREC=(5540,463),FNAMES=TEMPG                                         
+  OUTFIL OUTREC=(6003,431),FNAMES=TEMPH                                         
+  OUTFIL OUTREC=(6434,382),FNAMES=TEMPI                                         
+  OUTFIL OUTREC=(6816,417),FNAMES=TEMPJ                                         
+  OUTFIL OUTREC=(7233,442),FNAMES=TEMPK                                         
+  OUTFIL OUTREC=(7675,326),FNAMES=TEMPL                                         

@@ -1,0 +1,6 @@
+ SELECT  TDCANFOY, TDCANCONT, TDCANCARTE, TDCANDT, TDCANRANG,                   
+         TDCANBIN, TDCANCARTPHY, TDCADCREAT, TDCADMOD, TDCACTIT,                
+         TDCACEMBOSS, TDCACEXPED, TDCADFAB, TDCACRENOUV,                        
+         TDCADFINVALID, TDCACGES, TDCACCONFID, TDCACDAB,                        
+         TDCACSECRET, TDCACCONFID16,                                            
+         TDPRNSOC, TDPRNOPERFIDEL, TDPRCPRODCOM                                 

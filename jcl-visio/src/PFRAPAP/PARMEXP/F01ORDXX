@@ -1,0 +1,83 @@
+.CONTROL +                                                              00010000
+ LOGID(DBR1) UNIT(SYSDA)                                                00020000
+.LIST SYSOUT(*)                                                         00030000
+.OPTION NOERRORS                                                        00040000
+.CONNECT DBR1                                                           00050000
+                                                                        00060000
+                                                                        00070000
+.ALLOC FI(LADXTRCT)                                                    +00080000
+ DATASET('PFRAQSM.PFRORA01.EXTRACT')                                   +00090006
+ CYL SPACE(20,10) BLKSIZE(23200) LRECL(23200) RECFM(F,S)               +00100000
+ NEW REPLACE CATALOG UNIT(SYSDA)                                        00110000
+                                                                        00120000
+.ALLOC FI(LADXCNTL)                                                    +00130000
+ DATASET('PFRAQSM.PFRORA01.CONTROL')                                   +00140006
+ TRACKS SPACE(5,5) BLKSIZE(7400) LRECL(7400) RECFM(F,S)                +00150000
+ NEW REPLACE CATALOG UNIT(SYSDA)                                        00160000
+                                                                        00170000
+.ALLOC FI(LADLOAD)                                                     +00180000
+ DATASET('PFRAQSM.PFRORA01.CNTL')                                      +00190006
+ TRACKS SPACE(5,5) BLKSIZE(3120) LRECL(80) RECFM(F,B)                  +00200000
+ NEW REPLACE CATALOG UNIT(SYSDA)                                        00210000
+                                                                        00220000
+.CALL LOG                                                               00230000
+.DATA                                                                   00240000
+ SSID     = (DBR1)                                                      00250000
+ STRATEGY = (DBR1,NOGET,BCCFACET,SAVE)                                  00260000
+ RESUME   = (36)                                                        00270000
+ START    = (DATE(2005-03-24),TIME(00:00:00.00))                        00280000
+ END      = (DATE(2005-03-25),TIME(06:00:00.00))                        00290000
+ LOGSRC   = (BSDS)                                                      00300000
+ OBJSRC   = (CATALOG)                                                   00310000
+ COPYSRC  = (CATALOG)                                                   00320000
+ DYNSORT  = (DSNUM(20),SPACE(200,100),MAINSIZE(2000),MSG(N))            00330000
+ GENUNIT  = (SYSDA)                                                     00340000
+ RPTLINES = (60)                                                        00350000
+ S99WAIT  = (YES)                                                       00360000
+ RESOLVUR = (YES)                                                       00370000
+ WORKLOAD = (SMALL)                                                     00380000
+ DMLREPT  = (LEVEL    (DETAIL)                                          00390000
+            ,ROLLBACK (INCLUDE)                                         00400000
+            ,CATALOG  (EXCLUDE)                                         00410000
+            ,ORDERBY  (URID)                                            00420000
+            ,INCLUDE  (AND                                              00430000
+                      ,TABLE (PFRA.TBBQRIB,                             00440004
+                              PFRA.TBADRES,                             00450004
+                              PFRA.TBCLFOY,                             00460004
+                              PFRA.TBCLPRF,                             00470004
+                              PFRA.TBCLIDE,                             00480004
+                              PFRA.TBTETEL,                             00490004
+                              PFRA.TBTEWEB,                             00500004
+                              PFRA.TBCLJAC,                             00510004
+                              PFRA.TBCLASS,                             00520004
+                              PFRA.TBCLPRC,                             00530004
+                              PFRA.TBCLREL,                             00540004
+                              PFRA.TBDOCAU,                             00550004
+                              PFRA.TBCLPRV)                             00560004
+                      )                                                 00570000
+            ,EXCLUDE  (AND                                              00580000
+                      ,PLAN  (PFRATP  )                                 00590004
+                      )                                                 00600000
+            ,DISCARDS (0)                                               00610000
+            ,GENFILE  (FIXED                                            00620000
+                      ,UTILITY (APPLY)                                  00630000
+                      ,TBFILES (NO) ,EMPTY (NO)                         00640000
+                      ,INCLUDE (REDO    , UNDO    )                     00650000
+                      ,LADFILE (                                        00660000
+                       'PFRAQSM.SORD0001.TRIFICH0.SORTOUT0(+1)'         00670005
+                               ,SPACE(500,500)                          00680003
+                               ,UNIT(SYSDA)                             00690000
+                               )                                        00700000
+                      ,COLPRFX (PLA_)                                   00710000
+                      ,TARGSSID (DBR1)                                  00720000
+                      ,DISCARDS (0)                                     00730000
+                      ,LOG     (YES)                                    00740000
+                      )                                                 00750000
+            )                                                           00760000
+ EXTRACT  = (FILTER)                                                    00770000
+.ENDDATA                                                                00780000
+                                                                        00790000
+.FREE  FI(LADXTRCT)                                                     00800000
+.FREE  FI(LADXCNTL)                                                     00810000
+.FREE  FI(LADLOAD)                                                      00820000
+

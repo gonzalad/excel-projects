@@ -1,0 +1,4 @@
+*+* FMC2FM: BEGINNING OF FILE MANAGER STATEMENT OUTPUT *+*                      
+$$FILEM DSC  INPUT=DD01,                                                        
+$$FILEM      OUTPUT=DD01O,                                                      
+$$FILEM      POSITION=1                                                         

@@ -1,0 +1,7 @@
+ CONVERT                                                                        
+ INPUT_FILE PFRAFTE.NIR00081.PDPMMAIN.EXTVDR10                                  
+ CONVERTED_FILE (DSNAME PFRATMP.NIR00082.PDPMMAIN.CONVDR10                      
+                 MODE REP)                                                      
+ CONTROL_FILE   (DSNAME PFRATMP.NIR00083.PDPMMAIN.CONVDR10                      
+                 MODE REP)                                                      
+ TABLE_MAP REFRVDR.ANONFRFULL11                                                 

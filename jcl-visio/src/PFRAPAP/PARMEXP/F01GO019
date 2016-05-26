@@ -1,0 +1,29 @@
+DELETE PFRAVSM.FIC CLUSTER PURGE                                                
+DELETE PFRAVSM.JALA CLUSTER PURGE                                               
+SET MAXCC = 0                                                                   
+  DEFINE CLUSTER(NAME(PFRAVSM.FIC)) -                                           
+      DATA(NAME(PFRAVSM.FIC.DATA) -                                             
+          VOL(PFRA25)-                                                          
+          CISZ(4096)-                                                           
+          TRK(200 200) -                                                        
+          RECSZ(121,121)-                                                       
+          RECOVERY-                                                             
+          SHR(2 3)-                                                             
+          KEYS(21,0))-                                                          
+      INDEX(NAME(PFRAVSM.FIC.INDEX) -                                           
+          VOL(PFRA25)-                                                          
+          SHR(2 3)-                                                             
+          CISZ(2048))                                                           
+  DEFINE CLUSTER(NAME(PFRAVSM.JALA)) -                                          
+      DATA(NAME(PFRAVSM.JALA.DATA) -                                            
+         VOL(PFRA25)-                                                           
+         CISZ(4096)-                                                            
+         TRK(200 200) -                                                         
+         RECSZ(131,131)-                                                        
+         RECOVERY-                                                              
+         SHR(2 3)-                                                              
+         KEYS(25,0))-                                                           
+     INDEX(NAME(PFRAVSM.JALA.INDEX) -                                           
+         VOL(PFRA25)-                                                           
+         SHR(2 3)-                                                              
+         CISZ(2048))                                                            

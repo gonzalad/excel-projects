@@ -1,0 +1,24 @@
+SELECT   TSNYLJOB   ,                                                   00020001
+         TSNYDCWA   ,                                                   00030001
+         TSNYLPROG  ,                                                   00040001
+         TSNYDDEBUT ,                                                   00050001
+         TSNYTDEBUT ,                                                   00060001
+         TSNYDFIN   ,                                                   00070001
+         TSNYTFIN   ,                                                   00080001
+         TSNYCTERM                                                      00090001
+FROM     PFRA.TBCTSNY                                                   00100001
+WHERE TSNYDCWA > '31.07.2015'                                           00110028
+AND TSNYDCWA < '02.09.2015'                                             00111028
+AND TSNYLJOB NOT LIKE 'PN1%'                                            00112008
+AND TSNYLJOB NOT LIKE 'PN2%'                                            00113008
+AND TSNYLJOB NOT LIKE 'PN3%'                                            00114008
+AND TSNYLJOB NOT LIKE 'PN4%'                                            00115008
+AND TSNYLJOB NOT LIKE 'K01%'                                            00116008
+AND TSNYLJOB NOT LIKE 'K02%'                                            00117008
+AND TSNYLJOB NOT LIKE 'K03%'                                            00118008
+AND TSNYLJOB NOT LIKE 'K04%'                                            00119008
+AND    TSNYDDEBUT   > '31.07.2015'                                      00120028
+AND    TSNYDDEBUT   < '02.09.2015'                                      00130028
+AND    TSNYCTERM <> 'COMP'                                              00140001
+AND    TSNYCTERM <> 'U0222'                                             00150001
+ORDER BY TSNYDDEBUT ;                                                   00160001

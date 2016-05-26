@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SGO00126.NERFIMPM.BDXCHAIN' +                                      
+      JOURA.FRFIMP.BDXCHAIN.MDT.DU0828.GED                                      
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FRFIMP.BDXCHAIN.MDT.DU0828.GED_INF                                  
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.FRFIMP.BDXCHAIN.MDT.DU0828.GED_EOF                                  
+CLOSE                                                                           
+QUIT                                                                            

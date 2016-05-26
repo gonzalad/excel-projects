@@ -1,0 +1,20 @@
+REORG TABLESPACE PCDBUTFR.SCDBRGFR  SHRLEVEL CHANGE                             
+DISCARD FROM TABLE PFRA.TBCDBRG                                                 
+                    WHERE (DATE_CREATE < CURRENT DATE - 24 MONTH                
+                             AND IXCREATOR <> 'SOMME')                          
+                                                                                
+REORG TABLESPACE PCDBUTFR.SCDBELFR  SHRLEVEL CHANGE                             
+DISCARD FROM TABLE PFRA.TBCDBEL                                                 
+                    WHERE (DATE_CREATE < CURRENT DATE - 24 MONTH)               
+                                                                                
+REORG TABLESPACE PCDBUTFR.SDRNFLFR  SHRLEVEL CHANGE                             
+DISCARD FROM TABLE CDB.CDB_DRAIN_FAIL_LOG                                       
+                    WHERE (TSTMP < CURRENT TIMESTAMP - 6 MONTH)                 
+                                                                                
+REORG TABLESPACE PCDBUTFR.SREORGFR  SHRLEVEL CHANGE                             
+DISCARD FROM TABLE CDB.CDB_REORG_QUEUE                                          
+                    WHERE (TSTMP < CURRENT TIMESTAMP - 24 MONTH)                
+                                                                                
+REORG TABLESPACE PCDBUTFR.SREORLFR  SHRLEVEL CHANGE                             
+DISCARD FROM TABLE CDB.CDB_REORG_LOG                                            
+                    WHERE (END_TSTMP < CURRENT TIMESTAMP - 24 MONTH)            

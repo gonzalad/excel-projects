@@ -1,0 +1,27 @@
+INSERT (COMMIT=10) INTO PFRA.TBVSTAT                                            
+SELECT MATABLE.TVSTDTRAIT,                                                      
+       MATABLE.NB_PART * (-1),                                                  
+       0,                                                                       
+       MATABLE.DEB,                                                             
+       TIME('00:00:00')+ MATABLE.DUREE SECONDS,                                 
+       ' ',                                                                     
+       MATABLE.NB_TRF,                                                          
+       (MATABLE.NB_TRF / MATABLE.DUREE),                                        
+       MATABLE.NB_ERRINS,                                                       
+       MATABLE.NB_ERRTOT                                                        
+FROM (SELECT X.TVSTDTRAIT,                                                      
+       COUNT(*) AS NB_PART,                                                     
+       MIN(X.TVSTHDEB) AS DEB,                                                  
+       SUM(HOUR(X.TVSTHDUREE)*3600+                                             
+           MINUTE(X.TVSTHDUREE)*60+                                             
+           SECOND(X.TVSTHDUREE)) AS DUREE,                                      
+       SUM(X.TVSTBTRF) AS NB_TRF,                                               
+       SUM(X.TVSTBERRINS)AS NB_ERRINS,                                          
+       SUM(X.TVSTBERRTOT)AS NB_ERRTOT                                           
+       FROM PFRA.TBVSTAT X                                                      
+       WHERE X.TVSTNPART > -1                                                   
+        AND  X.TVSTDTRAIT = (SELECT MAX(TVSTDTRAIT)                             
+                             FROM PFRA.TBVSTAT                                  
+                             WHERE TVSTNPART > -1)                              
+       GROUP BY X.TVSTDTRAIT) AS MATABLE                                        
+;                                                                               

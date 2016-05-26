@@ -1,0 +1,29 @@
+COPY                                                                            
+DATASET(  -                                                                     
+    INCL(                    -                                                  
+DFRAAGL.DBRMLIB, -                                                              
+PFRAQSM.CICS.LINKLIB, -                                                         
+PFRAAPP.NEUGES.MAPLINK, -                                                       
+PFRAAPP.TABLES.CICSLINK, -                                                      
+PFRAAPP.AGREE.DBRMLIB, -                                                        
+PFRAAPP.COFICA.DBRMLIB, -                                                       
+PFRAAPP.DIRECT.DBRMLIB, -                                                       
+PFRAAPP.DIVERS.DBRMLIB, -                                                       
+PFRAAPP.NEUGES.DBRMLIB -                                                        
+                      )) -                                                      
+    CONVERT(PDS(                      -                                         
+DFRAAGL.DBRMLIB, -                                                              
+                         )) -                                                   
+    RENAMEU(                                     -                              
+(DFRAAGL.DBRMLIB,DFRAAGL.DBRMLIB.GARBAGE.TP), -                                 
+(PFRAQSM.CICS.LINKLIB,PFRAAPP.CICS.LINKLIB.GARBAGE), -                          
+(PFRAAPP.NEUGES.MAPLINK,DFRAAGL.NEUGES.MAPLINK.GARBAGE), -                      
+(PFRAAPP.TABLES.CICSLINK,PFRAEXP.TABLES.CICSLINK.GARBAGE), -                    
+(PFRAAPP.AGREE.DBRMLIB,PFRAAPP.AGREE.DBRMLIB.GARBAGE.TP), -                     
+(PFRAAPP.COFICA.DBRMLIB,PFRAAPP.COFICA.DBRMLIB.GARBAGE.TP) -                    
+(PFRAAPP.DIRECT.DBRMLIB,PFRAAPP.DIRECT.DBRMLIB.GARBAGE.TP), -                   
+(PFRAAPP.DIVERS.DBRMLIB,PFRAAPP.DIVERS.DBRMLIB.GARBAGE.TP), -                   
+(PFRAAPP.NEUGES.DBRMLIB,DFRAAGL.NEUGES.DBRMLIB.GARBAGE.TP), -                   
+         ) -                                                                    
+    SHR  TOL(ENQF) ADMIN                                                        
+     SET MAXCC=0                                                                

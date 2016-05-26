@@ -1,0 +1,11 @@
+        FNAMES=SERIE16                                                          
+ OUTFIL INCLUDE=(19,6,BI,GT,X'00000000762C',AND,                                
+                 57,6,BI,GT,X'00000000000C',AND,                                
+                 31,6,BI,GE,19,6,BI),                                           
+        FNAMES=SERIE17                                                          
+ OUTFIL INCLUDE=((51,2,BI,NE,X'000C',OR,53,2,BI,NE,X'000C'),AND,                
+                 37,3,CH,NE,C'ANN'),                                            
+        FNAMES=SERIE18                                                          
+ OUTFIL INCLUDE=(97,2,BI,EQ,X'009C',AND,37,3,CH,NE,C'ANN'),                     
+        FNAMES=SERIE19                                                          
+ OUTFIL INCLUDE=(96,1,BI,EQ,C'J',AND,                                           

@@ -1,0 +1,132 @@
+SELECT                                                                          
+   TDPRNSOC                                                                     
+  ,TDPRCPRODCOM                                                                 
+  ,TDCPCSOUSGEST                                                                
+  ,TDPRCPOSA                                                                    
+  ,TDPRMSREC                                                                    
+  ,TDPRMCRD                                                                     
+  ,TDPRDEAT                                                                     
+  ,TDPRNSOCAGRO                                                                 
+  ,TDPRNAGRO                                                                    
+  ,TDOCCTYPEOCTSE                                                               
+  ,TDOCCTYPETUORI                                                               
+  ,TDOCNSOCCHAINE                                                               
+  ,TDOCNCHAINEVDR                                                               
+  ,TDPRNFOY                                                                     
+  ,TDPRCOPT                                                                     
+  ,TDPRCOPTCO                                                                   
+  ,TDCPBMONTSSR                                                                 
+  ,TDCPBMOISSSR                                                                 
+  ,TDPRCBAREME                                                                  
+  ,TDPRDCREAT                                                                   
+  ,TDPRCPAIEMENT                                                                
+  ,TDPRCVERROU                                                                  
+  ,TDPRDVERROU                                                                  
+  ,TDPRTBAREME                                                                  
+  ,TDPRCOPTCPT                                                                  
+  ,TDPRMMENS                                                                    
+  ,TDPRNQUANT                                                                   
+  ,TDOCCORIGCONTACT                                                             
+  ,TDPRCMSO                                                                     
+  ,TDPRCTITCAR                                                                  
+  ,TDPRNAGCFIN                                                                  
+  ,TDPRMTDDBIL                                                                  
+  ,TDPRDCOTISCA                                                                 
+  ,CHAR(IFNULL(TDCBCPOSA,'   '),3)                                              
+  ,CHAR(IFNULL(TDCACRENOUV,' '),1)                                              
+  ,CHAR(IFNULL(TDCACGES,' '),1)                                                 
+  ,TDCPCTYPCONTRAT                                                              
+  ,TDCPMMENSCLI                                                                 
+  ,TDPRCPRODBASE                                                                
+  ,TDPRMDECO                                                                    
+  ,TDPRTDEG                                                                     
+  ,TDPRDFINBARSPEC                                                              
+  ,TDPRCBARSPEC                                                                 
+  ,TDPRNSOCFIN                                                                  
+  ,TDPRMTODD                                                                    
+  ,TDPRNCONT                                                                    
+  ,TDPRNCARTE                                                                   
+  ,TDPRNDT                                                                      
+  ,TDPRNSOCAGR                                                                  
+  ,TDPRNAGR                                                                     
+  FROM (                                                                        
+SELECT                                                                          
+   TDPRNSOC                                                                     
+  ,TDPRCPRODCOM                                                                 
+  ,TDCPCSOUSGEST                                                                
+  ,TDPRCPOSA                                                                    
+  ,TDPRMSREC                                                                    
+  ,TDPRMCRD                                                                     
+  ,TDPRDEAT                                                                     
+  ,TDPRNSOCAGRO                                                                 
+  ,TDPRNAGRO                                                                    
+  ,TDOCCTYPEOCTSE                                                               
+  ,TDOCCTYPETUORI                                                               
+  ,TDOCNSOCCHAINE                                                               
+  ,TDOCNCHAINEVDR                                                               
+  ,TDPRNFOY                                                                     
+  ,TDPRNCONT                                                                    
+  ,TDPRNCARTE                                                                   
+  ,TDPRNDT                                                                      
+  ,TDPRNSOCAGR                                                                  
+  ,TDPRNAGR                                                                     
+  ,TDPRCOPT                                                                     
+  ,TDPRCOPTCO                                                                   
+  ,TDCPBMONTSSR                                                                 
+  ,TDCPBMOISSSR                                                                 
+  ,TDPRCBAREME                                                                  
+  ,TDPRDCREAT                                                                   
+  ,TDPRCPAIEMENT                                                                
+  ,TDPRCVERROU                                                                  
+  ,TDPRDVERROU                                                                  
+  ,TDPRTBAREME                                                                  
+  ,TDPRCOPTCPT                                                                  
+  ,TDPRMMENS                                                                    
+  ,TDPRNQUANT                                                                   
+  ,TDOCCORIGCONTACT                                                             
+  ,TDPRCMSO                                                                     
+  ,TDPRCTITCAR                                                                  
+  ,TDPRNAGCFIN                                                                  
+  ,TDPRMTDDBIL                                                                  
+  ,TDPRDCOTISCA                                                                 
+  ,TDCPCTYPCONTRAT                                                              
+  ,TDCPMMENSCLI                                                                 
+  ,TDPRCPRODBASE                                                                
+  ,TDPRMDECO                                                                    
+  ,TDPRTDEG                                                                     
+  ,TDPRDFINBARSPEC                                                              
+  ,TDPRCBARSPEC                                                                 
+  ,TDPRNSOCFIN                                                                  
+  ,TDPRMTODD                                                                    
+FROM PFRA.TBDOPRN,PFRA.TBDOCPL,PFRA.TBDOOCT                                     
+WHERE       TDPRNFOY   = TDCPNFOY                                               
+     AND    TDPRNCONT  = TDCPNCONT                                              
+     AND    TDPRNCARTE = TDCPNCARTE                                             
+     AND    TDPRNDT    = TDCPNDT                                                
+     AND    TDPRNFOY   = TDOCNFOY                                               
+     AND    TDPRNCONT  = TDOCNCONT                                              
+     AND    TDPRNCARTE = TDOCNCARTE                                             
+     AND    TDPRNDT    = TDOCNDT                                                
+     AND    TDOCNRANG  = 1) AS T1                                               
+LEFT OUTER JOIN                                                                 
+(SELECT                                                                         
+   TDCBNFOY                                                                     
+  ,TDCBNCONT                                                                    
+  ,TDCBNCARTE                                                                   
+  ,TDCBNDT                                                                      
+  ,TDCBCPOSA                                                                    
+  ,TDCACRENOUV                                                                  
+  ,TDCACGES                                                                     
+FROM PFRA.TBDOCBL, PFRA.TBDOCAR                                                 
+WHERE       TDCBNFOY   = TDCANFOY                                               
+     AND    TDCBNCONT  = TDCANCONT                                              
+     AND    TDCBNCARTE = TDCANCARTE                                             
+     AND    TDCBNDT    = TDCANDT                                                
+     AND    TDCBNRANG  = TDCANRANG                                              
+     AND    TDCBNRANG  = 1         ) AS T2                                      
+ON          TDPRNFOY   = TDCBNFOY                                               
+     AND    TDPRNCONT  = TDCBNCONT                                              
+     AND    TDPRNCARTE = TDCBNCARTE                                             
+     AND    TDPRNDT    = TDCBNDT                                                
+WITH UR;                                                                        
+

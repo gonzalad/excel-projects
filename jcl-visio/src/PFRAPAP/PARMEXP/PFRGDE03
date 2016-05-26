@@ -1,0 +1,38 @@
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL) OUTDDN(TBDOEXT)                         
+  MODE(DB2SQL)                                                                  
+  SELECT                                                                        
+      TDEXNFOY                                                                  
+    , TDEXNCONT                                                                 
+    , TDEXNCARTE                                                                
+    , TDEXNDT                                                                   
+    , TDEXCPOSA                                                                 
+    , TDEXDMOD                                                                  
+    , TDEXCPROD                                                                 
+    , TDEXNAGCMEP                                                               
+    , CHAR(' ')                                                                 
+    , CHAR('O')                                                                 
+    , CHAR(' ',39)                                                              
+  FROM                                                                          
+   PFRA.TBDOEXT                                                                 
+  WHERE TDEXNSOC IN ( 100                                                       
+                    , 135                                                       
+                    , 150                                                       
+                    , 168                                                       
+                    , 185                                                       
+                    , 187                                                       
+                    , 188                                                       
+                    , 192                                                       
+                    , 257                                                       
+                    , 258                                                       
+                    , 637                                                       
+                    , 638                                                       
+                    , 639                                                       
+                    , 700                                                       
+                    , 740                                                       
+                    , 770                                                       
+                    , 775                                                       
+                    , 785                                                       
+                    , 788                                                       
+                    )                                                           
+ AND TDEXDMOD >= CURRENT DATE - 2 MONTH                                         
+  ;                                                                             

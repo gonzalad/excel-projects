@@ -1,0 +1,100 @@
+*+* FMC2FM: Beginning of File Manager statement output *+*                      
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 509 CORRESPONDANT AU FLUX 412 (emission)            
+*                                 IDENTIFIANT    OSKSK180                       
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-tete                                          
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a 1                                                           
+$$FILEM SET  PAD=X'00'                                                          
+$$FILEM DSC  INPUT=DD01,                                                        
+$$FILEM      OUTPUT=TYPEZERO,                                                   
+$$FILEM      PROC=*                                                             
+ IF TESTN(NOT_FIRST,'=','0')                                                    
+ THEN DO                           /* SET DUPLICATED CONSTANT(S) */             
+  SETN(NOT_FIRST,'1')                                                           
+  SETC(C_STR1,'0',6)                                                            
+  SETC(C_STR2,'0',14)                                                           
+  SETC(C_STR3,'0',18)                                                           
+ END                                                                            
+ IF FLD(1,1) == '1',                                                            
+  & FLD_TYPE(2,8,Z) = 1,                                                        
+  & FLD_TYPE(10,8,Z) = 1                                                        
+ THEN DO                                                                        
+  RSTR_OUT()                                                                    
+  OVLY_OUT('ENTETE ',2)                                                         
+  OVLY_OUT('DATE',9)                                                            
+  FLD_OUT(6,4,13)                                                               
+  FLD_OUT(4,2,17)                                                               
+  FLD_OUT(2,2,19)                                                               
+  OVLY_OUT('&C_STR1',21)                                                        
+  WRITE(TYPEZERO)                                                               
+  SAVE_OUT()                                                                    
+  RETURN DROP                      /* drop record READNEXT           */         
+ END                                                                            
+ IF FLD(1,1) == '3',                                                            
+  & FLD_TYPE(2,11,Z) = 1                                                        
+ THEN DO                                                                        
+  RSTR_OUT()                                                                    
+  OVLY_OUT('ENQUEUE',2)                                                         
+  OVLY_OUT('DATE',9)                                                            
+  OVLY_OUT('&C_STR2',13)                                                        
+  OVLY_OUT('NOMBRE000',27)                                                      
+  FLD_OUT(7,6,36)                                                               
+  OVLY_OUT('MONTANT',42)                                                        
+  OVLY_OUT('&C_STR3',49)                                                        
+  WRITE(TYPENEUF)                                                               
+  SAVE_OUT()                                                                    
+  RETURN DROP                      /* drop record READNEXT           */         
+ END                                                                            
+ IF FLD(1,1) == '2'                                                             
+ THEN DO                                                                        
+  TALLY(36,11,Z,'TOTAL FLUX 509 ')                                              
+ END                                                                            
+ RETURN DROP                       /* done USER processing of record */         
+/+                                                                              
+* date creation numerique (jjmmssaa)                                            
+* date de periode numerique (jjmmssaa)                                          
+* si controle ok ecriture de l'enregistrement en-tete                           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* controle de l'enregistrement en-queue                                         
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* code ligne egal a 3                                                           
+* nombre d'enregistrements transmis numerique                                   
+* si controle ok ecriture de l'enregistrement en-queue                          
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* Cumul montant pos=36,lg=11, le resultat est dans SYSTOTAL                     
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+*                                                                               
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* comptabilisation du nombre d'enregistrements details code 2                   
+* le resultat est dans SYSPRINT                                                 
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$FILEM DSC  INPUT=DD02,                                                        
+$$FILEM      OUTPUT=DD02O,                                                      
+$$FILEM      PROC=*                                                             
+ IF FLD(1,1) == '2'                                                             
+ THEN DO                                                                        
+  SETN(COMPT,'+1','Lines COPIED=')                                              
+  RETURN                           /* process record                 */         
+ END                                                                            
+ RETURN DROP                       /* no criteria match, drop        */         
+*EOFPROC                                                                        
+ IF TESTN(COMPT,'EQ', 0) Then Do                                                
+    Say 'TOTAL FLUX 509  0'                                                     
+    Say '             OUTPUT=DD02O'                                             
+    Say 'Lines COPIED=   0'                                                     
+ End                                                                            
+/+                                                                              
+

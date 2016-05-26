@@ -1,0 +1,57 @@
+SELECT TCCONSOC,SUM(TCCOMPRDCL),COUNT(*)                                        
+FROM PFRA.TBCOCOM                                                               
+WHERE  TCCONSOC = 135                                                           
+AND    TCCOMPRDCL <> 0                                                          
+GROUP BY TCCONSOC;                                                              
+SELECT TCCONSOC,SUM(TCCOMVC),COUNT(*)                                           
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 135                                                            
+AND    TCCOMVC <> 0                                                             
+GROUP BY TCCONSOC;                                                              
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMVC                                      
+FROM PFRA.TBCOCOM, PFRA.TBCOIDE                                                 
+WHERE TCCONSOC = 135                                                            
+AND TCIDNSOC = TCCONSOC                                                         
+AND TCIDNBEN = TCCONBEN                                                         
+AND TCCOMVC <> 0                                                                
+ORDER BY 1,2;                                                                   
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMPRINS                                   
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 135                                                              
+AND TCCOMPRINS <> 0                                                             
+ORDER BY 1,2,3;                                                                 
+SELECT SUM(TCCOMPRINS)                                                          
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 135                                                              
+AND TCCOMPRINS <> 0;                                                            
+SELECT TCCONSOC,SUM(TCCOMPRDCL),COUNT(*)                                        
+FROM PFRA.TBCOCOM                                                               
+WHERE  TCCONSOC = 150                                                           
+AND    TCCOMPRDCL <> 0                                                          
+GROUP BY TCCONSOC;                                                              
+SELECT TCCONSOC,SUM(TCCOMVC),COUNT(*)                                           
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 150                                                            
+AND    TCCOMVC <> 0                                                             
+GROUP BY TCCONSOC;                                                              
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMVC                                      
+FROM PFRA.TBCOCOM, PFRA.TBCOIDE                                                 
+WHERE TCCONSOC = 150                                                            
+AND TCIDNSOC = TCCONSOC                                                         
+AND TCIDNBEN = TCCONBEN                                                         
+AND TCCOMVC <> 0                                                                
+ORDER BY 1,2;                                                                   
+SELECT TCCONSOC,TCIDNAGCE,TCCONBEN,TCCOMPRINS                                   
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 150                                                              
+AND TCCOMPRINS <> 0                                                             
+ORDER BY 1,2,3;                                                                 
+SELECT SUM(TCCOMPRINS)                                                          
+FROM PFRA.TBCOCOM,PFRA.TBCOIDE                                                  
+WHERE TCIDNBEN = TCCONBEN                                                       
+AND TCCONSOC = 150                                                              
+AND TCCOMPRINS <> 0;                                                            
+

@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SFV20051.NEFCHQSP.CHEQUES0' +                                      
+      JOURA.F#FCHQ.CHEQUES.DUMOJJ                                               
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.F#FCHQ.CHEQUES.DUMOJJ_INF                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.F#FCHQ.CHEQUES.DUMOJJ_EOF                                           
+CLOSE                                                                           
+QUIT                                                                            

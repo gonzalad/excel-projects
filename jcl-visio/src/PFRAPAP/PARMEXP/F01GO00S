@@ -1,0 +1,378 @@
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 100                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 100;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 160                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 160;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 160;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 168;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 100;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 150                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 150;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 150;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 197;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 135                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 135;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 135;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 130                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 130;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 130;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 248                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 248;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 248;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 176                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 176;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 176;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                      
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 700                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 700;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 700;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                      
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 775                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 775;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 775;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                      
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 750                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 750;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 750;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                      
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 730                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 730;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 730;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                      
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 785                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 785;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 785;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                      
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 788                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 788;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 788;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC-TCCOMDBC                                      
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 790                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 790;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 790;                                                           
+SELECT TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                      
+FROM PFRA.TBCOCOB                                                               
+WHERE (TCCBMCRC <> TCCBMDBC)                                                    
+  AND TCCBNSOC = 700                                                            
+ORDER BY TCCBNBEN;                                                              
+SELECT SUM(TCCBMCRC-TCCBMDBC)                                                   
+FROM PFRA.TBCOCOB                                                               
+WHERE (TCCBMCRC <> TCCBMDBC)                                                    
+  AND TCCBNSOC = 700;                                                           
+SELECT SUM(TCCBMVC)                                                             
+FROM PFRA.TBCOCOB                                                               
+WHERE TCCBNSOC = 700;                                                           
+SELECT TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                      
+FROM PFRA.TBCOCOB                                                               
+WHERE  (TCCBMCRC <> TCCBMDBC)                                                   
+  AND TCCBNSOC = 775                                                            
+ORDER BY TCCBNBEN;                                                              
+SELECT SUM(TCCBMCRC-TCCBMDBC)                                                   
+FROM PFRA.TBCOCOB                                                               
+WHERE (TCCBMCRC <> TCCBMDBC)                                                    
+  AND TCCBNSOC = 775;                                                           
+SELECT SUM(TCCBMVC)                                                             
+FROM PFRA.TBCOCOB                                                               
+WHERE TCCBNSOC = 775;                                                           
+SELECT TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                      
+FROM PFRA.TBCOCOB                                                               
+WHERE  (TCCBMCRC <> TCCBMDBC)                                                   
+  AND TCCBNSOC = 750                                                            
+ORDER BY TCCBNBEN;                                                              
+SELECT SUM(TCCBMCRC-TCCBMDBC)                                                   
+FROM PFRA.TBCOCOB                                                               
+WHERE (TCCBMCRC <> TCCBMDBC)                                                    
+  AND TCCBNSOC = 750;                                                           
+SELECT SUM(TCCBMVC)                                                             
+FROM PFRA.TBCOCOB                                                               
+WHERE TCCBNSOC = 750;                                                           
+SELECT TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                      
+FROM PFRA.TBCOCOB                                                               
+WHERE  (TCCBMCRC <> TCCBMDBC)                                                   
+  AND TCCBNSOC = 730                                                            
+ORDER BY TCCBNBEN;                                                              
+SELECT SUM(TCCBMCRC-TCCBMDBC)                                                   
+FROM PFRA.TBCOCOB                                                               
+WHERE (TCCBMCRC <> TCCBMDBC)                                                    
+  AND TCCBNSOC = 730;                                                           
+SELECT SUM(TCCBMVC)                                                             
+FROM PFRA.TBCOCOB                                                               
+WHERE TCCBNSOC = 730;                                                           
+SELECT TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                      
+FROM PFRA.TBCOCOB                                                               
+WHERE  (TCCBMCRC <> TCCBMDBC)                                                   
+  AND TCCBNSOC = 785                                                            
+ORDER BY TCCBNBEN;                                                              
+SELECT SUM(TCCBMCRC-TCCBMDBC)                                                   
+FROM PFRA.TBCOCOB                                                               
+WHERE (TCCBMCRC <> TCCBMDBC)                                                    
+  AND TCCBNSOC = 785;                                                           
+SELECT SUM(TCCBMVC)                                                             
+FROM PFRA.TBCOCOB                                                               
+WHERE TCCBNSOC = 785;                                                           
+SELECT TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                      
+FROM PFRA.TBCOCOB                                                               
+WHERE  (TCCBMCRC <> TCCBMDBC)                                                   
+  AND TCCBNSOC = 788                                                            
+ORDER BY TCCBNBEN;                                                              
+SELECT SUM(TCCBMCRC-TCCBMDBC)                                                   
+FROM PFRA.TBCOCOB                                                               
+WHERE (TCCBMCRC <> TCCBMDBC)                                                    
+  AND TCCBNSOC = 788;                                                           
+SELECT SUM(TCCBMVC)                                                             
+FROM PFRA.TBCOCOB                                                               
+WHERE TCCBNSOC = 788;                                                           
+SELECT TCCBNSOC,TCCBNBEN,TCCBMCRC-TCCBMDBC                                      
+FROM PFRA.TBCOCOB                                                               
+WHERE  (TCCBMCRC <> TCCBMDBC)                                                   
+  AND TCCBNSOC = 790                                                            
+ORDER BY TCCBNBEN;                                                              
+SELECT SUM(TCCBMCRC-TCCBMDBC)                                                   
+FROM PFRA.TBCOCOB                                                               
+WHERE (TCCBMCRC <> TCCBMDBC)                                                    
+  AND TCCBNSOC = 790;                                                           
+SELECT SUM(TCCBMVC)                                                             
+FROM PFRA.TBCOCOB                                                               
+WHERE TCCBNSOC = 790;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 637                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 637;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 637;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 638                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 638;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 638;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 639                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 639;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 639;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 185                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 185;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 185;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 166                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 166;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 166;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 187                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 187;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 187;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 188                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 188;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 188;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE  (TCCOMCRC <> TCCOMDBC)                                                   
+  AND TCCONSOC = 192                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 192;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 192;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 257                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 257;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 257;                                                           
+SELECT TCCONSOC,TCCONBEN,TCCOMCRC,TCCOMDBC,TCCOMCRC-TCCOMDBC                    
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 258                                                            
+ORDER BY TCCONBEN;                                                              
+SELECT SUM(TCCOMCRC-TCCOMDBC)                                                   
+FROM PFRA.TBCOCOM                                                               
+WHERE (TCCOMCRC <> TCCOMDBC)                                                    
+  AND TCCONSOC = 258;                                                           
+SELECT SUM(TCCOMVC)                                                             
+FROM PFRA.TBCOCOM                                                               
+WHERE TCCONSOC = 258;                                                           

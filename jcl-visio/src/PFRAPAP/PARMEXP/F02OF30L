@@ -1,0 +1,21 @@
+    WHERE TDPRNSOC IN (175,176,177,178)                                         
+      AND (                                                                     
+           ( CURRENT TIME >= '20.00.00' AND CURRENT TIME <= '23.59.59'          
+              AND ( TDC2DMOD     = CURRENT DATE                                 
+                 OR TDC2DCREAT   = CURRENT DATE )                               
+              AND TDC2DREFLEX  = CURRENT DATE )                                 
+            OR                                                                  
+           ( CURRENT TIME >= '00.00.00' AND CURRENT TIME <= '19.59.59'          
+              AND ( TDC2DMOD     = (CURRENT DATE - 1 DAYS)                      
+                 OR TDC2DCREAT   = (CURRENT DATE - 1 DAYS) )                    
+              AND TDC2DREFLEX  = (CURRENT DATE - 1 DAYS) )                      
+          )                                                                     
+      AND TDC2NFOY   = TDPRNFOY                                                 
+      AND TDC2NCONT  = TDPRNCONT                                                
+      AND TDC2NCARTE = TDPRNCARTE                                               
+      AND TDC2NDT    = TDPRNDT                                                  
+   ORDER BY TDC2NFOY    ASC,                                                    
+            TDC2NCONT   ASC,                                                    
+            TDC2NCARTE  ASC,                                                    
+            TDC2NDT     DESC                                                    
+   WITH UR;                                                                     

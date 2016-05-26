@@ -1,0 +1,24 @@
+*-- REQUETE ${_lineNumber} UPDATE TBPL004                                                
+${TL04CTLIT} - VARIABLE ${TL04CTVARTLIT}${TL04NREFVARTLIT} EN ${TL04CVARPR950}                                                    
+*-- SELECT --------------------------------------------------*                  
+SELECT TL04NSOCCOMU                                                             
+     , TL04CTLIT                                                                
+     , TL04NRANGVAR                                                             
+  FROM XXXX.TBPL004                                                             
+ WHERE TL04CTLIT = '${TL04CTLIT}'                                                     
+   AND TL04CTVARTLIT = '${TL04CTVARTLIT}'                                                      
+   AND TL04NREFVARTLIT = ${TL04NREFVARTLIT}                                                     
+   AND TL04CVARPR950 = 'ZZZ'                                                    
+ORDER BY TL04NSOCCOMU                                                           
+       , TL04CTLIT                                                              
+       , TL04NRANGVAR                                                           
+ FOR FETCH ONLY                                                                 
+*-- UPDATE ----- ||| NE PAS MODIFIER LA CLAUSE WHERE ||| ----*                  
+UPDATE XXXX.TBPL004                                                             
+   SET TL04CREADT = CURRENT DATE                                                
+     , TL04UPDTTS = CURRENT TIMESTAMP                                           
+     , TL04PGMID = 'MAJDB2'                                                     
+     , TL04CVARPR950 = '${TL04CVARPR950}'                                                    
+ WHERE TL04NSOCCOMU = ?    <-- TL04NSOCCOMU                                     
+   AND TL04CTLIT = ?       <-- TL04CTLIT                                        
+   AND TL04NRANGVAR = ?    <-- TL04NRANGVAR                                     

@@ -1,0 +1,7 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00022.BT000000.LG220000' BILLCO.SERIEA_EOF                      
+APPEND 'PFRAFTS.SGL10016.NEWBILNA.SYSOUC00' BILLCO.SERIEA_EOF                   
+CLOSE                                                                           
+QUIT                                                                            

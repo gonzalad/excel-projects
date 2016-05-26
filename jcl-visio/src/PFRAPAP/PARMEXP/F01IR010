@@ -1,0 +1,6 @@
+ EXTRACT                                                                        
+ ACCESS_DEFINITION REFRESH.PFRA.FULLAUTVDR11                                    
+ EXTRACT_FILE (DSNAME PFRAFTE.NIR00097.PDPMMAIN.EXTVDRN1                        
+               MODE REP)                                                        
+ ROW_LIMIT  90000000                                                            
+ UNKNOWN ALLOW                                                                  

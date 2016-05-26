@@ -1,0 +1,20 @@
+SELECT                                                                          
+     B.TBSUNFOY,                                                                
+     B.TBSUNCONT,                                                               
+     B.TBSUNCARTE,                                                              
+     B.TBSUNDT,                                                                 
+     A.TBDMNIDDOMBQ,                                                            
+     A.TBDMCBIC,                                                                
+     A.TBDMCLEIBAN,                                                             
+     A.TBDMCBBAN,                                                               
+     A.TBDMLNOMTIT                                                              
+    FROM PFRA.TBBSDOM A, PFRA.TBBSUDO B                                         
+    INNER JOIN PFRA.TBDOPRN C                                                   
+    ON     (C.TDPRNFOY   = B.TBSUNFOY   AND                                     
+            C.TDPRNCONT  = B.TBSUNCONT AND                                      
+            C.TDPRNCARTE = B.TBSUNCARTE AND                                     
+            C.TDPRNDT    = B.TBSUNDT)                                           
+WHERE A.TBDMNIDDOMBQ = B.TBSUNIDDOMBQ                                           
+      AND C.TDPRNSOC IN ( 257  ,  258 )                                         
+      AND C.TDPRCPRODCOM IN ('PPPR' , 'AD7R')                                   
+    WITH UR;                                                                    

@@ -1,0 +1,16 @@
+UNLD FORMAT(DSNTIAUL) OUTDDN(SYSREC00)                                          
+FROM TABLE PFRA.TBCLIDE                                                         
+(TCLINFOY                                                                       
+,TCLIDNAIS                                                                      
+,TCLINRANG                                                                      
+,CASE                                                                           
+  WHEN TCLIDNAIS >= '01.08.1935' AND TCLIDNAIS < '01.09.1935' THEN '80'         
+  WHEN TCLIDNAIS >= '01.08.1940' AND TCLIDNAIS < '01.09.1940' THEN '75'         
+  WHEN TCLIDNAIS >= '01.08.1945' AND TCLIDNAIS < '01.09.1945' THEN '70'         
+  WHEN TCLIDNAIS >= '01.01.1950' AND TCLIDNAIS < '31.12.1950' THEN '65'         
+  WHEN TCLIDNAIS >= '01.08.1955' AND TCLIDNAIS < '01.09.1955' THEN '60'         
+  WHEN TCLIDNAIS >= '01.08.1960' AND TCLIDNAIS < '01.09.1960' THEN '55'         
+  ELSE '00'                                                                     
+ END)                                                                           
+WHERE TCLIDNAIS >= '01.08.1935'                                                 
+  AND TCLIDNAIS < '01.09.1960'                                                  

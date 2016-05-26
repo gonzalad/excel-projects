@@ -1,0 +1,16 @@
+UNLD FORMAT(DSNTIAUL) OUTDDN(SYSREC00)                                          
+FROM TABLE PFRA.TBCLIDE                                                         
+(TCLINFOY                                                                       
+,TCLIDNAIS                                                                      
+,TCLINRANG                                                                      
+,CASE                                                                           
+  WHEN TCLIDNAIS >= '01.M+0Y-80' AND TCLIDNAIS < '01.M+1Y-80' THEN '80'         
+  WHEN TCLIDNAIS >= '01.M+0Y-75' AND TCLIDNAIS < '01.M+1Y-75' THEN '75'         
+  WHEN TCLIDNAIS >= '01.M+0Y-70' AND TCLIDNAIS < '01.M+1Y-70' THEN '70'         
+  WHEN TCLIDNAIS >= '01.01.A-65' AND TCLIDNAIS < '31.12.A-65' THEN '65'         
+  WHEN TCLIDNAIS >= '01.M+0Y-60' AND TCLIDNAIS < '01.M+1Y-60' THEN '60'         
+  WHEN TCLIDNAIS >= '01.M+0Y-55' AND TCLIDNAIS < '01.M+1Y-55' THEN '55'         
+  ELSE '00'                                                                     
+ END)                                                                           
+WHERE TCLIDNAIS >= '01.M+0Y-80'                                                 
+  AND TCLIDNAIS < '01.M+1Y-55'                                                  

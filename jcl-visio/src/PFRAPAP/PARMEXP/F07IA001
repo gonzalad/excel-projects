@@ -1,0 +1,5 @@
+FROM CELLULE.QUALITE@CETELEM.FR                                         00010000
+TO   DOMINIQUE.BEDOU@CETELEM.FR                                         00020000
+SUBJ PFRA CTL NORMES DSN FLUX                                           00030000
+CONT PFRA DSN FLUX NORME INCORRECTE                                     00040000
+FILE COMMUN/FLUXNIV1.TXT                                                00050000

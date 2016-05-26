@@ -1,0 +1,134 @@
+  UNLD DATA CONCURRENT FORMAT(DSNTIAUL)                                         
+       OUTDDN(SYSREC00) MODE(AUTO)                                              
+    SELECT TPCONFOY           ,                                                 
+           TPCONCONT          ,                                                 
+           TPCONCARTE         ,                                                 
+           TPCONDT            ,                                                 
+           TPCONSOC           ,                                                 
+           TPCODCREAT         ,                                                 
+           TPCODMOD           ,                                                 
+           TPCODEDITION       ,                                                 
+           TPCODSIGN          ,                                                 
+           TPCODEFFET         ,                                                 
+           TPCODECH1          ,                                                 
+           TPCOCPROD          ,                                                 
+           TPCOCFAMILLE       ,                                                 
+           TPCOCSOUSPROD      ,                                                 
+           TPCONPOSA          ,                                                 
+           TPCOCPOSA          ,                                                 
+           TPCODPOSA          ,                                                 
+           TPCOCPOSP          ,                                                 
+           TPCODPOSP          ,                                                 
+           TPCONAGCMEP        ,                                                 
+           TPCONOIDMEP        ,                                                 
+           TPCONAGCAPV        ,                                                 
+           TPCOCTITULAIRE     ,                                                 
+           TPCOCMANDAT        ,                                                 
+           TPCOCPTT           ,                                                 
+           TPCONSOCPREST      ,                                                 
+           TPCONAGRPREST      ,                                                 
+           TPCONREFEXT        ,                                                 
+           TPCONCLASST        ,                                                 
+           TPCOCCLASST        ,                                                 
+           TPCOCRECOUVR       ,                                                 
+           TPCOBRECOUVR       ,                                                 
+           TPCOBDUREE         ,                                                 
+           TPCOCFREQ          ,                                                 
+           TPCONQUANT         ,                                                 
+           TPCODEAT           ,                                                 
+           TPCOBRGEAT         ,                                                 
+           TPCODREVERSE       ,                                                 
+           TPCONJREVERSE      ,                                                 
+           TPCOMAREVERSER     ,                                                 
+           TPCODAREVERSER     ,                                                 
+           TPCOMCUMECHU       ,                                                 
+           TPCOMCUMREGLE      ,                                                 
+           TPCOMCUMREVERSE    ,                                                 
+           TPCOBIMPDOM        ,                                                 
+           TPCODMODIMPDOM     ,                                                 
+           TPCOBIMPREGL       ,                                                 
+           TPCODDOMICIL       ,                                                 
+           TPCODECHDOMICIL    ,                                                 
+           TPCOMDOMICIL       ,                                                 
+           TPCOMIMP           ,                                                 
+           TPCODEECHIMP       ,                                                 
+           TPCOCTRAITPART     ,                                                 
+           TPCOCNATLIEN       ,                                                 
+           TPCOCDOMFIN        ,                                                 
+           TPCOCTYPDOM        ,                                                 
+           TPCONCONTDOM       ,                                                 
+           TPCONCARTEDOM      ,                                                 
+           TPCONDTDOM         ,                                                 
+           TPCONCONTMEP       ,                                                 
+           TPCONCARTEMEP      ,                                                 
+           TPCONDTMEP         ,                                                 
+           TPCOCOKLMEP        ,                                                 
+           TPCOCTARIF         ,                                                 
+           TPCOMFORFAIT       ,                                                 
+           TPCOCFORFAIT       ,                                                 
+           TPCOTPCHRGCOF      ,                                                 
+           TPCOBPCHRGCOF      ,                                                 
+           TPCOCTVAPRIME      ,                                                 
+           TPCOMFORFAITCOM    ,                                                 
+           TPCOCTVACOM        ,                                                 
+           TPCOBUTIL          ,                                                 
+           TPCONSOCAPPORT     ,                                                 
+           TPCONAGRAPPORT     ,                                                 
+           TPCOBKMPREVU       ,                                                 
+           TPCOCTRANSFERT     ,                                                 
+           TPCONPNEU          ,                                                 
+           TPCONDGARCONS      ,                                                 
+           TPCONCARENCE       ,                                                 
+           TPCOCASSIETTE      ,                                                 
+           TPCOMASSIETTE      ,                                                 
+           TPCONSOCFIN        ,                                                 
+           TPCONCC            ,                                                 
+           TPCONPZR           ,                                                 
+           TPCONARTICLE       ,                                                 
+           TPCOCITENVLET      ,                                                 
+           TPCODITENVLET      ,                                                 
+           TPCOCDEVISE        ,                                                 
+           TPCOCPACK          ,                                                 
+           TPCOMPRIMTHEO                                                        
+     FROM PFRA.TBPRCOM                                                          
+    WHERE TPCONCONT  = 0                                                        
+      AND TPCONCARTE = 9                                                        
+      AND TPCOCPOSA  = 'ENC'                                                    
+      AND TPCOCPOSP IN ('INS','   ','SOL','REF')                                
+      AND                                                                       
+        (   SUBSTR(TPCOCPROD,1,3)                                               
+                         IN ('VOC','PTX','PTM')                                 
+         OR SUBSTR(TPCOCPROD,1,4)                                               
+                         IN ('VOC1','VOC2','VOC3','GM01','GM12','GM24',         
+                             'GM36','VOK1','VOK2','VNCO',                       
+                             'EN15','EO25','EO30','EO35','EP27','EC27',         
+                             'PACP','PACS','PACD','PAEP','PAES','PAED',         
+                             'PAN1','PAN2','PAN3','PCCP','PCCS','PCCD',         
+                             'PCEP','PCES','PCED','PCN1','PCN2','PCN3',         
+                             'PMN1','PMN2',                                     
+                             'EAN1','EAN2','EAN3','EAEP','EAES','EAED',         
+                             'EACP','EACS','EACD','ECN1','ECN2','ECN3',         
+                             'ECNP','ECES','ECED','ECCP','ECCS','ECCD',         
+                             'AN24','AN36','AE01','AE06','AE12','AE18',         
+                             'AC01','AC06','AC12','CN12','CN24','CN36',         
+                             'CE01','CE06','CE12','CC01','CC06','CC12',         
+                             'MN12','MN24','HM01','HM12','HM24','HM36')         
+        )                                                                       
+      AND (                                                                     
+            (     CURRENT TIME >= '20.00.00'                                    
+              AND CURRENT TIME <= '23.59.59'                                    
+              AND TPCODPOSA = CURRENT DATE                                      
+            )                                                                   
+            OR                                                                  
+            (     CURRENT TIME >= '00.00.00'                                    
+              AND CURRENT TIME <= '19.59.59'                                    
+              AND TPCODPOSA = (CURRENT DATE - 1 DAYS)                           
+            )                                                                   
+          )                                                                     
+   ORDER BY TPCONFOY   ASC,                                                     
+            TPCONCONT  ASC,                                                     
+            TPCONCARTE ASC,                                                     
+            TPCONDT    DESC,                                                    
+            TPCONSOC   ASC                                                      
+   WITH UR;                                                                     
+

@@ -1,0 +1,35 @@
+ SELECT  TDCANFOY, TDCANCONT, TDCANCARTE, TDCANDT, TDCANRANG,                   
+         TDCANBIN, TDCANCARTPHY, TDCADCREAT, TDCADMOD, TDCACTIT,                
+         TDCACEMBOSS, TDCACEXPED, TDCADFAB, TDCACRENOUV,                        
+         TDCADFINVALID, TDCACGES, TDCACCONFID, TDCACDAB,                        
+         TDCACSECRET, TDCACCONFID16,                                            
+         TDPRNSOC, TDPRNOPERFIDEL, TDPRCPRODCOM                                 
+       FROM PFRA.TBDOCAR, PFRA.TBDOPRN                                          
+       WHERE                                                                    
+             TDPRCPOSA IN ('RET','ASM','ENC') AND                               
+             TDCANFOY    =  TDPRNFOY   AND                                      
+             TDCANCONT   =  TDPRNCONT  AND                                      
+             TDCANCARTE  =  TDPRNCARTE AND                                      
+             TDCANDT     =  TDPRNDT    AND                                      
+            (TDPRNFOY BETWEEN 4102059340 AND 4262989447) AND                    
+             TDPRNOPERFIDEL = 14                         AND                    
+             TDPRNSOC     IN (100 , 114, 700, 714, 192)  AND                    
+            ( (     CURRENT TIME >= '20.00.00'                                  
+                AND CURRENT TIME <= '23.59.59'                                  
+                AND (TDCADCREAT = CURRENT DATE  OR                              
+                     TDCADMOD   = CURRENT DATE)                                 
+              )                                                                 
+              OR                                                                
+              (     CURRENT TIME >= '00.00.00'                                  
+                AND CURRENT TIME <= '19.59.59'                                  
+                AND (TDCADCREAT = (CURRENT DATE - 1 DAYS)  OR                   
+                     TDCADMOD   = (CURRENT DATE - 1 DAYS))                      
+            ) )                                                                 
+             ORDER BY TDCANFOY   ASC,                                           
+                      TDCANCONT  ASC,                                           
+                      TDCANCARTE ASC,                                           
+                      TDCANDT    DESC,                                          
+                      TDCADCREAT ASC,                                           
+                      TDCADMOD   ASC,                                           
+                      TDCANRANG  ASC                                            
+          WITH UR;                                                              

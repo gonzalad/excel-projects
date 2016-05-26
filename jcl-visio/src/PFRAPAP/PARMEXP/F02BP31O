@@ -1,0 +1,27 @@
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* TRAITEMENT DU REFERENTIEL 505 CORRESPONDANT AU FLUX 302 (EMISSION)            
+*                                 IDENTIFIANT    ECHSO001                       
+* CE FICHIER CONTIENT PLUSIEURS ENTETE ET FIN                                   
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* COPY D'UN SEUL ENREGISTREMENT EN-TETE                                         
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$DD01 COPY OUT=1                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* CUMUL DES NOMBRES ET MONTANTS DES ENREGISTREMENTS EN-QUEUE                    
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$DD02 COPY  ACCUM=(0049,15,C,'CUMUL MONT 505 '),                               
+             ACCUM=(0033,09,C,'CUMUL NBRE 505 ')                                
+*                                                                               
+*                                                                               
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+* COPY D'UN SEUL ENREGISTREMENT EN-QUEUE                                        
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -           
+*                                                                               
+$$DD03 COPY OUT=1                                                               
+*                                                                               

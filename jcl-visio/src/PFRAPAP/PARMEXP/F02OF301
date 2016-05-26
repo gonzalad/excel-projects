@@ -1,0 +1,18 @@
+    WHERE TDCPNSOC IN (175,176,177,178,182)                                     
+      AND (                                                                     
+(     CURRENT TIME >= '20.00.00'                                                
+AND CURRENT TIME <= '23.59.59'                                                  
+              AND TDCPDMOD  = CURRENT DATE                                      
+            )                                                                   
+            OR                                                                  
+(     CURRENT TIME >= '00.00.00'                                                
+AND CURRENT TIME <= '19.59.59'                                                  
+              AND TDCPDMOD  = (CURRENT DATE - 1 DAYS)                           
+            )                                                                   
+          )                                                                     
+   ORDER BY TDCPNFOY   ASC,                                                     
+            TDCPNCONT  ASC,                                                     
+            TDCPNCARTE ASC,                                                     
+            TDCPNDT   DESC,                                                     
+            TDCPNSOC  ASC                                                       
+   WITH UR;                                                                     

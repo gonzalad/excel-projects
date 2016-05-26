@@ -1,0 +1,25 @@
+SELECT TDPRNFOY, TDPRNCONT, TDPRNCARTE, TDPRNDT,                                
+TDPRNSOC,                                                                       
+TDPRCPRODCOM, TDPRMCRD, TDCOMDMA, TDPRCPOSA,                                    
+TCLILNOMPREN, TCLIBINDP,                                                        
+COALESCE(TDUFMFMRB,0),                                                          
+COALESCE(TDUFMFMRB1,0),                                                         
+     TDPRNSOCAGRO, TDPRNAGRO, TDPRCVERROU                                       
+FROM PFRA.TBDOPRN                                                               
+INNER JOIN PFRA.TBCLIDE                                                         
+ON    TDPRNFOY      =   TCLINFOY                                                
+INNER JOIN PFRA.TBDOCTR                                                         
+ON    TDPRNFOY      =   TDCONFOY                                                
+AND   TDPRNCONT     =   TDCONCONT                                               
+LEFT OUTER JOIN PFRA.TBDOUFM                                                    
+ON    TDPRNFOY     =   TDUFNFOY                                                 
+AND   TDPRNCONT    =   TDUFNCONT                                                
+AND   TDPRNCARTE   =   TDUFNCARTE                                               
+AND   TDPRNDT      =   TDUFNDT                                                  
+WHERE TDPRNSOC IN (257,258)                                                     
+AND   TDPRCTYPEPROD = 'CP'                                                      
+AND   TDCONCARTE    = 0                                                         
+AND   TDCONDT       = 0                                                         
+ORDER BY TDPRNFOY, TDPRNCONT, TDPRNCARTE, TDPRNDT                               
+FOR FETCH ONLY                                                                  
+ WITH UR;                                                                       

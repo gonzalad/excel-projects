@@ -1,0 +1,18 @@
+SELECT A.TDPRNFOY,                                                              
+       A.TDPRNCONT,                                                             
+       A.TDPRNCARTE,                                                            
+       A.TDPRNDT,                                                               
+       A.TDPRCPRODCOM,                                                          
+       A.TDPRMCRD,                                                              
+       A.TDPRDECH1,                                                             
+       A.TDPRCPOSA,                                                             
+       A.TDPRDEAT,                                                              
+       B.TCLILNOMPREN,                                                          
+       B.TCLIBINDP,                                                             
+       A.TDPRNSOCAGRO, A.TDPRNAGRO, A.TDPRCVERROU                               
+FROM PFRA.TBDOPRN A, PFRA.TBCLIDE B                                             
+WHERE TDPRNSOC IN (257,258)                                                     
+   AND A.TDPRCTYPEPROD = 'CL'                                                   
+   AND A.TDPRNFOY     = B.TCLINFOY                                              
+ORDER BY A.TDPRNFOY, A.TDPRNCONT, A.TDPRNCARTE, A.TDPRNDT                       
+WITH UR;                                                                        

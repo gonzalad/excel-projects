@@ -1,0 +1,14 @@
+   UPDATE PFRA.TBBPTVX                                                          
+    SET    TBTVDTRAIT =   CURRENT DATE,                                         
+           TBTVDMOD   =   CURRENT DATE,                                         
+           TBTVLUSERMOD  =   'POINT'                                            
+    WHERE  TBTVLPROG = 'FEECNE'                                                 
+    AND    TBTVLKJOB IN ('PFRGP001')                                            
+    AND    TBTVLTVX LIKE '111101 0009999999999%';                               
+    UPDATE PFRA.TBBPENT                                                         
+    SET    TBENDTRAIT =   CURRENT DATE,                                         
+           TBENDCREAT =   CURRENT DATE,                                         
+           TBENLUSERMOD  =   'POINT'                                            
+    WHERE  TBENLPROG = 'FEECNE'                                                 
+    AND    TBENLKJOB IN ('PFRGP001')                                            
+    AND    TBENLENTITEDEB LIKE '00000000000%';                                  

@@ -1,0 +1,107 @@
+ SELECT    TDCBNFOY           ,                                                 
+           TDCBNCONT          ,                                                 
+           TDCBNCARTE         ,                                                 
+           TDCBNDT            ,                                                 
+           TDCBNRANG          ,                                                 
+           TDCBNBIN           ,                                                 
+           TDCBNCARTPHY       ,                                                 
+           TDCBDCREAT         ,                                                 
+           TDCBDMOD           ,                                                 
+           TDCBCTIT           ,                                                 
+           TDCBCEXPED         ,                                                 
+           TDCBDECH           ,                                                 
+           TDCBBDURVAL        ,                                                 
+           TDCBBRENOUVANN     ,                                                 
+           TDCBDPERTE         ,                                                 
+           TDCBCLETPERTE      ,                                                 
+           TDCBCMOTIFOPP      ,                                                 
+           TDCBCCARTEREN      ,                                                 
+           TDCBCPOSA          ,                                                 
+           TDCBDPOSA          ,                                                 
+           TDCBCPOSP          ,                                                 
+           TDCBDPOSP          ,                                                 
+           TDCBCORIGNRE       ,                                                 
+           TDCBCTYPCB         ,                                                 
+           TDCBDFAB           ,                                                 
+           TDCBCDEMURG        ,                                                 
+           TDCBCTARIF         ,                                                 
+           TDCBCSAV           ,                                                 
+           TDCBCSERV          ,                                                 
+           TDCBNOIDMAP        ,                                                 
+           TDCBNAGCMEP        ,                                                 
+           TDCBDCOTIS         ,                                                 
+           TDCBMCOTIS         ,                                                 
+           TDCBMPLAFCOM       ,                                                 
+           TDCBBPERIODCOM     ,                                                 
+           TDCBMPLAFRET       ,                                                 
+           TDCBBPERIODRET     ,                                                 
+           TDCBDDUTIL         ,                                                 
+           TDCBCCONFID        ,                                                 
+           TDCBBINCABUS       ,                                                 
+           TDCBMINCABUS       ,                                                 
+           TDCBBRETRAITM      ,                                                 
+           TDCBMRETRAITM      ,                                                 
+           TDCBBACHATM        ,                                                 
+           TDCBMACHATM        ,                                                 
+           TDCBBINTERNM       ,                                                 
+           TDCBMINTERNM       ,                                                 
+           TDCBMCRIMP         ,                                                 
+           TDCBMCOTISORIG     ,                                                 
+           TDCBMUTILORIG      ,                                                 
+           TDCBMCRIMPORIG     ,                                                 
+           TDCBDSIGNCTR       ,                                                 
+           TDCBTHOPPO         ,                                                 
+           TDCBCPANSEQNUM     ,                                                 
+           TDCBBLIMBASFRA     ,                                                 
+           TDCBBLIMHAUTFRA    ,                                                 
+           TDCBMCONSECFRA     ,                                                 
+           TDCBBLIMBASINTER   ,                                                 
+           TDCBBLIMHAUTINTER  ,                                                 
+           TDCBCDKI           ,                                                 
+           TDCBCCLEPUBEMET    ,                                                 
+           TDCBCLONGMAC       ,                                                 
+           TDCBCHISTORIS      ,                                                 
+           TDCBCBLOMULTAPP    ,                                                 
+           TDCBCTRANS         ,                                                 
+           TDCBCAUC1          ,                                                 
+           TDCBCAUC2          ,                                                 
+           TDCBCDKI2          ,                                                 
+           TDCBCAIP           ,                                                 
+           TDCBCAID1          ,                                                 
+           TDCBCAID2          ,                                                 
+           TDCBCPROFIL        ,                                                 
+           TDCBBVERSPROFIL    ,                                                 
+           TDCBCFMP           ,                                                 
+           TDCBCPLAFEMV       ,                                                 
+           TDCBCBLOPUCE       ,                                                 
+           TDCBCBLOAPPL                                                         
+       FROM PFRA.TBDOCBL, PFRA.TBDOPRN                                          
+       WHERE                                                                    
+             TDPRCPOSA IN ('RET','ASM','ENC')              AND                  
+             TDCBNFOY    =  TDPRNFOY                       AND                  
+             TDCBNCONT   =  TDPRNCONT                      AND                  
+             TDCBNCARTE  =  TDPRNCARTE                     AND                  
+             TDCBNDT     =  TDPRNDT                        AND                  
+            (TDPRNFOY BETWEEN 4262989448 AND 4302812419)   AND                  
+             TDPRNOPERFIDEL = 14                           AND                  
+             TDPRNSOC     IN (100 , 114, 700, 714, 192)    AND                  
+            ( (     CURRENT TIME >= '20.00.00'                                  
+                AND CURRENT TIME <= '23.59.59'                                  
+                AND (TDCBDCREAT = CURRENT DATE  OR                              
+                     TDCBDMOD   = CURRENT DATE)                                 
+              )                                                                 
+              OR                                                                
+              (     CURRENT TIME >= '00.00.00'                                  
+                AND CURRENT TIME <= '19.59.59'                                  
+                AND (TDCBDCREAT = (CURRENT DATE - 1 DAYS)  OR                   
+                     TDCBDMOD   = (CURRENT DATE - 1 DAYS))                      
+            ) )                                                                 
+             ORDER BY TDCBNFOY   ASC,                                           
+                      TDCBNCONT  ASC,                                           
+                      TDCBNCARTE ASC,                                           
+                      TDCBNDT    DESC,                                          
+                      TDCBDCREAT ASC,                                           
+                      TDCBDMOD   ASC,                                           
+                      TDCBNRANG  ASC                                            
+          WITH UR;                                                              
+

@@ -1,0 +1,25 @@
+TEMPLATE TEMPFIC DISP(NEW,CATLG,CATLG) GDGLIMIT 7 UNIT SYSDA            00010000
+      DSN 'PFRABU0.DF.&DB..&TS..P&PART.(+1)'                            00020000
+LOAD DATA INDDN SYSREC00 LOG NO                                         00030000
+        SORTKEYS SORTNUM 10 DISCARDS 1                                  00040000
+        STATISTICS TABLE(ALL) INDEX(ALL) KEYCARD                        00050000
+INTO TABLE PFRA.TBFILST PART &PARTI REPLACE COPYDDN(TEMPFIC)            00060000
+ ( "TFLNUMPART        " POSITION(      1      ) SMALLINT                00070000
+ , "TFLCSOCIETE       "                         DECIMAL PACKED          00080000
+ , "TFLNOVDR          "                         DECIMAL PACKED          00090000
+ , "TFLDATE           "                         DATE EXTERNAL(10)       00100000
+ , "TFLNDOSSIER       " POSITION(  00045:00052) DECIMAL PACKED          00110000
+ , "TFLLNOM           "                         CHAR(015)               00120000
+ , "TFLCSIGNE         "                         CHAR(001)               00130000
+ , "TFLMTDEC          "                         DECIMAL PACKED          00140000
+ , "TFLNCHQE_CPTE     "                         CHAR(011)               00150000
+ , "TFLLREFVDR        "                         CHAR(013)               00160000
+ , "TFLBAUTORIS       "                         DECIMAL PACKED          00170000
+ , "TFLMTAGIOS        "                         DECIMAL PACKED          00180000
+ , "TFLMTRET          "                         DECIMAL PACKED          00190000
+ , "TFLCSTDOS         "                         DECIMAL PACKED          00200000
+ , "TFLCPRODNUM       "                         DECIMAL PACKED          00210000
+ , "TFLNCARTPHY       " POSITION(  00118:00136) CHAR(019)               00220000
+ , "TFLNRCP           "                         CHAR(003)               00230000
+ , "TFLCDEVISE        "                         CHAR(003)               00240000
+ )                                                                      00250000

@@ -1,0 +1,51 @@
+SELECT                                                                          
+      B.TCPFNFOY,                                                               
+      DIGITS (A.TCLINRANG),                                                     
+      B.TCPFNSOC,                                                               
+      A.TCLILSIGL,                                                              
+      A.TCLILNOMPREN,                                                           
+      A.TCLIBINDP,                                                              
+      A.TCLILPATRONYM,                                                          
+      A.TCLILNOMCOMPL,                                                          
+      A.TCLILAUTPREN,                                                           
+      A.TCLICNAT,                                                               
+      A.TCLIDNAIS,                                                              
+      A.TCLICDEPTNAIS,                                                          
+      A.TCLILNAIS,                                                              
+      A.TCLICCOMNAIS,                                                           
+      A.TCLICPIDENT,                                                            
+      A.TCLINIDENT,                                                             
+       A.TCLIMRESS,                                                             
+       D.TCLFMAUTREV,                                                           
+       A.TCLILEMPLIB,                                                           
+       A.TCLICANCPROF,                                                          
+       A.TCLICMOISANCPROF,                                                      
+       A.TCLICCONTRAT,                                                          
+       A.TCLICCSP,                                                              
+       D.TCLFCSITFAM,                                                           
+       D.TCLFBENF,                                                              
+       D.TCLFCHAB1,                                                             
+        D.TCLFCANCHAB1,                                                         
+        D.TCLFMALLOCFAM,                                                        
+        D.TCLFMALLOCLOG,                                                        
+        B.TCPFMMENSRES1,                                                        
+        B.TCPFMAUTCHARG,                                                        
+        C.TADRLADRE,                                                            
+        C.TADRCPTT,                                                             
+        C.TADRLVILL,                                                            
+        C.TADRCPAYS,                                                            
+        D.TCLFNTELP                                                             
+FROM PFRA.TBCLIDE A, PFRA.TBCLPRF B,                                            
+      PFRA.TBADRES C, PFRA.TBCLFOY D                                            
+ WHERE B.TCPFNFOY = A.TCLINFOY                                                  
+    AND   B.TCPFNFOY = D.TCLFNFOY                                               
+    AND   B.TCPFNFOY = C.TADRNFOY                                               
+    AND   C.TADRCTYPE = 'FO'                                                    
+    AND EXISTS                                                                  
+     (SELECT 1                                                                  
+      FROM PFRA.TBDOPRN E                                                       
+      WHERE A.TCLINFOY = E.TDPRNFOY                                             
+      AND E.TDPRNSOC IN ( 257  ,  258 )                                         
+      AND E.TDPRCPRODCOM IN ('PPPR' , 'AD7R' , 'UP7R'))                         
+    WITH UR;                                                                    
+

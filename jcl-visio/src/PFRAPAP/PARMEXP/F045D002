@@ -1,0 +1,17 @@
+* SEULES LES LIGNES AVEC UNE ETOILE EN DEBUT (POUR COMMENTAIRE)                 
+*               OU LES LIGNES DE CALCUL DE DATE SONT ACCEPTEES                  
+* LE FORMAT DU CALCUL EST UN NOMBRE AVEC LE SIGNE PLUS OU MOINS                 
+*         COLLE DEVANT (ENTRE -99 ET +99 ANS)                                   
+* EXEMPLE : -75 (CREE LE REMPLACEMENT DE A-75 PAR                               
+*         L'ANNEE EN COURS -75 ANS)                                             
+-55                                                                             
+-60                                                                             
+-65                                                                             
+-66                                                                             
+-67                                                                             
+-68                                                                             
+-69                                                                             
+-70                                                                             
+-75                                                                             
+-80                                                                             
++10                                                                             

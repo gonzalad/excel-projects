@@ -1,0 +1,10 @@
+      GENERATE MAXFLDS=9                                                        
+      RECORD FIELD=(11,1,,1),                                                   
+             FIELD=(1,13,,12),                                                  
+             FIELD=(1,15,,13),                                                  
+             FIELD=(2,18,,14),                                                  
+             FIELD=(3,25,,16),                                                  
+             FIELD=(4,30,,19),                                                  
+             FIELD=(11,33,,23),                                                 
+             FIELD=(01,44,,34),                                                 
+             FIELD=(04,45,,35)                                                  

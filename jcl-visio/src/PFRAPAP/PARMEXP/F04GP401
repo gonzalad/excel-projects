@@ -1,0 +1,4 @@
+  SORT FIELDS=(1,11,BI,A)                                                       
+  OUTFIL OMIT=(35,4,CH,EQ,C'SAVE'),                                             
+         OUTREC=(1,34),                                                         
+         FNAMES=SERIE1                                                          

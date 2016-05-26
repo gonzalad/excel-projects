@@ -1,0 +1,21 @@
+    WHERE TDPRNSOC IN (175,176,177,178,182)                                     
+      AND (                                                                     
+(     CURRENT TIME >= '20.00.00'                                                
+AND CURRENT TIME <= '23.59.59'                                                  
+              AND TDRVDMOD  = CURRENT DATE                                      
+            )                                                                   
+            OR                                                                  
+(     CURRENT TIME >= '00.00.00'                                                
+AND CURRENT TIME <= '19.59.59'                                                  
+              AND TDRVDMOD  = (CURRENT DATE - 1 DAYS)                           
+            )                                                                   
+          )                                                                     
+      AND TDRVNFOY   = TDPRNFOY                                                 
+      AND TDRVNCONT  = TDPRNCONT                                                
+      AND TDRVNCARTE = TDPRNCARTE                                               
+      AND TDRVNDT    = TDPRNDT                                                  
+   ORDER BY TDRVNFOY   ASC,                                                     
+            TDRVNCONT  ASC,                                                     
+            TDRVNCARTE ASC,                                                     
+            TDRVNDT   DESC                                                      
+   WITH UR;                                                                     

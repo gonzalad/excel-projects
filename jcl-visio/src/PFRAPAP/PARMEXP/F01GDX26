@@ -1,0 +1,23 @@
+ SORT FIELDS=(34,2,BI,A,337,3,BI,A),EQUALS                                      
+  OUTFIL INCLUDE=(35,1,BI,EQ,X'0C',OR,                                          
+                  35,1,BI,EQ,X'1C',OR,                                          
+                  35,1,BI,EQ,X'2C',OR,                                          
+                  35,1,BI,EQ,X'3C',OR,                                          
+                  35,1,BI,EQ,X'4C',OR,                                          
+                  35,1,BI,EQ,X'5C',OR,                                          
+                  35,1,BI,EQ,X'6C',OR,                                          
+                  35,1,BI,EQ,X'7C',OR,                                          
+                  35,1,BI,EQ,X'8C',OR,                                          
+                  35,1,BI,EQ,X'9C'),FNAMES=FECCBFRS                             
+  OUTFIL INCLUDE=(35,1,BI,EQ,X'0D',OR,                                          
+                  35,1,BI,EQ,X'1D',OR,                                          
+                  35,1,BI,EQ,X'2D',OR,                                          
+                  35,1,BI,EQ,X'3D',OR,                                          
+                  35,1,BI,EQ,X'4D',OR,                                          
+                  35,1,BI,EQ,X'5D',OR,                                          
+                  35,1,BI,EQ,X'6D',OR,                                          
+                  35,1,BI,EQ,X'7D',OR,                                          
+                  35,1,BI,EQ,X'8D',OR,                                          
+                  35,1,BI,EQ,X'9D'),FNAMES=FECCBEUR                             
+  OUTFIL INCLUDE=(660,1,BI,EQ,C'1',OR,660,1,BI,EQ,C'2'),                        
+         FNAMES=FSSRCL                                                          

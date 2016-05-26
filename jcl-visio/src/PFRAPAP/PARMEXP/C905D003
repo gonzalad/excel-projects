@@ -1,0 +1,29 @@
+ SELECT TDRPNFOYOLD, TDRPNCONTOLD, TDRPNCARTEOLD, TDRPNDTOLD,                   
+        TDRPDCREAT, TDRPDMOD, TDRPNFOYNEW, TDRPNCONTNEW,                        
+        TDRPNCARTENEW, TDRPNDTNEW, TDRPCTRAIT, TDRPTIMESTAMP,                   
+        TDPRNSOC,TDPRNOPERFIDEL,TDPRCPRODCOM                                    
+       FROM PFRA.TBDORAP, PFRA.TBDOPRN                                          
+       WHERE                                                                    
+             TDPRNFOY      =  TDRPNFOYNEW   AND                                 
+             TDPRNCONT     =  TDRPNCONTNEW  AND                                 
+             TDPRNCARTE    =  TDRPNCARTENEW AND                                 
+             TDPRNDT       =  TDRPNDTNEW    AND                                 
+          (( TDRPNFOYNEW BETWEEN 4102059340 AND 4499999999 ) OR                 
+             TDRPNFOYNEW     >=  8800000000  )               AND                
+             TDPRNOPERFIDEL = 14                             AND                
+             TDPRNSOC     IN (100 , 114, 700, 714, 192)      AND                
+            ( (      CURRENT TIME >= '20.00.00'                                 
+                 AND CURRENT TIME <= '23.59.59'                                 
+                 AND TDRPDCREAT    = CURRENT DATE                               
+              )                                                                 
+               OR                                                               
+              (     CURRENT TIME  >= '00.00.00'                                 
+                 AND CURRENT TIME <= '19.59.59'                                 
+                 AND TDRPDCREAT    = (CURRENT DATE - 1 DAYS)                    
+            ) )                                                                 
+             ORDER BY TDRPNFOYNEW   ASC,                                        
+                      TDRPNCONTNEW  ASC,                                        
+                      TDRPNCARTENEW ASC,                                        
+                      TDRPNDTNEW    DESC,                                       
+                      TDRPDCREAT    ASC                                         
+            WITH UR;                                                            

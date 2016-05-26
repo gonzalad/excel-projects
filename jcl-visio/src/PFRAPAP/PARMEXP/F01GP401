@@ -1,0 +1,8 @@
+  SORT FIELDS=(12,6,BI,A)                                                       
+  OUTFIL OMIT=(146,4,BI,EQ,C'PC  '),                                            
+         FNAMES=SERIE1                                                          
+  OUTFIL OMIT=(292,1,BI,EQ,C'C',OR,146,4,BI,EQ,C'PC  '),                        
+         OUTREC=(1,291),                                                        
+         FNAMES=SERIE2                                                          
+  OUTFIL OMIT=(146,4,BI,NE,C'PC  '),                                            
+         FNAMES=SERIE3                                                          

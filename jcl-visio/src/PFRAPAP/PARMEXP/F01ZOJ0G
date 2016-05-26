@@ -1,0 +1,60 @@
+SELECT                                                                          
+      A.TDPRNFOY,                                                               
+      A.TDPRNCONT,                                                              
+      A.TDPRNCARTE,                                                             
+      A.TDPRNDT,                                                                
+      A.TDPRNSOC,                                                               
+      C.TDCOCTIT,                                                               
+      A.TDPRCPRODCOM,                                                           
+      A.TDPRCPOSA,                                                              
+      A.TDPRMCRD,                                                               
+      A.TDPRMSREC,                                                              
+      A.TDPRMSRECCAP,                                                           
+      A.TDPRMSRECASS,                                                           
+      A.TDPRMSRECPCAV,                                                          
+      A.TDPRMSRECREPORT,                                                        
+      A.TDPRMSRECRET,                                                           
+      A.TDPRMSRECAGIOS,                                                         
+      A.TDPRMSRECCOTI,                                                          
+      A.TDPRMSRECDIVERS,                                                        
+      A.TDPRMDECFIN,                                                            
+      A.TDPRMDECO,                                                              
+       A.TDPRDECH1,                                                             
+     A.TDPRBDUREE,                                                              
+      A.TDPRCFREQ,                                                              
+      A.TDPRMMENS,                                                              
+       A.TDPRDCREAT,                                                            
+     A.TDPRCVERROU,                                                             
+      A.TDPRDVERROU,                                                            
+      C.TDCOMDMA,                                                               
+      C.TDCOMDMS,                                                               
+      C.TDCODCREAT,                                                             
+      B.TDCPBREPORT,                                                            
+      C.TDCODSIGN,                                                              
+      B.TDCPDDFIN,                                                              
+      A.TDPRTNC,                                                                
+      A.TDPRNQUANT,                                                             
+      A.TDPRCPAIEMENT,                                                          
+      A.TDPRBMENS,                                                              
+      A.TDPRBDURREST,                                                           
+      A.TDPRMFASS,                                                              
+      A.TDPRBRGEAT,                                                             
+      A.TDPRDEAT,                                                               
+      B.TDCPDDREPORT,                                                           
+      A.TDPRMREPORTE,                                                           
+      A.TDPRMREPORTACONS,                                                       
+      A.TDPRMFREPORT,                                                           
+      C.TDCOCOPT,                                                               
+      C.TDCOCOPTCO,                                                             
+      C.TDCOCTITOPT,                                                            
+      C.TDCOCTITOPTCO                                                           
+  FROM PFRA.TBDOPRN A, PFRA.TBDOCPL B, PFRA.TBDOCTR C                           
+  WHERE A.TDPRNFOY = B.TDCPNFOY AND A.TDPRNCONT = B.TDCPNCONT                   
+  AND A.TDPRNCARTE = B.TDCPNCARTE AND A.TDPRNDT = B.TDCPNDT                     
+  AND A.TDPRNFOY = C.TDCONFOY AND A.TDPRNCONT = C.TDCONCONT                     
+  AND C.TDCONCARTE = 0 AND C.TDCONDT = 0                                        
+  AND B.TDCPCTYPCONTRAT = 'S7'                                                  
+  AND A.TDPRNSOC IN (257 , 258)                                                 
+  AND A.TDPRCPRODCOM IN ('AD7R' , 'UP7R')                                       
+  WITH UR;                                                                      
+

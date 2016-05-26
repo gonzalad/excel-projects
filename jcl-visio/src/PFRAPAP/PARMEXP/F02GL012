@@ -1,0 +1,6 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+ASCII                                                                           
+PUT 'PFRATMP.SGL00043.NEWBILNA.SYSOUC00(0)' BILLCP.SERIEY_EOF                   
+CLOSE                                                                           
+QUIT                                                                            

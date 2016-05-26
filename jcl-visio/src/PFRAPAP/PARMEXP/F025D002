@@ -1,0 +1,2 @@
+ INREC FIELDS=(75,6,C'     Q05Q07Q20J06',57X'40')                               
+ OPTION COPY,SKIPREC=1,STOPAFT=1                                                

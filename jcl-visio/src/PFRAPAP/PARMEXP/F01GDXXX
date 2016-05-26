@@ -1,0 +1,6 @@
+ OPTION COPY                                                                    
+  OUTFIL INCLUDE=(660,1,BI,EQ,C'1',OR,660,1,BI,EQ,C'2'),                        
+         FNAMES=CEFI                                                            
+  OUTFIL INCLUDE=(1,2,BI,GE,X'420C',AND,1,2,BI,LE,X'450C',OR,                   
+        (1,2,BI,GE,X'515C',AND,1,2,BI,LE,X'536C'),OR,                           
+        (1,2,BI,EQ,X'453C',OR,1,2,BI,EQ,X'455C')),                              

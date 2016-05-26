@@ -1,0 +1,5 @@
+*+* FMC2FM: BEGINNING OF FILE MANAGER STATEMENT OUTPUT *+*                      
+$$FILEM SET HEADERPG=YES,PAD=OFF,NOTRUNC=NO                                     
+$$FILEM DSC LANG=COBOL,CORRESP=YES                                              
+$$FILEM EOJ                                                                     
+/+                                                                              

@@ -1,0 +1,499 @@
+ UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC01)            
+ MAXTASKS 3                                                                     
+ SELECT PFRA.TBADRES.*                                                          
+ FROM PFRA.TBADRES, PFRA.TBEXFOY                                                
+ WHERE TADRNFOY = TEXFNFOY                                                      
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC02)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBALPHA.*                                                        
+   FROM PFRA.TBALPHA, PFRA.TBEXFOY                                              
+   WHERE TALPNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC03)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBBQRIB.*                                                        
+   FROM PFRA.TBBQRIB, PFRA.TBEXFOY                                              
+   WHERE TBQRNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC04)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBCLFOY.*                                                        
+   FROM PFRA.TBCLFOY, PFRA.TBEXFOY                                              
+   WHERE TCLFNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC05)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBCLIDE.*                                                        
+   FROM PFRA.TBCLIDE, PFRA.TBEXFOY                                              
+   WHERE TCLINFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC06)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBCLPRF.*                                                        
+   FROM PFRA.TBCLPRF, PFRA.TBEXFOY                                              
+   WHERE TCPFNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC07)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOCAR.*                                                        
+   FROM PFRA.TBDOCAR, PFRA.TBEXFOY                                              
+   WHERE TDCANFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC08)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOCBL.*                                                        
+   FROM PFRA.TBDOCBL, PFRA.TBEXFOY                                              
+   WHERE TDCBNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC09)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOCPL.*                                                        
+   FROM PFRA.TBDOCPL, PFRA.TBEXFOY                                              
+   WHERE TDCPNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC10)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOCTR.*                                                        
+   FROM PFRA.TBDOCTR, PFRA.TBEXFOY                                              
+   WHERE TDCONFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC11)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOHIS.*                                                        
+   FROM PFRA.TBDOHIS, PFRA.TBEXFOY                                              
+   WHERE TDHINFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC12)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOMSO.*                                                        
+   FROM PFRA.TBDOMSO, PFRA.TBEXFOY                                              
+   WHERE TDMSNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC13)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOOCT.*                                                        
+   FROM PFRA.TBDOOCT, PFRA.TBEXFOY                                              
+   WHERE TDOCNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC14)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOPRN.*                                                        
+   FROM PFRA.TBDOPRN, PFRA.TBEXFOY                                              
+   WHERE TDPRNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC15)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOREV.*                                                        
+   FROM PFRA.TBDOREV, PFRA.TBEXFOY                                              
+   WHERE TDRVNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC16)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBENCPL.*                                                        
+   FROM PFRA.TBENCPL, PFRA.TBEXFOY                                              
+   WHERE TENCNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC17)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBENIDE.*                                                        
+   FROM PFRA.TBENIDE, PFRA.TBEXFOY                                              
+   WHERE TENINFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC18)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBENPRF.*                                                        
+   FROM PFRA.TBENPRF, PFRA.TBEXFOY                                              
+   WHERE TENPNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC19)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBRECLI.*                                                        
+   FROM PFRA.TBRECLI, PFRA.TBEXFOY                                              
+   WHERE TRCLNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC20)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBREDOS.*                                                        
+   FROM PFRA.TBREDOS, PFRA.TBEXFOY                                              
+   WHERE TRDONFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC21)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOMAT.*                                                        
+   FROM PFRA.TBDOMAT, PFRA.TBEXFOY                                              
+   WHERE TDMANFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC22)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOFPR.*                                                        
+   FROM PFRA.TBDOFPR, PFRA.TBEXFOY                                              
+   WHERE TDFPNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC23)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOUFM.*                                                        
+   FROM PFRA.TBDOUFM, PFRA.TBEXFOY                                              
+   WHERE TDUFNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC24)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOEUR.*                                                        
+   FROM PFRA.TBDOEUR, PFRA.TBEXFOY                                              
+   WHERE TDEUNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC25)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOCP2.*                                                        
+   FROM PFRA.TBDOCP2, PFRA.TBEXFOY                                              
+   WHERE TDC2NFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC26)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBTETEL.*                                                        
+   FROM PFRA.TBTETEL, PFRA.TBEXFOY                                              
+   WHERE TTELNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC27)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBADCPL.*                                                        
+   FROM PFRA.TBADCPL, PFRA.TBEXFOY                                              
+   WHERE TACPNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC28)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBTEWEB.*                                                        
+   FROM PFRA.TBTEWEB, PFRA.TBEXFOY                                              
+   WHERE TTWENFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC29)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOBIL.*                                                        
+   FROM PFRA.TBDOBIL, PFRA.TBEXFOY                                              
+   WHERE TDBINFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC30)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBTMDEG.*                                                        
+   FROM PFRA.TBTMDEG, PFRA.TBEXFOY                                              
+   WHERE TTDENFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC31)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOAVT.*                                                        
+   FROM PFRA.TBDOAVT, PFRA.TBEXFOY                                              
+   WHERE TDAVNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC32)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOPRM.*                                                        
+   FROM PFRA.TBDOPRM, PFRA.TBEXFOY                                              
+   WHERE TDPMNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC33)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOSAR.*                                                        
+   FROM PFRA.TBDOSAR, PFRA.TBEXFOY                                              
+   WHERE TDSANFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC34)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOCAU.*                                                        
+   FROM PFRA.TBDOCAU, PFRA.TBEXFOY                                              
+   WHERE TDCTNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC35)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOTAU.*                                                        
+   FROM PFRA.TBDOTAU, PFRA.TBEXFOY                                              
+   WHERE TDTVNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC36)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOJKR.*                                                        
+   FROM PFRA.TBDOJKR, PFRA.TBEXFOY                                              
+   WHERE TDJKNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC37)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOTRF.*                                                        
+   FROM PFRA.TBDOTRF, PFRA.TBEXFOY                                              
+   WHERE TDTRNFOYOLD = TEXFNFOY                                                 
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC38)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOTRA.*                                                        
+   FROM PFRA.TBDOTRA, PFRA.TBEXFOY                                              
+   WHERE TDTANFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC39)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBSUPCO.*                                                        
+   FROM PFRA.TBSUPCO, PFRA.TBEXFOY                                              
+   WHERE TSPCNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC40)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOMIM.*                                                        
+   FROM PFRA.TBDOMIM,PFRA.TBEXFOY                                               
+   WHERE TDMINFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC41)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBCLMIM.*                                                        
+   FROM PFRA.TBCLMIM,PFRA.TBEXFOY                                               
+   WHERE TCMINFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC42)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBREMDO.*                                                        
+   FROM PFRA.TBREMDO, PFRA.TBEXFOY                                              
+   WHERE TRMDNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC43)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBREMCL.*                                                        
+   FROM PFRA.TBREMCL, PFRA.TBEXFOY                                              
+   WHERE TRMCNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC44)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOFRE.*                                                        
+   FROM PFRA.TBDOFRE, PFRA.TBEXFOY                                              
+   WHERE TDFRNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC45)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOREC.*                                                        
+   FROM PFRA.TBDOREC, PFRA.TBEXFOY                                              
+   WHERE TDRENFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC46)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOIMP.*                                                        
+   FROM PFRA.TBDOIMP, PFRA.TBEXFOY                                              
+   WHERE TDPINFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC47)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDORAN.*                                                        
+   FROM PFRA.TBDORAN, PFRA.TBEXFOY                                              
+   WHERE TDRNNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC48)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBV2009.*                                                        
+   FROM PFRA.TBV2009, PFRA.TBEXFOY                                              
+   WHERE THISNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC49)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBV2010.*                                                        
+   FROM PFRA.TBV2010, PFRA.TBEXFOY                                              
+   WHERE THISNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC50)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBPRCOM.*                                                        
+   FROM PFRA.TBPRCOM, PFRA.TBEXFOY                                              
+   WHERE TPCONFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC51)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBCBTRF.*                                                        
+   FROM PFRA.TBCBTRF,PFRA.TBEXFOY                                               
+   WHERE TCTRNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC53)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBV2008.*                                                        
+   FROM PFRA.TBV2008, PFRA.TBEXFOY                                              
+   WHERE THISNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC54)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBV2007.*                                                        
+   FROM PFRA.TBV2007, PFRA.TBEXFOY                                              
+   WHERE THISNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC55)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBV2006.*                                                        
+   FROM PFRA.TBV2006, PFRA.TBEXFOY                                              
+   WHERE TV06NFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC56)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBV2005.*                                                        
+   FROM PFRA.TBV2005, PFRA.TBEXFOY                                              
+   WHERE TV05NFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC57)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBV2004.*                                                        
+   FROM PFRA.TBV2004, PFRA.TBEXFOY                                              
+   WHERE TV04NFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC58)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOFID.*                                                        
+   FROM PFRA.TBDOFID,PFRA.TBEXFOY                                               
+   WHERE TDFINFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC59)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOBAL.*                                                        
+   FROM PFRA.TBDOBAL,PFRA.TBEXFOY                                               
+   WHERE TDBANFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC60)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOVER.*                                                        
+   FROM PFRA.TBDOVER,PFRA.TBEXFOY                                               
+   WHERE TDVENFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC61)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOSCE.*                                                        
+   FROM PFRA.TBDOSCE,PFRA.TBEXFOY                                               
+   WHERE TDSENFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC62)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBENFJU.*                                                        
+   FROM PFRA.TBENFJU,PFRA.TBEXFOY                                               
+   WHERE TEFJNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC63)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBWEBFO.*                                                        
+   FROM PFRA.TBWEBFO,PFRA.TBEXFOY                                               
+   WHERE TWFONFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC64)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBBSUDO.*                                                        
+   FROM PFRA.TBBSUDO,PFRA.TBEXFOY                                               
+   WHERE TBSUNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC65)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOHRP.*                                                        
+   FROM PFRA.TBDOHRP,PFRA.TBEXFOY                                               
+   WHERE TDHRNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC66)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOMTP.*                                                        
+   FROM PFRA.TBDOMTP,PFRA.TBEXFOY                                               
+   WHERE TDMTNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC67)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDORPT.*                                                        
+   FROM PFRA.TBDORPT,PFRA.TBEXFOY                                               
+   WHERE TDRTNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC68)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDORRA.*                                                        
+   FROM PFRA.TBDORRA,PFRA.TBEXFOY                                               
+   WHERE TDRRNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC69)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBCXRFO.*                                                        
+   FROM PFRA.TBCXRFO, PFRA.TBEXFOY                                              
+   WHERE TXRONFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC70)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBBSDOM.*                                                        
+   FROM PFRA.TBBSDOM, PFRA.TBEXFOY, PFRA.TBBSUDO                                
+   WHERE TBSUNFOY = TEXFNFOY AND TBDMNIDDOMBQ = TBSUNIDDOMBQ                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC71)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOFBE.*                                                        
+   FROM PFRA.TBDOFBE, PFRA.TBEXFOY                                              
+   WHERE TDFBNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC72)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBTMFEV.*                                                        
+   FROM PFRA.TBTMFEV, PFRA.TBEXFOY                                              
+   WHERE TTFENFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC73)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOGAR.*                                                        
+   FROM PFRA.TBDOGAR, PFRA.TBEXFOY                                              
+   WHERE TDGANFOY  = TEXFNFOY                                                   
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC74)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOCMD.*                                                        
+   FROM PFRA.TBDOCMD, PFRA.TBEXFOY                                              
+   WHERE TDCMNFOY= TEXFNFOY                                                     
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC75)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOMDT.*                                                        
+   FROM PFRA.TBDOMDT, PFRA.TBEXFOY                                              
+   WHERE TDMDNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC76)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOCFI.*                                                        
+   FROM PFRA.TBDOCFI, PFRA.TBEXFOY                                              
+   WHERE TDCFNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC77)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBBLOCN.*                                                        
+   FROM PFRA.TBBLOCN, PFRA.TBEXFOY                                              
+   WHERE TBLONFOY = TEXFNFOY AND TBLONNAT IN (72520,72512)                      
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC78)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOMAR.*                                                        
+   FROM PFRA.TBDOMAR, PFRA.TBEXFOY                                              
+   WHERE TDMRNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC79)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOTIT.*                                                        
+   FROM PFRA.TBDOTIT, PFRA.TBEXFOY                                              
+   WHERE TDTTNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC80)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBCLTEC.*                                                        
+   FROM PFRA.TBCLTEC, PFRA.TBEXFOY                                              
+   WHERE TCTENFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC81)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBREEXT.*                                                        
+   FROM PFRA.TBREEXT, PFRA.TBEXFOY                                              
+   WHERE TREXNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC82)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBCREVG.*                                                        
+   FROM PFRA.TBCREVG, PFRA.TBEXFOY                                              
+   WHERE TCEVNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC83)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOFIN.*                                                        
+   FROM PFRA.TBDOFIN, PFRA.TBEXFOY                                              
+   WHERE TDFNNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+   UNLD DATA CONCURRENT FORMAT(DSNTIAUL) MODE(DB2SQL) OUTDDN(SYSREC84)          
+   MAXTASKS 3                                                                   
+   SELECT PFRA.TBDOBCR.*                                                        
+   FROM PFRA.TBDOBCR, PFRA.TBEXFOY                                              
+   WHERE TDBRNFOY = TEXFNFOY                                                    
+   OPTIMIZE FOR 1 ROW                                                           
+

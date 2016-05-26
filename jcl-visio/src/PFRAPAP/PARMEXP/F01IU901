@@ -1,0 +1,115 @@
+UNLD DATA FORMAT(ASCIIDEL) OUTDDN(SYSREC01)                                     
+     STMTDDN(SYSPUNCH) MODE(DB2SQL)                                             
+     SORTDEVT SYSDA SORTNUM 10                                                  
+SELECT TTNAME,REMARKS,                                                          
+       SUM(BATCH_NOYAU),SUM(BATCH_SPECIF),SUM(BATCH),                           
+       SUM(TP_NOYAU),SUM(TP_SPECIF),SUM(TP),                                    
+       COUNT(*)                                                                 
+FROM ( SELECT DISTINCT TTNAME,GRANTEE,REMARKS,                                  
+            CASE WHEN TRP1CNOYAU ='O' AND TRP1CTYPE = 'BATCH' THEN 1            
+                 ELSE 0 END AS BATCH_NOYAU,                                     
+            CASE WHEN TRP1CNOYAU ='N' AND TRP1CTYPE = 'BATCH' THEN 1            
+                 ELSE 0 END AS BATCH_SPECIF,                                    
+            CASE WHEN TRP1CTYPE  ='BATCH' THEN 1                                
+                 ELSE 0 END AS BATCH ,                                          
+            CASE WHEN TRP1CNOYAU ='O' AND TRP1CTYPE = 'TP' THEN 1               
+                 ELSE 0 END AS TP_NOYAU,                                        
+            CASE WHEN TRP1CNOYAU ='N' AND TRP1CTYPE = 'TP' THEN 1               
+                 ELSE 0 END AS TP_SPECIF,                                       
+            CASE WHEN TRP1CTYPE  ='TP' THEN 1                                   
+                 ELSE 0 END AS TP                                               
+       FROM PFRA.VWTABPGM A,                                                    
+            SYSIBM.SYSTABLES,                                                   
+            PFRA.TBTTRP1                                                        
+       WHERE GRANTEE    = TRP1LNOM                                              
+         AND TRP1CTYPE  IN ('BATCH','TP')                                       
+         AND TRP1CNOYAU IN ('O','N')                                            
+         AND TCREATOR = 'PFRA'                                                  
+         AND TTNAME LIKE 'TB%'                                                  
+         AND TCREATOR = CREATOR                                                 
+         AND TTNAME   = NAME                                                    
+         AND DATEGRANTED = (SELECT MAX(DATEGRANTED)                             
+                            FROM PFRA.VWTABPGM B                                
+                            WHERE B.GRANTEE = A.GRANTEE                         
+                              AND B.COLLID  = A.COLLID                          
+                              AND B.TCREATOR = A.TCREATOR)                      
+     ) AS T1                                                                    
+GROUP BY TTNAME,REMARKS                                                         
+ORDER BY TTNAME;                                                                
+                                                                                
+UNLD DATA FORMAT(ASCIIDEL) OUTDDN(SYSREC02)                                     
+     STMTDDN(SYSPUNCH) MODE(DB2SQL)                                             
+     SORTDEVT SYSDA SORTNUM 10                                                  
+SELECT DISTINCT TTNAME,GRANTEE,TRP1LCOMMENT,TRP1CTYPE,TRP1CNOYAU,               
+       INSERTAUTH,SELECTAUTH,UPDATEAUTH,DELETEAUTH                              
+FROM PFRA.VWTABPGM a,PFRA.TBTTRP1                                               
+WHERE GRANTEE    =    TRP1LNOM                                                  
+  AND TRP1CTYPE  IN   ('BATCH','TP')                                            
+  AND TRP1CNOYAU IN   ('O','N')                                                 
+  AND TCREATOR   =    'PFRA'                                                    
+  AND TTNAME     LIKE 'TB%'                                                     
+  AND COLLID     LIKE 'PFRA%'                                                   
+  AND DATEGRANTED = (SELECT MAX(DATEGRANTED)                                    
+                     FROM PFRA.VWTABPGM B                                       
+                     WHERE B.GRANTEE = A.GRANTEE                                
+                       AND B.COLLID  = A.COLLID                                 
+                       AND B.TCREATOR = A.TCREATOR)                             
+ORDER BY TTNAME,TRP1CTYPE,GRANTEE;                                              
+                                                                                
+UNLD DATA FORMAT(ASCIIDEL) OUTDDN(SYSREC03)                                     
+     STMTDDN(SYSPUNCH) MODE(DB2SQL)                                             
+     SORTDEVT SYSDA SORTNUM 10                                                  
+SELECT TRP1LNOM, TRP1CTYPE, TRP1CNOYAU, TRP1LDOMAINE, TRP1LCOMMENT,             
+       IFNULL(HASDB2,0)                                                         
+FROM                                                                            
+( SELECT TRP1LNOM, TRP1CTYPE, TRP1CNOYAU, TRP1LDOMAINE, TRP1LCOMMENT            
+ FROM PFRA.TBTTRP1                                                              
+ WHERE TRP1CTYPE  IN   ('BATCH','TP')                                           
+   AND TRP1CNOYAU IN   ('O','N')) AS T1                                         
+LEFT OUTER JOIN                                                                 
+( SELECT GRANTEE,COUNT(*) AS HASDB2                                             
+  FROM ( SELECT DISTINCT GRANTEE,TTNAME                                         
+        FROM PFRA.VWTABPGM A                                                    
+        WHERE TCREATOR   =    'PFRA'                                            
+          AND TTNAME     LIKE 'TB%'                                             
+          AND COLLID     LIKE 'PFRA%'                                           
+          AND DATEGRANTED = (SELECT MAX(DATEGRANTED)                            
+                            FROM PFRA.VWTABPGM B                                
+                            WHERE B.GRANTEE = A.GRANTEE                         
+                              AND B.COLLID  = A.COLLID                          
+                              AND B.TCREATOR = A.TCREATOR)) AS T2               
+  GROUP BY GRANTEE ) AS T2B                                                     
+ON TRP1LNOM = GRANTEE                                                           
+ORDER BY TRP1LNOM;                                                              
+                                                                                
+UNLD DATA FORMAT(ASCIIDEL) OUTDDN(SYSREC04)                                     
+     STMTDDN(SYSPUNCH) MODE(DB2SQL)                                             
+     SORTDEVT SYSDA SORTNUM 10                                                  
+SELECT NAME, DBNAME, REMARKS                                                    
+FROM   SYSIBM.SYSTABLES                                                         
+WHERE  CREATOR = 'PFRA'                                                         
+  AND  DBNAME NOT LIKE '%DL2DB%'                                                
+  AND  DBNAME NOT LIKE '%CDBUT%'                                                
+  AND  DBNAME NOT LIKE '%EXTRA%'                                                
+  AND  DBNAME NOT LIKE '%HISTO%'                                                
+  AND  DBNAME NOT LIKE '%REPRI%'                                                
+  AND  DBNAME NOT LIKE '%TTECH%'                                                
+  AND  DBNAME NOT LIKE '%VTEMP%'                                                
+  AND  DBNAME NOT LIKE '%DB2CC%'                                                
+  AND  DBNAME NOT LIKE '%STATD%'                                                
+  AND  DBNAME NOT LIKE '%SERVI%'                                                
+  AND  DBNAME NOT LIKE '%FOYER%'                                                
+  AND  DBNAME NOT LIKE '%TECHN%'                                                
+  AND  NAME    LIKE 'TB%'                                                       
+  AND  NOT EXISTS (SELECT '*' FROM PFRA.VWTABPGM A                              
+                   WHERE TCREATOR = CREATOR                                     
+                     AND TTNAME   = NAME                                        
+                     AND COLLID LIKE 'PFRA%'                                    
+                     AND DATEGRANTED = (SELECT MAX(DATEGRANTED)                 
+                                        FROM PFRA.VWTABPGM B                    
+                                        WHERE B.GRANTEE = A.GRANTEE             
+                                          AND B.COLLID  = A.COLLID              
+                                          AND B.TCREATOR = A.TCREATOR)          
+                  )                                                             
+ORDER BY NAME;                                                                  
+

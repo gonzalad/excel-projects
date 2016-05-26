@@ -1,0 +1,12 @@
+PFRLAS01 (EXIT=16                                                               
+CD /data-apmx/apm_files/input                                                   
+BIN                                                                             
+PUT 'PFRAFTS.SRCC0019.NEEMAGL0.EDITPMAG' +                                      
+      JOURA.PMAG.NTX.CL.DUMOJJ                                                  
+ASCII                                                                           
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.PMAG.NTX.CL.DUMOJJ_INF                                              
+PUT 'PFRAQSM.S5E00014.BT000000.CFTEOF00' +                                      
+      JOURA.PMAG.NTX.CL.DUMOJJ_EOF                                              
+CLOSE                                                                           
+QUIT                                                                            

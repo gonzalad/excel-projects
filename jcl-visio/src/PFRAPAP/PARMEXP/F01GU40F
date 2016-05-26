@@ -1,0 +1,22 @@
+$$FILEM SET  PAD=X'00'                                                          
+$$FILEM DSC  INPUT=DD01,                                                        
+$$FILEM      OUTPUT=DD01O,                                                      
+$$FILEM      PROC=*                                                             
+  RSTR_OUT()                                                                    
+  FLD_OUT(1,107,1)                                                              
+  SAVE_OUT()                                                                    
+  IF FLD(83,4) == '9999'                                                        
+  THEN DO                                                                       
+   RSTR_OUT()                                                                   
+   OVLY_OUT('2999',83)                                                          
+   SAVE_OUT()                                                                   
+  END                                                                           
+ IF FLD(94,4) == '9999'                                                         
+  THEN DO                                                                       
+   RSTR_OUT()                                                                   
+   OVLY_OUT('2999',94)                                                          
+   SAVE_OUT()                                                                   
+  END                                                                           
+  WRITE(DD01O)                                                                  
+  RETURN DROP                       /* DONE USER PROCESSING OF RECORD */        
+/+                                                                              

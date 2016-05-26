@@ -1,0 +1,3 @@
+ OPTION COPY                                                                    
+  OUTFIL INCLUDE=(660,1,BI,EQ,C'1',OR,660,1,BI,EQ,C'2'),                        
+         FNAMES=FSSRCP                                                          
